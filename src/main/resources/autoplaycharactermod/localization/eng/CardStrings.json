@@ -1,0 +1,785 @@
+{
+  "${modID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Description.",
+    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "EXTENDED_DESCRIPTION": [
+      "You can put more text in here.",
+      "If you need to use it for stuff.",
+      "Blizzard is a good example for this."
+    ]
+  },
+  "${modID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:CoverFire": {
+    "NAME": "Cover Fire",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deals double damage to the target.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage to ALL enemies. NL Deals triple damage to the target."
+    ]
+  },
+  "${modID}:DefenseAlgo": {
+    "NAME": "Defense Algorithm",
+    "DESCRIPTION": "Gain !B! Block for each enemy in combat.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block and [E] for each enemy in combat."
+    ]
+  },
+  "${modID}:SelectTarget": {
+    "NAME": "Select Target",
+    "DESCRIPTION": "Ethereal. NL Apply ${modID}:Target. NL If the enemy is already *Targeted gain !M! Vigor. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Ethereal. NL Apply ${modID}:Target. NL If the enemy is already *Targeted gain !M! Strength. NL Exhaust."
+    ]
+  },
+  "${modID}:ScorchedCore": {
+    "NAME": "Scorched Core",
+    "DESCRIPTION": "Gain [E] . NL Gain !B! Block. NL Add a *Melt into your hand.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] . NL Gain !B! Block. NL Add a *Melt into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain [E] [E] [E] . NL Gain !B! Block."
+    ],
+    "FLAVOR": "You shouldn't be able to read this."
+  },
+  "${modID}:BurningPayload": {
+    "NAME": "Burning Payload",
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Melt to your hand and a copy of this card to your discard.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage twice. NL Add a copy of this card to your discard pile."
+    ],
+    "FLAVOR": "You shouldn't be able to read this."
+  },
+  "${modID}:CombustionRounds": {
+    "NAME": "Combustion Rounds",
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a Dazed into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL Gain 1 Artifact."
+    ],
+    "FLAVOR": "You shouldn't be able to read this."
+  },
+  "${modID}:ThermalSurge": {
+    "NAME": "Thermal Surge",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust a card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Exhaust up to 2 cards in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL Exhaust any card in your hand."
+    ],
+    "FLAVOR": "You shouldn't be able to read this."
+  },
+  "${modID}:IgnitionProtocol": {
+    "NAME": "Ignition Protocol",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies, Add a *Melt to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage and apply 99 Vulnerable to ALL enemies"
+    ],
+    "FLAVOR": "You shouldn't be able to read this."
+  },
+  "${modID}:Firewall": {
+    "NAME": "Firewall",
+    "DESCRIPTION": "Whenever a Status is played or created, NL gain !M! Block."
+  },
+  "${modID}:FeedbackLoop": {
+    "NAME": "Feedback Loop",
+    "DESCRIPTION": "Whenever you apply a Buff or Debuff, NL deal !M! damage."
+  },
+  "${modID}:Flash": {
+    "NAME": "Flash",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "ALL enemies lose !M! Strength"
+    ]
+  },
+  "${modID}:DataCache": {
+    "NAME": "Data Cache",
+    "DESCRIPTION": "Gain !B! Block for every [E] [E] spent since last use.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block for every [E] spent since last use.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block for every [E] spent this combat.",
+      " NL (",
+      " Spent)"
+    ]
+  },
+  "${modID}:Cryostasis": {
+    "NAME": "Cryostasis",
+    "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL Block is not removed at the start of your next 3 turns."
+    ]
+  },
+  "${modID}:TakeCover": {
+    "NAME": "Take Cover",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
+  },
+  "${modID}:Beacon": {
+    "NAME": "Beacon",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Add a random *Bastion card into your Discard Pile.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add a random *Bastion card into your Discard Pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL Add 2 random *Bastion cards into your Discard Pile."
+    ]
+  },
+  "${modID}:RedOptionOne": {
+    "NAME": "Demonic Fuel",
+    "DESCRIPTION": "At the start of your turn, gain 1 Strength."
+  },
+  "${modID}:RedOptionTwo": {
+    "NAME": "Reinforcements",
+    "DESCRIPTION": "Enemies start with !M!% less HP."
+  },
+  "${modID}:RedOptionThree": {
+    "NAME": "Upgrade Chassis",
+    "DESCRIPTION": "Raise your Max HP by !M!."
+  },
+  "${modID}:BlueOptionOne": {
+    "NAME": "Fortress Protocol",
+    "DESCRIPTION": "Block is not removed at the start of your first !M! turn."
+  },
+  "${modID}:BlueOptionTwo": {
+    "NAME": "Null Entry",
+    "DESCRIPTION": "Start each combat with !M! *Buffers."
+  },
+  "${modID}:BlueOptionThree": {
+    "NAME": "Runic Programming",
+    "DESCRIPTION": "Start each combat with !M! Artifact."
+  },
+  "${modID}:YellowOptionOne": {
+    "NAME": "Bit Mining",
+    "DESCRIPTION": "Gain !M! Gold."
+  },
+  "${modID}:YellowOptionTwo": {
+    "NAME": "Automated Refinement",
+    "DESCRIPTION": "Upgrade !M! random cards in your deck."
+  },
+  "${modID}:YellowOptionThree": {
+    "NAME": "Lucky Cache",
+    "DESCRIPTION": "Obtain 2 relics."
+  },
+  "${modID}:ScrapCommon": {
+    "NAME": "Sharp Scrap",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:[#03befc]Echo[]: Gain !M! Vigor, NL ${modID}:Fuse and Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL ${modID}:[#03befc]Echo[]: Heal 3 HP. NL Exhaust."
+    ]
+  },
+  "${modID}:ScrapCommonDef": {
+    "NAME": "Tough Scrap",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Gain !M! Thorns, NL ${modID}:Fuse and Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Heal 3 HP. NL Exhaust."
+    ]
+  },
+  "${modID}:ScrapCommonLeft": {
+    "NAME": "Common Leftovers",
+    "DESCRIPTION": "Permanently evolve a random common card in your deck and all it's copies. NL stslib:Fleeting."
+  },
+  "${modID}:ScrapUncommonAttStr": {
+    "NAME": "Strong Module",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:[#03befc]Echo[]: Gain !M! Strength, NL  ${modID}:Fuse and Exhaust."
+  },
+  "${modID}:ScrapUncommonDefDex": {
+    "NAME": "Swift Module",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Gain !M! Dexterity, NL ${modID}:Fuse and Exhaust."
+  },
+  "${modID}:ScrapUncommonLeft": {
+    "NAME": "Uncommon Leftovers",
+    "DESCRIPTION": "Permanently evolve a random uncommon card in your deck and all it's copies. NL stslib:Fleeting."
+  },
+  "${modID}:ScrapRareAtt": {
+    "NAME": "Prototype: Alpha",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:[#03befc]Echo[]: Gain !M! Ritual, NL ${modID}:Fuse and Exhaust."
+  },
+  "${modID}:ScrapRareDef": {
+    "NAME": "Prototype: Delta",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Gain !M! Intangible, NL ${modID}:Fuse and Exhaust."
+  },
+  "${modID}:ScrapRareLeft": {
+    "NAME": "Rare Leftovers",
+    "DESCRIPTION": "Permanently evolve a random rare card in your deck and all it's copies. NL stslib:Fleeting."
+  },
+  "${modID}:ScrapUltraRare": {
+    "NAME": "Omega Frame",
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all it's copies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all it's copies. NL Exhaust."
+    ]
+  },
+  "${modID}:CouponStamp": {
+    "NAME": "Coupon Stamp",
+    "DESCRIPTION": "Deal damage equal to !M! times the number of shop purchases.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal damage equal to !M! times the number of shop purchases.",
+      " NL (",
+      " purchases made.)"
+    ]
+  },
+  "${modID}:LostAndFound": {
+    "NAME": "Lost And Found",
+    "DESCRIPTION": "Gain [E] [E] . NL Decrease the energy gained by 1 this combat.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] . NL Decrease the energy gained by 1 this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain [E] [E] [E] [E] .",
+      "Gain ",
+      ". NL Decrease the energy gain by 1 this combat.",
+      "There's nothing left.."
+    ]
+  },
+  "${modID}:DuctTape": {
+    "NAME": "Duct Tape",
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Deal !D! Damage. NL Whenever you play a *Trait card, return this to your Hand.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:[#03befc]Echo[]: Deal !D! Damage NL Gain 2 Temporary_HP. NL Whenever you play a *Trait card, return this to your Hand."
+    ]
+  },
+  "${modID}:NFT": {
+    "NAME": "NFT",
+    "DESCRIPTION": "Gain !B! Block. NL Reduce Block by !M! for each *NFT in your deck.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL Gain 15 gold for each *NFT in your deck."
+    ]
+  },
+  "${modID}:CrossedWires": {
+    "NAME": "Crossed Wires",
+    "DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random *Trait cards into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Counts twice as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random *Trait cards into your draw pile."
+    ],
+    "FLAVOR": "You shouldn't be able to read this."
+  },
+  "${modID}:FavorableTerrain": {
+    "NAME": "Favorable Terrain",
+    "DESCRIPTION": "Choose one: NL *Inferno, *Bunker or *Junk *Pit. NL Add it to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose one: NL *Inferno+, *Bunker+ or *Junk *Pit+. NL Add it to your hand. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose one: NL *Inferno, *Bunker or *Junk *Pit. NL Add it to your hand and evolve it. NL Exhaust."
+    ]
+  },
+  "${modID}:TerrainRed": {
+    "NAME": "Inferno",
+    "DESCRIPTION": "Retain. NL ${modID}:[#03befc]Echo[]: Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Counts twice as *Ignition. NL ${modID}:[#03befc]Echo[]: Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Retain. NL Counts twice as *Ignition. NL [#03befc]Turn[] [#03befc]End[]: Deal 15 Damage. NL ${modID}:[#03befc]Echo[]: Exhaust."
+    ]
+  },
+  "${modID}:TerrainBlue": {
+    "NAME": "Bunker",
+    "DESCRIPTION": "Retain. NL ${modID}:[#03befc]Echo[]: Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Counts twice as *Bastion. NL ${modID}:[#03befc]Echo[]: Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Retain. NL Counts twice as *Bastion. NL [#03befc]Turn[] [#03befc]End[]: Gain 15 Block. NL ${modID}:[#03befc]Echo[]: Exhaust."
+    ]
+  },
+  "${modID}:TerrainYellow": {
+    "NAME": "Junk Pit",
+    "DESCRIPTION": "Retain. NL ${modID}:[#03befc]Echo[]: Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Counts twice as *Scavenge. NL ${modID}:[#03befc]Echo[]: Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Retain. NL Counts twice as *Scavenge. NL [#03befc]Turn[] [#03befc]End[]: Gain 30 Gold. NL ${modID}:[#03befc]Echo[]: Exhaust."
+    ]
+  },
+  "${modID}:GachaPull": {
+    "NAME": "Gacha Pull",
+    "DESCRIPTION": "Lose !${modID}:COST! Gold to pick NL 1 of !M! rewards or drawbacks and remove it from the pool.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose 1 of 3 rewards.",
+      "Not enough #rGold.",
+      "No rewards left."
+    ]
+  },
+  "${modID}:GamblingBlock": {
+    "NAME": "Block",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:GamblingBuffer": {
+    "NAME": "Buffer",
+    "DESCRIPTION": "Gain !M! Buffer."
+  },
+  "${modID}:GamblingCardReward": {
+    "NAME": "Card Reward",
+    "DESCRIPTION": "Gain 1 additional card to choose from next card reward.",
+    "UPGRADE_DESCRIPTION": "Gain an extra card reward at the end of this combat."
+  },
+  "${modID}:GamblingCreateScavenge": {
+    "NAME": "Scavenge",
+    "DESCRIPTION": "Add !M! random ${modID}:Scavenge cards into your Draw Pile."
+  },
+  "${modID}:GamblingDamage": {
+    "NAME": "Damage",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies"
+  },
+  "${modID}:GamblingDexterity": {
+    "NAME": "Dexterity",
+    "DESCRIPTION": "Gain !M! Dexterity."
+  },
+  "${modID}:GamblingEnergy": {
+    "NAME": "Energy",
+    "DESCRIPTION": "Next turn, Gain [E] .",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] [E] ."
+  },
+  "${modID}:GamblingLoseEnergy": {
+    "NAME": "Lose Energy",
+    "DESCRIPTION": "Lose all your energy."
+  },
+  "${modID}:GamblingFrail": {
+    "NAME": "Frail",
+    "DESCRIPTION": "Gain !M! Frail."
+  },
+  "${modID}:GamblingGainCurse": {
+    "NAME": "Curse",
+    "DESCRIPTION": "Add a random Curse to your deck."
+  },
+  "${modID}:GamblingGold": {
+    "NAME": "Gold",
+    "DESCRIPTION": "Gain !M! Gold."
+  },
+  "${modID}:GamblingHeal": {
+    "NAME": "Heal",
+    "DESCRIPTION": "Heal !M! HP."
+  },
+  "${modID}:GamblingLoseGold": {
+    "NAME": "Lose Gold",
+    "DESCRIPTION": "Lose !M! Gold."
+  },
+  "${modID}:GamblingLoseHP": {
+    "NAME": "Lose HP",
+    "DESCRIPTION": "Lose !M! HP."
+  },
+  "${modID}:GamblingNoBlock": {
+    "NAME": "No Block",
+    "DESCRIPTION": "You cannot gain Block from cards for the next 2 turns."
+  },
+  "${modID}:GamblingPlatedArmor": {
+    "NAME": "Plated Armor",
+    "DESCRIPTION": "Gain !M! Plated Armor."
+  },
+  "${modID}:GamblingPotion": {
+    "NAME": "Potions",
+    "DESCRIPTION": "Obtain a random potion.",
+    "UPGRADE_DESCRIPTION": "Obtain !M! random potions."
+  },
+  "${modID}:GamblingRelic": {
+    "NAME": "Relic",
+    "DESCRIPTION": "Gain a random relic."
+  },
+  "${modID}:GamblingScry": {
+    "NAME": "Scry",
+    "DESCRIPTION": "Scry !M!."
+  },
+  "${modID}:GamblingStrength": {
+    "NAME": "Strength",
+    "DESCRIPTION": "Gain !M! Strength."
+  },
+  "${modID}:GamblingStun": {
+    "NAME": "Stun",
+    "DESCRIPTION": "Stun the target."
+  },
+  "${modID}:GamblingUpgradeCards": {
+    "NAME": "Upgrades",
+    "DESCRIPTION": "Permanently upgrade a basic Strike or Defend in your deck.",
+    "UPGRADE_DESCRIPTION": "Permanently upgrade a random card in your deck"
+  },
+  "${modID}:GamblingVulnerable": {
+    "NAME": "Vulnerable",
+    "DESCRIPTION": "Gain !M! Vulnerable."
+  },
+  "${modID}:GamblingWeak": {
+    "NAME": "Weak",
+    "DESCRIPTION": "Gain !M! Weak."
+  },
+  "${modID}:GamblingScrap": {
+    "NAME": "Scrap",
+    "DESCRIPTION": "Add a *Scrap to your deck.",
+    "UPGRADE_DESCRIPTION": "Add 2 *Scrap to your deck."
+  },
+  "${modID}:LockedIn": {
+    "NAME": "Locked In",
+    "DESCRIPTION": "${modID}:Charge !M!. NL ${modID}:[#03befc]Echo[]: Discard 2 cards to Scry !${modID}:SCRY!.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Charge !M!. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Scry 10."
+    ]
+  },
+  "${modID}:FlashDrive": {
+    "NAME": "Flash Drive",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Play a Skill in your draw pile and add a Dazed into your discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Play any card in your draw pile."
+    ]
+  },
+  "${modID}:TakeAim": {
+    "NAME": "Take Aim",
+    "DESCRIPTION": "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! and ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! and ${modID}:Charge 4 for each card discarded. NL Exhaust."
+    ]
+  },
+  "${modID}:ComboBreaker": {
+    "NAME": "Combo Breaker",
+    "DESCRIPTION": "Ethereal. NL ${modID}:Charge !M!. NL ${modID}:[#03befc]Ejected[]: Double this card's ${modID}:Charge.",
+    "UPGRADE_DESCRIPTION": "${modID}:Charge !M!. NL ${modID}:[#03befc]Ejected[]: Double this card's ${modID}:Charge.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Charge !M!. NL ${modID}:[#03befc]Ejected[]: Triple this card's ${modID}:Charge."
+    ]
+  },
+  "${modID}:Thrusters": {
+    "NAME": "Thrusters",
+    "DESCRIPTION": "Scry !${modID}:SCRY!. NL ${modID}:Charge !M!. NL Gain [E] . NL Next turn, Lose [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Scry 5. NL ${modID}:Charge !M!. NL Gain [E] ."
+    ]
+  },
+  "${modID}:VolatileBattery": {
+    "NAME": "Volatile Battery",
+    "DESCRIPTION": "${modID}:Charge !M! for each copy in your deck. NL ${modID}:[#03befc]Ejected[]: Add a copy of this card to your discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Charge !M! for each copy in your deck. NL ${modID}:[#03befc]Ejected[]: Add 2 copies of this card to your discard pile."
+    ]
+  },
+  "${modID}:Maintenance": {
+    "NAME": "Maintenance",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Discard !${modID}:DISCARD! card to Gain !M! ${modID}:Capacity.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Discard !${modID}:DISCARD! cards to Gain !M! ${modID}:Capacity.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to repeat."
+    ]
+  },
+  "${modID}:Acceleration": {
+    "NAME": "Acceleration",
+    "DESCRIPTION": "Next turn, Gain [E] . NL ${modID}:[#03befc]Echo[]: Discard 1 card to ${modID}:Charge !M! for each [E] spent this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Next turn, Gain [E] . NL ${modID}:[#03befc]Echo[]: Discard 1 card to ${modID}:Charge !M! for each [E] spent this combat.",
+      " NL (",
+      " Spent)"
+    ]
+  },
+  "${modID}:QuickReflex": {
+    "NAME": "Quick Reflex",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. ! NL ${modID}:[#03befc]Ejected[]: Gain [E] . NL Add a *Dazed into your discard pile.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Gain [E] [E] . NL Add a *Dazed into your discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !B! Block. NL Gain 12 ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Gain !B! Block. NL Gain [E] [E] ."
+    ]
+  },
+  "${modID}:ArcBlasterMk": {
+    "NAME": "Arc Blaster Mk-",
+    "DESCRIPTION": "${modID}:Charge !M!. NL ${modID}:[#03befc]Ejected[]: Upgrade. NL Can be upgraded any number of times.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Charge !M!. NL ${modID}:[#03befc]Ejected[]: Upgrade Permanently. NL Can be upgraded any number of times."
+    ]
+  },
+  "${modID}:TitaniumCasing": {
+    "NAME": "Titanium Casing",
+    "DESCRIPTION": "Double your ${modID}:Capacity and Block. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your ${modID}:Capacity and Block.",
+    "EXTENDED_DESCRIPTION": [
+      "Triple your ${modID}:Capacity and Block."
+    ]
+  },
+  "${modID}:PreemptiveStrike": {
+    "NAME": "Preemptive Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Scry !M!."
+  },
+  "${modID}:EnergyBurst": {
+    "NAME": "Energy Burst",
+    "DESCRIPTION": "Every time you shuffle your draw pile, ${modID}:Charge equal to your deck size.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL Every time you shuffle your draw pile, ${modID}:Charge equal to your deck size.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL Every time you shuffle your draw pile, ${modID}:Charge equal to twice your deck size."
+    ]
+  },
+  "${modID}:DoubleOrNothing": {
+    "NAME": "Double Or Nothing",
+    "DESCRIPTION": "Double your ${modID}:Charge. NL Lose all your Block.",
+    "UPGRADE_DESCRIPTION": "Double your ${modID}:Charge. NL Lose half your Block.",
+    "EXTENDED_DESCRIPTION": [
+      "Triple your ${modID}:Charge."
+    ]
+  },
+  "${modID}:Reload": {
+    "NAME": "Reload",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to place a card from your discard pile on top of your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to play a card from your discard pile."
+    ]
+  },
+  "${modID}:ExposedWire": {
+    "NAME": "Exposed Wire",
+    "DESCRIPTION": "Retain. NL Gain [E] [E] . NL Gain !M! ${modID}:Capacity. NL Exhaust a random card in your hand.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain [E] [E] [E] . NL Gain !M! ${modID}:Capacity. NL Exhaust a random card in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain [E] [E] [E] . NL Gain !M! ${modID}:Capacity."
+    ]
+  },
+  "${modID}:Efficiency": {
+    "NAME": "Efficiency",
+    "DESCRIPTION": "At the end of your turn, gain Block equal to ${modID}:Capacity, up to !M!.",
+    "EXTENDED_DESCRIPTION": [
+      "At the end of your turn, gain Block equal to ${modID}:Capacity, up to !M!. NL Gain !M! ${modID}:Capacity."
+    ]
+  },
+  "${modID}:Virus": {
+    "NAME": "Virus",
+    "DESCRIPTION": "Play the top !M! cards of your draw pile. NL ALL enemies gain 1 Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "Play the top !M! cards of your draw pile."
+    ]
+  },
+  "${modID}:DefenseMatrix": {
+    "NAME": "Defense Matrix",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain Block equal to half your ${modID}:Capacity.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain Block equal to twice your ${modID}:Capacity."
+    ]
+  },
+  "${modID}:PowerSlide": {
+    "NAME": "Power Slide",
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: ${modID}:Charge !M!. NL [#03befc]Scry[]: Return this from the discard pile to your Hand.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:[#03befc]Echo[]: ${modID}:Charge !M! NL increase this card's ${modID}:Charge by 2. NL [#03befc]Scry[]: Return this from the discard pile to your Hand."
+    ]
+  },
+  "${modID}:JunkFood": {
+    "NAME": "Junk Food",
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Heal !M! HP."
+    ]
+  },
+  "${modID}:Grenades": {
+    "NAME": "Grenades",
+    "DESCRIPTION": "At the end of 2 turns deal !M! damage to ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "At the end of 2 turns deal !M! damage to ALL enemies."
+    ]
+  },
+  "${modID}:Dispenser": {
+    "NAME": "Dispenser",
+    "DESCRIPTION": "Obtain a random potion. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Obtain 2 random potions."
+    ]
+  },
+  "${modID}:BrokenBattery": {
+    "NAME": "Broken Battery",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:Charge !M!. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain !M! ${modID}:Capacity. NL ${modID}:Charge !M!."
+    ]
+  },
+  "${modID}:FieldBubble": {
+    "NAME": "Field Bubble",
+    "DESCRIPTION": "Reduce all damage received this turn by !M!. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Reduce all damage received this turn by !M!."
+    ]
+  },
+  "${modID}:SpareParts": {
+    "NAME": "Spare Parts",
+    "DESCRIPTION": "${modID}:Repair !M! durability to ALL ${modID}:Equipment. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Repair !M! durability to ALL ${modID}:Equipment."
+    ]
+  },
+  "${modID}:Metronome": {
+    "NAME": "Metronome",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Gain !M! Strength and Dexterity for this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Turn[] [#03befc]Start[]: NL Gain !M! Strength and Dexterity."
+    ]
+  },
+  "${modID}:TungstenCoat": {
+    "NAME": "Tungsten Coat",
+    "DESCRIPTION": "[#03befc]Lose[] [#03befc]HP[]: NL Lose 1 less HP.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Lose[] [#03befc]HP[]: NL Lose 1 less HP.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]Lose[] [#03befc]HP[]: NL Lose 3 less HP."
+    ]
+  },
+  "${modID}:Coolant": {
+    "NAME": "Coolant",
+    "DESCRIPTION": "[#03befc]Play[] Status: NL Exhaust it and gain [E].",
+    "UPGRADE_DESCRIPTION": "[#03befc]Play[] Status: NL Exhaust it and gain [E] [E].",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it and gain [E] [E] [E]."
+    ]
+  },
+  "${modID}:HeavyShield": {
+    "NAME": "Heavy Shield",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: NL Gain !B! Block. NL Next turn, Lose [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Turn[] [#03befc]End[]: NL Gain !B! Block."
+    ]
+  },
+  "${modID}:TacticalVisor": {
+    "NAME": "Tactical Visor",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Scry !M!. NL Gain [E] .",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]Start[]: NL Scry !M!. NL Gain [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]Start[]: NL Scry !M!. NL Gain [E] [E] ."
+    ]
+  },
+  "${modID}:ToolKit": {
+    "NAME": "Tool Kit",
+    "DESCRIPTION": "${modID}:Repair !M! durability to ALL ${modID}:Equipment in your hand."
+  },
+  "${modID}:Flamethrower": {
+    "NAME": "Flamethrower",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage to ALL enemies and double this card's damage."
+  },
+  "${modID}:InstructionManual": {
+    "NAME": "Instruction Manual",
+    "DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Gain [E] .",
+    "UPGRADE_DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Gain [E] [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Gain [E] [E] [E] ."
+    ]
+  },
+  "${modID}:GrapplingHook": {
+    "NAME": "Grappling Hook",
+    "DESCRIPTION": "${modID}:[#03befc]Equipped[], ${modID}:[#03befc]Unequipped[]: NL Gain !B! Block. NL If the last card played was an Attack, gain [E].",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:[#03befc]Equipped[], ${modID}:[#03befc]Unequipped[]: NL Gain !B! Block. NL If the last card played was an Attack, gain [E] [E] ."
+    ]
+  },
+  "${modID}:PowerBank": {
+    "NAME": "Power Bank",
+    "DESCRIPTION": "[#03befc]Gain [#03befc]Charge[]: NL Gain !M! ${modID}:Capacity. NL Gain !B! Block."
+  },
+  "${modID}:MicroMissiles": {
+    "NAME": "Micro Missiles",
+    "DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Deal !D! damage for every !M! cards in your deck."
+  },
+  "${modID}:PoisonMine": {
+    "NAME": "Poison Mines",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: NL Apply !M! Poison to ALL enemies for every 2 cards in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Turn[] [#03befc]End[]: NL Apply !M! Poison to ALL enemies for every card in your hand."
+    ]
+  },
+  "${modID}:TrashCannon": {
+    "NAME": "Trash Cannon",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Removing cards from your deck permanently increases damage by !M!.",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Turn[] [#03befc]Start[]: NL Deal !M! damage for every fusion made."
+    ]
+  },
+  "${modID}:FailSafe": {
+    "NAME": "Fail Safe",
+    "DESCRIPTION": "[#03befc]On [#03befc]Death[]: NL Heal to !M!% of your Max HP instead.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]On [#03befc]Death[]: NL Heal to !M!% of your Max HP instead.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]On [#03befc]Death[]: NL Heal to !M!% of your Max HP instead. NL Exhaust."
+    ]
+  },
+  "${modID}:Shredder": {
+    "NAME": "Shredder",
+    "DESCRIPTION": "[#03befc]Gain[] [#03befc]Block[]: NL Gain !M! Thorns for this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Gain[] [#03befc]Block[]: NL Gain !M! Thorns."
+    ]
+  },
+  "${modID}:TeslaCoil": {
+    "NAME": "Tesla Coil",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[], [#03befc]End[], ${modID}:[#03befc]Discard[]: NL Deal !D! damage."
+  },
+  "${modID}:SmartGun": {
+    "NAME": "Smart Gun",
+    "DESCRIPTION": "${modID}:[#03befc]Equip[], [#03befc]Trigger NL [#03befc]Other ${modID}:Equipment: NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL ${modID}:[#03befc]Equip[], [#03befc]Trigger ${modID}:Equipment: NL Deal !D! damage."
+    ]
+  },
+  "${modID}:FireSupport": {
+    "NAME": "Fire Support",
+    "DESCRIPTION": "[#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage."
+    ]
+  },
+  "${modID}:RustyBlade": {
+    "NAME": "Rusty Blade",
+    "DESCRIPTION": "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Apply Poison equal to missing durability.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[], [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage. NL Apply Poison equal to missing durability."
+    ]
+  },
+  "${modID}:EnergyChamber": {
+    "NAME": "Energy Chamber",
+    "DESCRIPTION": "[#03befc]Take[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Take[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]Take[] ${modID}:[#03befc]Damage[]: NL Increase this card damage twice that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
+    ]
+  },
+  "${modID}:Drill": {
+    "NAME": "Drill",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL [#03befc]Combat[] [#03befc]End[]: Add a *Scrap to your deck.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL [#03befc]Combat[] [#03befc]End[]: Add a *Scrap to your deck.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold."
+    ]
+  },
+  "${modID}:RocketPunch": {
+    "NAME": "Rocket Punch",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Gain !M! Vigor. NL [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "[#03befc]Turn[] [#03befc]Start[]: NL Gain !M! Strength. NL [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage to ALL enemies."
+    ]
+  },
+  "${modID}:SelfDestruct": {
+    "NAME": "Self Destruct",
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted card.",
+    "EXTENDED_DESCRIPTION": [
+      "Retain NL ${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted card."
+    ]
+  },
+  "${modID}:EMPGrenade": {
+    "NAME": "EMP Grenade",
+    "DESCRIPTION": "Deal !D! damage. Deals an additional !M! damage for each ${modID}:Equipment in hand."
+  },
+  "${modID}:Melt": {
+    "NAME": "Melt",
+    "DESCRIPTION": "Retain. NL Exhaust."
+  },
+  "${modID}:EvolutionOneA": {
+    "NAME": "Boot: Pacifist",
+    "DESCRIPTION": "At the start of each combat, Gain 9 Temporary_HP."
+  },
+  "${modID}:EvolutionOneB": {
+    "NAME": "Boot: Hoarder",
+    "DESCRIPTION": "At the start of each combat, Shuffle 2 *Miracle+ into your draw pile."
+  },
+  "${modID}:EvolutionOneC": {
+    "NAME": "Boot: Berserker",
+    "DESCRIPTION": "At the start of each combat, Gain 3 Strength for that turn."
+  },
+  "${modID}:EvolutionTwoA": {
+    "NAME": "Directive: Stockpile",
+    "DESCRIPTION": "At the end of your turn, Gain 1 Block for every 2 cards in your hand."
+  },
+  "${modID}:EvolutionTwoB": {
+    "NAME": "Directive: Maintenance",
+    "DESCRIPTION": "At the end of your turn, ${modID}:Repair 1 durability to a random ${modID}:Equipment in your hand."
+  },
+  "${modID}:EvolutionTwoC": {
+    "NAME": "Directive: Arms Race",
+    "DESCRIPTION": "At the end of your turn, Gain 1 strength. (up to 3 times)"
+  },
+  "${modID}:EvolutionThreeA": {
+    "NAME": "Node: Memory Upgrade",
+    "DESCRIPTION": "Increase your hand size by 2."
+  },
+  "${modID}:EvolutionThreeB": {
+    "NAME": "Node: Power Supply",
+    "DESCRIPTION": "Gain [E] at the start of your first 2 turns."
+  },
+  "${modID}:EvolutionThreeC": {
+    "NAME": "Node: Processing Unit",
+    "DESCRIPTION": "Whenever you use the Scry button, Scry 1 additional card."
+  }
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "PROPER_NAME": "This is displayed in the tooltip.",
+    "NAMES": [
+      "these",
+      "are",
+      "detected",
+      "in",
+      "the",
+      "text"
+    ],
+    "DESCRIPTION": "This is displayed in the tooltip. Spaces should not be used be avoided in NAMES, with the exception of multi-word keywords (see next entry)."
+  },
+  {
+    "ID": "Ignition",
+    "PROPER_NAME": "Trait: Ignition",
+    "NAMES": [
+      "Ignition",
+      "Ignition+"
+    ],
+    "DESCRIPTION": "Ignite effects deal damage and grant Strength."
+  },
+  {
+    "ID": "Bastion",
+    "PROPER_NAME": "Trait: Bastion",
+    "NAMES": [
+      "Bastion",
+      "Bastion+"
+    ],
+    "DESCRIPTION": "Bastion applies debuffs to enemies and buffs to yourself."
+  },
+  {
+    "ID": "Scavenge",
+    "PROPER_NAME": "Trait: Scavenge",
+    "NAMES": [
+      "Scavenge",
+      "Scavenge+"
+    ],
+    "DESCRIPTION": "Scavenge rewards with extra gold, scrap and loot."
+  },
+  {
+    "ID": "CrossWire",
+    "PROPER_NAME": "CrossWire",
+    "NAMES": [
+      "CrossWire",
+      "CrossWire+"
+    ],
+    "DESCRIPTION": "Aggression, Defenses and resources... Something went wrong here."
+  },
+  {
+    "ID": "Trait",
+    "PROPER_NAME": "Trait",
+    "NAMES": [
+      "Trait"
+    ],
+    "DESCRIPTION": "At the end of your turn if you have one or more Traits in hand, trigger escalating effects based on how many you hold."
+  },
+  {
+    "ID": "Equipment",
+    "PROPER_NAME": "Equipment",
+    "NAMES": [
+      "Equipment",
+      "Equipments"
+    ],
+    "DESCRIPTION": "Not discarded at end of turn. Loses 1 Durability when [#03befc]triggered[], Exhausts at 0. Play from hand to unequip."
+  },
+  {
+    "PROPER_NAME": "Target",
+    "NAMES": [
+      "Target",
+      "[#03befc]Target[]"
+    ],
+    "DESCRIPTION": "ALL cards target this enemy. Only one enemy can be Targeted at a time."
+  },
+  {
+    "PROPER_NAME": "Repair",
+    "NAMES": [
+      "Repair"
+    ],
+    "DESCRIPTION": "Increase the durability of an equipment."
+  },
+  {
+    "PROPER_NAME": "Fusing",
+    "NAMES": [
+      "Fuse",
+      "Fusing"
+    ],
+    "DESCRIPTION": "Fuse 3 cards of the same rarity to permanently combine them into a stronger card."
+  },
+  {
+    "PROPER_NAME": "Consumable",
+    "NAMES": [
+      "Consumable"
+    ],
+    "DESCRIPTION": "Has a limited amount of uses. When depleted, remove this card from your deck."
+  },
+  {
+    "PROPER_NAME": "Metallicize",
+    "NAMES": [
+      "Metallicize"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain Block equal to your Metallicize."
+  },
+  {
+    "PROPER_NAME": "Barricade",
+    "NAMES": [
+      "Barricade"
+    ],
+    "DESCRIPTION": "Block is not removed at the start of your turn."
+  },
+  {
+    "ID": "Charge",
+    "PROPER_NAME": "Charge",
+    "NAMES": [
+      "Charge"
+    ],
+    "DESCRIPTION": "Deals damage at the end of your turn. If this kills, keep half of your Charge."
+  },
+  {
+    "PROPER_NAME": "Capacity",
+    "NAMES": [
+      "Capacity"
+    ],
+    "DESCRIPTION": "Charge cannot fall below your Capacity at turn end."
+  },
+  {
+    "PROPER_NAME": "Augment",
+    "NAMES": [
+      "Augment"
+    ],
+    "DESCRIPTION": "Augments are permanent character upgrades unlocked during your run."
+  },
+  {
+    "PROPER_NAME": "Hacked",
+    "NAMES": [
+      "Hacked"
+    ],
+    "DESCRIPTION": "You cannot use the Scry button."
+  },
+  {
+    "ID": "Deploy",
+    "PROPER_NAME": "Deploy",
+    "NAMES": [
+      "Deploy"
+    ],
+    "DESCRIPTION": "Play this card at the start of combat. Replaces Innate."
+  },
+  {
+    "PROPER_NAME": "Plated Armor",
+    "NAMES": [
+      "Plated Armor",
+      "plated_armor",
+      "Played_Armor"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain Block equal to your plated armor. Unblocked attack damage reduces Plated Armor by 1."
+  },
+  {
+    "ID": "Ejected",
+    "PROPER_NAME": "[#03befc]Ejected[]",
+    "NAMES": [
+      "[#03befc]Ejected[]",
+      "Ejected",
+      "Eject"
+    ],
+    "DESCRIPTION": "Whenever is manually discarded from your hand or draw pile, Scry included."
+  },
+  {
+    "ID": "Echo",
+    "PROPER_NAME": "[#03befc]Echo[]",
+    "NAMES": [
+      "Echo",
+      "[#03befc]Echo[]"
+    ],
+    "DESCRIPTION": "Can be played a second time for a different effect."
+  },
+  {
+    "PROPER_NAME": "[#03befc]Discard[]",
+    "NAMES": [
+      "Discard",
+      "[#03befc]Discard[]"
+    ],
+    "DESCRIPTION": "Whenever you manually discard a card from your hand during your turn."
+  },
+  {
+    "PROPER_NAME": "[#03befc]Equipping[]",
+    "NAMES": [
+      "[#03befc]Equipping[]",
+      "[#03befc]Equip[]",
+      "[#03befc]Equipped[]"
+    ],
+    "DESCRIPTION": "The first time you play an equipment during your turn."
+  },
+  {
+    "PROPER_NAME": "[#03befc]Unequipping[]",
+    "NAMES": [
+      "[#03befc]Unequipping[]",
+      "[#03befc]Unequip[]",
+      "[#03befc]Unequipped[]"
+    ],
+    "DESCRIPTION": "The second time you play an equipment and is discarded from your hand."
+  },
+  {
+    "PROPER_NAME": "[#03befc]Take[] [#03befc]Damage[]",
+    "NAMES": [
+      "[#03befc]Damage[]"
+    ],
+    "DESCRIPTION": "Includes blocked damage."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "multiword keyword",
+      "multiword_keyword",
+      "multiword_keywords"
+    ],
+    "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "${modID}:CoolingFan": {
+    "NAME": "Cooling Fan",
+    "FLAVOR": "Frost-cooling technology at it's prime.",
+    "DESCRIPTIONS": [
+      "Scrying #yStatus cards #yExhausts them."
+    ]
+  },
+  "${modID}:RunicEngine": {
+    "NAME": "Runic Engine",
+    "FLAVOR": "The runes are indecipherable. But somehow, it still works.",
+    "DESCRIPTIONS": [
+      "When you obtain a Key, choose an #y${modID}:Augment.",
+      " NL [#03befc]Combat[] [#03befc]Start[]: ",
+      "Gain #b9 #yTemp #yHP.",
+      "Shuffle #b2 #yMiracle+.",
+      "Gain #b3 strength for that turn.",
+      " NL [#03befc]Turn[] [#03befc]End[]: ",
+      "Gain #b1 #yBlock for every #b2 cards in hand.",
+      "#yRepair #b1 durability to A random #yEquipment in hand.",
+      "Gain #b1 #yStrength. (3 times max)",
+      " NL [#03befc]Permanent[]: ",
+      "Increase maximum hand size by #b2.",
+      "Gain [E] at the start of first 2 turns.",
+      "Whenever you use the Scry button, Scry #b1 additional card.",
+      "When you obtain a Key, choose an #yAugment."
+    ]
+  },
+  "${modID}:OilCan": {
+    "NAME": "Oil Can",
+    "FLAVOR": "The forbidden beverage.",
+    "DESCRIPTIONS": [
+      "Whenever you trigger an #y${modID}:Equipment, gain #b1 #yBlock."
+    ]
+  },
+  "${modID}:Lightbulb": {
+    "NAME": "Lightbulb",
+    "FLAVOR": "A large lightbulb. It's the sun.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #yScry #b"
+    ]
+  },
+  "${modID}:RGBLED": {
+    "NAME": "RGB LED",
+    "FLAVOR": "5BCEFA F5A9B8 FFFFFF F5A9B8 5BCEFA.",
+    "DESCRIPTIONS": [
+      "Replaces [#e1ff4d]Lightbulb[]. At the start of each combat, #yScry #b"
+    ]
+  },
+  "${modID}:EmptyDisk": {
+    "NAME": "Empty Disk",
+    "FLAVOR": "Finally! can't wait to play... Slice the Tower 2?",
+    "DESCRIPTIONS": [
+      "Increase your maximum hand size by #b4."
+    ]
+  },
+  "${modID}:Motherboard": {
+    "NAME": "Motherboard",
+    "FLAVOR": "Crafted with 3 copper cables and 1 iron plate",
+    "DESCRIPTIONS": [
+      "The first time you play an #y${modID}:Equipment each turn, gain [E] ."
+    ]
+  },
+  "${modID}:Schematics": {
+    "NAME": "Schematics",
+    "FLAVOR": "Step 1: Build thing. Step 2: ??? Step 3: Profit.",
+    "DESCRIPTIONS": [
+      "You can now repair #b2 additional #y${modID}:Equipment at Rest Sites."
+    ]
+  },
+  "${modID}:RecyclingBin": {
+    "NAME": "Recycling Bin",
+    "FLAVOR": "Non perishable files go in a different container.",
+    "DESCRIPTIONS": [
+      "When adding cards into your deck, you may #yRecycle instead. Every #bthird time you recycle, add a #yScrap to your deck.",
+      "Scrap ",
+      "/3"
+    ]
+  },
+  "${modID}:MemoryCard": {
+    "NAME": "Memory Card",
+    "FLAVOR": "Ah... I can see into your mind... You like Castlevania. don't you?",
+    "DESCRIPTIONS": [
+      "You can now add #y${modID}:Deploy to a card at Rest Sites. (up to 3 times)"
+    ]
+  },
+  "${modID}:SecurityCamera": {
+    "NAME": "Security Camera",
+    "FLAVOR": "Now recording at 144p.",
+    "DESCRIPTIONS": [
+      "Whenever you swap your #y${modID}:Target apply #b1 #yVulnerable and #b1 #yWeak."
+    ]
+  },
+  "${modID}:UnceasingBottom": {
+    "NAME": "Unceasing Bottom",
+    "FLAVOR": "Replaces Unceasing Top.",
+    "DESCRIPTIONS": [
+      "Whenever your hand is full during your turn, discard #b1 card."
+    ]
+  },
+  "${modID}:AIFiedHand": {
+    "NAME": "AI-Fied Hand",
+    "FLAVOR": "Replaces Mummified Hand.",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yPower, play the top card of your draw pile."
+    ]
+  },
+  "${modID}:NecronomiconPDF": {
+    "NAME": "Necronomicon.pdf",
+    "FLAVOR": "Replaces Necronomicon.",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yCurse, your next #b2 cards are played twice. When you take this relic, become #yCursed."
+    ]
+  },
+  "${modID}:SneckoAI": {
+    "NAME": "Snecko AI",
+    "FLAVOR": "Replaces Chemical Snecko Eye.",
+    "DESCRIPTIONS": [
+      "Gain [E] [E] at the start of your turn. Start each combat #y${modID}:Hacked."
+    ]
+  },
+  "${modID}:PyramidScheme": {
+    "NAME": "Pyramid Scheme",
+    "FLAVOR": "Replaces Runic Pyramid.",
+    "DESCRIPTIONS": [
+      "Increase your maximum hand size by #b2. At the end of your turn, #yRetain up to #b2 cards."
+    ]
+  },
+  "${modID}:ChemicalY": {
+    "NAME": "Chemical Y",
+    "FLAVOR": "Replaces Chemical X.",
+    "DESCRIPTIONS": [
+      "Whenever you use the Scry button, Scry #b1 additional card."
+    ]
+  },
+  "${modID}:StrangeFork": {
+    "NAME": "Strange Fork",
+    "FLAVOR": "Replaces Strange Spoon.",
+    "DESCRIPTIONS": [
+      "Whenever you trigger an #yEquipment, it has a #b",
+      "% chance to not lose Durability."
+    ]
+  },
+  "${modID}:ScheduledUpdate": {
+    "NAME": "Scheduled Update",
+    "FLAVOR": "Please wait... Estimated time: 7 years.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn and swap your #yTarget to a random enemy. NL #yChange #yTarget costs #b1 more."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+  "${modID}:SelectCustomAction": {
+    "TEXT": [
+      "Exhaust",
+      "Evolve"
+    ]
+  },
+  "${modID}:ConfigPanel": {
+    "TEXT_DICT": {
+      "lessParticles": "Less custom particles and VFX. (Faster)"
+    }
+  },
+  "${modID}:ComboTags": {
+    "TEXT": [
+      "Ignition",
+      "Bastion",
+      "Scavenge",
+      "Equipment",
+      "[#FFF6E2FF]Click[] [#FFF6E2FF]to[] [#FFF6E2FF]cycle.[] NL "
+    ]
+  },
+  "${modID}:DrawButton": {
+    "TEXT": [
+      "Play 1",
+      "Play",
+      "Spend [E] to play the top card of your draw pile.",
+      "I can only play up to NL #r", " cards this turn.",
+      " cards per turn."
+    ]
+  },
+  "${modID}:AutoPlayTopCardAction": {
+    "TEXT": [
+      "I'm #rEntangled! NL Can't play Attacks"
+    ]
+  },
+  "${modID}:ScryButton": {
+    "TEXT": [
+      "Scry ",
+      "Scry",
+      "Spend [E] to look at the top ",
+      " cards of your draw pile. You may discard any of them."
+    ]
+  },
+  "${modID}:InnateRest": {
+    "TEXT": [
+      "Prepare",
+      "Add deploy to a card in your deck.",
+      "Select a Card to Deploy"
+    ]
+  },
+  "${modID}:repairButton": {
+    "TEXT": [
+      "Repair",
+      "Repair ",
+      " Equipment cards to full durability.",
+      "No repairable cards.",
+      "Select Cards to repair"
+    ]
+  },
+  "${modID}:InnateRelicMod": {
+    "TEXT": [
+      "${modID}:Deploy. NL ",
+      "Play this card at the start of each combat. Replaces Innate. "
+    ]
+  },
+  "${modID}:ConsumableCards": {
+    "TEXT": [
+      "${modID}:Consumable. NL [#68fa43](",
+      " [#68fa43]uses [#68fa43]left) NL ",
+      " [#68fa43]use [#68fa43]left) NL "
+    ]
+  },
+  "${modID}:ScrapReward": {
+    "TEXT": [
+      "Add a Scrap to your deck",
+      "Choose a Scrap",
+      "Add a card to your deck",
+      "Choose a Card"
+    ]
+  }
+}

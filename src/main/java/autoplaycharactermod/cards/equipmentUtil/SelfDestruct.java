@@ -1,0 +1,92 @@
+package autoplaycharactermod.cards.equipmentUtil;
+
+import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.actions.SfxActionVolume;
+import autoplaycharactermod.cards.BaseCard;
+import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ui.ConfigPanel;
+import autoplaycharactermod.util.CardStats;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
+
+public class SelfDestruct extends BaseCard {
+    public static final String ID = makeID("SelfDestruct");
+    private static final CardStats info = new CardStats(
+            MyCharacter.Meta.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.RARE,
+            CardTarget.ALL_ENEMY,
+            0 
+    );
+    private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 4;
+    public static final UIStrings uiStringsShow = CardCrawlGame.languagePack.getUIString(makeID("SelectCustomAction"));
+
+    public SelfDestruct() {
+        super(ID, info);
+        returnToHand = true;
+        setDamage(DAMAGE, UPG_DAMAGE);
+        this.isMultiDamage = true;
+        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(BasicMod.CustomTags.skipVigor);
+        returnToHand = true;
+        checkEvolve();
+    }
+
+    @Override
+    public void evolveCard() {
+        setSelfRetain(true);
+        setDamage(22);
+        super.evolveCard();
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (PlayOnce) {
+            PlayOnce = false;
+            returnToHand = true;
+        } else {
+            returnToHand = false;
+            addToBot(new SfxActionVolume("KEY_OBTAIN", 0f, 1.8F));
+
+            addToBot(new SelectCardsInHandAction(10, uiStringsShow.TEXT[0], true, true, c -> c instanceof EquipmentCard, cards -> {
+                if (!cards.isEmpty()) {
+                    for (AbstractCard card : cards) {
+                        addToBot(new SFXAction("ORB_FROST_EVOKE", 0.3f));
+                        addToBot(new ExhaustSpecificCardAction(card, p.hand, Settings.FAST_MODE));
+                    }
+                    for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
+                        if (!mon.isDeadOrEscaped() && !ConfigPanel.lessParticles)
+                            addToBot(new VFXAction(new ExplosionSmallEffect(mon.hb.cX, mon.hb.cY)));
+                    }
+                    addToBot(new DamageAllEnemiesAction(p, damage * cards.size(), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+                    if (p.hasPower(VigorPower.POWER_ID)) {
+                        p.getPower(VigorPower.POWER_ID).flash();
+                        addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
+                    }
+                }
+            }));
+        }
+    }
+
+    @Override
+    public boolean freeToPlay() {
+        return true;
+    }
+}

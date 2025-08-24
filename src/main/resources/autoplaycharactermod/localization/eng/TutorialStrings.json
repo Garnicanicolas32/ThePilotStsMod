@@ -1,0 +1,36 @@
+{
+  "${modID}:PilotTutorials": {
+    "TEXT": [
+      "The Pilot is incapable of drawing cards, every draw effect is transformed to energy and cards have no cost. NL NL Instead it has two new buttons available. NL #yPlay: Spend [E] to play the top card of your draw pile. NL #yScry: Spend [E] to look at the top 3 cards of your draw pile. You may discard any of them.",
+      "At the start of combat, apply #yTarget to a random enemy NL #yTarget: Powers and cards played will target this enemy. Removed when another enemy is Targeted. NL NL At the start of your turn, add a #ySelect #yTarget to your hand if two or more enemies are alive.",
+      "To simplify card descriptions, a new type of keyword was added: [#03befc]Triggers[]. NL NL Cards can have different [#03befc]Triggers that activate effects separately from playing the card."
+    ],
+    "LABEL": [
+      "Next",
+      "Got it",
+      "The Pilot",
+      "(Page: ",
+      ")"
+    ]
+  },
+  "${modID}:TraitTutorials": {
+    "TEXT": [
+      "New card type, #yTraits. NL NL #yTrait cards activate effects at the end of your turn based on how many cards of the same trait you hold. NL You can see the current effects that will apply by hovering over the player. NL For a full list, hover over the trait icon at the top and click to cycle. NL NL #yRecommendation: Try not to memorize every effect right away."
+    ],
+    "LABEL": [
+      "Next",
+      "Got it",
+      "Trait cards",
+      "(Page: ",
+      ")"
+    ]
+  },
+  "${modID}:DurabilityTutorials": {
+    "TEXT": [
+      "Durability persists between combats. NL At rest sites, you may fully repair up to two Equipment cards."
+    ],
+    "LABEL": [
+      "Durability"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "${modID}:PowerID": {
+    "NAME": "Ultimate Power",
+    "DESCRIPTIONS": [
+      "You are Very Cool and Strong."
+    ]
+  },
+  "${modID}:RedPower": {
+    "NAME": "Ignition",
+    "DESCRIPTIONS": [
+      "At the end of your turn: NL 1. Deal #b",
+      " damage. (Random)",
+      " NL 2. Deal #b",
+      " damage. (Target)",
+      " NL 3. Deal #b",
+      " damage. (ALL)",
+      " NL 4. Gain #b",
+      " Strength.",
+      " NL 5. Repeat all previous tiers.",
+      " NL 6. Stun ALL enemies. (Max 1)",
+      " NL 7. Choose a unique Augment. (Once per run)"
+    ]
+  },
+  "${modID}:BluePower": {
+    "NAME": "Bastion",
+    "DESCRIPTIONS": [
+      "At the end of your turn: NL 1. Gain #b",
+      " Block.",
+      " NL 3. Apply #b1 Weak to your target.",
+      " NL 2. Gain #b",
+      " Thorns.",
+      " NL 4. Gain #b",
+      " Plated Armor.",
+      " NL 6. Double your current Block.",
+      " NL 5. Deal damage equal to your current Block.",
+      " NL 7. Choose a unique Augment. (Once per run)"
+    ]
+  },
+  "${modID}:YellowPower": {
+    "NAME": "Scavenge",
+    "DESCRIPTIONS": [
+      "At the end of your turn: NL 1. Gain #b",
+      " temp HP.",
+      " NL 3. Gain #b",
+      " Gold, permanently increase by #b", ". (Max 2)",
+      " NL 4. Add Scrap to your rewards. (Max 1)",
+      " NL 2. Pick 1 of 2 rewards. (Max 1)",
+      " NL 5. Extra card reward. (Max 1)",
+      " NL 6. Upgrade a random card in your deck. (Max 1)",
+      " NL 7. Choose a unique Augment. (Once per run)",
+      "Already used."
+    ]
+  },
+  "${modID}:MarkedPower": {
+    "NAME": "Target",
+    "DESCRIPTIONS": [
+      "Cards and powers target this enemy."
+    ]
+  },
+  "${modID}:FirewallPower": {
+    "NAME": "Firewall",
+    "DESCRIPTIONS": [
+      "Whenever a Status card is played or created during combat, gain #b",
+      " Block."
+    ]
+  },
+  "${modID}:BubblePower": {
+    "NAME": "Field Bubble",
+    "DESCRIPTIONS": [
+      "Reduce all damage received by "
+    ]
+  },
+  "${modID}:FeedbackLoopPower": {
+    "NAME": "Feedback Loop",
+    "DESCRIPTIONS": [
+      "Whenever you apply a Buff or Debuff, deal #b",
+      " damage to your target."
+    ]
+  },
+  "${modID}:Crafting": {
+    "NAME": "Crafting",
+    "DESCRIPTIONS": [
+      " of ",
+      " Scraps.",
+      " Modules.",
+      " Prototypes.",
+      "[#03befc]Fuse[] 3 cards to permanently combine into a new card. NL "
+    ]
+  },
+  "${modID}:SavePower": {
+    "NAME": "Capacity",
+    "DESCRIPTIONS": [
+      "Retain up to #b",
+      " #yCharge at the end of your turn."
+    ]
+  },
+  "${modID}:ChargePower": {
+    "NAME": "Charge",
+    "DESCRIPTIONS": [
+      "#bTurn #bend: Deal #b",
+      " damage. If Fatal, retain half your Charge."
+    ]
+  },
+  "${modID}:EnergyBurstPower": {
+    "NAME": "Energy Burst",
+    "DESCRIPTIONS": [
+      "When you shuffle your deck gain #yCharge equal to your deck size."
+    ]
+  },
+  "${modID}:HackedPower": {
+    "NAME": "Hacked",
+    "DESCRIPTIONS": [
+      "You cannot use the Scry button."
+    ]
+  },
+  "${modID}:EfficiencyPower": {
+    "NAME": "Efficiency",
+    "DESCRIPTIONS": [
+      "#bTurn #bend: Transform up to #b",
+      " Capacity into Block"
+    ]
+  },
+  "${modID}:LoseThornsPower": {
+    "NAME": "LoseThornsPower",
+    "DESCRIPTIONS": [
+      "At the end of this turn, lose #b",
+      " #yThorns."
+    ]
+  },
+  "${modID}:OneLessEnergyPower": {
+    "NAME": "Energy Reduction",
+    "DESCRIPTIONS": [
+      "Gain #b1 less [E] next turn.",
+      "Gain #b1 less [E] for #b",
+      " turns."
+    ]
+  }
+}
