@@ -142,6 +142,7 @@ public class GachaPull extends TraitCard {
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             for (int i = 0; i < magicNumber && i < cardsList.size(); i++) {
                 AbstractCard option = cardsList.get(i).makeCopy();
+                option.upgrade();
                 stanceChoices.add(option);
             }
             if (!stanceChoices.isEmpty()) {
@@ -156,6 +157,7 @@ public class GachaPull extends TraitCard {
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             for (int i = 0; i < magicNumber && i < possiblecards.size(); i++) {
                 AbstractCard option = possiblecards.get(i).makeCopy();
+                option.upgrade();
                 stanceChoices.add(option);
             }
             if (!stanceChoices.isEmpty()) {

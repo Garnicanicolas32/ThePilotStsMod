@@ -2,7 +2,9 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.traitIgnitionCards.ThermalSurge;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
+import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.util.CardStats;
@@ -115,6 +117,14 @@ public class Flamethrower extends EquipmentCard {
         customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
         customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Ignition").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
         return customTooltips;
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[1] || BasicMod.unseenTutorials[2]) {
+            return new ThermalSurge();
+        }
+        return this;
     }
 
     @Override

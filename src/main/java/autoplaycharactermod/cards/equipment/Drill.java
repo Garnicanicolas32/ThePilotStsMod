@@ -6,6 +6,7 @@ import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.scrap.ScrapCommon;
 import autoplaycharactermod.cards.scrap.ScrapCommonDef;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
+import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.YellowPower;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
@@ -32,7 +34,7 @@ public class Drill extends EquipmentCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            0 
+            0
     );
     private static final int BASE_HP = 10;
     private static final int MAGIC = 10;
@@ -80,7 +82,7 @@ public class Drill extends EquipmentCard {
     public void Activate() {
         if (!Equipped) return;
         addToBot(new SfxActionVolume("ATTACK_WHIRLWIND", -0.2F, 1.2F));
-        for (int i = 0; i <  (ConfigPanel.lessParticles ? 10 : magicNumber); i++) {
+        for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : magicNumber); i++) {
             AbstractDungeon.topLevelEffects.add(new GainPennyEffect(this.hb.cX, this.hb.cY));
             AbstractDungeon.effectsQueue.add(new PoisonMineDrillEffect(this.hb.cX, this.hb.cY, true));
             AbstractDungeon.effectsQueue.add(new PoisonMineDrillEffect(this.hb.cX, this.hb.cY, true));
@@ -125,6 +127,14 @@ public class Drill extends EquipmentCard {
         descriptorReturn.add(descriptor.TEXT[2]);
 
         return descriptorReturn;
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[1] || BasicMod.unseenTutorials[2]) {
+            return new LostAndFound();
+        }
+        return this;
     }
 
 }

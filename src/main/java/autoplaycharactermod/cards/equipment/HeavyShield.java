@@ -2,7 +2,9 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.traitBastionCards.Flash;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
+import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.powers.OneLessEnergyPower;
@@ -107,6 +109,14 @@ public class HeavyShield extends EquipmentCard {
         customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
         customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Bastion").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
         return customTooltips;
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[1] || BasicMod.unseenTutorials[2]) {
+            return new Flash();
+        }
+        return this;
     }
 
     @Override

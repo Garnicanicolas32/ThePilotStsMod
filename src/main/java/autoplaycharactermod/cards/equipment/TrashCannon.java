@@ -4,6 +4,8 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
+import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
+import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.YellowPower;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -130,6 +132,14 @@ public class TrashCannon extends EquipmentCard {
         customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
         customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Scavenge").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
         return customTooltips;
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[1] || BasicMod.unseenTutorials[2]) {
+            return new GachaPull();
+        }
+        return this;
     }
 
     @Override
