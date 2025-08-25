@@ -87,7 +87,6 @@ public class Beacon extends TraitCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canuse = (PlayOnce || (!upgraded && !this.alreadyEvolved)) && super.canUse(p, m);
-        System.out.println("Play once: " + PlayOnce + " !Upgraded: " + !upgraded + " !alreadyevolved: " + !alreadyEvolved + " Result: " + canuse);
         return (PlayOnce || (!upgraded && !this.alreadyEvolved)) && super.canUse(p, m);
     }
 

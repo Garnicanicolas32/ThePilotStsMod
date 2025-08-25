@@ -1,6 +1,4 @@
 package autoplaycharactermod.cards.traitMixedCards;
-
-import autoplaycharactermod.actions.AutoPlayTraitCards;
 import autoplaycharactermod.actions.AutoplayTopCardAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;

@@ -75,7 +75,6 @@ public class ExtraCardRewardsPatch {
                 localvars = {"numCards"}
         )
         public static void Insert(@ByRef int[] numCards) {
-            System.out.println("Triggered extra card: " + BasicMod.extracardsoption);
             if (!calledonce && BasicMod.extracardsoption)
                 numCards[0]++;
             calledonce = true;

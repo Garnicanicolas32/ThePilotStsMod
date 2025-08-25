@@ -18,7 +18,6 @@ public class TriggerOnShufflePatches {
                 locator = OnShuffleTriggerPatch.Locator.class
         )
         public static void Insert(ShuffleAction __instance) {
-            System.out.println("Shuffle patch!");
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c instanceof EquipmentCard) {
                     ((EquipmentCard) c).triggerOnShuffle();
@@ -44,7 +43,6 @@ public class TriggerOnShufflePatches {
                 locator = OnShuffleTriggerEmptyPatch.Locator.class
         )
         public static void Insert(EmptyDeckShuffleAction __instance) {
-            System.out.println("Shuffle patch!");
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c instanceof EquipmentCard) {
                     ((EquipmentCard) c).triggerOnShuffle();

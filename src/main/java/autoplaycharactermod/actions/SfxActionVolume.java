@@ -25,7 +25,6 @@ public class SfxActionVolume extends AbstractGameAction {
             try {
                 CardCrawlGame.sound.playAV(this.key, this.pitch, this.volume);
             } catch (Exception e) {
-                System.out.println("SfxActionVolume failed to play: " + this.key);
             }
         }
         this.isDone = true;
