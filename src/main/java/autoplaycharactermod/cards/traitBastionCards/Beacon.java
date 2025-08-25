@@ -52,7 +52,7 @@ public class Beacon extends TraitCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce || (!upgraded && !this.alreadyEvolved)) {
+        if (PlayOnce) {
             PlayOnce = false;
             addToBot(new GainBlockAction(p, p, block));
             addPower();
@@ -86,6 +86,8 @@ public class Beacon extends TraitCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canuse = (PlayOnce || (!upgraded && !this.alreadyEvolved)) && super.canUse(p, m);
+        System.out.println("Play once: " + PlayOnce + " !Upgraded: " + !upgraded + " !alreadyevolved: " + !alreadyEvolved + " Result: " + canuse);
         return (PlayOnce || (!upgraded && !this.alreadyEvolved)) && super.canUse(p, m);
     }
 

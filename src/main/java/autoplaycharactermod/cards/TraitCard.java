@@ -2,6 +2,7 @@ package autoplaycharactermod.cards;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.TutorialCaller;
+import autoplaycharactermod.cards.traitBastionCards.Beacon;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.BluePower;
@@ -273,7 +274,7 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return PlayOnce && super.canUse(p, m);
+        return (PlayOnce || this instanceof Beacon) && super.canUse(p, m);
     }
 
     public enum TraitColor {

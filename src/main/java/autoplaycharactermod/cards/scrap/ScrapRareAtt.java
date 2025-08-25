@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.RitualPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
@@ -59,6 +60,10 @@ public class ScrapRareAtt extends BaseCard {
             if (p.hasPower(VigorPower.POWER_ID)) {
                 p.getPower(VigorPower.POWER_ID).flash();
                 addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
+            }
+            if (p.hasPower(PenNibPower.POWER_ID)) {
+                p.getPower(PenNibPower.POWER_ID).flash();
+                addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
             }
             returnToHand = true;
         } else {

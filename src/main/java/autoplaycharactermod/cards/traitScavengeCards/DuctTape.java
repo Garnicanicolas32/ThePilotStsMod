@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class DuctTape extends TraitCard {
@@ -56,6 +57,10 @@ public class DuctTape extends TraitCard {
             if (p.hasPower(VigorPower.POWER_ID)) {
                 p.getPower(VigorPower.POWER_ID).flash();
                 addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
+            }
+            if (p.hasPower(PenNibPower.POWER_ID)) {
+                p.getPower(PenNibPower.POWER_ID).flash();
+                addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
             }
             returnToHand = false;
         }

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
@@ -51,6 +52,10 @@ public class ScrapUncommonAttStr extends BaseCard {
             if (p.hasPower(VigorPower.POWER_ID)) {
                 p.getPower(VigorPower.POWER_ID).flash();
                 addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
+            }
+            if (p.hasPower(PenNibPower.POWER_ID)) {
+                p.getPower(PenNibPower.POWER_ID).flash();
+                addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
             }
             returnToHand = true;
         } else {

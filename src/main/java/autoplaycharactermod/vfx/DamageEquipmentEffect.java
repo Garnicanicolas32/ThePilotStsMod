@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -38,25 +37,6 @@ public class DamageEquipmentEffect extends AbstractGameEffect {
         this.vY = MathUtils.random(460.0F * Settings.scale, 480.0F * Settings.scale);
         this.amt = amt;
         this.color = Color.RED.cpy();
-        if (Settings.SHOW_DMG_SUM && amt > 0) {
-            boolean isSumDamageAvailable = false;
-
-            for(AbstractGameEffect e : AbstractDungeon.topLevelEffects) {
-                if (e instanceof SumDamageEquipmentEffect && ((SumDamageEquipmentEffect)e).target == target) {
-                    isSumDamageAvailable = true;
-                    ((SumDamageEquipmentEffect)e).refresh(amt);
-                }
-            }
-
-            if (!isSumDamageAvailable) {
-                for(AbstractGameEffect e : AbstractDungeon.topLevelEffects) {
-                    if (e instanceof DamageEquipmentEffect && e != this && ((DamageEquipmentEffect)e).target == target) {
-                        AbstractDungeon.topLevelEffects.add(new SumDamageEquipmentEffect(target, x, y, ((DamageEquipmentEffect)e).amt + amt));
-                    }
-                }
-            }
-
-        }
     }
 
     public void update() {

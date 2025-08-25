@@ -18,7 +18,7 @@ public class Grenades extends ConsumableCards {
     public static final String ID = makeID("Grenades");
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.NONE,
             -2

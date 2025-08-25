@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.relics.PenNib;
 
@@ -27,6 +28,17 @@ public class VigorPenNibPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> patch(PenNib __instance, AbstractCard card, UseCardAction action) {
             if ((card instanceof EquipmentCard || card.hasTag(BasicMod.CustomTags.skipVigor)) && __instance.counter > 8){
+                return SpireReturn.Return(null);
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(clz = PenNibPower.class, method = "onUseCard")
+    public static class DontConsumePenNibPowerPatch {
+        @SpirePrefixPatch
+        public static SpireReturn<Void> patch(PenNibPower __instance, AbstractCard card, UseCardAction action) {
+            if ((card instanceof EquipmentCard || card.hasTag(BasicMod.CustomTags.skipVigor))){
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
