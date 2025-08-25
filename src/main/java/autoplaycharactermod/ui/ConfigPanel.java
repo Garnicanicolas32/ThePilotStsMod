@@ -5,6 +5,7 @@ import basemod.EasyConfigPanel;
 
 public class ConfigPanel extends EasyConfigPanel {
     public static boolean lessParticles = false;
+    public static boolean experimentalSounds = false;
 
     public ConfigPanel() {
         super(BasicMod.modID, BasicMod.makeID("ConfigPanel"));

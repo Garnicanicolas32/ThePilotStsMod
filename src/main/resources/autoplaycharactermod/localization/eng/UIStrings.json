@@ -21,7 +21,8 @@
   },
   "${modID}:ConfigPanel": {
     "TEXT_DICT": {
-      "lessParticles": "Less custom particles and VFX. (Faster)"
+      "lessParticles": "Less custom particles and VFX. (Faster)",
+      "experimentalSounds": "More custom sounds, is known to sometimes crash, mostly equipment. (EXPERIMENTAL)"
     }
   },
   "${modID}:ComboTags": {

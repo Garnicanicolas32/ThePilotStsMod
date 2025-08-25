@@ -65,7 +65,8 @@ public class SmartGun extends EquipmentCard {
         AbstractMonster m = MyCharacter.getTarget();
 
         calculateCardDamage(m);
-        addToBot(new SfxActionVolume("SPHERE_DETECT_VO_2", MathUtils.random(0.3f, 0.9F), 3.5F));
+        if (ConfigPanel.experimentalSounds)
+            addToBot(new SfxActionVolume("SPHERE_DETECT_VO_2", MathUtils.random(0.3f, 0.9F), 3.5F));
         if (!ConfigPanel.lessParticles)
             addToBot(new SmartGunLocateAnimation(this));
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT));

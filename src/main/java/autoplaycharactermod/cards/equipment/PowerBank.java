@@ -5,6 +5,7 @@ import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.SavePower;
+import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -51,6 +52,7 @@ public class PowerBank extends EquipmentCard {
     public void Activate() {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
+        if (ConfigPanel.experimentalSounds)
         addToBot(new SfxActionVolume("ORB_PLASMA_EVOKE", 1f, 0.8f));
         AbstractDungeon.topLevelEffects.add(new StanceChangeParticleGenerator(this.hb.cX, this.hb.cY, "Divinity"));
         addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));

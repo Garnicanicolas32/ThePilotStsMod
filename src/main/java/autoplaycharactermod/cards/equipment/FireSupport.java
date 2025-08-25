@@ -4,6 +4,7 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -46,6 +47,7 @@ public class FireSupport extends EquipmentCard {
         AbstractMonster m = MyCharacter.getTarget();
 
         calculateCardDamage(m);
+        if (ConfigPanel.experimentalSounds)
         this.addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", -0.25F, 1F));
         this.addToBot(new VFXAction(p, new SweepingBeamEffect(this.hb.cX, this.hb.cY, AbstractDungeon.player.flipHorizontal), 0.4F));
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.FIRE));

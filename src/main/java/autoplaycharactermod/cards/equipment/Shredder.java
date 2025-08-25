@@ -49,8 +49,9 @@ public class Shredder extends EquipmentCard {
             return;
         }
         AbstractPlayer p = AbstractDungeon.player;
+        if (ConfigPanel.experimentalSounds){
         addToBot(new SfxActionVolume("ATTACK_DAGGER_4", MathUtils.random(-1.3f, 1.3f), 1.8F));
-        addToBot(new SfxActionVolume("ATTACK_DAGGER_1", MathUtils.random(-1.3f, 1.3f), 1.8F));
+        addToBot(new SfxActionVolume("ATTACK_DAGGER_1", MathUtils.random(-1.3f, 1.3f), 1.8F));}
         for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); i++) {
             AbstractDungeon.topLevelEffectsQueue.add(new ShredderLinesEffect(
                     this.hb.cX + MathUtils.random(10.0F, -10.0F) * Settings.scale,

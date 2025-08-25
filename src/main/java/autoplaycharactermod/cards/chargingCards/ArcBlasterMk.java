@@ -56,6 +56,7 @@ public class ArcBlasterMk extends BaseCard {
     }
 
     public void eject() {
+        if (ConfigPanel.experimentalSounds)
         addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", -0.1f + 0.05f * timesUpgraded, 1));
         for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); i++)
             AbstractDungeon.effectsQueue.add(new EjectLightingEffect((float) Settings.WIDTH * 0.96F, (float) Settings.HEIGHT * 0.06F, i));

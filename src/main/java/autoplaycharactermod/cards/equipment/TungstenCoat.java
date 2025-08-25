@@ -3,6 +3,7 @@ package autoplaycharactermod.cards.equipment;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
@@ -41,6 +42,7 @@ public class TungstenCoat extends EquipmentCard {
 
     public int customOnLoseHpLast(int damageAmount) {
         if (damageAmount > 0 && Equipped) {
+            if (ConfigPanel.experimentalSounds)
             addToBot(new SfxActionVolume("RELIC_DROP_CLINK", MathUtils.random(-0.4F, 0.4F), 0.7F));
             for (int i = 0; i < 10; i++) {
                 AbstractDungeon.topLevelEffectsQueue.add(new BlockImpactLineEffect(

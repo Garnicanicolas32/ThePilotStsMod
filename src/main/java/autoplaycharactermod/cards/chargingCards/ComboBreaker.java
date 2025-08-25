@@ -72,6 +72,7 @@ public class ComboBreaker extends BaseCard {
         this.magicNumber *= this.alreadyEvolved ? 3 : 2;
         this.baseMagicNumber = this.magicNumber;
         this.isMagicNumberModified = true;
+        if (ConfigPanel.experimentalSounds)
         addToBot(new SfxActionVolume("RELIC_DROP_MAGICAL", -0.1f + 0.05F * count, 1.5F + 0.4F * Math.min(count, 6)));
         for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); i++)
             AbstractDungeon.effectsQueue.add(new EjectLightingEffect((float) Settings.WIDTH * 0.96F, (float) Settings.HEIGHT * 0.06F, i));

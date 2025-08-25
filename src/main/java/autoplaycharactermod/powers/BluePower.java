@@ -5,6 +5,7 @@ import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionOne;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionThree;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionTwo;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ui.ConfigPanel;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -48,7 +49,6 @@ public class BluePower extends BasePower {
 
     public void playApplyPowerSfx() {
         CardCrawlGame.sound.playAV("SPHERE_DETECT_VO_2", -0.5F + amount * 0.05F,2f);
-
     }
 
     @Override
@@ -97,6 +97,7 @@ public class BluePower extends BasePower {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
+                if (ConfigPanel.experimentalSounds)
                 CardCrawlGame.sound.playAV("SPHERE_DETECT_VO_1", -0.2F,1.4f);
                 for (int i = 0; i < 3; i++) {
                     AbstractDungeon.effectsQueue.add(new UpgradeHammerImprintEffect(MathUtils.random(0.0F, 1870.0F) * Settings.xScale, MathUtils.random(50.0F, 990.0F) * Settings.yScale));

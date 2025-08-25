@@ -1,6 +1,7 @@
 package autoplaycharactermod.relics;
 
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ui.ConfigPanel;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -23,6 +24,7 @@ public class OilCan extends BaseRelic {
 
     public void activate() {
         addToBot(new GainBlockAction(AbstractDungeon.player, 1));
+        if (ConfigPanel.experimentalSounds)
         flash();
     }
 }
