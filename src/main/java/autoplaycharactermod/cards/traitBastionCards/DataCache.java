@@ -52,8 +52,7 @@ public class DataCache extends TraitCard {
         super.use(p, m);
     }
 
-    public void applyPowers() {
-        super.applyPowers();
+    public void updateTextCount() {
         if (!this.alreadyEvolved) {
             if (upgraded)
                 this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;

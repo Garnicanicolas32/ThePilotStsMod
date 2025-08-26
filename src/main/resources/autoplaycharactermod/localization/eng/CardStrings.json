@@ -413,9 +413,9 @@
   },
   "${modID}:TakeAim": {
     "NAME": "Take Aim",
-    "DESCRIPTION": "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! and ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust.",
+    "DESCRIPTION": "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! and ${modID}:Charge 4 for each card discarded. NL Exhaust."
+      "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge 4 for each card discarded. NL Exhaust."
     ]
   },
   "${modID}:ComboBreaker": {

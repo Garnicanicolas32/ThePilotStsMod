@@ -42,7 +42,9 @@ public class CouponStamp extends TraitCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("SHOP_PURCHASE"));
         this.addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY, Color.GOLD.cpy())));
-        addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(p, magicNumber * BasicMod.purchases)));
+        this.baseDamage = BasicMod.purchases * this.magicNumber;
+        this.calculateCardDamage(MyCharacter.getTarget());
+        addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(p, damage)));
         PlayOnce = false;
         super.use(p, m);
     }

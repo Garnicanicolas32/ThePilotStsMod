@@ -27,7 +27,7 @@ public class Grenades extends ConsumableCards {
     private static final int DAMAGEUPG = 5;
 
     public Grenades() {
-        super(ID, info, 4, 9);
+        super(ID, info, 4, 5);
         setMagic(DAMAGE, DAMAGEUPG);
         checkEvolve();
     }

@@ -2,10 +2,12 @@ package autoplaycharactermod;
 
 import autoplaycharactermod.actions.TutorialCaller;
 import autoplaycharactermod.cards.BaseCard;
+import autoplaycharactermod.cards.equipment.TrashCannon;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionOne;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionThree;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionTwo;
 import autoplaycharactermod.cards.optionSelection.TraitReward.RedOptionTwo;
+import autoplaycharactermod.cards.traitBastionCards.DataCache;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
 import autoplaycharactermod.cards.traitScavengeCards.NFT;
 import autoplaycharactermod.character.MyCharacter;
@@ -41,6 +43,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -397,6 +400,18 @@ public class BasicMod implements
 
     public static void energySpentTrigger() {
         energySpentCombat++;
+        for (CardGroup group : Arrays.asList(
+                AbstractDungeon.player.hand,
+                AbstractDungeon.player.drawPile,
+                AbstractDungeon.player.discardPile)) {
+            if (group != null) {
+                for (AbstractCard ca : group.group) {
+                    if (ca instanceof DataCache) {
+                        ((DataCache)ca).updateTextCount();
+                    }
+                }
+            }
+        }
         energySpentTurn++;
     }
 

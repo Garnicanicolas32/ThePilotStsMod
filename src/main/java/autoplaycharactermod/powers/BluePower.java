@@ -133,7 +133,8 @@ public class BluePower extends BasePower {
             addToBot(new ApplyPowerAction(MyCharacter.getTarget(), this.owner, new WeakPower(MyCharacter.getTarget(), 1, false)));}
         if (this.amount > 3){
             HammerImprints();
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(MyCharacter.getTarget(), PLATEDARMOR)));}
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, PLATEDARMOR)));}
+        addToBot(new GainBlockAction(this.owner, this.owner, PLATEDARMOR));
         if (this.amount > 4) {
             HammerImprints();
             addToBot(new AbstractGameAction() {

@@ -213,7 +213,7 @@ public class ScryButton {
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {// 258
                     float dy = 162f;
-                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + scryAmount +  uiStrings.TEXT[2]);
+                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + scryAmount +  uiStrings.TEXT[3]);
                 }
             } else {
                 textColor = Color.LIGHT_GRAY.cpy();// 241

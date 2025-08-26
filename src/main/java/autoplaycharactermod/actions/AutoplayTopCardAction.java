@@ -19,7 +19,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
+import org.apache.logging.log4j.Level;
 
+import static autoplaycharactermod.BasicMod.logger;
 import static autoplaycharactermod.BasicMod.makeID;
 
 public class AutoplayTopCardAction extends AbstractGameAction {
@@ -56,6 +58,9 @@ public class AutoplayTopCardAction extends AbstractGameAction {
             AbstractMonster target = MyCharacter.getTarget();
             AbstractCard card = player.drawPile.getTopCard();
 
+            if (card.cost > 0){
+                card.setCostForTurn(0);
+            }
             if ((card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE) && !card.canUse(player, target)) {
                 player.drawPile.removeTopCard();
                 card.current_x = CardGroup.DRAW_PILE_X;

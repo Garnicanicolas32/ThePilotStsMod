@@ -756,7 +756,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
         if (this instanceof EquipmentCard) {
             return new Integer[]{evo, ((EquipmentCard) this).equipmentHp, ((EquipmentCard) this).equipmentMaxHp};
         } else if (this instanceof ConsumableCards) {
-            return new Integer[]{evo, ((ConsumableCards) this).uses};
+            return new Integer[]{evo, ((ConsumableCards) this).uses, ((ConsumableCards) this).MaxAmount};
         } else {
             return new Integer[]{evo};
         }
@@ -779,8 +779,9 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
             } else {
                 ((EquipmentCard) this).equipmentHp = ((EquipmentCard) this).equipmentMaxHp = ((EquipmentCard) this).getDefaultDurability();
             }
-        } else if (this instanceof ConsumableCards && data.length == 2) {
+        } else if (this instanceof ConsumableCards && data.length == 3) {
             ((ConsumableCards) this).uses = data[1];
+            ((ConsumableCards) this).MaxAmount = data[2];
             ((ConsumableCards) this).updateDescription();
         }
     }

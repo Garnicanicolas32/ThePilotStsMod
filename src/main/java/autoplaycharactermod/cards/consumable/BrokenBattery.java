@@ -22,7 +22,7 @@ public class BrokenBattery extends ConsumableCards {
     private static final int MAGIC_UPG = 6;
 
     public BrokenBattery() {
-        super(ID, info, 5, 3);
+        super(ID, info, 4, 4);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();
     }
