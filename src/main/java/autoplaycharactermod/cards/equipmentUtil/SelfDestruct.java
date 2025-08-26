@@ -4,6 +4,8 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
+import autoplaycharactermod.cards.traitBastionCards.FeedbackLoop;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
@@ -25,6 +27,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
+
+import java.util.ArrayList;
 
 public class SelfDestruct extends BaseCard {
     public static final String ID = makeID("SelfDestruct");
@@ -55,6 +59,14 @@ public class SelfDestruct extends BaseCard {
         setSelfRetain(true);
         setDamage(22);
         super.evolveCard();
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[2]) {
+            return new FeedbackLoop();
+        }
+        return this;
     }
 
     @Override

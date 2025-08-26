@@ -269,25 +269,29 @@ public class MyCharacter extends CustomPlayer {
                 break;
             }
             AbstractCard c = this.drawPile.getTopCard();
-            if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS) {
-                if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-                    AbstractDungeon.player.createHandIsFullDialog();
-                    if (AbstractDungeon.actionManager.turnHasEnded) {
-                        savedEnergy++;
-                    }
-                    this.gainEnergy(1);
-                } else {
-                    this.drawPile.removeTopCard();
-                    prepareCardForDraw(c);
-                    this.hand.addToHand(c);
-                    triggerDrawEffects(c);
-                }
-            } else {
-                if (AbstractDungeon.actionManager.turnHasEnded) {
-                    savedEnergy++;
-                }
-                this.gainEnergy(1);
+//            if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS) {
+//                if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+//                    AbstractDungeon.player.createHandIsFullDialog();
+//                    if (AbstractDungeon.actionManager.turnHasEnded) {
+//                        savedEnergy++;
+//                    }
+//                    this.gainEnergy(1);
+//                } else {
+//                    this.drawPile.removeTopCard();
+//                    prepareCardForDraw(c);
+//                    this.hand.addToHand(c);
+//                    triggerDrawEffects(c);
+//                }
+//            } else {
+//                if (AbstractDungeon.actionManager.turnHasEnded) {
+//                    savedEnergy++;
+//                }
+//                this.gainEnergy(1);
+//            }
+            if (AbstractDungeon.actionManager.turnHasEnded) {
+                savedEnergy++;
             }
+            this.gainEnergy(1);
         }
     }
 

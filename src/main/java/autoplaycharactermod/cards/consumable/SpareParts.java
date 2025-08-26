@@ -1,7 +1,10 @@
 package autoplaycharactermod.cards.consumable;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.ConsumableCards;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
+import autoplaycharactermod.cards.traitIgnitionCards.ThermalSurge;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.HealEquipmentEffect;
@@ -12,6 +15,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class SpareParts extends ConsumableCards {
     public static final String ID = makeID("SpareParts");
@@ -35,6 +40,14 @@ public class SpareParts extends ConsumableCards {
     public void evolveCard() {
         setMagic(6);
         super.evolveCard();
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[2]) {
+            return new PreemptiveStrike();
+        }
+        return this;
     }
 
     @Override

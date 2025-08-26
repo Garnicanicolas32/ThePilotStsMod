@@ -21,7 +21,7 @@ public class JunkFood extends ConsumableCards {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int MAGIC_UPG = 1;
 
     public JunkFood() {

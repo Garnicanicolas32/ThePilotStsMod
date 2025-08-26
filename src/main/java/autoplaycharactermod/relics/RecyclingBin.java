@@ -26,7 +26,7 @@ public class RecyclingBin extends BaseRelic implements CardRewardSkipButtonRelic
     @Override
     public void onClickedButton() {
         flash();
-        if (counter > 1) {
+        if (counter > 0) {
             AbstractCard c = AbstractDungeon.cardRandomRng.randomBoolean() ? new ScrapCommon() : new ScrapCommonDef();
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F - 340.0F * Settings.scale));
             AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(c, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F - 340.0F * Settings.scale));

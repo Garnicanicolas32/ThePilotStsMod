@@ -1,9 +1,12 @@
 package autoplaycharactermod.cards.equipmentUtil;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
+import autoplaycharactermod.cards.chargingCards.Thrusters;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.badlogic.gdx.graphics.Color;
@@ -13,6 +16,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class EMPGrenade extends BaseCard {
     public static final String ID = makeID("EMPGrenade");
@@ -61,6 +66,14 @@ public class EMPGrenade extends BaseCard {
         addToBot(new SfxActionVolume("ORB_LIGHTNING_CHANNEL", -0.25F, 1.9F));
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         PlayOnce = false;
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[2]) {
+            return new Thrusters();
+        }
+        return this;
     }
 
     @Override

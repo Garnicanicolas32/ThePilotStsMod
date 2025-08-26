@@ -26,7 +26,7 @@ public class DefenseMatrix extends BaseCard {
             0 
     );
     private static final int MAGIC = 4;
-    private static final int UPG_MAGIC = 3;
+    private static final int UPG_MAGIC = 4;
 
     public DefenseMatrix() {
         super(ID, info);

@@ -1,7 +1,10 @@
 package autoplaycharactermod.cards.equipmentUtil;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
+import autoplaycharactermod.cards.traitIgnitionCards.Firewall;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.HealEquipmentEffect;
@@ -12,6 +15,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class ToolKit extends BaseCard {
     public static final String ID = makeID("ToolKit");
@@ -37,6 +42,14 @@ public class ToolKit extends BaseCard {
     public void evolveCard() {
         setMagic(10);
         super.evolveCard();
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[2]) {
+            return new Firewall();
+        }
+        return this;
     }
 
     @Override

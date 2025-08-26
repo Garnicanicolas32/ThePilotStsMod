@@ -27,7 +27,7 @@ public class LockedIn extends BaseCard {
         super(ID, info);
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
-        setCustomVar("SCRY", 5, 2);
+        setCustomVar("SCRY", 4, 2);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
