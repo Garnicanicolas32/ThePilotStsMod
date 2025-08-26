@@ -44,6 +44,7 @@ public class Drill extends EquipmentCard {
         super(ID, info, BASE_HP);
         setInnate(false, true);
         setMagic(MAGIC, UPG_MAGIC);
+        tags.add(CardTags.HEALING);
         setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.GOLD.cpy());
         FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Scavenge").DESCRIPTION);

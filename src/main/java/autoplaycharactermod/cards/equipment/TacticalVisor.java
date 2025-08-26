@@ -94,7 +94,7 @@ public class TacticalVisor extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 4;
+        return 3;
     }
 
     public void atTurnStart() {

@@ -413,7 +413,7 @@
   },
   "${modID}:TakeAim": {
     "NAME": "Take Aim",
-    "DESCRIPTION": "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust.",
+    "DESCRIPTION": "Shuffle your discard pile into your draw pile. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge 4 for each card discarded. NL Exhaust."
     ]
@@ -459,8 +459,8 @@
   },
   "${modID}:QuickReflex": {
     "NAME": "Quick Reflex",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. ! NL ${modID}:[#03befc]Ejected[]: Gain [E] . NL Add a *Dazed into your discard pile.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Gain [E] [E] . NL Add a *Dazed into your discard pile.",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Gain 12 ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Gain !B! Block. NL Gain [E] [E] ."
     ]
@@ -603,7 +603,7 @@
   "${modID}:Coolant": {
     "NAME": "Coolant",
     "DESCRIPTION": "[#03befc]Play[] Status: NL Exhaust it and gain [E].",
-    "UPGRADE_DESCRIPTION": "[#03befc]Play[] Status: NL Exhaust it and gain [E] [E].",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it and gain [E].",
     "EXTENDED_DESCRIPTION": [
       "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it and gain [E] [E] [E]."
     ]
@@ -704,6 +704,7 @@
   "${modID}:RustyBlade": {
     "NAME": "Rusty Blade",
     "DESCRIPTION": "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Apply Poison equal to missing durability.",
+    "UPGRADE_DESCRIPTION": "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage. NL Apply Poison equal to missing durability.",
     "EXTENDED_DESCRIPTION": [
       "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[], [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage. NL Apply Poison equal to missing durability."
     ]

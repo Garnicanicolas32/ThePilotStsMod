@@ -41,12 +41,11 @@ public class ScrapCommon extends BaseCard {
         setMagic(MAGIC, MAGICUPG);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         tags.add(BasicMod.CustomTags.skipVigor);
+        MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
         if (BasicMod.evolved && CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null){
-            MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
             this.evolveCard();
         }
-
     }
 
     @Override

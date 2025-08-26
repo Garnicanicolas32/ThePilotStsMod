@@ -22,7 +22,7 @@ public class Coolant extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 16;
+    private static final int BASE_HP = 14;
     private static final int MAGIC = 1;
     private static final int MAGIC_UPG = 0;
 

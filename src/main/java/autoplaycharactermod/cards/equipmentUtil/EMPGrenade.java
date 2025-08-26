@@ -26,7 +26,7 @@ public class EMPGrenade extends BaseCard {
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 2;
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 3;
+    private static final int UPG_DAMAGE = 0;
 
     public EMPGrenade() {
         super(ID, info);

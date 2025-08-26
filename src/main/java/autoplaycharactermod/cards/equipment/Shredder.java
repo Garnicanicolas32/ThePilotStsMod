@@ -66,7 +66,7 @@ public class Shredder extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 20;
+        return 15;
     }
 
     public void onGainBlock() {

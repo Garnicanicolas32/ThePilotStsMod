@@ -21,9 +21,6 @@ public class EvolutionOneC extends BaseCard {
             CardTarget.NONE,
             -2 
     );
-    private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 3;
-
 
     public EvolutionOneC() {
         super(ID, info);

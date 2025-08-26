@@ -23,7 +23,7 @@ public class Grenades extends ConsumableCards {
             CardTarget.NONE,
             -2
     );
-    private static final int DAMAGE = 15;
+    private static final int DAMAGE = 14;
     private static final int DAMAGEUPG = 5;
 
     public Grenades() {

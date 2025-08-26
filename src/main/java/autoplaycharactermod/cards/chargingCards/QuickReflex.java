@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,8 +32,8 @@ public class QuickReflex extends BaseCard {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 4;
+    private static final int UPG_MAGIC = 2;
     private static final int CAPACITY = 4;
     private static final int UPG_CAPACITY = 3;
     private static final int BLOCK = 4;
@@ -73,12 +74,18 @@ public class QuickReflex extends BaseCard {
     }
 
     public void eject() {
-        addToBot(new EjectedEffectAction());
-        addToBot(new GainEnergyAction(magicNumber));
         if (this.alreadyEvolved) {
+            addToBot(new EjectedEffectAction());
             addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
-        } else
-            addToBot(new MakeTempCardInDiscardAction(new Dazed(), 1));
+            addToBot(new GainEnergyAction(2));
+        }else if (BasicMod.energySpentTurn <= magicNumber){
+            addToBot(new EjectedEffectAction());
+            addToBot(new GainEnergyAction(upgraded ? 2 : 1));
+        }
+    }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = BasicMod.energySpentTurn <= this.magicNumber ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public void onScrySelected() {

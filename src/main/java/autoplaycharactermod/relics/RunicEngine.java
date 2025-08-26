@@ -79,7 +79,7 @@ public class RunicEngine extends BaseRelic implements CustomSavable<Integer[]> {
             case 1:
                 this.flash();
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                addToBot(new AddTemporaryHPAction(p, AbstractDungeon.player, 6));
+                addToBot(new AddTemporaryHPAction(p, AbstractDungeon.player, 9));
                 break;
             case 2:
                 this.flash();
