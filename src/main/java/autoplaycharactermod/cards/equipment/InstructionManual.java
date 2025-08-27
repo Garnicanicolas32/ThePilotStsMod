@@ -2,10 +2,13 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
+import autoplaycharactermod.cards.statusAndCurses.Melt;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,7 +23,7 @@ public class InstructionManual extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 10;
+    private static final int BASE_HP = 11;
     private static final int BLOCK = 8;
     private static final int BLOCKUPG = 4;
     private static final int MAGIC = 1;
@@ -31,6 +34,7 @@ public class InstructionManual extends EquipmentCard {
         super(ID, info, BASE_HP);
         setBlock(BLOCK, BLOCKUPG);
         setMagic(MAGIC, MAGICUPG);
+        cardsToPreview = new Insight();
         checkEvolve();
     }
 
@@ -46,7 +50,7 @@ public class InstructionManual extends EquipmentCard {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new SfxActionVolume("STAB_BOOK_DEATH", 0.8F, 1.8F));
-        addToBot(new GainEnergyAction(magicNumber));
+        this.addToBot(new MakeTempCardInDrawPileAction(new Insight(), magicNumber, true, true, false));
         calculateCardDamage(null);
         addToBot(new GainBlockAction(p, p, block));
         super.Activate();

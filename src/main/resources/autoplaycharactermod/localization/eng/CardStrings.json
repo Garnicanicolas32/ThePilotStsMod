@@ -633,10 +633,10 @@
   },
   "${modID}:InstructionManual": {
     "NAME": "Instruction Manual",
-    "DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Gain [E] .",
-    "UPGRADE_DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Gain [E] [E] .",
+    "DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Shuffle an *Insight into your draw pile.",
+    "UPGRADE_DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Shuffle !M! *Insight into your draw pile.",
     "EXTENDED_DESCRIPTION": [
-      "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Gain [E] [E] [E] ."
+      "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Shuffle !M! *Insight into your draw pile."
     ]
   },
   "${modID}:GrapplingHook": {

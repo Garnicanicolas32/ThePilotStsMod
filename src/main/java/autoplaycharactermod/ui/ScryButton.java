@@ -7,8 +7,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -68,7 +68,7 @@ public class ScryButton {
     }
 
     public void update() {
-        this.enabled = canTrigger && EnergyPanel.totalCount >= 1 && !AbstractDungeon.player.drawPile.isEmpty() && !AbstractDungeon.player.hasPower(HackedPower.POWER_ID);
+        this.enabled = canTrigger && EnergyPanel.totalCount >= 1 && !AbstractDungeon.player.hasPower(HackedPower.POWER_ID);
         this.glow();// 68
         this.updateHoldProgress();// 69
         if (this.current_x != this.target_x) {// 71
@@ -153,6 +153,8 @@ public class ScryButton {
     public void trigger() {
         hb.hovered = false;
         AbstractDungeon.player.loseEnergy(1);
+        if (AbstractDungeon.player.drawPile.isEmpty())
+            AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
         AbstractDungeon.actionManager.addToBottom(new ScryAction(scryAmount));
         BasicMod.energySpentTrigger();
     }
@@ -213,7 +215,7 @@ public class ScryButton {
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {// 258
                     float dy = 162f;
-                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + scryAmount +  uiStrings.TEXT[3]);
+                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + scryAmount + uiStrings.TEXT[3]);
                 }
             } else {
                 textColor = Color.LIGHT_GRAY.cpy();// 241

@@ -6,7 +6,9 @@ import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TakeAim extends BaseCard {
@@ -44,6 +46,7 @@ public class TakeAim extends BaseCard {
             PlayOnce = false;
             returnToHand = true;
             addToBot(new EmptyDeckShuffleAction());
+            this.addToBot(new ShuffleAction(AbstractDungeon.player.drawPile, false));
         } else {
             addToBot(new ScryWithChargeAction(magicNumber, alreadyEvolved ? 4 : customVar("CHARGE")));
             setExhaust(true);
