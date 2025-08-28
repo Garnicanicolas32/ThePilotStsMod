@@ -22,8 +22,8 @@ public class Metronome extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 15;
-    private static final int STR = 1;
+    private static final int BASE_HP = 12;
+    private static final int STR = 2;
     private static final int STR_UPG = 1;
 
     public Metronome() {
@@ -54,7 +54,7 @@ public class Metronome extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 6;
+        return 3;
     }
 
     @Override

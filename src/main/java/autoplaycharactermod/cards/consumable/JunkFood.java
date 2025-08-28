@@ -21,11 +21,11 @@ public class JunkFood extends ConsumableCards {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 3;
-    private static final int MAGIC_UPG = 1;
+    private static final int MAGIC = 4;
+    private static final int MAGIC_UPG = 2;
 
     public JunkFood() {
-        super(ID, info, 4, 4);
+        super(ID, info, 4, 3);
         tags.add(CardTags.HEALING);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();

@@ -23,11 +23,11 @@ public class InstructionManual extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 11;
+    private static final int BASE_HP = 12;
     private static final int BLOCK = 8;
     private static final int BLOCKUPG = 4;
     private static final int MAGIC = 1;
-    private static final int MAGICUPG = 1;
+    private static final int MAGICUPG = 0;
 
 
     public InstructionManual() {
@@ -58,7 +58,7 @@ public class InstructionManual extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 2;
+        return 3;
     }
 
     public void triggerOnShuffle() {

@@ -45,11 +45,15 @@ public class ScrapRareAtt extends BaseCard {
         super(ID, info);
         returnToHand = true;
         tags.add(BasicMod.CustomTags.ScrapRare);
-        setDamage(DAMAGE, DAMAGEUPG);
-        setMagic(MAGIC, MAGICUPG);
+        setDamage(DAMAGE);
+        setMagic(MAGIC);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         tags.add(BasicMod.CustomTags.skipVigor);
         this.setDisplayRarity(CardRarity.RARE);
+    }
+
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override

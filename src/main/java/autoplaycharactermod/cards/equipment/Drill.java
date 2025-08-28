@@ -38,7 +38,7 @@ public class Drill extends EquipmentCard {
     );
     private static final int BASE_HP = 10;
     private static final int MAGIC = 10;
-    private static final int UPG_MAGIC = 5;
+    private static final int UPG_MAGIC = 4;
 
     public Drill() {
         super(ID, info, BASE_HP);

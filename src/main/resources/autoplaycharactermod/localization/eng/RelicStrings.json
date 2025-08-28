@@ -17,11 +17,11 @@
       "Gain #b3 strength for that turn.",
       " NL [#03befc]Turn[] [#03befc]End[]: ",
       "Gain #b1 #yBlock for every #b2 cards in hand.",
-      "#yRepair #b1 durability to A random #yEquipment in hand.",
+      "#yRepair #b1 durability to a random #yEquipment in hand.",
       "Gain #b1 #yStrength. (3 times max)",
       " NL [#03befc]Permanent[]: ",
       "Increase maximum hand size by #b2.",
-      "Gain [E] at the start of first 2 turns.",
+      "Gain [E] at the start of your first 2 turns.",
       "Whenever you use the Scry button, Scry #b1 additional card.",
       "When you obtain a Key, choose an #yAugment."
     ]
@@ -51,7 +51,7 @@
     "NAME": "Empty Disk",
     "FLAVOR": "Finally! can't wait to play... Slice the Tower 2?",
     "DESCRIPTIONS": [
-      "Increase your maximum hand size by #b4."
+      "Gain #b1 potion slot. NL Raise your Max HP by #b8. NL Increase your maximum hand size by #b4."
     ]
   },
   "${modID}:Motherboard": {
@@ -65,7 +65,7 @@
     "NAME": "Schematics",
     "FLAVOR": "Step 1: Build thing. Step 2: ??? Step 3: Profit.",
     "DESCRIPTIONS": [
-      "You can now repair #b2 additional #y${modID}:Equipment at Rest Sites."
+      "Heal #b" , " HP when repairing at Rest Sites. You can now repair #b2 additional #y${modID}:Equipment."
     ]
   },
   "${modID}:RecyclingBin": {
@@ -88,14 +88,14 @@
     "NAME": "Security Camera",
     "FLAVOR": "Now recording at 144p.",
     "DESCRIPTIONS": [
-      "Whenever you swap your #y${modID}:Target apply #b1 #yVulnerable and #b1 #yWeak."
+      "Whenever you swap your #y${modID}:Target apply #b1 #yVulnerable."
     ]
   },
   "${modID}:UnceasingBottom": {
     "NAME": "Unceasing Bottom",
     "FLAVOR": "Replaces Unceasing Top.",
     "DESCRIPTIONS": [
-      "Whenever your hand is full during your turn, discard #b1 card."
+      "Whenever you use the Play button and your hand is full, discard #b1 card."
     ]
   },
   "${modID}:AIFiedHand": {
@@ -109,14 +109,14 @@
     "NAME": "Necronomicon.pdf",
     "FLAVOR": "Replaces Necronomicon.",
     "DESCRIPTIONS": [
-      "Whenever you play a #yCurse, your next #b2 cards are played twice. When you take this relic, become #yCursed."
+      "Whenever you play a #yCurse, your next card is played twice. When you take this relic, become #yCursed."
     ]
   },
   "${modID}:SneckoAI": {
     "NAME": "Snecko AI",
     "FLAVOR": "Replaces Chemical Snecko Eye.",
     "DESCRIPTIONS": [
-      "Gain [E] [E] at the start of your turn. Start each combat #y${modID}:Hacked."
+      "Gain [E] at the start of your turn. Start each combat #y${modID}:Hacked."
     ]
   },
   "${modID}:PyramidScheme": {
@@ -145,7 +145,7 @@
     "NAME": "Scheduled Update",
     "FLAVOR": "Please wait... Estimated time: 7 years.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn and swap your #yTarget to a random enemy. NL #yChange #yTarget costs #b1 more."
+      "Gain [E] at the start of your turn and swap your #yTarget to a random enemy. NL #yChange #yTarget costs #b2 more."
     ]
   }
 }

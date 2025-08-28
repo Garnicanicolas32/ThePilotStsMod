@@ -34,14 +34,18 @@ public class ScrapCommonDef extends BaseCard {
         super(ID, info);
         returnToHand = true;
         tags.add(BasicMod.CustomTags.ScrapCommon);
-        setBlock(SHIELD, UPG);
-        setMagic(MAGIC, MAGICUPG);
+        setBlock(SHIELD);
+        setMagic(MAGIC);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         if (BasicMod.evolved && CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null){
             MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
             this.evolveCard();
         }
+    }
+
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override

@@ -74,7 +74,7 @@ public class Flamethrower extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 2;
+        return 4;
     }
 
     protected void onEquip() {

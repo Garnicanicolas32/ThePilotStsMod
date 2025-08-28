@@ -21,13 +21,13 @@ public class LockedIn extends BaseCard {
             0 
     );
     private static final int MAGIC = 8;
-    private static final int UPG_MAGIC = 4;
+    private static final int UPG_MAGIC = 2;
 
     public LockedIn() {
         super(ID, info);
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
-        setCustomVar("SCRY", 4, 2);
+        setCustomVar("SCRY", 4, 1);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         checkEvolve();
     }

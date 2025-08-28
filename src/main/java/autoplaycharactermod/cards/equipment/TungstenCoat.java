@@ -20,7 +20,7 @@ public class TungstenCoat extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 16;
+    private static final int BASE_HP = 18;
 
     public TungstenCoat() {
         super(ID, info, BASE_HP);
@@ -58,6 +58,6 @@ public class TungstenCoat extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 10;
+        return 6;
     }
 }

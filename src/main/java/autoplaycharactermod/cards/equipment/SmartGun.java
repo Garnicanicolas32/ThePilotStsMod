@@ -25,8 +25,8 @@ public class SmartGun extends EquipmentCard {
             0
     );
     private static final int BASE_HP = 66;
-    private static final int DAMAGE = 4;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 3;
+    private static final int UPG_DAMAGE = 1;
 
 
     public SmartGun() {

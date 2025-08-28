@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class Virus extends BaseCard {
     public static final String ID = makeID("Virus");
@@ -51,9 +52,7 @@ public class Virus extends BaseCard {
             addToBot(new AutoplayTopCardAction());
         }
         if (!this.alreadyEvolved) {
-            for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
-                addToTop(new ApplyPowerAction(mon, mon, new StrengthPower(m, 1), 1));
-            }
+            addToBot(new ApplyPowerAction(p,p, new VulnerablePower(p,1,false)));
         }
         PlayOnce = false;
     }

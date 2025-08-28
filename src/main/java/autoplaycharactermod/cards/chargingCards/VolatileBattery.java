@@ -5,6 +5,7 @@ import autoplaycharactermod.actions.EjectedEffectAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.ChargePower;
+import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EjectLightingEffect;
@@ -30,7 +31,7 @@ public class VolatileBattery extends BaseCard {
             -2 
     );
     private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public VolatileBattery() {
         super(ID, info);
@@ -65,11 +66,15 @@ public class VolatileBattery extends BaseCard {
     }
 
     public void triggerOnManualDiscard() {
+        if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
+            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         addToBot(new EjectedEffectAction());
         addToBot(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), this.alreadyEvolved ? 2 : 1));
     }
 
     public void onScrySelected() {
+        if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
+            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         addToBot(new EjectedEffectAction());
         addToBot(new MakeTempCardInDiscardAction(this.makeStatEquivalentCopy(), this.alreadyEvolved ? 2 : 1));
     }

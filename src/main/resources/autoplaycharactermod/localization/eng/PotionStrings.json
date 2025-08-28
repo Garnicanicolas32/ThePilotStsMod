@@ -15,5 +15,20 @@
       "Gain #b",
       " Energy and #yHacked. NL Replaces #ySnecko #yOil"
     ]
+  },
+  "${modID}:EquipmentPotion": {
+    "NAME": "Equipment Potion",
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random #yEquipment cards to add to your hand.",
+      "Choose #b1 of #b3 random #yEquipment cards and add #b2 copies to your hand."
+    ]
+  },
+  "${modID}:ChargePotion": {
+    "NAME": "Charge Potion",
+    "DESCRIPTIONS": [
+      "#yScry ",
+      " then #yCharge ",
+      " for each card discarded."
+    ]
   }
 }

@@ -42,11 +42,13 @@ public class DataCache extends TraitCard {
         if (this.alreadyEvolved)
             amount = BasicMod.energySpentCombat;
 
-        int blockFix = Math.max(block, 1);
+        this.baseBlock = upgraded || alreadyEvolved ?  amount : amount / 2;
+        this.applyPowersToBlock();
+
         for (int i = 0; i < (ConfigPanel.lessParticles ? 5 : amount); i++) {
             AbstractDungeon.effectList.add(new DatacacheEffect(i));
         }
-        addToBot(new GainBlockAction(p, p, upgraded || this.alreadyEvolved ? blockFix * amount : blockFix * amount / 2));
+        addToBot(new GainBlockAction(p, p, block));
         bufferCounter = BasicMod.energySpentCombat;
         PlayOnce = false;
         super.use(p, m);

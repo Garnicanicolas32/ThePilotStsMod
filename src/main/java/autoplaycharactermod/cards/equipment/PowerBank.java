@@ -27,11 +27,11 @@ public class PowerBank extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 40;
+    private static final int BASE_HP = 45;
     private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 2;
-    private static final int BLOCK = 2;
-    private static final int UPG_BLOCK = 2;
+    private static final int UPG_MAGIC = 1;
+    private static final int BLOCK = 3;
+    private static final int UPG_BLOCK = 1;
 
 
     public PowerBank() {
@@ -71,6 +71,6 @@ public class PowerBank extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 30;
+        return 15;
     }
 }

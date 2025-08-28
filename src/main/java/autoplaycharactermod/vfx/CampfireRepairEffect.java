@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.relics.EternalFeather;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
@@ -50,12 +51,15 @@ public class CampfireRepairEffect extends AbstractGameEffect {
             float w = AbstractCard.IMG_WIDTH + 30f * Settings.scale;
             float startX = Settings.WIDTH * 0.5f - (w * (AbstractDungeon.gridSelectScreen.selectedCards.size() - 1)) / 2f;
             int count = 0;
+            CardCrawlGame.sound.playAV("CARD_UPGRADE", 0.2f, 1.0F);
+            CardCrawlGame.sound.playAV("BLOCK_ATTACK", MathUtils.random(-0.2F, 0.2F), 0.5F);
+            if (hasRelic){
+                AbstractDungeon.player.getRelic(Schematics.ID).flash();
+                AbstractDungeon.player.heal(Schematics.AMOUNTTOHEALREPAIR);
+            }
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 if (c instanceof EquipmentCard) {
                     ((EquipmentCard) c).equipmentHp = ((EquipmentCard) c).equipmentMaxHp;
-
-                    CardCrawlGame.sound.playAV("CARD_UPGRADE", 0.2f, 1.0F);
-                    CardCrawlGame.sound.playAV("BLOCK_ATTACK", MathUtils.random(-0.2F, 0.2F), 0.5F);
                     AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(
                             c.makeStatEquivalentCopy(), startX + count++ * w, Settings.HEIGHT * 0.5f
                     ));

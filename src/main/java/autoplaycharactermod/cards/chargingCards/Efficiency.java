@@ -43,14 +43,12 @@ public class Efficiency extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EfficiencyPower(p, magicNumber)));
-        if (this.alreadyEvolved)
-            addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
     }
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Charge").PROPER_NAME, BasicMod.keywords.get("Charge").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Ejected").PROPER_NAME, BasicMod.keywords.get("Ejected").DESCRIPTION));
         return customTooltips;
     }
 }

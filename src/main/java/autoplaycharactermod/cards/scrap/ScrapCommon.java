@@ -37,8 +37,8 @@ public class ScrapCommon extends BaseCard {
         super(ID, info);
         returnToHand = true;
         tags.add(BasicMod.CustomTags.ScrapCommon);
-        setDamage(DAMAGE, UPG);
-        setMagic(MAGIC, MAGICUPG);
+        setDamage(DAMAGE);
+        setMagic(MAGIC);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         tags.add(BasicMod.CustomTags.skipVigor);
         MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());

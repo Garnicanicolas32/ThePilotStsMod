@@ -36,12 +36,16 @@ public class ScrapUncommonAttStr extends BaseCard {
         super(ID, info);
         returnToHand = true;
         tags.add(BasicMod.CustomTags.ScrapUncommon);
-        setMagic(MAGIC, MAGICUPG);
-        setDamage(DAMAGE, DAMAGE_UPG);
+        setMagic(MAGIC);
+        setDamage(DAMAGE);
         MultiCardPreview.add(this, new ScrapRareAtt(), new ScrapRareDef());
         tags.add(BasicMod.CustomTags.NoEnergyText);
         tags.add(BasicMod.CustomTags.skipVigor);
         this.setDisplayRarity(CardRarity.UNCOMMON);
+    }
+
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override

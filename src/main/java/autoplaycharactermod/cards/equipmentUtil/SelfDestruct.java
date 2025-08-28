@@ -39,8 +39,8 @@ public class SelfDestruct extends BaseCard {
             CardTarget.ALL_ENEMY,
             0 
     );
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 4;
+    private static final int DAMAGE = 7;
+    private static final int UPG_DAMAGE = 3;
     public static final UIStrings uiStringsShow = CardCrawlGame.languagePack.getUIString(makeID("SelectCustomAction"));
 
     public SelfDestruct() {

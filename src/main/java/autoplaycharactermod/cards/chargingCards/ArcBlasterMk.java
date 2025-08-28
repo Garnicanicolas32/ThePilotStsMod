@@ -4,15 +4,14 @@ import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.ChargePower;
+import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EjectLightingEffect;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -26,7 +25,7 @@ public class ArcBlasterMk extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            -2 
+            -2
     );
     private static final int UPG_MAGIC = 4;
     private static final int MAGIC = 6;
@@ -57,9 +56,11 @@ public class ArcBlasterMk extends BaseCard {
 
     public void eject() {
         if (ConfigPanel.experimentalSounds)
-        addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", -0.1f + 0.05f * timesUpgraded, 1));
+            addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", -0.1f + 0.05f * timesUpgraded, 1));
         for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); i++)
             AbstractDungeon.effectsQueue.add(new EjectLightingEffect((float) Settings.WIDTH * 0.96F, (float) Settings.HEIGHT * 0.06F, i));
+        if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
+            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         upgrade();
         if (this.alreadyEvolved) {
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {

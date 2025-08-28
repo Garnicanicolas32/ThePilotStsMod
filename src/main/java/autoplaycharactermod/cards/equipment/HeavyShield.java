@@ -32,8 +32,8 @@ public class HeavyShield extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 16;
-    private static final int BLOCK = 5;
+    private static final int BASE_HP = 22;
+    private static final int BLOCK = 6;
     private static final int BLOCKUPG = 3;
 
     public HeavyShield() {

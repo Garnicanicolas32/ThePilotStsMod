@@ -40,7 +40,7 @@ public class TrashCannon extends EquipmentCard {
     private static final int DAMAGE = 5;
     private static final int DAMAGE_UPG = 0;
     private static final int MAGIC = 3;
-    private static final int MAGIC_UPG = 2;
+    private static final int MAGIC_UPG = 1;
 
 
     public TrashCannon() {
@@ -48,6 +48,7 @@ public class TrashCannon extends EquipmentCard {
         misc = DAMAGE;
         setDamage(misc, DAMAGE_UPG);
         setMagic(MAGIC, MAGIC_UPG);
+        setCustomVar("DURABILITY", 1,1);
             setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.GOLD.cpy());
         FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Scavenge").DESCRIPTION);
@@ -118,6 +119,8 @@ public class TrashCannon extends EquipmentCard {
         this.applyPowers();
         this.baseDamage = this.misc;
         this.isDamageModified = false;
+        this.equipmentMaxHp += customVar("DURABILITY");
+        this.equipmentHp += customVar("DURABILITY");
         initializeDescription();
     }
 

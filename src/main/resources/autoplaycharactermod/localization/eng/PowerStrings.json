@@ -110,14 +110,14 @@
   "${modID}:HackedPower": {
     "NAME": "Hacked",
     "DESCRIPTIONS": [
-      "You cannot use the Scry button."
+      "Whenever you use the Scry button, Scry #b1 less card."
     ]
   },
   "${modID}:EfficiencyPower": {
     "NAME": "Efficiency",
     "DESCRIPTIONS": [
-      "#bTurn #bend: Transform up to #b",
-      " Capacity into Block"
+      "#bEjected: Gain #b",
+      " Block"
     ]
   },
   "${modID}:LoseThornsPower": {

@@ -22,7 +22,7 @@ public class GamblingLoseHP extends BaseCard {
             CardTarget.NONE,
             -2 
     );
-    private static final int MAGIC = 15;
+    private static final int MAGIC = 8;
 
     public GamblingLoseHP() {
         super(ID, info);

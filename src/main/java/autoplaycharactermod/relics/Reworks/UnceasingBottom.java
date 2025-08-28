@@ -23,28 +23,6 @@ public class UnceasingBottom extends BaseRelic {
     }
 
     @Override
-    public void update() {
-        super.update();
-        if (lockTrigger)
-            return;
-        if (!isObtained || AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.actionManager.turnHasEnded) {
-            return;
-        }
-        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-            lockTrigger = true;
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, false));
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    lockTrigger = false;
-                    this.isDone = true;
-                }
-            });
-        }
-    }
-
-    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }

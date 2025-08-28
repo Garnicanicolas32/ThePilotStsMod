@@ -18,7 +18,7 @@ public class RustyBlade extends EquipmentCard {
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,
-            0 
+            0
     );
     private static final int BASE_HP = 10;
     private static final int DAMAGE = 4;
@@ -68,12 +68,11 @@ public class RustyBlade extends EquipmentCard {
     }
 
     public void triggerOnEndOfTurnForPlayingCard() {
-        if (alreadyEvolved || upgraded)
+        if (alreadyEvolved)
             Activate();
     }
 
     public void atTurnStart() {
-        if (alreadyEvolved || !upgraded)
-            Activate();
+        Activate();
     }
 }

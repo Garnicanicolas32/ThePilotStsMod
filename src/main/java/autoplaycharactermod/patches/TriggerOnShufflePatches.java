@@ -38,7 +38,7 @@ public class TriggerOnShufflePatches {
 
     @SpirePatch(
             clz = EmptyDeckShuffleAction.class,
-            method = SpirePatch.CONSTRUCTOR
+            method = "update"
     )
     public static class OnShuffleTriggerEmptyPatch {
         @SpireInsertPatch(
@@ -55,7 +55,7 @@ public class TriggerOnShufflePatches {
         private static class Locator extends SpireInsertLocator {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
-                Matcher matcher = new Matcher.FieldAccessMatcher(AbstractDungeon.class, "player");
+                Matcher matcher = new Matcher.FieldAccessMatcher(EmptyDeckShuffleAction.class, "isDone");
                 return LineFinder.findInOrder(ctMethodToPatch, matcher);
             }
         }

@@ -4,6 +4,7 @@ import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.ChargePower;
+import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EjectLightingEffect;
@@ -69,6 +70,8 @@ public class ComboBreaker extends BaseCard {
     }
 
     public void combo() {
+        if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
+            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         this.magicNumber *= this.alreadyEvolved ? 3 : 2;
         this.baseMagicNumber = this.magicNumber;
         this.isMagicNumberModified = true;

@@ -135,7 +135,7 @@
     "NAMES": [
       "Hacked"
     ],
-    "DESCRIPTION": "You cannot use the Scry button."
+    "DESCRIPTION": "Whenever you use the Scry button, Scry #b1 less card."
   },
   {
     "ID": "Deploy",
@@ -143,7 +143,7 @@
     "NAMES": [
       "Deploy"
     ],
-    "DESCRIPTION": "Play this card at the start of combat. Replaces Innate."
+    "DESCRIPTION": "Lose [E] to play this at combat start, if you have no energy shuffle a #yVoid into your draw pile instead. Replaces #yInnate."
   },
   {
     "PROPER_NAME": "Plated Armor",

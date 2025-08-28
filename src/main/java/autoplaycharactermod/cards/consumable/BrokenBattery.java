@@ -18,11 +18,11 @@ public class BrokenBattery extends ConsumableCards {
             CardTarget.SELF,
             -2
     );
-    private static final int MAGIC = 6;
-    private static final int MAGIC_UPG = 6;
+    private static final int MAGIC = 7;
+    private static final int MAGIC_UPG = 4;
 
     public BrokenBattery() {
-        super(ID, info, 4, 4);
+        super(ID, info, 4, 3);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();
     }

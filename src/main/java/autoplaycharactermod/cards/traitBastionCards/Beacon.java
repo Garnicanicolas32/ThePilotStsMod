@@ -25,28 +25,21 @@ public class Beacon extends TraitCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            0 
+            0
     );
     private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 3;
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = -1;
 
     public Beacon() {
         super(ID, info, TraitCard.TraitColor.BASTION, false);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC, UPG_MAGIC);
-        setCostUpgrade(-2);
         checkEvolve();
-        if (!this.alreadyEvolved)
-            tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(BasicMod.CustomTags.NoEnergyText);
     }
 
     @Override
     public void evolveCard() {
-        cost = -2;
         setBlock(12);
-        tags.remove(BasicMod.CustomTags.NoEnergyText);
         super.evolveCard();
     }
 
@@ -60,13 +53,6 @@ public class Beacon extends TraitCard {
                 if (c instanceof DuctTape && c.uuid != this.uuid) {
                     ((DuctTape) c).triggerReturnToHand();
                 }
-            }
-            if (upgraded || this.alreadyEvolved) {
-                addToBot(new SfxActionVolume("POWER_MANTRA", 0f, 1F));
-                this.addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.BLUE_TEXT_COLOR, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.5F));
-                addToBot(new MakeTempCardInDiscardAction(GeneralUtils.getRandomBastionCard(), 1));
-                if (this.alreadyEvolved)
-                    addToBot(new MakeTempCardInDiscardAction(GeneralUtils.getRandomBastionCard(), 1));
             }
             returnToHand = true;
         } else {
@@ -85,18 +71,8 @@ public class Beacon extends TraitCard {
     }
 
     @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return (PlayOnce || (!upgraded && !this.alreadyEvolved)) && super.canUse(p, m);
-    }
-
-    @Override
     public boolean freeToPlay() {
-        return !upgraded && !this.alreadyEvolved;
+        return true;
     }
 
-    @Override
-    public void upgrade() {
-        super.upgrade();
-        tags.remove(BasicMod.CustomTags.NoEnergyText);
-    }
 }

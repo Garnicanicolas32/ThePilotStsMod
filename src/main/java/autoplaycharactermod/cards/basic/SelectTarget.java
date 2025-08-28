@@ -27,7 +27,7 @@ public class SelectTarget extends BaseCard {
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
-            1
+            2
     );
 
     public SelectTarget() {

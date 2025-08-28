@@ -227,6 +227,7 @@ public abstract class EquipmentCard extends BaseCard  {
 
     }
 
+
     public void healEquipment(int healAmount, boolean asPercentage, boolean inCombat) {
         if (asPercentage) {
             healAmount = healAmount * equipmentMaxHp / 100;

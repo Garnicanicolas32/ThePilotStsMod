@@ -36,12 +36,15 @@ public class ScrapRareDef extends BaseCard {
         super(ID, info);
         returnToHand = true;
         tags.add(BasicMod.CustomTags.ScrapRare);
-        setBlock(BLOCK, BLOCKUPG);
-        setMagic(MAGIC, MAGICUPG);
+        setBlock(BLOCK);
+        setMagic(MAGIC);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         this.setDisplayRarity(CardRarity.RARE);
     }
 
+    public boolean canUpgrade() {
+        return false;
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

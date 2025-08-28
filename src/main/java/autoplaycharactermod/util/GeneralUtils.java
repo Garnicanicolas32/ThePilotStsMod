@@ -1,6 +1,6 @@
 package autoplaycharactermod.util;
 
-import autoplaycharactermod.cards.equipment.Drill;
+import autoplaycharactermod.cards.equipment.*;
 import autoplaycharactermod.cards.traitBastionCards.*;
 import autoplaycharactermod.cards.traitIgnitionCards.*;
 import autoplaycharactermod.cards.traitMixedCards.CrossedWires;
@@ -9,6 +9,7 @@ import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
 import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Arrays;
@@ -36,6 +37,30 @@ public class GeneralUtils {
             new ScorchedCore(),
             new ThermalSurge()
     );
+    private static final List<AbstractCard> EquipmentPool = Arrays.asList(
+            new Coolant(),
+            new Drill(),
+            new EnergyChamber(),
+            new FailSafe(),
+            new FireSupport(),
+            new Flamethrower(),
+            new GrapplingHook(),
+            new HeavyShield(),
+            new InstructionManual(),
+            new Metronome(),
+            new MicroMissiles(),
+            new PoisonMine(),
+            new PowerBank(),
+            new RocketPunch(),
+            new RustyBlade(),
+            new Shredder(),
+            new SmartGun(),
+            new TacticalVisor(),
+            new TeslaCoil(),
+            new TrashCannon(),
+            new TungstenCoat()
+    );
+
 
 
     public static String arrToString(Object[] arr) {
@@ -69,5 +94,10 @@ public class GeneralUtils {
     public static AbstractCard getRandomScavengeCard() {
         int index = AbstractDungeon.cardRandomRng.random(scavengeCardPool.size() - 1);
         return scavengeCardPool.get(index).makeCopy();
+    }
+
+    public static AbstractCard getRandomEquipmentCard() {
+        int index = AbstractDungeon.cardRandomRng.random(EquipmentPool.size() - 1);
+        return EquipmentPool.get(index).makeCopy();
     }
 }

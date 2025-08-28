@@ -2,6 +2,7 @@ package autoplaycharactermod;
 
 import autoplaycharactermod.actions.TutorialCaller;
 import autoplaycharactermod.cards.BaseCard;
+import autoplaycharactermod.cards.chargingCards.QuickReflex;
 import autoplaycharactermod.cards.equipment.TrashCannon;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionOne;
 import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionThree;
@@ -408,6 +409,8 @@ public class BasicMod implements
                 for (AbstractCard ca : group.group) {
                     if (ca instanceof DataCache) {
                         ((DataCache)ca).updateTextCount();
+                    }else if(ca instanceof QuickReflex){
+                        ((QuickReflex)ca).updateTextCount();
                     }
                 }
             }

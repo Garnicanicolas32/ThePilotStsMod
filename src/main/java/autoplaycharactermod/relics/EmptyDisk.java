@@ -2,6 +2,9 @@ package autoplaycharactermod.relics;
 
 import autoplaycharactermod.character.MyCharacter;
 import basemod.BaseMod;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 
 import static autoplaycharactermod.BasicMod.makeID;
 
@@ -17,6 +20,10 @@ public class EmptyDisk extends BaseRelic {
 
     public void onEquip() {
         BaseMod.MAX_HAND_SIZE += 4;
+        AbstractPlayer var10000 = AbstractDungeon.player;
+        var10000.potionSlots += 1;
+        AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots - 1));
+        AbstractDungeon.player.increaseMaxHp(8, true);
     }
 
     public void onUnequip() {

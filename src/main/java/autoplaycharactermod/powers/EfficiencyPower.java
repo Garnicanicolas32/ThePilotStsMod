@@ -24,14 +24,9 @@ public class EfficiencyPower extends BasePower {
         CardCrawlGame.sound.play("POWER_FLIGHT", 0.05F);
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
-        int saveAmount = AbstractDungeon.player.hasPower(SavePower.POWER_ID)
-                ? AbstractDungeon.player.getPower(SavePower.POWER_ID).amount
-                : 0;
-        if (saveAmount > 0) {
-            flash();
-            addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, Math.min(amount, saveAmount)));
-        }
+    public void triggerEject(){
+        flash();
+        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, amount));
     }
 
     public void updateDescription() {

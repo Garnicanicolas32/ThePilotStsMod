@@ -32,7 +32,7 @@ public class IgnitionProtocol extends TraitCard {
     public IgnitionProtocol() {
         super(ID, info, TraitColor.IGNITE, false);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(2, 1);
+        setMagic(2, 0);
         this.isMultiDamage = true;
         checkEvolve();
         if (!this.alreadyEvolved)

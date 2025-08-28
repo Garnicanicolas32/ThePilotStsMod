@@ -32,11 +32,15 @@ public class ScrapUncommonDefDex extends BaseCard {
         super(ID, info);
         returnToHand = true;
         tags.add(BasicMod.CustomTags.ScrapUncommon);
-        setMagic(MAGIC, MAGICUPG);
-        setBlock(BLOCK, BLOCKUPG);
+        setMagic(MAGIC);
+        setBlock(BLOCK);
         MultiCardPreview.add(this, new ScrapRareAtt(), new ScrapRareDef());
         tags.add(BasicMod.CustomTags.NoEnergyText);
         this.setDisplayRarity(CardRarity.UNCOMMON);
+    }
+
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override

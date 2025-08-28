@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.ChargePower;
@@ -21,13 +20,12 @@ public class DoubleOrNothing extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            -2 
+            -2
     );
 
     public DoubleOrNothing() {
         super(ID, info);
         returnToHand = true;
-        setMagic(1, 2);
         checkEvolve();
     }
 
@@ -38,10 +36,13 @@ public class DoubleOrNothing extends BaseCard {
         if (number > 0) {
             addToBot(new SFXAction("GUARDIAN_ROLL_UP"));
             AbstractDungeon.topLevelEffectsQueue.add(new StanceChangeParticleGenerator(p.hb.cX, p.hb.cY, "Neutral"));
-            addToBot(new ApplyPowerAction(p, p, new ChargePower(p, this.alreadyEvolved ? number * 2 : number)));
+            if (this.alreadyEvolved) {
+                addToBot(new ApplyPowerAction(p, p, new ChargePower(p, number * 2)));
+            } else
+                addToBot(new ApplyPowerAction(p, p, new ChargePower(p, this.upgraded ? number : number / 2)));
         }
         if (!this.alreadyEvolved)
-            addToBot(new LoseBlockAction(p, p, p.currentBlock / magicNumber));
+            addToBot(new LoseBlockAction(p, p, p.currentBlock));
         PlayOnce = false;
     }
 

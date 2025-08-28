@@ -2,7 +2,7 @@ package autoplaycharactermod.character;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.AutoplayTopCardAction;
-import autoplaycharactermod.cards.BaseCard;
+import autoplaycharactermod.actions.InnateAction;
 import autoplaycharactermod.cards.basic.*;
 import autoplaycharactermod.cards.equipment.Coolant;
 import autoplaycharactermod.cards.equipment.Drill;
@@ -26,10 +26,12 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -44,10 +46,10 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SneckoOil;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
+import org.apache.logging.log4j.Level;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -341,7 +343,7 @@ public class MyCharacter extends CustomPlayer {
     public static void targetCheck(AbstractMonster m) {
         if (AbstractDungeon.player.hasRelic(SecurityCamera.ID) && m != null && !m.isDeadOrEscaped()) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, AbstractDungeon.player.getRelic(SecurityCamera.ID)));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, 1, false)));
+            //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, 1, false)));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new VulnerablePower(m, 1, false)));
         }
         boolean activated = false;
@@ -390,15 +392,9 @@ public class MyCharacter extends CustomPlayer {
     public void applyStartOfCombatLogic() {
         super.applyStartOfCombatLogic();
         if (innateAmount > 0) {
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    for (int i = 0; i < innateAmount; i++) {
-                        AbstractDungeon.actionManager.addToTop(new AutoplayTopCardAction());
-                    }
-                    this.isDone = true;
-                }
-            });
+            for (int i = 0; i < innateAmount; i++) {
+                AbstractDungeon.actionManager.addToBottom(new InnateAction());
+            }
         }
 
         AbstractRelic scryStarter = getRelic(Lightbulb.ID);

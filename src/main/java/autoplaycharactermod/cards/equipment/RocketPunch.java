@@ -24,8 +24,8 @@ public class RocketPunch extends EquipmentCard {
             0 
     );
     private static final int BASE_HP = 30;
-    private static final int DAMAGE = 4;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 5;
+    private static final int UPG_DAMAGE = 1;
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 2;
 

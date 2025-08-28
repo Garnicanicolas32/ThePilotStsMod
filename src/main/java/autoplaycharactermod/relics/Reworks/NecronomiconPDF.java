@@ -35,7 +35,7 @@ public class NecronomiconPDF extends BaseRelic {
     public void onCardDraw(AbstractCard drawnCard) {
         if (drawnCard.type == AbstractCard.CardType.CURSE) {
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DuplicationPower(AbstractDungeon.player, 2)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DuplicationPower(AbstractDungeon.player, 1)));
         }
     }
 

@@ -5,6 +5,7 @@ import autoplaycharactermod.actions.EjectedEffectAction;
 import autoplaycharactermod.actions.ModifiedCardFromDeckToHandAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class FlashDrive extends BaseCard {
             -2 
     );
     private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 6;
+    private static final int UPG_MAGIC = 4;
 
     public FlashDrive() {
         super(ID, info);
@@ -61,6 +63,8 @@ public class FlashDrive extends BaseCard {
     }
 
     public void eject() {
+        if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
+            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         addToBot(new EjectedEffectAction());
         if (this.alreadyEvolved) {
             addToBot(new ModifiedCardFromDeckToHandAction(1, true));

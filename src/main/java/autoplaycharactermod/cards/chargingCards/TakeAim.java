@@ -20,10 +20,10 @@ public class TakeAim extends BaseCard {
             CardTarget.SELF,
             0 
     );
-    private static final int MAGIC = 9;
-    private static final int UPG_MAGIC = 6;
+    private static final int MAGIC = 7;
+    private static final int UPG_MAGIC = 4;
     private static final int CHARGE = 3;
-    private static final int CHARGE_UPG = -1;
+    private static final int CHARGE_UPG = 0;
 
     public TakeAim() {
         super(ID, info);

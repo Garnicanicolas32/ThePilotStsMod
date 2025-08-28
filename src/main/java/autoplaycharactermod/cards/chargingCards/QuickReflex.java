@@ -4,6 +4,8 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.EjectedEffectAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.powers.ChargePower;
+import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EjectLightingEffect;
@@ -19,6 +21,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,41 +35,45 @@ public class QuickReflex extends BaseCard {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 5;
     private static final int UPG_MAGIC = 2;
-    private static final int CAPACITY = 4;
+    private static final int CAPACITY = 5;
     private static final int UPG_CAPACITY = 3;
-    private static final int BLOCK = 4;
-    private static final int UPG_BLOCK = 3;
 
     public QuickReflex() {
         super(ID, info);
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
-        setBlock(BLOCK, UPG_BLOCK);
         setCustomVar("CAPACITY", CAPACITY, UPG_CAPACITY);
+        setCustomVar("WEAK", 1, 1);
         checkEvolve();
     }
 
     @Override
     public void evolveCard() {
         setMagic(2);
-        setBlock(12);
         super.evolveCard();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new SavePower(p, alreadyEvolved ? 12 : customVar("CAPACITY"))));
+        addToBot(new ApplyPowerAction(p, p, new ChargePower(p, alreadyEvolved ? 12 : customVar("CAPACITY"))));
+        addToBot(new ApplyPowerAction(MyCharacter.getTarget(), p, new WeakPower(p, customVar("WEAK"), false)));
         PlayOnce = false;
     }
 
-    @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Charge").PROPER_NAME, BasicMod.keywords.get("Charge").DESCRIPTION));
-        return customTooltips;
+    public void updateTextCount() {
+        if (!this.alreadyEvolved) {
+            if (upgraded)
+                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            else
+                this.rawDescription = cardStrings.DESCRIPTION;
+
+            if (BasicMod.energySpentTurn > 0)
+                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn) + cardStrings.EXTENDED_DESCRIPTION[2];
+            initializeDescription();
+        }
     }
 
     public void triggerOnManualDiscard() {
@@ -74,6 +81,8 @@ public class QuickReflex extends BaseCard {
     }
 
     public void eject() {
+        if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
+            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         if (this.alreadyEvolved) {
             addToBot(new EjectedEffectAction());
             addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));

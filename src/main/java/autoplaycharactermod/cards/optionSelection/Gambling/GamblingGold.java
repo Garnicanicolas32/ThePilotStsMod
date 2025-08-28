@@ -20,7 +20,7 @@ public class GamblingGold extends BaseCard {
             -2
     );
     private static final int MAGIC = 20;
-    private static final int MAGIC_UPG = 30;
+    private static final int MAGIC_UPG = 40;
 
     public GamblingGold() {
         super(ID, info);

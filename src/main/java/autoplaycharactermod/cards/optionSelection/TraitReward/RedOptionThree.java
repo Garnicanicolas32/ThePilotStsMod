@@ -34,7 +34,6 @@ public class RedOptionThree extends BaseCard {
     }
 
     public void onChoseThisOption() {
-        AbstractDungeon.player.maxHealth += magicNumber;
-        AbstractDungeon.player.heal(magicNumber);
+        AbstractDungeon.player.increaseMaxHp(magicNumber, true);
     }
 }

@@ -97,8 +97,8 @@
   },
   "${modID}:DataCache": {
     "NAME": "Data Cache",
-    "DESCRIPTION": "Gain !B! Block for every [E] [E] spent since last use.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block for every [E] spent since last use.",
+    "DESCRIPTION": "Gain Block equal to half the energy spent since last use.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the energy spent since last use.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block for every [E] spent this combat.",
       " NL (",
@@ -119,9 +119,8 @@
   "${modID}:Beacon": {
     "NAME": "Beacon",
     "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Add a random *Bastion card into your Discard Pile.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add a random *Bastion card into your Discard Pile.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block. NL Add 2 random *Bastion cards into your Discard Pile."
+      "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Add 2 random *Bastion cards into your Discard Pile."
     ]
   },
   "${modID}:RedOptionOne": {
@@ -238,7 +237,7 @@
   },
   "${modID}:NFT": {
     "NAME": "NFT",
-    "DESCRIPTION": "Gain !B! Block. NL Reduce Block by !M! for each *NFT in your deck.",
+    "DESCRIPTION": "Gain !B! Block. NL Loses !M! Block for each *NFT in your deck.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Gain 15 gold for each *NFT in your deck."
     ]
@@ -459,10 +458,12 @@
   },
   "${modID}:QuickReflex": {
     "NAME": "Quick Reflex",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !${modID}:CAPACITY! ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E] [E].",
+    "DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
+    "UPGRADE_DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block. NL Gain 12 ${modID}:Capacity. NL ${modID}:[#03befc]Ejected[]: Gain !B! Block. NL Gain [E] [E] ."
+      "${modID}:Charge 12. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: Gain !B! Block. NL Gain [E] [E] .",
+      " NL (",
+      " Spent)"
     ]
   },
   "${modID}:ArcBlasterMk": {
@@ -494,8 +495,8 @@
   },
   "${modID}:DoubleOrNothing": {
     "NAME": "Double Or Nothing",
-    "DESCRIPTION": "Double your ${modID}:Charge. NL Lose all your Block.",
-    "UPGRADE_DESCRIPTION": "Double your ${modID}:Charge. NL Lose half your Block.",
+    "DESCRIPTION": "${modID}:Charge equal to half your current ${modID}:Charge. NL Lose all your Block.",
+    "UPGRADE_DESCRIPTION": "Double your ${modID}:Charge. NL Lose all your Block.",
     "EXTENDED_DESCRIPTION": [
       "Triple your ${modID}:Charge."
     ]
@@ -517,14 +518,11 @@
   },
   "${modID}:Efficiency": {
     "NAME": "Efficiency",
-    "DESCRIPTION": "At the end of your turn, gain Block equal to ${modID}:Capacity, up to !M!.",
-    "EXTENDED_DESCRIPTION": [
-      "At the end of your turn, gain Block equal to ${modID}:Capacity, up to !M!. NL Gain !M! ${modID}:Capacity."
-    ]
+    "DESCRIPTION": "Whenever an [#03befc]Ejected[] effect is triggered, Gain !M! Block."
   },
   "${modID}:Virus": {
     "NAME": "Virus",
-    "DESCRIPTION": "Play the top !M! cards of your draw pile. NL ALL enemies gain 1 Strength.",
+    "DESCRIPTION": "Play the top !M! cards of your draw pile. NL Gain Vulnerable.",
     "EXTENDED_DESCRIPTION": [
       "Play the top !M! cards of your draw pile."
     ]
@@ -573,9 +571,9 @@
   },
   "${modID}:FieldBubble": {
     "NAME": "Field Bubble",
-    "DESCRIPTION": "Reduce all damage received this turn by !M!. NL Exhaust.",
+    "DESCRIPTION": "Reduce ALL damage received by !M! this turn. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Reduce all damage received this turn by !M!."
+      "Reduce ALL damage received by !M! this turn."
     ]
   },
   "${modID}:SpareParts": {
@@ -634,7 +632,6 @@
   "${modID}:InstructionManual": {
     "NAME": "Instruction Manual",
     "DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Shuffle an *Insight into your draw pile.",
-    "UPGRADE_DESCRIPTION": "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Shuffle !M! *Insight into your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "[#03befc]Shuffle[] [#03befc]Draw[] [#03befc]Pile[]: NL Gain !B! Block. NL Shuffle !M! *Insight into your draw pile."
     ]
@@ -663,7 +660,7 @@
   },
   "${modID}:TrashCannon": {
     "NAME": "Trash Cannon",
-    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Removing cards from your deck permanently increases damage by !M!.",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Removing cards from your deck permanently increases durability by !${modID}:DURABILITY! and damage by !M!.",
     "EXTENDED_DESCRIPTION": [
       "[#03befc]Turn[] [#03befc]Start[]: NL Deal !M! damage for every fusion made."
     ]
@@ -671,7 +668,6 @@
   "${modID}:FailSafe": {
     "NAME": "Fail Safe",
     "DESCRIPTION": "[#03befc]On [#03befc]Death[]: NL Heal to !M!% of your Max HP instead.",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]On [#03befc]Death[]: NL Heal to !M!% of your Max HP instead.",
     "EXTENDED_DESCRIPTION": [
       "${modID}:Deploy. NL [#03befc]On [#03befc]Death[]: NL Heal to !M!% of your Max HP instead. NL Exhaust."
     ]
@@ -685,7 +681,7 @@
   },
   "${modID}:TeslaCoil": {
     "NAME": "Tesla Coil",
-    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[], [#03befc]End[], ${modID}:[#03befc]Discard[]: NL Deal !D! damage."
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[], [#03befc]End[]: NL Deal !D! damage. ${modID}:[#03befc]Discard[]: NL ${modID}:Repair !M! durability."
   },
   "${modID}:SmartGun": {
     "NAME": "Smart Gun",
@@ -704,17 +700,17 @@
   "${modID}:RustyBlade": {
     "NAME": "Rusty Blade",
     "DESCRIPTION": "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Apply Poison equal to missing durability.",
-    "UPGRADE_DESCRIPTION": "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage. NL Apply Poison equal to missing durability.",
+    "UPGRADE_DESCRIPTION": "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Apply Poison equal to missing durability.",
     "EXTENDED_DESCRIPTION": [
       "${modID}:[#03befc]Equipped[], [#03befc]Turn[] [#03befc]Start[], [#03befc]Turn[] [#03befc]End[]: NL Deal !D! damage. NL Apply Poison equal to missing durability."
     ]
   },
   "${modID}:EnergyChamber": {
     "NAME": "Energy Chamber",
-    "DESCRIPTION": "[#03befc]Take[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Take[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
+    "DESCRIPTION": "[#03befc]Take[], [#03befc]Block[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Take[] ${modID}:[#03befc]Damage[]: NL Increase this card damage twice that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
+      "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] ${modID}:[#03befc]Damage[]: NL Increase this card damage twice that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
     ]
   },
   "${modID}:Drill": {
@@ -736,7 +732,7 @@
     "NAME": "Self Destruct",
     "DESCRIPTION": "${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted card.",
     "EXTENDED_DESCRIPTION": [
-      "Retain NL ${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted card."
+      "Retain NL ${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted Equipment."
     ]
   },
   "${modID}:EMPGrenade": {

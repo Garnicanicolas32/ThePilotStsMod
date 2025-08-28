@@ -19,7 +19,7 @@ public class GamblingLoseGold extends BaseCard {
             CardTarget.NONE,
             -2 
     );
-    private static final int MAGIC = 50;
+    private static final int MAGIC = 30;
 
     public GamblingLoseGold() {
         super(ID, info);

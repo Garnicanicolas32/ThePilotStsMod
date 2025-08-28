@@ -24,11 +24,11 @@ public class SneckoAI extends BaseRelic {
     }
 
     public void onEquip() {
-        AbstractDungeon.player.energy.energyMaster += 2;
+        AbstractDungeon.player.energy.energyMaster += 1;
     }
 
     public void onUnequip() {
-        AbstractDungeon.player.energy.energyMaster -= 2;
+        AbstractDungeon.player.energy.energyMaster -= 1;
     }
 
     @Override

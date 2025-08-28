@@ -68,7 +68,7 @@ public class ScryButton {
     }
 
     public void update() {
-        this.enabled = canTrigger && EnergyPanel.totalCount >= 1 && !AbstractDungeon.player.hasPower(HackedPower.POWER_ID);
+        this.enabled = canTrigger && EnergyPanel.totalCount >= 1;
         this.glow();// 68
         this.updateHoldProgress();// 69
         if (this.current_x != this.target_x) {// 71
@@ -155,7 +155,10 @@ public class ScryButton {
         AbstractDungeon.player.loseEnergy(1);
         if (AbstractDungeon.player.drawPile.isEmpty())
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-        AbstractDungeon.actionManager.addToBottom(new ScryAction(scryAmount));
+        if (AbstractDungeon.player.hasPower(HackedPower.POWER_ID))
+            AbstractDungeon.actionManager.addToBottom(new ScryAction(scryAmount - 1));
+        else
+            AbstractDungeon.actionManager.addToBottom(new ScryAction(scryAmount));
         BasicMod.energySpentTrigger();
     }
 

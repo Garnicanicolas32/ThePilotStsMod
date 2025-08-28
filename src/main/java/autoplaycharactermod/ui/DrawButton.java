@@ -2,6 +2,7 @@ package autoplaycharactermod.ui;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.AutoplayTopCardAction;
+import autoplaycharactermod.relics.Reworks.UnceasingBottom;
 import autoplaycharactermod.vfx.ButtonGlowEffect;
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
@@ -10,7 +11,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -76,7 +79,7 @@ public class DrawButton {
         this.enabled = canTrigger
                 && EnergyPanel.totalCount >= 1
                 && AbstractDungeon.player.discardPile.size() + AbstractDungeon.player.drawPile.size() > 0
-                && AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE;
+                && (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE || AbstractDungeon.player.hasRelic(UnceasingBottom.ID));
         this.glow();// 68
         this.updateHoldProgress();// 69
         if (this.current_x != this.target_x) {// 71
@@ -173,6 +176,10 @@ public class DrawButton {
                 AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, bubble, true));
                 return;
             }
+        }
+        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE && AbstractDungeon.player.hasRelic(UnceasingBottom.ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, AbstractDungeon.player.getRelic(UnceasingBottom.ID)));
+            AbstractDungeon.actionManager.addToBottom(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, false));
         }
         AbstractDungeon.player.loseEnergy(1);
         BasicMod.energySpentTrigger();

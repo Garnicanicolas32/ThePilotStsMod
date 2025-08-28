@@ -23,13 +23,12 @@ public class FailSafe extends EquipmentCard {
             0
     );
     private static final int BASE_HP = 1;
-    private static final int MAGIC = 20;
-    private static final int MAGICUPG = 10;
+    private static final int MAGIC = 10;
+    private static final int MAGICUPG = 20;
 
     public FailSafe() {
         super(ID, info, BASE_HP);
         tags.add(CardTags.HEALING);
-        setInnate(false, true);
         setMagic(MAGIC, MAGICUPG);
         checkEvolve();
     }
