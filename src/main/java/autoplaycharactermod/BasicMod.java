@@ -431,7 +431,7 @@ public class BasicMod implements
             AbstractDungeon.actionManager.addToTop(new TutorialCaller(0));
         }
 
-        GachaPull.resetPool();
+        GachaPull.cardsList = GachaPull.getList(true);
         energySpentCombat = 0;
         YellowPower.usedScrap = false;
         YellowPower.usedPotion = false;
@@ -518,5 +518,7 @@ public class BasicMod implements
         public static AbstractCard.CardTags NoEnergyText;
         @SpireEnum
         public static AbstractCard.CardTags skipVigor;
+        @SpireEnum
+        public static AbstractCard.CardTags ignoreDuplication;
     }
 }

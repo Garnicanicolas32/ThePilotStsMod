@@ -23,7 +23,7 @@ public class ScrapCommonDef extends BaseCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
-            0 
+            0
     );
     private static final int UPG = 4;
     private static final int SHIELD = 4;
@@ -38,7 +38,7 @@ public class ScrapCommonDef extends BaseCard {
         setMagic(MAGIC);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         if (BasicMod.evolved && CardCrawlGame.isInARun()
-                && AbstractDungeon.player.masterDeck != null){
+                && AbstractDungeon.player.masterDeck != null) {
             MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
             this.evolveCard();
         }
@@ -57,7 +57,7 @@ public class ScrapCommonDef extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new GainBlockAction(p, p, block));
             returnToHand = true;
@@ -65,8 +65,9 @@ public class ScrapCommonDef extends BaseCard {
             if (this.alreadyEvolved) {
                 addToBot(new HealAction(p, p, 3));
             } else {
-                addToBot(new SfxActionVolume("MAP_SELECT_1", 0f,3.8F));
-                addToBot(new ApplyPowerAction(p, p, new Crafting(p, 1)));
+                addToBot(new SfxActionVolume("MAP_SELECT_1", 0f, 3.8F));
+                if (!Duplicated)
+                    addToBot(new ApplyPowerAction(p, p, new Crafting(p, 1)));
                 addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber)));
             }
             returnToHand = false;

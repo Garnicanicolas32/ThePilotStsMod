@@ -38,5 +38,6 @@ public class YellowOptionOne extends BaseCard {
         AbstractDungeon.player.gainGold(magicNumber);
         for (int i = 0; i < magicNumber; i++)
             AbstractDungeon.effectList.add(new GainPennyEffect(this.current_x, this.current_y));
+        BasicMod.usedYellowJACKPOT = true;
     }
 }

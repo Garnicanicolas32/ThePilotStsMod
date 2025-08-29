@@ -34,5 +34,6 @@ public class BlueOptionTwo extends BaseCard {
 
     public void onChoseThisOption() {
         BasicMod.startWithBuffer = true;
+        BasicMod.usedBlueJACKPOT = true;
     }
 }

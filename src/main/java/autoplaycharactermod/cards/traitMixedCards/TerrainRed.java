@@ -30,6 +30,7 @@ public class TerrainRed extends TraitCard {
         super(ID, info, TraitCard.TraitColor.IGNITE, true);
         setSelfRetain(true);
         tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(BasicMod.CustomTags.ignoreDuplication);
         checkEvolve();
     }
 

@@ -33,5 +33,6 @@ public class BlueOptionOne extends BaseCard {
 
     public void onChoseThisOption() {
         BasicMod.startWithBarricade = true;
+        BasicMod.usedBlueJACKPOT = true;
     }
 }

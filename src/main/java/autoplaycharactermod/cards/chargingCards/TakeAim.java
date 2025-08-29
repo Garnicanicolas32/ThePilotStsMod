@@ -42,7 +42,7 @@ public class TakeAim extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             returnToHand = true;
             addToBot(new EmptyDeckShuffleAction());

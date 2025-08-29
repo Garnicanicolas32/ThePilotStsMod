@@ -21,7 +21,7 @@ public class ScrapUncommonDefDex extends BaseCard {
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
-            0 
+            0
     );
     private static final int MAGIC = 1;
     private static final int MAGICUPG = 1;
@@ -45,12 +45,13 @@ public class ScrapUncommonDefDex extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new GainBlockAction(p, p, block));
             returnToHand = true;
         } else {
-            addToBot(new ApplyPowerAction(p, p, new Crafting(p, 2)));
+            if (!Duplicated)
+                addToBot(new ApplyPowerAction(p, p, new Crafting(p, 2)));
             addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
             returnToHand = false;
             setExhaust(true);

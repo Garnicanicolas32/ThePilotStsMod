@@ -2,11 +2,9 @@ package autoplaycharactermod.cards;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.SfxActionVolume;
-import autoplaycharactermod.cards.equipment.FailSafe;
-import autoplaycharactermod.cards.equipment.RocketPunch;
-import autoplaycharactermod.cards.equipment.Shredder;
-import autoplaycharactermod.cards.equipment.SmartGun;
+import autoplaycharactermod.cards.equipment.*;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
 import autoplaycharactermod.relics.OilCan;
 import autoplaycharactermod.relics.Reworks.StrangeFork;
 import autoplaycharactermod.ui.DurabilityTutorial;
@@ -18,10 +16,8 @@ import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,17 +26,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
-public abstract class EquipmentCard extends BaseCard  {
+public abstract class EquipmentCard extends BaseCard {
 
     protected static final UIStrings descriptor = CardCrawlGame.languagePack.getUIString(makeID("ComboTags"));
     public int equipmentHp;
@@ -54,6 +47,7 @@ public abstract class EquipmentCard extends BaseCard  {
         this.returnToHand = true;
         this.equipmentMaxHp = hp;
         this.equipmentHp = hp;
+        this.tags.add(BasicMod.CustomTags.ignoreDuplication);
         CardModifierManager.addModifier(this, new EquipmentVisualModifier());
     }
 
@@ -77,6 +71,13 @@ public abstract class EquipmentCard extends BaseCard  {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (Duplicated && this instanceof EnergyChamber) {
+            Equipped = false;
+            returnToHand = false;
+            onUnequip();
+            return;
+        }
+
         if (equipmentHp < 1) {
             addToBot(new SfxActionVolume("ORB_FROST_EVOKE", 0f, 2.5F));
             setExhaust(true);
@@ -122,12 +123,8 @@ public abstract class EquipmentCard extends BaseCard  {
             }
         });
 
-        if (!(this instanceof RocketPunch) && this.type == CardType.ATTACK && AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(VigorPower.POWER_ID).flash();
-            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, VigorPower.POWER_ID));
-        }
-        if (this.type == CardType.ATTACK && AbstractDungeon.player.hasPower(PenNibPower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, PenNibPower.POWER_ID));
+        if (!(this instanceof RocketPunch) && this.type == CardType.ATTACK) {
+            VigorPenNibDuplicationPatch.checkPenNibVigor();
         }
         if (!(this instanceof Shredder) && AbstractDungeon.player.hasRelic(OilCan.ID)) {
             if (this instanceof SmartGun) {

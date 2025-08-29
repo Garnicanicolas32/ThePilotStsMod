@@ -4,9 +4,9 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
 import autoplaycharactermod.cards.traitBastionCards.FeedbackLoop;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -24,8 +23,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 import java.util.ArrayList;
@@ -71,7 +68,7 @@ public class SelfDestruct extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             returnToHand = true;
         } else {
@@ -89,14 +86,7 @@ public class SelfDestruct extends BaseCard {
                             addToBot(new VFXAction(new ExplosionSmallEffect(mon.hb.cX, mon.hb.cY)));
                     }
                     addToBot(new DamageAllEnemiesAction(p, damage * cards.size(), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
-                    if (p.hasPower(VigorPower.POWER_ID)) {
-                        p.getPower(VigorPower.POWER_ID).flash();
-                        addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
-                    }
-                    if (p.hasPower(PenNibPower.POWER_ID)) {
-                        p.getPower(PenNibPower.POWER_ID).flash();
-                        addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
-                    }
+                    VigorPenNibDuplicationPatch.checkPenNibVigor();
                 }
             }));
         }

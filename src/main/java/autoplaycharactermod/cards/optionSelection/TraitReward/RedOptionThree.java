@@ -35,5 +35,6 @@ public class RedOptionThree extends BaseCard {
 
     public void onChoseThisOption() {
         AbstractDungeon.player.increaseMaxHp(magicNumber, true);
+        BasicMod.usedRedJACKPOT = true;
     }
 }

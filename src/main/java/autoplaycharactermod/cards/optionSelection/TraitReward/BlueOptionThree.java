@@ -34,5 +34,6 @@ public class BlueOptionThree extends BaseCard {
 
     public void onChoseThisOption() {
         BasicMod.startWithArtifact = true;
+        BasicMod.usedBlueJACKPOT = true;
     }
 }

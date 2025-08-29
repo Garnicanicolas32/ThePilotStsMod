@@ -5,18 +5,17 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class ScrapCommon extends BaseCard {
@@ -26,7 +25,7 @@ public class ScrapCommon extends BaseCard {
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,
-            0 
+            0
     );
     private static final int DAMAGE = 4;
     private static final int UPG = 4;
@@ -43,7 +42,7 @@ public class ScrapCommon extends BaseCard {
         tags.add(BasicMod.CustomTags.skipVigor);
         MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
         if (BasicMod.evolved && CardCrawlGame.isInARun()
-                && AbstractDungeon.player.masterDeck != null){
+                && AbstractDungeon.player.masterDeck != null) {
             this.evolveCard();
         }
     }
@@ -57,24 +56,18 @@ public class ScrapCommon extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            if (p.hasPower(VigorPower.POWER_ID)) {
-                p.getPower(VigorPower.POWER_ID).flash();
-                addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
-            }
-            if (p.hasPower(PenNibPower.POWER_ID)) {
-                p.getPower(PenNibPower.POWER_ID).flash();
-                addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
-            }
+            VigorPenNibDuplicationPatch.checkPenNibVigor();
             returnToHand = true;
         } else {
             if (this.alreadyEvolved) {
                 addToBot(new HealAction(p, p, 3));
             } else {
-                addToBot(new SfxActionVolume("MAP_SELECT_1", 0f,3.8F));
-                addToBot(new ApplyPowerAction(p, p, new Crafting(p, 1)));
+                addToBot(new SfxActionVolume("MAP_SELECT_1", 0f, 3.8F));
+                if (!Duplicated)
+                    addToBot(new ApplyPowerAction(p, p, new Crafting(p, 1)));
                 addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
             }
             returnToHand = false;

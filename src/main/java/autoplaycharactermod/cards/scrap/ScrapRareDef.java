@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,7 +24,7 @@ public class ScrapRareDef extends BaseCard {
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
-            0 
+            0
     );
     private static final int BLOCK = 13;
     private static final int BLOCKUPG = 5;
@@ -48,7 +47,7 @@ public class ScrapRareDef extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce&&!Duplicated) {
             PlayOnce = false;
             addToBot(new GainBlockAction(p, p, block));
             returnToHand = true;
@@ -56,7 +55,8 @@ public class ScrapRareDef extends BaseCard {
             addToBot(new SFXAction("STANCE_ENTER_CALM"));
             addToBot(new VFXAction(new SanctityEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
             addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, magicNumber)));
-            addToBot(new ApplyPowerAction(p, p, new Crafting(p, 3)));
+            if (!Duplicated)
+                addToBot(new ApplyPowerAction(p, p, new Crafting(p, 3)));
             returnToHand = false;
             setExhaust(true);
         }

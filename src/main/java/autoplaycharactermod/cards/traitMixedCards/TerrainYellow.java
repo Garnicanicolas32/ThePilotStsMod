@@ -28,6 +28,7 @@ public class TerrainYellow extends TraitCard {
         super(ID, info, TraitColor.SCAVENGE, true);
         setSelfRetain(true);
         tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(BasicMod.CustomTags.ignoreDuplication);
         checkEvolve();
     }
 

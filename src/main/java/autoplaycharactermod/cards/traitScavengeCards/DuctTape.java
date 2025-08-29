@@ -4,17 +4,14 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DuctTapeAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
 import autoplaycharactermod.util.CardStats;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class DuctTape extends TraitCard {
     public static final String ID = makeID("DuctTape");
@@ -23,7 +20,7 @@ public class DuctTape extends TraitCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            0 
+            0
     );
     private static final int DAMAGE = 3;
     private static final int UPG_DAMAGE = 2;
@@ -44,24 +41,18 @@ public class DuctTape extends TraitCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             returnToHand = true;
             addPower();
         } else {
             removePower();
             addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            if (alreadyEvolved){
-                addToBot(new AddTemporaryHPAction(p, AbstractDungeon.player, 2));
+            if (alreadyEvolved) {
+                addToBot(new AddTemporaryHPAction(p, p, 2));
             }
-            if (p.hasPower(VigorPower.POWER_ID)) {
-                p.getPower(VigorPower.POWER_ID).flash();
-                addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
-            }
-            if (p.hasPower(PenNibPower.POWER_ID)) {
-                p.getPower(PenNibPower.POWER_ID).flash();
-                addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
-            }
+            VigorPenNibDuplicationPatch.checkPenNibVigor();
             returnToHand = false;
         }
     }

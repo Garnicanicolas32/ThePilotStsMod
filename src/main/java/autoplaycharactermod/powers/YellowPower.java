@@ -158,22 +158,14 @@ public class YellowPower extends BasePower {
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (this.amount > 1 && !usedPotion) {
-            sparkles();
-            addToBot(new SFXAction("UNLOCK_PING"));
-            if (!ConfigPanel.lessParticles)
-                AbstractDungeon.effectList.add(new GachaPullEffect(25));
-            ArrayList<AbstractCard> possiblecards = rewardlist();
-            Collections.shuffle(possiblecards, AbstractDungeon.cardRandomRng.random);
-            ArrayList<AbstractCard> RewardChoices = new ArrayList<>();
-            for (int i = 0; i < 2 && i < possiblecards.size(); i++) {
-                RewardChoices.add(possiblecards.get(i).makeCopy());
-            }
-            addToBot(new ChooseOneAction(RewardChoices));
-            usedPotion = true;
-
-
+        if (this.amount > 6 && !BasicMod.usedYellowJACKPOT) {
+            ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
+            stanceChoices.add(new YellowOptionThree());
+            stanceChoices.add(new YellowOptionTwo());
+            stanceChoices.add(new YellowOptionOne());
+            addToBot(new ChooseOneAction(stanceChoices));
         }
+
         if (this.amount > 2 && usesGold < 2) {
             sparkles();
             addToBot(new GainGoldAction(BasicMod.scavengeCount));
@@ -208,20 +200,27 @@ public class YellowPower extends BasePower {
                 usedUpgrade = true;
             }
         }
-        if (this.amount > 6 && !BasicMod.usedYellowJACKPOT) {
-            BasicMod.usedYellowJACKPOT = true;
-            ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-            stanceChoices.add(new YellowOptionThree());
-            stanceChoices.add(new YellowOptionTwo());
-            stanceChoices.add(new YellowOptionOne());
-            addToBot(new ChooseOneAction(stanceChoices));
-        }
+
     }
 
     public void atEndOfTurn(boolean isPlayer) {
         if (this.amount > 0) {
             sparkles();
             addToBot(new AddTemporaryHPAction(owner, owner, PUNISHMENTAMOUNT));
+        }
+        if (this.amount > 1 && !usedPotion) {
+            sparkles();
+            addToBot(new SFXAction("UNLOCK_PING"));
+            if (!ConfigPanel.lessParticles)
+                AbstractDungeon.effectList.add(new GachaPullEffect(25));
+            ArrayList<AbstractCard> possiblecards = rewardlist();
+            Collections.shuffle(possiblecards, AbstractDungeon.cardRandomRng.random);
+            ArrayList<AbstractCard> RewardChoices = new ArrayList<>();
+            for (int i = 0; i < 2 && i < possiblecards.size(); i++) {
+                RewardChoices.add(possiblecards.get(i).makeCopy());
+            }
+            addToBot(new ChooseOneAction(RewardChoices));
+            usedPotion = true;
         }
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, YellowPower.POWER_ID));
     }

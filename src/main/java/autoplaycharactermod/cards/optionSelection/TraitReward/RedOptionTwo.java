@@ -34,5 +34,6 @@ public class RedOptionTwo extends BaseCard {
 
     public void onChoseThisOption() {
         BasicMod.startWithLessHP = true;
+        BasicMod.usedRedJACKPOT = true;
     }
 }

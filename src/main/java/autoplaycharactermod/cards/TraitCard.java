@@ -1,14 +1,12 @@
 package autoplaycharactermod.cards;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.actions.TutorialCaller;
 import autoplaycharactermod.cards.traitBastionCards.Beacon;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.powers.YellowPower;
-import autoplaycharactermod.ui.PilotTutorials;
 import autoplaycharactermod.ui.TraitTutorials;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.TraitFlashesEffect;
@@ -23,7 +21,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -31,9 +28,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
-public abstract class TraitCard extends BaseCard implements SpawnModificationCard{
+public abstract class TraitCard extends BaseCard implements SpawnModificationCard {
 
     private static final UIStrings descriptor = CardCrawlGame.languagePack.getUIString(makeID("ComboTags"));
     protected boolean countsTwiceOnUpgrade = false;
@@ -128,46 +124,50 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
     }
 
     public void addPower() {
-        int amount = (this.alreadyEvolved || upgraded) && countsTwiceOnUpgrade ? 2 : 1;
-        switch (traitColor) {
-            case BASTION:
-                AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(0.3F, 0.3F, 1.0F, 1F)));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BluePower(AbstractDungeon.player, amount)));
-                break;
-            case IGNITE:
-                AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(1.0F, 0.1F, 0.1F, 1F)));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RedPower(AbstractDungeon.player, amount)));
-                break;
-            case SCAVENGE:
-                AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(1.0F, 1.0F, 0.1F, 1F)));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new YellowPower(AbstractDungeon.player, amount)));
-                break;
-            case OTHER:
-                AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(1.0F, 0.1F, 1.0F, 1F)));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new YellowPower(AbstractDungeon.player, amount)));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BluePower(AbstractDungeon.player, amount)));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RedPower(AbstractDungeon.player, amount)));
-                break;
+        if (!this.Duplicated) {
+            int amount = (this.alreadyEvolved || upgraded) && countsTwiceOnUpgrade ? 2 : 1;
+            switch (traitColor) {
+                case BASTION:
+                    AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(0.3F, 0.3F, 1.0F, 1F)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BluePower(AbstractDungeon.player, amount)));
+                    break;
+                case IGNITE:
+                    AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(1.0F, 0.1F, 0.1F, 1F)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RedPower(AbstractDungeon.player, amount)));
+                    break;
+                case SCAVENGE:
+                    AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(1.0F, 1.0F, 0.1F, 1F)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new YellowPower(AbstractDungeon.player, amount)));
+                    break;
+                case OTHER:
+                    AbstractDungeon.effectsQueue.add(new TraitFlashesEffect(new Color(1.0F, 0.1F, 1.0F, 1F)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new YellowPower(AbstractDungeon.player, amount)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BluePower(AbstractDungeon.player, amount)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RedPower(AbstractDungeon.player, amount)));
+                    break;
+            }
         }
     }
 
     public void removePower() {
-        int amount = (this.alreadyEvolved || upgraded) && countsTwiceOnUpgrade ? 2 : 1;
-        switch (traitColor) {
-            case BASTION:
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, BluePower.POWER_ID, amount));
-                break;
-            case IGNITE:
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, RedPower.POWER_ID, amount));
-                break;
-            case SCAVENGE:
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, YellowPower.POWER_ID, amount));
-                break;
-            case OTHER:
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, YellowPower.POWER_ID, amount));
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, BluePower.POWER_ID, amount));
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, RedPower.POWER_ID, amount));
-                break;
+        if (!this.Duplicated) {
+            int amount = (this.alreadyEvolved || upgraded) && countsTwiceOnUpgrade ? 2 : 1;
+            switch (traitColor) {
+                case BASTION:
+                    addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, BluePower.POWER_ID, amount));
+                    break;
+                case IGNITE:
+                    addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, RedPower.POWER_ID, amount));
+                    break;
+                case SCAVENGE:
+                    addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, YellowPower.POWER_ID, amount));
+                    break;
+                case OTHER:
+                    addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, YellowPower.POWER_ID, amount));
+                    addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, BluePower.POWER_ID, amount));
+                    addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, RedPower.POWER_ID, amount));
+                    break;
+            }
         }
     }
 
@@ -232,7 +232,7 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
                     this.beginGlowing();
                     break;
             }
-        }else {
+        } else {
             this.stopGlowing();
         }
     }

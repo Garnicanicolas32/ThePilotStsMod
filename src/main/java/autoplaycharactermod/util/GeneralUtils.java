@@ -4,10 +4,7 @@ import autoplaycharactermod.cards.equipment.*;
 import autoplaycharactermod.cards.traitBastionCards.*;
 import autoplaycharactermod.cards.traitIgnitionCards.*;
 import autoplaycharactermod.cards.traitMixedCards.CrossedWires;
-import autoplaycharactermod.cards.traitScavengeCards.CouponStamp;
-import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
-import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
-import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
+import autoplaycharactermod.cards.traitScavengeCards.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,21 +18,25 @@ public class GeneralUtils {
             new Beacon(),
             new Cryostasis(),
             new TakeCover(),
-            new Flash()
+            new Flash(),
+            new HeavyShield()
     );
     private static final List<AbstractCard> scavengeCardPool = Arrays.asList(
             new GachaPull(),
             new CouponStamp(),
             new DuctTape(),
             new LostAndFound(),
-            new Drill()
+            new Drill(),
+            new NFT(),
+            new TrashCannon()
     );
     private static final List<AbstractCard> IgnitionCardPool = Arrays.asList(
             new BurningPayload(),
             new CombustionRounds(),
             new IgnitionProtocol(),
             new ScorchedCore(),
-            new ThermalSurge()
+            new ThermalSurge(),
+            new Flamethrower()
     );
     private static final List<AbstractCard> EquipmentPool = Arrays.asList(
             new Coolant(),

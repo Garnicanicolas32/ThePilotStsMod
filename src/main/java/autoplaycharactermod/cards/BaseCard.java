@@ -35,6 +35,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
     final protected Map<String, LocalVarInfo> cardVariables = new HashMap<>();
     public boolean PlayOnce = true;
+    public boolean Duplicated = false;
     public boolean alreadyEvolved = false;
     public boolean dontsparkle = false;
     protected CardStrings cardStrings;

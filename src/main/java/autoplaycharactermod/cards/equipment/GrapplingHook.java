@@ -28,6 +28,7 @@ public class GrapplingHook extends EquipmentCard {
         super(ID, info, BASE_HP);
         setBlock(BLOCK, UPG_BLOCK);
         checkEvolve();
+        this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
     }
 
     @Override

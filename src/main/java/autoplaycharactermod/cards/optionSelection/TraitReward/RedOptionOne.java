@@ -32,5 +32,6 @@ public class RedOptionOne extends BaseCard {
 
     public void onChoseThisOption() {
         BasicMod.startWithDemon = true;
+        BasicMod.usedRedJACKPOT = true;
     }
 }

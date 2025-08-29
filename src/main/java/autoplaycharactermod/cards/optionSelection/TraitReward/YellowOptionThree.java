@@ -35,6 +35,7 @@ public class YellowOptionThree extends BaseCard {
     public void onChoseThisOption() {
         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
+        BasicMod.usedYellowJACKPOT = true;
     }
 
     public void onVictory() {

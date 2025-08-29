@@ -30,6 +30,7 @@ public class TerrainBlue extends TraitCard {
         super(ID, info, TraitColor.BASTION, true);
         setSelfRetain(true);
         tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(BasicMod.CustomTags.ignoreDuplication);
         checkEvolve();
     }
 

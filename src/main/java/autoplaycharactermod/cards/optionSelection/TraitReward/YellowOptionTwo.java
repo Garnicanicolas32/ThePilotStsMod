@@ -60,5 +60,6 @@ public class YellowOptionTwo extends BaseCard {
             } else
                 break;
         }
+        BasicMod.usedYellowJACKPOT = true;
     }
 }

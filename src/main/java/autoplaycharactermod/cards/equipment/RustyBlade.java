@@ -1,5 +1,6 @@
 package autoplaycharactermod.cards.equipment;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
@@ -29,6 +30,7 @@ public class RustyBlade extends EquipmentCard {
         super(ID, info, BASE_HP);
         setDamage(DAMAGE, DAMAGE_UPG);
         checkEvolve();
+        this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
     }
 
     @Override

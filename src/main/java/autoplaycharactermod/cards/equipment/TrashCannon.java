@@ -5,7 +5,6 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
-import autoplaycharactermod.cards.traitScavengeCards.LostAndFound;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.YellowPower;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -48,8 +47,8 @@ public class TrashCannon extends EquipmentCard {
         misc = DAMAGE;
         setDamage(misc, DAMAGE_UPG);
         setMagic(MAGIC, MAGIC_UPG);
-        setCustomVar("DURABILITY", 1,1);
-            setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
+        setCustomVar("DURABILITY", 1, 1);
+        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.GOLD.cpy());
         FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Scavenge").DESCRIPTION);
         checkEvolve();

@@ -112,7 +112,7 @@ public class BluePower extends BasePower {
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         if (this.amount > 6 && !BasicMod.usedBlueJACKPOT) {
-            BasicMod.usedBlueJACKPOT = true;
+
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new BlueOptionOne());
             stanceChoices.add(new BlueOptionTwo());

@@ -26,13 +26,14 @@ public class GachaPull extends TraitCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            -2 
+            -2
     );
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
     private static final int COST = 20;
     private static final int UPG_COST = 10;
-    public static ArrayList<AbstractCard> cardsList = new ArrayList<>();
+    public static ArrayList<AbstractCard> cardsList;
+    private final static ArrayList<AbstractCard> ShowList = getList(true);
     private float rotationTimer;
     private int previewIndex;
 
@@ -42,44 +43,10 @@ public class GachaPull extends TraitCard {
         setMagic(MAGIC, UPG_MAGIC);
         tags.add(CardTags.HEALING);
         setCustomVar("COST", COST, UPG_COST);
-        resetPool();
         checkEvolve();
     }
 
-    public static void resetPool() {
-        cardsList.clear();
-        cardsList.add(new GamblingWeak());
-        cardsList.add(new GamblingFrail());
-        cardsList.add(new GamblingGainCurse());
-        cardsList.add(new GamblingLoseEnergy());
-        cardsList.add(new GamblingLoseGold());
-        cardsList.add(new GamblingLoseHP());
-        cardsList.add(new GamblingVulnerable());
-        cardsList.add(new GamblingNoBlock());
-
-        cardsList.add(new GamblingScrap());
-        cardsList.add(new GamblingBlock());
-        cardsList.add(new GamblingBuffer());
-        cardsList.add(new GamblingDamage());
-        cardsList.add(new GamblingCardReward());
-        cardsList.add(new GamblingCreateScavenge());
-        cardsList.add(new GamblingDexterity());
-        cardsList.add(new GamblingEnergy());
-        cardsList.add(new GamblingGold());
-        cardsList.add(new GamblingHeal());
-        cardsList.add(new GamblingPlatedArmor());
-        cardsList.add(new GamblingPotion());
-        cardsList.add(new GamblingRelic());
-        cardsList.add(new GamblingScry());
-        cardsList.add(new GamblingStrength());
-        cardsList.add(new GamblingStun());
-        cardsList.add(new GamblingUpgradeCards());
-        for (AbstractCard c : cardsList){
-            c.upgrade();
-        }
-    }
-
-    private static ArrayList<AbstractCard> evolvedlist() {
+    public static ArrayList<AbstractCard> getList(boolean negatives) {
         ArrayList<AbstractCard> listreturn = new ArrayList<AbstractCard>();
         listreturn.add(new GamblingScrap());
         listreturn.add(new GamblingBlock());
@@ -98,7 +65,17 @@ public class GachaPull extends TraitCard {
         listreturn.add(new GamblingStrength());
         listreturn.add(new GamblingStun());
         listreturn.add(new GamblingUpgradeCards());
-        for (AbstractCard c : listreturn){
+        if (negatives) {
+            listreturn.add(new GamblingWeak());
+            listreturn.add(new GamblingFrail());
+            listreturn.add(new GamblingGainCurse());
+            listreturn.add(new GamblingLoseEnergy());
+            listreturn.add(new GamblingLoseGold());
+            listreturn.add(new GamblingLoseHP());
+            listreturn.add(new GamblingVulnerable());
+            listreturn.add(new GamblingNoBlock());
+        }
+        for (AbstractCard c : listreturn) {
             c.upgrade();
         }
         return listreturn;
@@ -117,12 +94,12 @@ public class GachaPull extends TraitCard {
         if (hb.hovered) {
             if (rotationTimer <= 0F) {
                 rotationTimer = 1F;
-                if (cardsList.isEmpty()) {
+                if (ShowList.isEmpty()) {
                     cardsToPreview = CardLibrary.cards.get("Madness");
                 } else {
-                    cardsToPreview = cardsList.get(previewIndex);
+                    cardsToPreview = ShowList.get(previewIndex);
                 }
-                if (previewIndex == cardsList.size() - 1) {
+                if (previewIndex == ShowList.size() - 1) {
                     previewIndex = 0;
                 } else {
                     previewIndex++;
@@ -130,6 +107,7 @@ public class GachaPull extends TraitCard {
             } else {
                 rotationTimer -= Gdx.graphics.getDeltaTime();
             }
+
         }
     }
 
@@ -152,7 +130,7 @@ public class GachaPull extends TraitCard {
                 addToBot(new ChooseOneAction(stanceChoices));
             }
         } else if (alreadyEvolved) {
-            ArrayList<AbstractCard> possiblecards = evolvedlist();
+            ArrayList<AbstractCard> possiblecards = getList(false);
             Collections.shuffle(possiblecards, AbstractDungeon.cardRandomRng.random);
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             for (int i = 0; i < magicNumber && i < possiblecards.size(); i++) {

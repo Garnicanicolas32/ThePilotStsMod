@@ -101,7 +101,6 @@ public class RedPower extends BasePower {
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         if (this.amount > 6 && !BasicMod.usedRedJACKPOT) {
-            BasicMod.usedRedJACKPOT = true;
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new RedOptionOne());
             stanceChoices.add(new RedOptionTwo());

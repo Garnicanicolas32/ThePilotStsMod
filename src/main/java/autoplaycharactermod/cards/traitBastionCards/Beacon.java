@@ -45,7 +45,7 @@ public class Beacon extends TraitCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new GainBlockAction(p, p, block));
             addPower();

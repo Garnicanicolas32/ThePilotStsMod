@@ -4,18 +4,16 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 @NoPools
 public class ScrapUncommonAttStr extends BaseCard {
@@ -50,20 +48,14 @@ public class ScrapUncommonAttStr extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (PlayOnce) {
+        if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            if (p.hasPower(VigorPower.POWER_ID)) {
-                p.getPower(VigorPower.POWER_ID).flash();
-                addToBot(new RemoveSpecificPowerAction(p, p, "Vigor"));
-            }
-            if (p.hasPower(PenNibPower.POWER_ID)) {
-                p.getPower(PenNibPower.POWER_ID).flash();
-                addToBot(new RemoveSpecificPowerAction(p, p, PenNibPower.POWER_ID));
-            }
+            VigorPenNibDuplicationPatch.checkPenNibVigor();
             returnToHand = true;
         } else {
-            addToBot(new ApplyPowerAction(p, p, new Crafting(p, 2)));
+            if (!Duplicated)
+                addToBot(new ApplyPowerAction(p, p, new Crafting(p, 2)));
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
             returnToHand = false;
             setExhaust(true);

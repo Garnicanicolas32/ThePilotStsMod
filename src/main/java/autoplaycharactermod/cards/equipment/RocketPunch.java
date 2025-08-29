@@ -1,13 +1,12 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -48,13 +47,9 @@ public class RocketPunch extends EquipmentCard {
     public void Activate() {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
-
-        if (AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(VigorPower.POWER_ID).flash();
-            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Vigor"));
-        }
         calculateCardDamage(null);
         addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        VigorPenNibDuplicationPatch.checkPenNibVigor();
         super.Activate();
     }
 
@@ -65,7 +60,6 @@ public class RocketPunch extends EquipmentCard {
 
     public void atTurnStart() {
         if (!Equipped) return;
-
         AbstractPlayer p = AbstractDungeon.player;
         if (this.alreadyEvolved)
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));

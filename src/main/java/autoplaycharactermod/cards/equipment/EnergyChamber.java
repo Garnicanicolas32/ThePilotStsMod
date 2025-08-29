@@ -1,5 +1,6 @@
 package autoplaycharactermod.cards.equipment;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.EnergyChamberAction;
 import autoplaycharactermod.actions.SfxActionVolume;
@@ -30,12 +31,14 @@ public class EnergyChamber extends EquipmentCard {
         setInnate(false, true);
         setDamage(1);
         checkEvolve();
+        this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
     }
 
     @Override
     public void evolveCard() {
         setInnate(true);
         super.evolveCard();
+
     }
 
     protected void onEquip() {
