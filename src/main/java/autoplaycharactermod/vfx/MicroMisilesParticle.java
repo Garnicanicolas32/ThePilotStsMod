@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.CatmullRomSpline;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -34,7 +33,7 @@ public class MicroMisilesParticle extends AbstractGameEffect {
 
     private Vector2 target;
 
-    private float currentSpeed = 0.0F;
+    private float currentSpeed;
 
     private static final float MAX_VELOCITY = 4000.0F * Settings.scale;
 
@@ -43,7 +42,7 @@ public class MicroMisilesParticle extends AbstractGameEffect {
     private static final float DST_THRESHOLD = 42.0F * Settings.scale;
 
     private float rotation;
-    private boolean rotateClockwise = true;
+    private boolean rotateClockwise;
     private boolean stopRotating = false;
     private boolean facingLeft;
     private boolean sound;
@@ -153,7 +152,7 @@ public class MicroMisilesParticle extends AbstractGameEffect {
             int i;
             for (i = this.points.length - 1; i > 0; i--) {
                 if (this.points[i] != null) {
-                    sb.draw((TextureRegion)this.img, (this.points[i]).x - (this.img.packedWidth / 2), (this.points[i]).y - (this.img.packedHeight / 2), this.img.packedWidth / 2.0F, this.img.packedHeight / 2.0F, this.img.packedWidth, this.img.packedHeight, scaleCpy * 1.5F, scaleCpy * 1.5F, this.rotation);
+                    sb.draw((TextureRegion)this.img, (this.points[i]).x - (this.img.packedWidth / 2f), (this.points[i]).y - (this.img.packedHeight / 2f), this.img.packedWidth / 2.0F, this.img.packedHeight / 2.0F, this.img.packedWidth, this.img.packedHeight, scaleCpy * 1.5F, scaleCpy * 1.5F, this.rotation);
                     scaleCpy *= 0.98F;
                 }
             }
@@ -162,7 +161,7 @@ public class MicroMisilesParticle extends AbstractGameEffect {
             scaleCpy = this.scale;
             for (i = this.points.length - 1; i > 0; i--) {
                 if (this.points[i] != null) {
-                    sb.draw((TextureRegion)this.img, (this.points[i]).x - (this.img.packedWidth / 2), (this.points[i]).y - (this.img.packedHeight / 2), this.img.packedWidth / 2.0F, this.img.packedHeight / 2.0F, this.img.packedWidth, this.img.packedHeight, scaleCpy, scaleCpy, this.rotation);
+                    sb.draw((TextureRegion)this.img, (this.points[i]).x - (this.img.packedWidth / 2f), (this.points[i]).y - (this.img.packedHeight / 2f), this.img.packedWidth / 2.0F, this.img.packedHeight / 2.0F, this.img.packedWidth, this.img.packedHeight, scaleCpy, scaleCpy, this.rotation);
                     scaleCpy *= 0.98F;
                 }
             }

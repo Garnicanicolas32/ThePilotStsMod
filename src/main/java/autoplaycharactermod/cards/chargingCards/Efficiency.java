@@ -4,7 +4,6 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.EfficiencyPower;
-import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

@@ -1,10 +1,10 @@
 package autoplaycharactermod.powers;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.cards.optionSelection.Gambling.*;
-import autoplaycharactermod.cards.optionSelection.TraitReward.YellowOptionOne;
-import autoplaycharactermod.cards.optionSelection.TraitReward.YellowOptionThree;
-import autoplaycharactermod.cards.optionSelection.TraitReward.YellowOptionTwo;
+import autoplaycharactermod.cards.optionSelection.gambling.*;
+import autoplaycharactermod.cards.optionSelection.traitReward.YellowOptionOne;
+import autoplaycharactermod.cards.optionSelection.traitReward.YellowOptionThree;
+import autoplaycharactermod.cards.optionSelection.traitReward.YellowOptionTwo;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.ui.ScrapReward;
 import autoplaycharactermod.vfx.GachaPullEffect;
@@ -51,26 +51,31 @@ public class YellowPower extends BasePower {
     //Look at powers that do this like VulnerablePower and DoubleTapPower.
     private static ArrayList<AbstractCard> rewardlist() {
         ArrayList<AbstractCard> listreturn = new ArrayList<AbstractCard>();
-        listreturn.add(new GamblingScrap());
         listreturn.add(new GamblingBlock());
         listreturn.add(new GamblingDamage());
-        listreturn.add(new GamblingCardReward());
-        listreturn.add(new GamblingCreateScavenge());
-        listreturn.add(new GamblingDexterity());
-        listreturn.add(new GamblingEnergy());
-        listreturn.add(new GamblingGold());
-        listreturn.add(new GamblingHeal());
-        listreturn.add(new GamblingPlatedArmor());
-        listreturn.add(new GamblingPotion());
         listreturn.add(new GamblingScry());
-        listreturn.add(new GamblingStrength());
+        listreturn.add(new GamblingEnergy());
+        if (AbstractDungeon.cardRandomRng.randomBoolean(0.7f)) {
+            listreturn.add(new GamblingDexterity());
+            listreturn.add(new GamblingStrength());
+            listreturn.add(new GamblingCreateScavenge());
+            listreturn.add(new GamblingPlatedArmor());
+        }
+        if (AbstractDungeon.cardRandomRng.randomBoolean(0.5f)) {
+            listreturn.add(new GamblingPotion());
+            listreturn.add(new GamblingHeal());
+            listreturn.add(new GamblingScrap());
+        }
+        if (AbstractDungeon.cardRandomRng.randomBoolean(0.3f)) {
+            listreturn.add(new GamblingCardReward());
+            listreturn.add(new GamblingGold());
+        }
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
                 listreturn.add(new GamblingUpgradeCards());
                 break;
             }
         }
-
         return listreturn;
     }
 
@@ -91,19 +96,19 @@ public class YellowPower extends BasePower {
                 if (!usedPotion)
                     Desc.append(DESCRIPTIONS[6]);
                 else
-                    Desc.append(" NL 1. ").append(DESCRIPTIONS[10]);
+                    Desc.append(" NL 2. ").append(DESCRIPTIONS[10]);
             }
             if (amount >= 3) {
                 if (usesGold < 2)
                     Desc.append(DESCRIPTIONS[2]).append(BasicMod.scavengeCount).append(DESCRIPTIONS[3]).append(GOLDAMOUNT).append(DESCRIPTIONS[4]);
                 else
-                    Desc.append(" NL 2. ").append(DESCRIPTIONS[10]);
+                    Desc.append(" NL 3. ").append(DESCRIPTIONS[10]);
             }
             if (amount >= 4) {
                 if (!usedScrap)
                     Desc.append(DESCRIPTIONS[5]);
                 else
-                    Desc.append(" NL 3. ").append(DESCRIPTIONS[10]);
+                    Desc.append(" NL 4. ").append(DESCRIPTIONS[10]);
             }
             if (amount >= 5) {
                 if (!usedCardReward)

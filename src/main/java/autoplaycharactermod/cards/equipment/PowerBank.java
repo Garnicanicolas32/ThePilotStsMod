@@ -25,7 +25,7 @@ public class PowerBank extends EquipmentCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
-            0 
+            0
     );
     private static final int BASE_HP = 45;
     private static final int MAGIC = 3;
@@ -53,7 +53,7 @@ public class PowerBank extends EquipmentCard {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
         if (ConfigPanel.experimentalSounds)
-        addToBot(new SfxActionVolume("ORB_PLASMA_EVOKE", 1f, 0.8f));
+            addToBot(new SfxActionVolume("ORB_PLASMA_EVOKE", 1f, 0.8f));
         AbstractDungeon.topLevelEffects.add(new StanceChangeParticleGenerator(this.hb.cX, this.hb.cY, "Divinity"));
         addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
         calculateCardDamage(null);

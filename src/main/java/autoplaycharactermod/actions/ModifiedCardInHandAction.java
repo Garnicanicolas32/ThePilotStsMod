@@ -65,9 +65,7 @@ public class ModifiedCardInHandAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.amount == 0) {
-            this.isDone = true;
-        } else {
+        if (this.amount != 0) {
             int discardAmount = 0;
             int handAmount = this.amount;
             if (this.amount + AbstractDungeon.player.hand.size() > BaseMod.MAX_HAND_SIZE) {
@@ -81,9 +79,8 @@ public class ModifiedCardInHandAction extends AbstractGameAction {
             if (this.amount > 0) {
                 this.addToTop(new WaitAction(0.8F));
             }
-
-            this.isDone = true;
         }
+        this.isDone = true;
     }
 
     private void addToHand(int handAmt) {

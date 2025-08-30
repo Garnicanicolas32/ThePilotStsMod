@@ -17,11 +17,14 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPrevie
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.curses.Pain;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
 import java.util.ArrayList;
@@ -59,6 +62,35 @@ public class Drill extends EquipmentCard {
         setMagic(30);
         setInnate(true);
         super.evolveCard();
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (PlayOnce) {
+            if (equipmentHp < 1) {
+                addToBot(new SfxActionVolume("ORB_FROST_EVOKE", 0f, 2.5F));
+                setExhaust(true);
+                addToBot(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand, true));
+            }else {
+                addToBot(new SFXAction("ORB_FROST_DEFEND_1"));
+                checkActivations();
+                Equipped = true;
+                returnToHand = true;
+            }
+            onEquip();
+
+        } else {
+            if (equipmentHp < 1) {
+                addToBot(new SfxActionVolume("ORB_FROST_EVOKE", 0f, 2.5F));
+                setExhaust(true);
+                addToBot(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand, true));
+            }else{
+                Equipped = false;
+                returnToHand = false;
+            }
+            onUnequip();
+        }
+        PlayOnce = false;
     }
 
     protected void onEquip() {

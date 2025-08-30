@@ -3,17 +3,16 @@ package autoplaycharactermod;
 import autoplaycharactermod.actions.TutorialCaller;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.chargingCards.QuickReflex;
-import autoplaycharactermod.cards.equipment.TrashCannon;
-import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionOne;
-import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionThree;
-import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionTwo;
-import autoplaycharactermod.cards.optionSelection.TraitReward.RedOptionTwo;
+import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionOne;
+import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionThree;
+import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionTwo;
+import autoplaycharactermod.cards.optionSelection.traitReward.RedOptionTwo;
 import autoplaycharactermod.cards.traitBastionCards.DataCache;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
 import autoplaycharactermod.cards.traitScavengeCards.NFT;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.ExtraCardRewardsPatch;
-import autoplaycharactermod.patches.ScrapRewardPatch;
+import autoplaycharactermod.patches.CombatRewardScreenSetupItemRewardPatch;
+import autoplaycharactermod.patches.RewardItemScrapPatch;
 import autoplaycharactermod.potions.BasePotion;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.powers.YellowPower;
@@ -70,7 +69,6 @@ import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 import static autoplaycharactermod.powers.YellowPower.GOLDAMOUNTSTART;
-import static autoplaycharactermod.ui.ScryButton.SCRYSTARTAMOUNT;
 
 @SpireInitializer
 public class BasicMod implements
@@ -220,7 +218,7 @@ public class BasicMod implements
         BaseMod.addTopPanelItem(new TraitsTopPanel());
 
         BaseMod.registerCustomReward(
-                ScrapRewardPatch.SCRAPREWARD,
+                RewardItemScrapPatch.SCRAPREWARD,
                 (rewardSave) -> { // this handles what to do when this quest type is loaded.
                     return new ScrapReward();
                 },
@@ -476,7 +474,7 @@ public class BasicMod implements
 
     @Override
     public void receiveStartGame() {
-        ExtraCardRewardsPatch.calledonce = false;
+        CombatRewardScreenSetupItemRewardPatch.calledonce = false;
         if (!CardCrawlGame.loadingSave) {
             //System.out.println("Resetting stats!");
             evolved = false;

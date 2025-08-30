@@ -20,7 +20,7 @@ public class FallingGoldEffect extends AbstractGameEffect {
     private float vY;
     private float floorY;
     private Texture img;
-    private int frostCount = 0;
+    private int frostCount;
 
     public FallingGoldEffect(int frostCount, boolean flipped) {
         this.frostCount = frostCount;

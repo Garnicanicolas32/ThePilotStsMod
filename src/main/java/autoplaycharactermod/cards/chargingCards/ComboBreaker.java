@@ -23,7 +23,7 @@ public class ComboBreaker extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            -2 
+            -2
     );
     private static final int UPG_MAGIC = 2;
     private static final int MAGIC = 3;
@@ -71,12 +71,12 @@ public class ComboBreaker extends BaseCard {
 
     public void combo() {
         if (AbstractDungeon.player.hasPower(EfficiencyPower.POWER_ID))
-            ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
+            ((EfficiencyPower) AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         this.magicNumber *= this.alreadyEvolved ? 3 : 2;
         this.baseMagicNumber = this.magicNumber;
         this.isMagicNumberModified = true;
         if (ConfigPanel.experimentalSounds)
-        addToBot(new SfxActionVolume("RELIC_DROP_MAGICAL", -0.1f + 0.05F * count, 1.5F + 0.4F * Math.min(count, 6)));
+            addToBot(new SfxActionVolume("RELIC_DROP_MAGICAL", -0.1f + 0.05F * count, 1.5F + 0.4F * Math.min(count, 6)));
         for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); i++)
             AbstractDungeon.effectsQueue.add(new EjectLightingEffect((float) Settings.WIDTH * 0.96F, (float) Settings.HEIGHT * 0.06F, i));
         count++;

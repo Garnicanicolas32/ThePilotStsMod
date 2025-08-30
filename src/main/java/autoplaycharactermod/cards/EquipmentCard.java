@@ -4,9 +4,9 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.equipment.*;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
+import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.relics.OilCan;
-import autoplaycharactermod.relics.Reworks.StrangeFork;
+import autoplaycharactermod.relics.reworks.StrangeFork;
 import autoplaycharactermod.ui.DurabilityTutorial;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.EquipmentVisualModifier;
@@ -26,7 +26,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -124,7 +123,7 @@ public abstract class EquipmentCard extends BaseCard {
         });
 
         if (!(this instanceof RocketPunch) && this.type == CardType.ATTACK) {
-            VigorPenNibDuplicationPatch.checkPenNibVigor();
+            OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
         }
         if (!(this instanceof Shredder) && AbstractDungeon.player.hasRelic(OilCan.ID)) {
             if (this instanceof SmartGun) {
@@ -145,9 +144,6 @@ public abstract class EquipmentCard extends BaseCard {
         Equipped = false;
         PlayOnce = true;
         returnToHand = true;
-        if (equipmentHp < 1) {
-            addToBot(new ExhaustSpecificCardAction(this, AbstractDungeon.player.discardPile, true));
-        }
     }
 
     public final void damageEquipment(int amount) {
@@ -177,10 +173,6 @@ public abstract class EquipmentCard extends BaseCard {
         }
         if (BasicMod.isInCombat())
             this.applyPowers();
-    }
-
-    protected int getDefaultDurability() {
-        return 10;
     }
 
     @Override

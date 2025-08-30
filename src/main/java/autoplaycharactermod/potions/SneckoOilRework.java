@@ -1,21 +1,16 @@
 package autoplaycharactermod.potions;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.HackedPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.unique.RandomizeHandCostAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.potions.SneckoOil;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static autoplaycharactermod.BasicMod.makeID;

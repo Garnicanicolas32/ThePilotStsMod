@@ -32,8 +32,8 @@ import java.util.List;
 public abstract class TraitCard extends BaseCard implements SpawnModificationCard {
 
     private static final UIStrings descriptor = CardCrawlGame.languagePack.getUIString(makeID("ComboTags"));
-    protected boolean countsTwiceOnUpgrade = false;
-    protected TraitColor traitColor = TraitColor.OTHER;
+    protected boolean countsTwiceOnUpgrade;
+    protected TraitColor traitColor;
     private boolean canSpawnTutorial = false;
 
     public TraitCard(String ID, CardStats info, TraitColor color, Boolean countsTwice) {

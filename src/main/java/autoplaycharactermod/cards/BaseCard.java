@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -778,7 +777,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
                 ((EquipmentCard) this).equipmentHp = data[1];
                 ((EquipmentCard) this).equipmentMaxHp = data[2];
             } else {
-                ((EquipmentCard) this).equipmentHp = ((EquipmentCard) this).equipmentMaxHp = ((EquipmentCard) this).getDefaultDurability();
+                ((EquipmentCard) this).equipmentHp = ((EquipmentCard) this).equipmentMaxHp = 10;
             }
         } else if (this instanceof ConsumableCards && data.length == 3) {
             ((ConsumableCards) this).uses = data[1];

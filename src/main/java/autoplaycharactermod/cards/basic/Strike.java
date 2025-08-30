@@ -3,14 +3,10 @@ package autoplaycharactermod.cards.basic;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
-import autoplaycharactermod.vfx.PilotEyeScreen;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.scene.DefectVictoryEyesEffect;
 
 public class Strike extends BaseCard {
     public static final String ID = makeID("Strike");

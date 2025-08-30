@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -18,10 +17,7 @@ public class FieldBubbleEffect extends AbstractGameEffect {
     private TextureAtlas.AtlasRegion img;
 
     public FieldBubbleEffect() {
-        if (this.img == null) {
-            this.img = ImageMaster.CRYSTAL_IMPACT;
-        }
-
+        this.img = ImageMaster.CRYSTAL_IMPACT;
         this.x = AbstractDungeon.player.hb.cX - (float)this.img.packedWidth / 2.0F;
         this.y = AbstractDungeon.player.hb.cY - (float)this.img.packedHeight / 2.0F;
         this.startingDuration = ConfigPanel.lessParticles ? 0.5f : 1.5F;

@@ -5,7 +5,6 @@ import autoplaycharactermod.actions.CraftingScrapAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static autoplaycharactermod.BasicMod.makeID;
 
@@ -66,7 +65,7 @@ public class Crafting extends BasePower {
             addToBot(new CraftingScrapAction(BasicMod.CustomTags.ScrapRare, 3));
             rares -= 3;
             removeConsumed();
-        };
+        }
         updateDescription();
     }
 

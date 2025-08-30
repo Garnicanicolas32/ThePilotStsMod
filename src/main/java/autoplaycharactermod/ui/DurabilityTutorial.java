@@ -1,7 +1,6 @@
 package autoplaycharactermod.ui;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.cards.basic.Strike;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;

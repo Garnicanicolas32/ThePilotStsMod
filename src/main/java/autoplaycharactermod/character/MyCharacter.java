@@ -1,7 +1,6 @@
 package autoplaycharactermod.character;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.actions.AutoplayTopCardAction;
 import autoplaycharactermod.actions.InnateAction;
 import autoplaycharactermod.cards.basic.*;
 import autoplaycharactermod.cards.equipment.Coolant;
@@ -26,12 +25,10 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -49,7 +46,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.vfx.FastCardObtainEffect;
-import org.apache.logging.log4j.Level;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -271,25 +267,6 @@ public class MyCharacter extends CustomPlayer {
                 break;
             }
             AbstractCard c = this.drawPile.getTopCard();
-//            if (c.type == AbstractCard.CardType.CURSE || c.type == AbstractCard.CardType.STATUS) {
-//                if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-//                    AbstractDungeon.player.createHandIsFullDialog();
-//                    if (AbstractDungeon.actionManager.turnHasEnded) {
-//                        savedEnergy++;
-//                    }
-//                    this.gainEnergy(1);
-//                } else {
-//                    this.drawPile.removeTopCard();
-//                    prepareCardForDraw(c);
-//                    this.hand.addToHand(c);
-//                    triggerDrawEffects(c);
-//                }
-//            } else {
-//                if (AbstractDungeon.actionManager.turnHasEnded) {
-//                    savedEnergy++;
-//                }
-//                this.gainEnergy(1);
-//            }
             if (AbstractDungeon.actionManager.turnHasEnded) {
                 savedEnergy++;
             }

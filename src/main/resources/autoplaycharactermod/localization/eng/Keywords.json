@@ -27,7 +27,7 @@
       "Bastion",
       "Bastion+"
     ],
-    "DESCRIPTION": "Bastion applies debuffs to enemies and buffs to yourself."
+    "DESCRIPTION": "Bastion defends you with Block and various buffs."
   },
   {
     "ID": "Scavenge",
@@ -62,7 +62,7 @@
       "Equipment",
       "Equipments"
     ],
-    "DESCRIPTION": "Not discarded at end of turn. Loses 1 Durability when [#03befc]triggered[], Exhausts at 0. Play from hand to unequip."
+    "DESCRIPTION": "Not discarded at end of turn. Loses 1 Durability when [#03befc]triggered[], #yExhausts at 0. NL Play a second time to unequip."
   },
   {
     "PROPER_NAME": "Target",

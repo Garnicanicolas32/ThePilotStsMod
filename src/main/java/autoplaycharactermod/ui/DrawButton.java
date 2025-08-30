@@ -2,7 +2,7 @@ package autoplaycharactermod.ui;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.AutoplayTopCardAction;
-import autoplaycharactermod.relics.Reworks.UnceasingBottom;
+import autoplaycharactermod.relics.reworks.UnceasingBottom;
 import autoplaycharactermod.vfx.ButtonGlowEffect;
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
@@ -10,9 +10,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

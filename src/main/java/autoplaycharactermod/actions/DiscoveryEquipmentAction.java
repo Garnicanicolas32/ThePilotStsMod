@@ -1,6 +1,5 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.util.GeneralUtils;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -72,11 +71,10 @@ public class DiscoveryEquipmentAction extends AbstractGameAction {
     }
 
     private ArrayList<AbstractCard> generateCardChoices() {
-        ArrayList<AbstractCard> derp = new ArrayList();
+        ArrayList<AbstractCard> derp = new ArrayList<>();
         while (derp.size() != 3) {
             boolean dupe = false;
-            AbstractCard tmp = null;
-            tmp = GeneralUtils.getRandomEquipmentCard();
+            AbstractCard tmp = GeneralUtils.getRandomEquipmentCard();
             for (AbstractCard c : derp) {
                 if (c.cardID.equals(tmp.cardID)) {
                     dupe = true;

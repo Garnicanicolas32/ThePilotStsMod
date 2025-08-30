@@ -4,7 +4,6 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.ConsumableCards;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
-import autoplaycharactermod.cards.traitIgnitionCards.ThermalSurge;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.HealEquipmentEffect;

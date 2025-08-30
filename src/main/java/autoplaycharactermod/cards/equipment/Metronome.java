@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;

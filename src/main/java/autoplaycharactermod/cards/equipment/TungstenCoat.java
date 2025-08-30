@@ -18,7 +18,7 @@ public class TungstenCoat extends EquipmentCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
-            0 
+            0
     );
     private static final int BASE_HP = 18;
 
@@ -43,7 +43,7 @@ public class TungstenCoat extends EquipmentCard {
     public int customOnLoseHpLast(int damageAmount) {
         if (damageAmount > 0 && Equipped) {
             if (ConfigPanel.experimentalSounds)
-            addToBot(new SfxActionVolume("RELIC_DROP_CLINK", MathUtils.random(-0.4F, 0.4F), 0.7F));
+                addToBot(new SfxActionVolume("RELIC_DROP_CLINK", MathUtils.random(-0.4F, 0.4F), 0.7F));
             for (int i = 0; i < 10; i++) {
                 AbstractDungeon.topLevelEffectsQueue.add(new BlockImpactLineEffect(
                         this.hb.cX + MathUtils.random(10.0F, -10.0F) * Settings.scale,

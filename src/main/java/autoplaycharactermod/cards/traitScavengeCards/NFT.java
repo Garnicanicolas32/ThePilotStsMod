@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.traitScavengeCards;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -15,9 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class NFT extends TraitCard {
     public static final String ID = makeID("NFT");

@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.AutoplayTopCardAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class Virus extends BaseCard {

@@ -1,14 +1,9 @@
 package autoplaycharactermod.cards.traitMixedCards;
-import autoplaycharactermod.actions.AutoplayTopCardAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.GeneralUtils;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.cards.status.Burn;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

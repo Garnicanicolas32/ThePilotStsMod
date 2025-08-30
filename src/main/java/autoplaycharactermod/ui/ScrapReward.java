@@ -3,7 +3,7 @@ package autoplaycharactermod.ui;
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.scrap.ScrapCommon;
 import autoplaycharactermod.cards.scrap.ScrapCommonDef;
-import autoplaycharactermod.patches.ScrapRewardPatch;
+import autoplaycharactermod.patches.RewardItemScrapPatch;
 import autoplaycharactermod.util.TextureLoader;
 import basemod.abstracts.CustomReward;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,7 +18,7 @@ public class ScrapReward extends CustomReward {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ScrapReward"));
 
     public ScrapReward() {
-        super(ICON, uiStrings.TEXT[0], ScrapRewardPatch.SCRAPREWARD);
+        super(ICON, uiStrings.TEXT[0], RewardItemScrapPatch.SCRAPREWARD);
 
     }
 

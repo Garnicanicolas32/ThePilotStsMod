@@ -31,11 +31,6 @@ public class Dispenser extends ConsumableCards {
     }
 
     @Override
-    public void evolveCard() {
-        super.evolveCard();
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         boolean found = false;
 

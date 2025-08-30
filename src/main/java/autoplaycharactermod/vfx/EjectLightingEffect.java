@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class EjectLightingEffect extends AbstractGameEffect {
-    private Texture img = null;
+    private Texture img;
     private int index = 0;
     private float x;
     private float y;
@@ -22,7 +22,7 @@ public class EjectLightingEffect extends AbstractGameEffect {
         this.x = x;
         this.y = y;
         this.color = Settings.LIGHT_YELLOW_COLOR.cpy();
-        this.img = (Texture) ImageMaster.LIGHTNING_PASSIVE_VFX.get(this.index);
+        this.img = ImageMaster.LIGHTNING_PASSIVE_VFX.get(this.index);
         this.scale = MathUtils.random(0.6F, 1.0F) * Settings.scale * 3.5f;
         this.rotation = MathUtils.random(90.0F);
 
@@ -43,7 +43,7 @@ public class EjectLightingEffect extends AbstractGameEffect {
                 return;
             }
 
-            this.img = (Texture) ImageMaster.LIGHTNING_PASSIVE_VFX.get(this.index);
+            this.img = ImageMaster.LIGHTNING_PASSIVE_VFX.get(this.index);
             this.duration = this.intervalDuration;
         }
     }

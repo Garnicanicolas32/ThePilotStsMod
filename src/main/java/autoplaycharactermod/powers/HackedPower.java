@@ -2,8 +2,6 @@ package autoplaycharactermod.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.ConfusionPower;
 
 import static autoplaycharactermod.BasicMod.makeID;
 

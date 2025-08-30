@@ -2,7 +2,7 @@ package autoplaycharactermod.ui;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.ToolTipColors;
+import autoplaycharactermod.patches.TipHelperRenderTipBoxPatch;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.powers.YellowPower;
@@ -51,16 +51,16 @@ public class TraitsTopPanel extends TopPanelItem {
             if (getHitbox().hovered) {
                 switch (current) {
                     case 1:
-                        ToolTipColors.MyTooltipColor.setOverride(Color.valueOf("#f77979"));
+                        TipHelperRenderTipBoxPatch.MyTooltipColor.setOverride(Color.valueOf("#f77979"));
                         TipHelper.renderGenericTip(getHitbox().x - offsetLeft, tipYpos, uiStrings.TEXT[0], uiStrings.TEXT[4] + DescriptionsLinesRed);
                         break;
                     case 2:
-                        ToolTipColors.MyTooltipColor.setOverride(Color.valueOf("#a2affc"));
+                        TipHelperRenderTipBoxPatch.MyTooltipColor.setOverride(Color.valueOf("#a2affc"));
                         TipHelper.renderGenericTip(getHitbox().x - offsetLeft, tipYpos, uiStrings.TEXT[1], uiStrings.TEXT[4] + DescriptionsLinesBlue);
                         break;
                     case 3:
                         buildLinesYellow();
-                        ToolTipColors.MyTooltipColor.setOverride(Color.valueOf("#f7e979"));
+                        TipHelperRenderTipBoxPatch.MyTooltipColor.setOverride(Color.valueOf("#f7e979"));
                         TipHelper.renderGenericTip(getHitbox().x - offsetLeft, tipYpos, uiStrings.TEXT[2], uiStrings.TEXT[4] + DescriptionsLinesYellow);
                         break;
                 }

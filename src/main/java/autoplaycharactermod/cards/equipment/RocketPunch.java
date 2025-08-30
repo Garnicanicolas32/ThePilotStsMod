@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
+import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -49,7 +49,7 @@ public class RocketPunch extends EquipmentCard {
         AbstractPlayer p = AbstractDungeon.player;
         calculateCardDamage(null);
         addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        VigorPenNibDuplicationPatch.checkPenNibVigor();
+        OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
         super.Activate();
     }
 

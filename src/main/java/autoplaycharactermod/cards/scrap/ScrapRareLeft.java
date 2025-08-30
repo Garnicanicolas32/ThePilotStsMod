@@ -2,7 +2,6 @@ package autoplaycharactermod.cards.scrap;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EvolveCardEffect;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;

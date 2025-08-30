@@ -6,7 +6,7 @@ import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.traitBastionCards.FeedbackLoop;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
+import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
@@ -88,7 +88,7 @@ public class SelfDestruct extends BaseCard {
                     for (int i = 0; i < cards.size(); i++) {
                         addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
                     }
-                    VigorPenNibDuplicationPatch.checkPenNibVigor();
+                    OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
                 }
             }));
         }

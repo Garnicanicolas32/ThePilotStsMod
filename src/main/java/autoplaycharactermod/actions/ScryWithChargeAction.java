@@ -22,7 +22,7 @@ public class ScryWithChargeAction extends AbstractGameAction {
     }
 
     private final float startingDuration;
-    private int chargeAmount = 0;
+    private int chargeAmount;
 
     public ScryWithChargeAction(int numCards, int save) {
         this.amount = numCards;

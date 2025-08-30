@@ -22,7 +22,7 @@ public class FailSafeParticle extends AbstractGameEffect {
         this.shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
         this.x = x - (float)(this.img.packedWidth / 2);
         this.y = y - (float)(this.img.packedHeight / 2);
-        this.color = new Color(MathUtils.random(0.F, 0.2F), MathUtils.random(0.085F, 1F), MathUtils.random(0.60F, 0.89F), 1F);;
+        this.color = new Color(MathUtils.random(0.F, 0.2F), MathUtils.random(0.085F, 1F), MathUtils.random(0.60F, 0.89F), 1F);
         this.color.a = duration;
         this.duration = duration;
         this.scale = Settings.scale / MathUtils.random(1.0F, 1.5F);

@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.traitIgnitionCards;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;

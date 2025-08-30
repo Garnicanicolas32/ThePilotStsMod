@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.traitBastionCards;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;

@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 public class DatacacheEffect extends AbstractGameEffect {
     private float x;
     private float y;
-    private float incrementTimer;
     private float appearTime;
     private String num = "";
 
@@ -20,7 +19,7 @@ public class DatacacheEffect extends AbstractGameEffect {
         this.renderBehind = true;
         this.x = MathUtils.random(0.0F, 1870.0F) * Settings.xScale;
         this.y = MathUtils.random(50.0F, 990.0F) * Settings.yScale;
-        this.incrementTimer = 0.05f * num;
+        float incrementTimer = 0.05f * num;
         this.startingDuration = 0.7f + incrementTimer;
         this.duration = startingDuration;
         this.appearTime = startingDuration - incrementTimer;

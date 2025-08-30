@@ -1,18 +1,12 @@
 package autoplaycharactermod.cards.consumable;
 
-import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.ConsumableCards;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.TheBombPower;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 public class Grenades extends ConsumableCards {
     public static final String ID = makeID("Grenades");

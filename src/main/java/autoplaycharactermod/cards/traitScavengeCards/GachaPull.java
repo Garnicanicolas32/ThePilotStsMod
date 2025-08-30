@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.traitScavengeCards;
 
 import autoplaycharactermod.cards.TraitCard;
-import autoplaycharactermod.cards.optionSelection.Gambling.*;
+import autoplaycharactermod.cards.optionSelection.gambling.*;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;

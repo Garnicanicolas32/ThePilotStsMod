@@ -5,7 +5,6 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
 import autoplaycharactermod.cards.chargingCards.Thrusters;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
@@ -13,7 +12,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

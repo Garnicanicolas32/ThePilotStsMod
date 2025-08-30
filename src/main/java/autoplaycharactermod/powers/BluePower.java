@@ -1,9 +1,9 @@
 package autoplaycharactermod.powers;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionOne;
-import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionThree;
-import autoplaycharactermod.cards.optionSelection.TraitReward.BlueOptionTwo;
+import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionOne;
+import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionThree;
+import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionTwo;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import com.badlogic.gdx.math.MathUtils;

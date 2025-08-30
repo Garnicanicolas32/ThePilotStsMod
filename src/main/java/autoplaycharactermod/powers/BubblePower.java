@@ -1,15 +1,10 @@
 package autoplaycharactermod.powers;
 
 import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.mod.stslib.patches.bothInterfaces.OnCreateCardInterface;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static autoplaycharactermod.BasicMod.makeID;
 
@@ -42,7 +37,7 @@ public class BubblePower extends BasePower {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, BubblePower.POWER_ID));
     }
 
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+    public int ChangeDamage(DamageInfo info, int damageAmount) {
         this.flash();
         return Math.max(damageAmount - amount, 0);
     }

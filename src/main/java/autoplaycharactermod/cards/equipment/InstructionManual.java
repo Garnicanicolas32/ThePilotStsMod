@@ -2,15 +2,12 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.cards.statusAndCurses.Melt;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class InstructionManual extends EquipmentCard {

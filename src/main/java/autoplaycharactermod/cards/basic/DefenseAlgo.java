@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.basic;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;

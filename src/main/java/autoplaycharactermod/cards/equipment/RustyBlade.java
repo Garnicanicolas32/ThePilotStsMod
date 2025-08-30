@@ -1,17 +1,14 @@
 package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.RustyBladeAction;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class RustyBlade extends EquipmentCard {
     public static final String ID = makeID("RustyBlade");

@@ -3,7 +3,6 @@ package autoplaycharactermod.cards.equipmentUtil;
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
 import autoplaycharactermod.cards.traitIgnitionCards.Firewall;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;

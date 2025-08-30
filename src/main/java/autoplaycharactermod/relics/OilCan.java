@@ -25,6 +25,6 @@ public class OilCan extends BaseRelic {
     public void activate() {
         addToBot(new GainBlockAction(AbstractDungeon.player, 1));
         if (ConfigPanel.experimentalSounds)
-        flash();
+            flash();
     }
 }

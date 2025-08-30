@@ -50,11 +50,8 @@ public class ModifiedDiscardPileToHandAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             if (!this.player.discardPile.isEmpty() && this.numberOfCards > 0) {
                 if (this.player.discardPile.size() <= this.numberOfCards && !this.optional) {
-                    ArrayList<AbstractCard> cardsToMove = new ArrayList();
 
-                    for (AbstractCard c : this.player.discardPile.group) {
-                        cardsToMove.add(c);
-                    }
+                    ArrayList<AbstractCard> cardsToMove = new ArrayList<>(this.player.discardPile.group);
 
                     for (AbstractCard c : cardsToMove) {
                         if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {

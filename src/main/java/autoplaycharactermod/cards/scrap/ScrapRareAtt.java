@@ -4,7 +4,7 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
+import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -53,7 +53,7 @@ public class ScrapRareAtt extends BaseCard {
         if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            VigorPenNibDuplicationPatch.checkPenNibVigor();
+            OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
             returnToHand = true;
         } else {
             addToBot(new SFXAction("STANCE_ENTER_WRATH"));

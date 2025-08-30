@@ -1,10 +1,7 @@
 package autoplaycharactermod.cards;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.equipment.TrashCannon;
 import autoplaycharactermod.util.CardStats;
-import basemod.abstracts.CustomSavable;
-import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,10 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public abstract class ConsumableCards extends BaseCard {
 

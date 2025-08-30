@@ -37,7 +37,6 @@ public class ShredderLinesEffect extends AbstractGameEffect {
         this.gravity = -20.0F * Settings.scale;
         Vector2 var10000 = this.speedVector;
         var10000.x *= this.speed;
-        var10000 = this.speedVector;
         var10000.y *= this.speed;
         if (MathUtils.randomBoolean()) {
             this.color = Color.CYAN.cpy();

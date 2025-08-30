@@ -21,10 +21,7 @@ public class DustCloudVFX  extends AbstractGameEffect {
     private TextureAtlas.AtlasRegion img;
 
     public DustCloudVFX(float x, float y) {
-        if (this.img == null) {
-            this.img = ImageMaster.vfxAtlas.findRegion("env/dustCloud");
-        }
-
+        this.img = ImageMaster.vfxAtlas.findRegion("env/dustCloud");
         this.x = x + MathUtils.random(-40.0F, 40.0F) * Settings.scale - (float)this.img.packedWidth / 2.0F;
         this.y = y - (float)this.img.packedHeight / 2.0F;
         float randY = MathUtils.random(-10.0F, 10.0F) * Settings.scale;

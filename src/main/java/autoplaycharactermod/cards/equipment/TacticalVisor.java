@@ -1,6 +1,5 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;

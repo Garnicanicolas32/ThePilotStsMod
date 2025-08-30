@@ -1,6 +1,5 @@
 package autoplaycharactermod.vfx;
 
-import autoplaycharactermod.BasicMod;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -9,8 +8,6 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
-import java.lang.reflect.Field;
 
 public class AfterImageEffectVFX extends AbstractGameEffect {
     private final AbstractCard ghostCard;

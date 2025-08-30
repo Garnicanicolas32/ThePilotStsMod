@@ -8,7 +8,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.HemokinesisParticle;
 
 public class MicroMissilesEffect extends AbstractGameEffect {
     private float x;

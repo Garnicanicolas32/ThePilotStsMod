@@ -2,21 +2,16 @@ package autoplaycharactermod.cards.traitMixedCards;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.ModifiedCardInHandAction;
-import autoplaycharactermod.actions.ScryWithChargeAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.util.CardStats;
-import autoplaycharactermod.vfx.TraitFlashesEffect;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

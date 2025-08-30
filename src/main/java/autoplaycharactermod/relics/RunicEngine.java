@@ -1,10 +1,8 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.actions.AutoplayTopCardAction;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.cards.chargingCards.Acceleration;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.upgradeRewardTypePatch;
+import autoplaycharactermod.patches.ObtainKeyEffectUpdatePatch;
 import autoplaycharactermod.vfx.HealEquipmentEffect;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Color;
@@ -57,13 +55,13 @@ public class RunicEngine extends BaseRelic implements CustomSavable<Integer[]> {
             }
             switch (counter) {
                 case 0:
-                    AbstractDungeon.cardRewardScreen.chooseOneOpen(upgradeRewardTypePatch.getLvl1Cards());
+                    AbstractDungeon.cardRewardScreen.chooseOneOpen(ObtainKeyEffectUpdatePatch.getLvl1Cards());
                     break;
                 case 1:
-                    AbstractDungeon.cardRewardScreen.chooseOneOpen(upgradeRewardTypePatch.getLvl2Cards());
+                    AbstractDungeon.cardRewardScreen.chooseOneOpen(ObtainKeyEffectUpdatePatch.getLvl2Cards());
                     break;
                 case 2:
-                    AbstractDungeon.cardRewardScreen.chooseOneOpen(upgradeRewardTypePatch.getLvl3Cards());
+                    AbstractDungeon.cardRewardScreen.chooseOneOpen(ObtainKeyEffectUpdatePatch.getLvl3Cards());
                     break;
             }
             counter++;

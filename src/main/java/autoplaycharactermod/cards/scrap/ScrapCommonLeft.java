@@ -1,27 +1,17 @@
 package autoplaycharactermod.cards.scrap;
 
 import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EvolveCardEffect;
-import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
 import java.util.ArrayList;
 import java.util.Arrays;

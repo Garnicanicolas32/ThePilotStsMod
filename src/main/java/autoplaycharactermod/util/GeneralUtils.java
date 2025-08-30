@@ -3,10 +3,8 @@ package autoplaycharactermod.util;
 import autoplaycharactermod.cards.equipment.*;
 import autoplaycharactermod.cards.traitBastionCards.*;
 import autoplaycharactermod.cards.traitIgnitionCards.*;
-import autoplaycharactermod.cards.traitMixedCards.CrossedWires;
 import autoplaycharactermod.cards.traitScavengeCards.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Arrays;

@@ -28,7 +28,7 @@ public class OmegaParticleEffect extends AbstractGameEffect {
     private float rotationRate;
     private boolean rotateClockwise;
     private boolean stopRotating = false;
-    private float currentSpeed = 0f;
+    private float currentSpeed;
 
     private CatmullRomSpline<Vector2> crs = new CatmullRomSpline<>();
     private ArrayList<Vector2> controlPoints = new ArrayList<>();
@@ -145,7 +145,7 @@ public class OmegaParticleEffect extends AbstractGameEffect {
                 for (int i = 0; i < 20; i++) {
                     if (points[i] == null) points[i] = new Vector2();
                     Vector2 derp = crs.valueAt(points[i], i / 19f);
-                    CardTrailEffect effect = (CardTrailEffect) trailEffectPool.obtain();
+                    CardTrailEffect effect = trailEffectPool.obtain();
                     effect.init(derp.x, derp.y);
                     AbstractDungeon.topLevelEffects.add(effect);
                 }

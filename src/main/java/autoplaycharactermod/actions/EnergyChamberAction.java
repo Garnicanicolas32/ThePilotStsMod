@@ -28,10 +28,10 @@ public class EnergyChamberAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
             AbstractMonster target = MyCharacter.getTarget();
             card.calculateCardDamage(target);
-            addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, card.damage), this.attackEffect,false, false));
+            addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, card.damage), this.attackEffect, false, false));
             addToTop(new VFXAction(new EnergyChamberEffect(original.hb.cX, original.hb.cY, target.hb.cX, target.hb.cY, card.damage, true), 0.5F));
             if (ConfigPanel.experimentalSounds)
-            addToTop(new SfxActionVolume("ORB_DARK_EVOKE", 0.1f, 2f));
+                addToTop(new SfxActionVolume("ORB_DARK_EVOKE", 0.1f, 2f));
         }
         this.tickDuration();
         this.isDone = true;

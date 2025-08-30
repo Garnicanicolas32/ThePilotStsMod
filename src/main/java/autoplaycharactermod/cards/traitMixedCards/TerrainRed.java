@@ -5,7 +5,6 @@ import autoplaycharactermod.actions.ModifiedCardInHandAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;

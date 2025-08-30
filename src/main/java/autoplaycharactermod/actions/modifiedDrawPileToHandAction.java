@@ -1,6 +1,5 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.character.MyCharacter;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -38,7 +37,7 @@ public class modifiedDrawPileToHandAction extends AbstractGameAction {
                 }
             }
 
-            if (tmp.size() == 0) {
+            if (tmp.isEmpty()) {
                 this.isDone = true;
                 return;
             }

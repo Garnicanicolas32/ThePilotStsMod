@@ -5,7 +5,7 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
+import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
@@ -59,7 +59,7 @@ public class ScrapCommon extends BaseCard {
         if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            VigorPenNibDuplicationPatch.checkPenNibVigor();
+            OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
             returnToHand = true;
         } else {
             if (this.alreadyEvolved) {

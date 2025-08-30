@@ -4,7 +4,7 @@ import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DuctTapeAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
-import autoplaycharactermod.patches.VigorPenNibDuplicationPatch;
+import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.util.CardStats;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -52,7 +52,7 @@ public class DuctTape extends TraitCard {
             if (alreadyEvolved) {
                 addToBot(new AddTemporaryHPAction(p, p, 2));
             }
-            VigorPenNibDuplicationPatch.checkPenNibVigor();
+            OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
             returnToHand = false;
         }
     }

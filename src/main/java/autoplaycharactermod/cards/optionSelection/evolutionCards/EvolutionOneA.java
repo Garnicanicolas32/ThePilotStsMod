@@ -37,7 +37,7 @@ public class EvolutionOneA extends BaseCard {
         AbstractRelic r = AbstractDungeon.player.getRelic(RunicEngine.ID);
         if (r != null) {
             ((RunicEngine) r).lvl1 = 1;
-            ((RunicEngine) r).updateDescription(null);
+            r.updateDescription(null);
         }
     }
 }
