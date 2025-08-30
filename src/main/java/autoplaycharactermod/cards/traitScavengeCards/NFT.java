@@ -47,28 +47,35 @@ public class NFT extends TraitCard {
         for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); ++i) {
             AbstractDungeon.effectList.add(new NFTcardEffect());
         }
+        int count = getNFTCountBattle();
         if (this.alreadyEvolved) {
-            int nftCount = 0;
-            for (CardGroup group : Arrays.asList(
-                    AbstractDungeon.player.hand,
-                    AbstractDungeon.player.drawPile,
-                    AbstractDungeon.player.discardPile)) {
-                if (group != null) {
-                    for (AbstractCard ca : group.group) {
-                        if (ca instanceof NFT) {
-                            nftCount++;
-                        }
-                    }
-                }
-            }
-
-            p.gainGold(nftCount * 15);
-            for (int i = 0; i < nftCount * 15; i++) {
+            p.gainGold(count * 15);
+            for (int i = 0; i < count * 15; i++) {
                 AbstractDungeon.topLevelEffects.add(new GainPennyEffect(Settings.WIDTH / 2f, Settings.HEIGHT / 2f));
             }
+        }else {
+            this.baseBlock = Math.max(0,(upgraded ? BLOCK + UPG_BLOCK : BLOCK) - (count - 1) * magicNumber);
         }
+        applyPowersToBlock();
         addToBot(new GainBlockAction(p, p, block));
         PlayOnce = false;
         super.use(p, m);
+    }
+
+    private static int getNFTCountBattle(){
+        int nftCount = 0;
+        for (CardGroup group : Arrays.asList(
+                AbstractDungeon.player.hand,
+                AbstractDungeon.player.drawPile,
+                AbstractDungeon.player.discardPile)) {
+            if (group != null) {
+                for (AbstractCard ca : group.group) {
+                    if (ca instanceof NFT) {
+                        nftCount++;
+                    }
+                }
+            }
+        }
+        return nftCount;
     }
 }

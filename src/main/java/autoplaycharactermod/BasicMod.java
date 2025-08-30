@@ -9,7 +9,6 @@ import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionTwo;
 import autoplaycharactermod.cards.optionSelection.traitReward.RedOptionTwo;
 import autoplaycharactermod.cards.traitBastionCards.DataCache;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
-import autoplaycharactermod.cards.traitScavengeCards.NFT;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.patches.CombatRewardScreenSetupItemRewardPatch;
 import autoplaycharactermod.patches.RewardItemScrapPatch;
@@ -59,7 +58,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -382,21 +380,6 @@ public class BasicMod implements
     }
 
     // custom things ////////////////////////////////////////////
-
-    public static void checkNFT() {
-        List<AbstractCard> allNFTs = new ArrayList<>();
-        for (AbstractCard ca : AbstractDungeon.player.masterDeck.group) {
-            if (ca instanceof NFT) {
-                allNFTs.add(ca);
-            }
-        }
-        int nftCount = allNFTs.size();
-        for (AbstractCard nft : allNFTs) {
-            if (!((NFT)nft).alreadyEvolved)
-                nft.baseBlock = Math.max(0, (nft.upgraded ? NFT.BLOCK + NFT.UPG_BLOCK : NFT.BLOCK) - nftCount * NFT.MAGIC);
-            nft.initializeDescription();
-        }
-    }
 
     public static void energySpentTrigger() {
         energySpentCombat++;
