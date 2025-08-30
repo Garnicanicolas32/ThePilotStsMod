@@ -26,7 +26,6 @@ public class GeneralUtils {
             new CouponStamp(),
             new DuctTape(),
             new LostAndFound(),
-            new Drill(),
             new NFT(),
             new TrashCannon()
     );
@@ -40,7 +39,6 @@ public class GeneralUtils {
     );
     private static final List<AbstractCard> EquipmentPool = Arrays.asList(
             new Coolant(),
-            new Drill(),
             new EnergyChamber(),
             new FailSafe(),
             new FireSupport(),
@@ -61,8 +59,6 @@ public class GeneralUtils {
             new TrashCannon(),
             new TungstenCoat()
     );
-
-
 
     public static String arrToString(Object[] arr) {
         if (arr == null)

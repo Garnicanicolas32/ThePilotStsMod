@@ -49,7 +49,7 @@ public class TitaniumCasing extends BaseCard {
         AbstractPower pwr = p.getPower(SavePower.POWER_ID);
         int number = (pwr != null) ? pwr.amount : 0;
         if (number > 0)
-            addToBot(new ApplyPowerAction(p, p, new SavePower(p, number * (this.alreadyEvolved ? 3 : 2))));
+            addToBot(new ApplyPowerAction(p, p, new SavePower(p, number * (this.alreadyEvolved ? 2 : 1))));
         addToBot(new SfxActionVolume("SHOVEL", 0f,1.6F));
         if (this.alreadyEvolved)
             addToBot(new TripleYourBlockAction(p));

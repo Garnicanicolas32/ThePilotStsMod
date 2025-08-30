@@ -340,8 +340,9 @@ public class MyCharacter extends CustomPlayer {
         return null;
     }
 
-    public static void targetCheck(AbstractMonster m) {
-        if (AbstractDungeon.player.hasRelic(SecurityCamera.ID) && m != null && !m.isDeadOrEscaped()) {
+    public static void targetCheck(AbstractMonster m, boolean procsCamera) {
+
+        if (procsCamera && AbstractDungeon.player.hasRelic(SecurityCamera.ID) && m != null && !m.isDeadOrEscaped()) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, AbstractDungeon.player.getRelic(SecurityCamera.ID)));
             //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, 1, false)));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new VulnerablePower(m, 1, false)));
@@ -369,15 +370,18 @@ public class MyCharacter extends CustomPlayer {
         }
     }
 
-    public static void ApplyRandomTarget() {
+    public static void ApplyRandomTarget(boolean scheduledVer) {
+        boolean camera = true;
         AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        if (target == getTarget() && scheduledVer)
+            camera = false;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new TargetedPower(target, -1)));
 
         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead() && AbstractDungeon.player.hasPower("Surrounded"))
             AbstractDungeon.player.flipHorizontal = (target.drawX < AbstractDungeon.player.drawX);
 
         if (!skipTargetSwitchThisTurn)
-            targetCheck(target);
+            targetCheck(target, camera);
     }
 
     @Override
@@ -385,7 +389,7 @@ public class MyCharacter extends CustomPlayer {
         super.applyStartOfCombatPreDrawLogic();
         skipTargetSwitchThisTurn = true;
         savedEnergy = 0;
-        ApplyRandomTarget();
+        ApplyRandomTarget(false);
     }
 
     @Override
@@ -413,11 +417,15 @@ public class MyCharacter extends CustomPlayer {
 
     @Override
     public void applyStartOfTurnRelics() {
+        long aliveCount = AbstractDungeon.getMonsters().monsters.stream()
+                .filter(m -> !m.halfDead && !m.isDying && !m.isEscaping)
+                .count();
+
         if (!skipTargetSwitchThisTurn) {
             boolean targetFound = AbstractDungeon.getMonsters().monsters.stream()
                     .anyMatch(m -> !m.isDeadOrEscaped() && m.hasPower(TargetedPower.POWER_ID));
-            if (!targetFound || hasRelic(ScheduledUpdate.ID)) {
-                ApplyRandomTarget();
+            if (!targetFound || (hasRelic(ScheduledUpdate.ID) && aliveCount > 1)) {
+                ApplyRandomTarget((hasRelic(ScheduledUpdate.ID) && aliveCount > 1));
             }
         }
 
@@ -425,10 +433,6 @@ public class MyCharacter extends CustomPlayer {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(savedEnergy));
             savedEnergy = 0;
         }
-
-        long aliveCount = AbstractDungeon.getMonsters().monsters.stream()
-                .filter(m -> !m.halfDead && !m.isDying && !m.isEscaping)
-                .count();
 
         if (aliveCount > 1 && AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
             AbstractDungeon.player.hand.addToTop(new SelectTarget());

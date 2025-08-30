@@ -27,7 +27,7 @@ public class PostSpawnTargetPatch {
             }
             if (!found) {
                 AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(___m, ___m, new TargetedPower(___m, -1)));
-                MyCharacter.targetCheck(___m);
+                MyCharacter.targetCheck(___m, true);
             }
         }
     }

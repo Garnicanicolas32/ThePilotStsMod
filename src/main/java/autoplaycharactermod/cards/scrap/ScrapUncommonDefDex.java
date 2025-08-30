@@ -59,6 +59,10 @@ public class ScrapUncommonDefDex extends BaseCard {
     }
 
     @Override
+    public void upgrade(){
+    }
+
+    @Override
     public boolean freeToPlay() {
         return true;
     }

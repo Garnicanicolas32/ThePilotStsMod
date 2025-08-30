@@ -48,7 +48,7 @@ public class RocketPunch extends EquipmentCard {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
         calculateCardDamage(null);
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         VigorPenNibDuplicationPatch.checkPenNibVigor();
         super.Activate();
     }

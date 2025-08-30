@@ -21,7 +21,7 @@ public class GamblingBuffer extends BaseCard {
             CardTarget.NONE,
             -2 
     );
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
 
     public GamblingBuffer() {
         super(ID, info);

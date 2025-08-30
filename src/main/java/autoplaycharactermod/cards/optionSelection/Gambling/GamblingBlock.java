@@ -9,6 +9,9 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.Level;
+
+import java.util.logging.Logger;
 
 
 @NoPools
@@ -35,7 +38,7 @@ public class GamblingBlock extends BaseCard {
     }
 
     public void onChoseThisOption() {
-        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+        addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, upgraded ? 20 : 5));
         GachaPull.cardsList.removeIf(c -> c instanceof GamblingBlock);
         
     }

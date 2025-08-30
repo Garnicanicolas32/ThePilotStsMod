@@ -64,7 +64,7 @@ public class Flamethrower extends EquipmentCard {
             amountUpg += p.getPower(StrengthPower.POWER_ID).amount;
 
         calculateCardDamage(null);
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         upgradeDamage(amountUpg);
 
         this.initializeDescription();

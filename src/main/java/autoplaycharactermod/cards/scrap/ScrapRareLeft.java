@@ -65,6 +65,10 @@ public class ScrapRareLeft extends BaseCard {
         }
     }
 
+    @Override
+    public void upgrade(){
+    }
+
     public boolean canUpgrade() {
         return false;
     }

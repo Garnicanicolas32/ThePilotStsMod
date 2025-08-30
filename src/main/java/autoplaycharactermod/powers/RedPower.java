@@ -29,8 +29,8 @@ import static autoplaycharactermod.BasicMod.makeID;
 public class RedPower extends BasePower {
     public static final String POWER_ID = makeID("RedPower");
     public static final int RANDOMDAMAGE = 4;
-    public static final int TARGETDAMAGE = 4;
-    public static final int AOEDAMAGE = 4;
+    public static final int TARGETDAMAGE = 5;
+    public static final int AOEDAMAGE = 6;
     public static final int STRENGTHTOADD = 2;
     private static final AbstractPower.PowerType TYPE = NeutralPowertypePatch.NEUTRAL;
     private static final boolean TURN_BASED = false;

@@ -6,12 +6,17 @@ import autoplaycharactermod.actions.ScryWithChargeAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.util.CardStats;
+import autoplaycharactermod.vfx.TraitFlashesEffect;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -67,6 +72,14 @@ public class TerrainBlue extends TraitCard {
         super.onRetained();
         if (this.alreadyEvolved) {
             addToBot(new GainBlockAction(AbstractDungeon.player, 15));
+        }
+    }
+
+    @Override
+    public void upgrade(){
+        super.upgrade();
+        if (BasicMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BluePower(AbstractDungeon.player, 1)));
         }
     }
 

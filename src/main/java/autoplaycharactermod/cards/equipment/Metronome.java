@@ -44,9 +44,9 @@ public class Metronome extends EquipmentCard {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new SfxActionVolume("UNLOCK_WHIR", 0.1F, 2.6F));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
         if (!this.alreadyEvolved) {
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber)));
             addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, magicNumber)));
         }
         super.Activate();

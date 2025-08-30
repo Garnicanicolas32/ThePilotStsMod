@@ -49,6 +49,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
@@ -487,12 +488,40 @@ public class BasicMod implements
             startWithArtifact = false;
             startWithBuffer = false;
             startWithLessHP = false;
-            ScryButton.scryAmount = SCRYSTARTAMOUNT;
+            ScryButton.scryAmount = ConfigPanel.debugScry;
             purchases = 0;
             extracards = 0;
             fusionsmade = 0;
             extracardsoption = false;
             scavengeCount = GOLDAMOUNTSTART;
+        }
+    }
+
+    public static AbstractRelic returnTrueRandomScreenlessRelic() {
+        ArrayList<AbstractRelic> eligibleRelicsList = new ArrayList<>();
+        ArrayList<AbstractRelic> myGoodStuffList = new ArrayList<>();
+        for (String r : AbstractDungeon.commonRelicPool) {
+            eligibleRelicsList.add(RelicLibrary.getRelic(r));
+        }
+        for (String r : AbstractDungeon.uncommonRelicPool) {
+            eligibleRelicsList.add(RelicLibrary.getRelic(r));
+        }
+        for (String r : AbstractDungeon.rareRelicPool) {
+            eligibleRelicsList.add(RelicLibrary.getRelic(r));
+        }
+        try {
+            for (AbstractRelic r : eligibleRelicsList)
+                if (r.getClass().getMethod("onEquip").getDeclaringClass() == AbstractRelic.class && r.getClass().getMethod("onUnequip").getDeclaringClass() == AbstractRelic.class) {
+                    myGoodStuffList.add(r);
+                }
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+        if (myGoodStuffList.isEmpty()) {
+            return new Circlet();
+        } else {
+            myGoodStuffList.removeIf(r -> AbstractDungeon.player.hasRelic(r.relicId));
+            return myGoodStuffList.get(AbstractDungeon.cardRandomRng.random(myGoodStuffList.size() - 1));
         }
     }
 
@@ -520,5 +549,9 @@ public class BasicMod implements
         public static AbstractCard.CardTags skipVigor;
         @SpireEnum
         public static AbstractCard.CardTags ignoreDuplication;
+    }
+
+    public static boolean isInCombat() {
+        return CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
     }
 }

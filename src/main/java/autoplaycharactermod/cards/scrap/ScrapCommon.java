@@ -76,6 +76,15 @@ public class ScrapCommon extends BaseCard {
     }
 
     @Override
+    public void upgrade(){
+    }
+
+    @Override
+    public boolean canUpgrade(){
+        return false;
+    }
+
+    @Override
     public boolean freeToPlay() {
         return true;
     }

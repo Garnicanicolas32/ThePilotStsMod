@@ -63,6 +63,10 @@ public class ScrapUncommonAttStr extends BaseCard {
     }
 
     @Override
+    public void upgrade(){
+    }
+
+    @Override
     public boolean freeToPlay() {
         return true;
     }

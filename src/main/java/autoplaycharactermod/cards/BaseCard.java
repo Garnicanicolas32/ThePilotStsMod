@@ -617,7 +617,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
                     setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_power.png"), BasicMod.imagePath("character/cardback/Evolved/bg_power_p.png"));
                     break;
             }
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
+            if (BasicMod.isInCombat())
                 applyPowers();
             initializeDescription();
         }

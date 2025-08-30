@@ -72,6 +72,12 @@ public class SpareParts extends ConsumableCards {
                 ((EquipmentCard) c).healEquipment(magicNumber, false, true);
             }
         }
+        for (AbstractCard c : p.exhaustPile.group) {
+            if (c instanceof EquipmentCard) {
+                count++;
+                ((EquipmentCard) c).healEquipment(magicNumber, false, true);
+            }
+        }
         if (count > 0) {
             addToBot(new SFXAction("HEAL_2"));
             AbstractDungeon.topLevelEffectsQueue.add(new HealEquipmentEffect(this, (float) Settings.WIDTH / 2, (float) Settings.HEIGHT / 2, count * magicNumber));

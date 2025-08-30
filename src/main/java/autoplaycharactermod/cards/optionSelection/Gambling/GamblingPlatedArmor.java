@@ -5,6 +5,7 @@ import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -35,6 +36,8 @@ public class GamblingPlatedArmor extends BaseCard {
     }
 
     public void onChoseThisOption() {
+        if (!upgraded)
+            addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber));
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, magicNumber)));
         GachaPull.cardsList.removeIf(c -> c instanceof GamblingPlatedArmor);
         

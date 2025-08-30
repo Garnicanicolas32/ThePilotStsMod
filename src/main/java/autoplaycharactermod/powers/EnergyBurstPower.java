@@ -29,14 +29,22 @@ public class EnergyBurstPower extends BasePower implements OnDrawPileShufflePowe
 
     @Override
     public void onShuffle() {
-        int amt = AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.hand.size() + AbstractDungeon.player.discardPile.size() + 1;
+        int amt = (AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.hand.size() + AbstractDungeon.player.discardPile.size() + 1) / 2;
         flash();
         addToBot(new ApplyPowerAction(owner, owner, new ChargePower(owner, amt * amount)));
     }
 
     public void updateDescription() {
-        if (DESCRIPTIONS != null && DESCRIPTIONS.length > 0){
+        if (DESCRIPTIONS != null && DESCRIPTIONS.length > 3){
         this.description = DESCRIPTIONS[0];
+        if (amount == 1){
+            this.description += DESCRIPTIONS[1];
+        } else if (amount == 2){
+            this.description += DESCRIPTIONS[2];
+        }else{
+            this.description += " #b" + (amount / 2) + (amount % 2 == 0 ? "" : ".5") + DESCRIPTIONS[3];
+        }
+
         } else
             this.description = "[MISSING DESCRIPTION]";
     }

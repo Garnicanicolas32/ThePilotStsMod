@@ -57,6 +57,7 @@ public class ScrapCommonDef extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
         if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             addToBot(new GainBlockAction(p, p, block));
@@ -73,6 +74,10 @@ public class ScrapCommonDef extends BaseCard {
             returnToHand = false;
             setExhaust(true);
         }
+    }
+
+    @Override
+    public void upgrade(){
     }
 
     @Override

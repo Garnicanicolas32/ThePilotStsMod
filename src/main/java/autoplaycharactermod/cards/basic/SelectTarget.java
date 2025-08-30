@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 public class SelectTarget extends BaseCard {
     public static final String ID = makeID("SelectTarget");
     public static final int MAGIC = 2;
-    public static final int MAGIC_UPG = 3;
+    public static final int MAGIC_UPG = 2;
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
@@ -50,7 +50,7 @@ public class SelectTarget extends BaseCard {
         } else {
                 addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
         }
-        MyCharacter.targetCheck(m);
+        MyCharacter.targetCheck(m, true);
     }
 
     @Override

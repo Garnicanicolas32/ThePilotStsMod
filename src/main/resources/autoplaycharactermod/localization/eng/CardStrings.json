@@ -175,7 +175,7 @@
   },
   "${modID}:ScrapCommonLeft": {
     "NAME": "Common Leftovers",
-    "DESCRIPTION": "Permanently evolve a random common card in your deck and all it's copies. NL stslib:Fleeting."
+    "DESCRIPTION": "Permanently evolve a random common card in your deck and all its copies. NL stslib:Fleeting."
   },
   "${modID}:ScrapUncommonAttStr": {
     "NAME": "Strong Module",
@@ -187,7 +187,7 @@
   },
   "${modID}:ScrapUncommonLeft": {
     "NAME": "Uncommon Leftovers",
-    "DESCRIPTION": "Permanently evolve a random uncommon card in your deck and all it's copies. NL stslib:Fleeting."
+    "DESCRIPTION": "Permanently evolve a random uncommon card in your deck and all its copies. NL stslib:Fleeting."
   },
   "${modID}:ScrapRareAtt": {
     "NAME": "Prototype: Alpha",
@@ -199,13 +199,13 @@
   },
   "${modID}:ScrapRareLeft": {
     "NAME": "Rare Leftovers",
-    "DESCRIPTION": "Permanently evolve a random rare card in your deck and all it's copies. NL stslib:Fleeting."
+    "DESCRIPTION": "Permanently evolve a random rare card in your deck and all its copies. NL stslib:Fleeting."
   },
   "${modID}:ScrapUltraRare": {
     "NAME": "Omega Frame",
-    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all it's copies. NL Exhaust.",
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all its copies. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all it's copies. NL Exhaust."
+      "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all its copies. NL Exhaust."
     ]
   },
   "${modID}:CouponStamp": {
@@ -450,8 +450,9 @@
   "${modID}:Acceleration": {
     "NAME": "Acceleration",
     "DESCRIPTION": "Next turn, Gain [E] . NL ${modID}:[#03befc]Echo[]: Discard 1 card to ${modID}:Charge !M! for each [E] spent this turn.",
+    "UPGRADE_DESCRIPTION": "Next turn, Gain [E] [E] . NL ${modID}:[#03befc]Echo[]: Discard 1 card to ${modID}:Charge !M! for each [E] spent this turn.",
     "EXTENDED_DESCRIPTION": [
-      "Next turn, Gain [E] . NL ${modID}:[#03befc]Echo[]: Discard 1 card to ${modID}:Charge !M! for each [E] spent this combat.",
+      "Next turn, Gain [E] [E] . NL ${modID}:[#03befc]Echo[]: Discard 1 card to ${modID}:Charge !M! for each [E] spent this combat.",
       " NL (",
       " Spent)"
     ]
@@ -459,7 +460,6 @@
   "${modID}:QuickReflex": {
     "NAME": "Quick Reflex",
     "DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
-    "UPGRADE_DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
       "${modID}:Charge 12. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: Gain !B! Block. NL Gain [E] [E] .",
       " NL (",
@@ -487,10 +487,10 @@
   },
   "${modID}:EnergyBurst": {
     "NAME": "Energy Burst",
-    "DESCRIPTION": "Every time you shuffle your draw pile, ${modID}:Charge equal to your deck size.",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL Every time you shuffle your draw pile, ${modID}:Charge equal to your deck size.",
+    "DESCRIPTION": "Every time you shuffle your draw pile, ${modID}:Charge equal to half your deck size.",
+    "UPGRADE_DESCRIPTION": "Every time you shuffle your draw pile, ${modID}:Charge equal to your deck size.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL Every time you shuffle your draw pile, ${modID}:Charge equal to twice your deck size."
+      "Every time you shuffle your draw pile, ${modID}:Charge equal to twice your deck size."
     ]
   },
   "${modID}:DoubleOrNothing": {
@@ -559,7 +559,8 @@
     "NAME": "Dispenser",
     "DESCRIPTION": "Obtain a random potion. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Obtain 2 random potions."
+      "Obtain 2 random potions.",
+      "I have no #rPotion slots."
     ]
   },
   "${modID}:BrokenBattery": {
@@ -662,7 +663,7 @@
     "NAME": "Trash Cannon",
     "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Removing cards from your deck permanently increases durability by !${modID}:DURABILITY! and damage by !M!.",
     "EXTENDED_DESCRIPTION": [
-      "[#03befc]Turn[] [#03befc]Start[]: NL Deal !M! damage for every fusion made."
+      "[#03befc]Turn[] [#03befc]Start[]: NL Deal !M! damage for every fusion made to ALL enemies."
     ]
   },
   "${modID}:FailSafe": {

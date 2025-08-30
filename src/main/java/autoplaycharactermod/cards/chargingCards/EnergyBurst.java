@@ -25,6 +25,7 @@ public class EnergyBurst extends BaseCard {
     public EnergyBurst() {
         super(ID, info);
         setInnate(false, true);
+        setMagic(1,1);
         checkEvolve();
     }
 
@@ -37,6 +38,6 @@ public class EnergyBurst extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectsQueue.add(new WobblyLineEffect(p.hb_x, p.hb_y, Color.CYAN.cpy()));
-        addToBot(new ApplyPowerAction(p, p, new EnergyBurstPower(p, this.alreadyEvolved ? 2: 1)));
+        addToBot(new ApplyPowerAction(p, p, new EnergyBurstPower(p, this.alreadyEvolved ? 4 : magicNumber)));
     }
 }

@@ -55,7 +55,7 @@ public class TargetedPower extends BasePower {
         AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
             @Override
             public void update() {
-                MyCharacter.ApplyRandomTarget();
+                MyCharacter.ApplyRandomTarget(false);
                 this.isDone = true;
             }
         });

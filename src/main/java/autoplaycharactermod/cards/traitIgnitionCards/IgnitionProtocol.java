@@ -50,7 +50,8 @@ public class IgnitionProtocol extends TraitCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         for (int i = 0; i < 10; i++) {
             AbstractDungeon.effectsQueue.add(new GiantFireEffect());
         }

@@ -2,6 +2,7 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
+import autoplaycharactermod.actions.RustyBladeAction;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
@@ -51,15 +52,7 @@ public class RustyBlade extends EquipmentCard {
         AbstractMonster m = MyCharacter.getTarget();
 
         calculateCardDamage(m);
-        addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.POISON));
-        int amt = equipmentMaxHp - equipmentHp + 1;
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                addToTop(new ApplyPowerAction(MyCharacter.getTarget(), p, new PoisonPower(m, p, amt)));
-                this.isDone = true;
-            }
-        });
+        addToBot(new RustyBladeAction(this, AbstractGameAction.AttackEffect.POISON));
 
         super.Activate();
     }

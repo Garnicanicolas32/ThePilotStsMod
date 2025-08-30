@@ -35,7 +35,7 @@ import static autoplaycharactermod.BasicMod.makeID;
 public class YellowPower extends BasePower {
     public static final String POWER_ID = makeID("YellowPower");
     public static final int GOLDAMOUNTSTART = 5;
-    public static final int GOLDAMOUNT = 2;
+    public static final int GOLDAMOUNT = 1;
     public static final int PUNISHMENTAMOUNT = 3;
     private static final PowerType TYPE = NeutralPowertypePatch.NEUTRAL;
     private static final boolean TURN_BASED = false;

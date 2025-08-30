@@ -34,7 +34,7 @@ public class ScryButton {
     private static final float GLOW_INTERVAL = 1.2F;
     private static final float HOLD_DUR = 0.4F;
     public static int SCRYSTARTAMOUNT = 4;
-    public static int scryAmount = SCRYSTARTAMOUNT;
+    public static int scryAmount = ConfigPanel.debugScry;
     private final String label;
     private final float current_y;
     private final ArrayList<EndTurnGlowEffect> glowList;
@@ -155,10 +155,9 @@ public class ScryButton {
         AbstractDungeon.player.loseEnergy(1);
         if (AbstractDungeon.player.drawPile.isEmpty())
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
-        if (AbstractDungeon.player.hasPower(HackedPower.POWER_ID))
-            AbstractDungeon.actionManager.addToBottom(new ScryAction(scryAmount - 1));
-        else
-            AbstractDungeon.actionManager.addToBottom(new ScryAction(scryAmount));
+
+        AbstractDungeon.actionManager.addToBottom(new ScryAction((AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount)));
+
         BasicMod.energySpentTrigger();
     }
 
@@ -218,7 +217,7 @@ public class ScryButton {
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {// 258
                     float dy = 162f;
-                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + scryAmount + uiStrings.TEXT[3]);
+                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + (AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount) + uiStrings.TEXT[3]);
                 }
             } else {
                 textColor = Color.LIGHT_GRAY.cpy();// 241
@@ -262,7 +261,7 @@ public class ScryButton {
                 sb.setBlendFunction(770, 771);// 353
             }
 
-            FontHelper.renderFontCentered(sb, FontHelper.panelEndTurnFont, this.label + scryAmount, this.current_x - 0.0F * Settings.scale, tmpY - 3.0F * Settings.scale, textColor);// 381
+            FontHelper.renderFontCentered(sb, FontHelper.panelEndTurnFont, this.label + (AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount), this.current_x - 0.0F * Settings.scale, tmpY - 3.0F * Settings.scale, textColor);// 381
             if (!this.isHidden) {// 389
                 this.hb.render(sb);// 390
             }

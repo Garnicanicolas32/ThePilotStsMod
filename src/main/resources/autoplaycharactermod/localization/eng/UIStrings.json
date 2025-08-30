@@ -22,7 +22,8 @@
   "${modID}:ConfigPanel": {
     "TEXT_DICT": {
       "lessParticles": "Less custom particles and VFX. (Faster)",
-      "experimentalSounds": "More custom sounds, is known to sometimes crash, mostly equipment. (EXPERIMENTAL)"
+      "experimentalSounds": "More custom sounds, is known to sometimes crash, mostly equipment. (EXPERIMENTAL)",
+      "debugScry": "Scry button amount (DEFAULT 4, Dev tool for DEBUG)"
     }
   },
   "${modID}:ComboTags": {

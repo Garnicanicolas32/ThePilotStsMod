@@ -18,7 +18,7 @@ public class CoverFire extends BaseCard {
             CardType.ATTACK,
             CardRarity.BASIC,
             CardTarget.ALL_ENEMY,
-            -2 
+            -2
     );
     private static final int DAMAGE = 6;
     private static final int DAMAGE_UPG = 3;
@@ -40,8 +40,10 @@ public class CoverFire extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int multiplier = this.alreadyEvolved ? 3 : 2;
         for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
-            if (!mon.isDeadOrEscaped())
+            if (!mon.isDeadOrEscaped()) {
+                calculateCardDamage(mon);
                 addToBot(new DamageAction(mon, new DamageInfo(p, mon.hasPower(TargetedPower.POWER_ID) ? damage * multiplier : damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            }
         }
         PlayOnce = false;
 

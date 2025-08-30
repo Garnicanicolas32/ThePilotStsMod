@@ -175,7 +175,7 @@ public abstract class EquipmentCard extends BaseCard {
                 ((EquipmentCard) c).equipmentHp = Math.min(((EquipmentCard) c).equipmentMaxHp, this.equipmentHp);
             }
         }
-        if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
+        if (BasicMod.isInCombat())
             this.applyPowers();
     }
 

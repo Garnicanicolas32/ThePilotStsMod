@@ -89,7 +89,7 @@ public class QuickReflex extends BaseCard {
             addToBot(new GainEnergyAction(2));
         }else if (BasicMod.energySpentTurn <= magicNumber){
             addToBot(new EjectedEffectAction());
-            addToBot(new GainEnergyAction(upgraded ? 2 : 1));
+            addToBot(new GainEnergyAction(1));
         }
     }
 

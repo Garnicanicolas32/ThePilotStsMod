@@ -5,9 +5,12 @@ import autoplaycharactermod.actions.ModifiedCardInHandAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.powers.BluePower;
+import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -60,6 +63,14 @@ public class TerrainRed extends TraitCard {
     @Override
     public boolean freeToPlay() {
         return true;
+    }
+
+    @Override
+    public void upgrade(){
+        super.upgrade();
+        if (BasicMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RedPower(AbstractDungeon.player, 1)));
+        }
     }
 
     @Override

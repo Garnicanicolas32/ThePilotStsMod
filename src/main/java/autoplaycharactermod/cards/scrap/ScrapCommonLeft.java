@@ -74,6 +74,10 @@ public class ScrapCommonLeft extends BaseCard {
         }
     }
 
+    @Override
+    public void upgrade(){
+    }
+
     public boolean canUpgrade() {
         return false;
     }

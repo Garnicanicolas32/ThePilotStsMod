@@ -85,7 +85,9 @@ public class SelfDestruct extends BaseCard {
                         if (!mon.isDeadOrEscaped() && !ConfigPanel.lessParticles)
                             addToBot(new VFXAction(new ExplosionSmallEffect(mon.hb.cX, mon.hb.cY)));
                     }
-                    addToBot(new DamageAllEnemiesAction(p, damage * cards.size(), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+                    for (int i = 0; i < cards.size(); i++) {
+                        addToBot(new DamageAllEnemiesAction(p, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+                    }
                     VigorPenNibDuplicationPatch.checkPenNibVigor();
                 }
             }));

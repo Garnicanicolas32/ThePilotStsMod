@@ -73,7 +73,9 @@ public class CraftingScrapAction extends AbstractGameAction {
                             this.isDone = true;
                         }
                     });
-                    replaceLeftovers();
+                    AbstractDungeon.player.masterDeck.addToBottom(new ScrapCommonLeft());
+                    AbstractDungeon.player.masterDeck.addToBottom(new ScrapUncommonLeft());
+                    AbstractDungeon.player.masterDeck.addToBottom(new ScrapRareLeft());
                 } else {
                     addToTop(new MakeTempCardInDiscardAction(c, true));
                     addToTop(new AddCardToDeckAction(c));

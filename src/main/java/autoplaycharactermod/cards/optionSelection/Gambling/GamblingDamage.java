@@ -2,9 +2,11 @@ package autoplaycharactermod.cards.optionSelection.Gambling;
 
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
+import autoplaycharactermod.powers.TargetedPower;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,7 +38,12 @@ public class GamblingDamage extends BaseCard {
     }
 
     public void onChoseThisOption() {
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
+            if (!mon.isDeadOrEscaped()) {
+                calculateCardDamage(mon);
+                addToBot(new DamageAction(mon, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            }
+        }
         GachaPull.cardsList.removeIf(c -> c instanceof GamblingDamage);
         
     }

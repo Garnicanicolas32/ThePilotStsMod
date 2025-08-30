@@ -13,8 +13,10 @@ import autoplaycharactermod.vfx.FallingGoldEffect;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,18 +37,17 @@ public class TrashCannon extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 10;
-    private static final int DAMAGE = 5;
-    private static final int DAMAGE_UPG = 0;
+    private static final int BASE_HP = 8;
     private static final int MAGIC = 3;
     private static final int MAGIC_UPG = 1;
 
 
     public TrashCannon() {
         super(ID, info, BASE_HP);
-        misc = DAMAGE;
-        setDamage(misc, DAMAGE_UPG);
-        setMagic(MAGIC, MAGIC_UPG);
+        this.misc = 5;
+        setMagic(3, 1);
+        this.baseDamage = this.misc;
+
         setCustomVar("DURABILITY", 1, 1);
         setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.GOLD.cpy());
@@ -56,7 +57,7 @@ public class TrashCannon extends EquipmentCard {
 
     @Override
     public void evolveCard() {
-        setMagic(5);
+        setMagic(7);
         super.evolveCard();
     }
 
@@ -90,7 +91,7 @@ public class TrashCannon extends EquipmentCard {
             AbstractDungeon.effectsQueue.add(new FallingGoldEffect(this.damage / MAGIC, AbstractDungeon.getMonsters().shouldFlipVfx()));
         }
         if (alreadyEvolved) {
-            addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(p, BasicMod.fusionsmade * magicNumber)));
+            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, BasicMod.fusionsmade * magicNumber, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         } else
             addToBot(new DamageCurrentTargetAction(this));
 
@@ -114,18 +115,31 @@ public class TrashCannon extends EquipmentCard {
     }
 
     public void AddStack() {
-        this.misc += magicNumber;
-        this.applyPowers();
-        this.baseDamage = this.misc;
-        this.isDamageModified = false;
-        this.equipmentMaxHp += customVar("DURABILITY");
-        this.equipmentHp += customVar("DURABILITY");
-        initializeDescription();
+        if (!alreadyEvolved) {
+            this.misc += magicNumber;
+            this.applyPowers();
+            this.baseDamage = this.misc;
+            this.isDamageModified = false;
+            this.equipmentMaxHp += customVar("DURABILITY");
+            this.equipmentHp += customVar("DURABILITY");
+            initializeDescription();
+        }
+    }
+
+    public void applyPowers() {
+        this.baseBlock = this.misc;
+        super.applyPowers();
+        this.initializeDescription();
+    }
+
+    @Override
+    public void onLoadedMisc() {
+        baseDamage = misc;
     }
 
     @Override
     protected int getUpgradeDurability() {
-        return 5;
+        return 4;
     }
 
     @Override

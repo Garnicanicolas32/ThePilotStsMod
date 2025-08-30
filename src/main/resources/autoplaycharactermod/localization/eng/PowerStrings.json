@@ -104,7 +104,9 @@
   "${modID}:EnergyBurstPower": {
     "NAME": "Energy Burst",
     "DESCRIPTIONS": [
-      "When you shuffle your deck gain #yCharge equal to your deck size."
+      "When you shuffle your deck gain #yCharge equal to", " half your deck size.",
+      " your deck size.",
+      " times your deck size."
     ]
   },
   "${modID}:HackedPower": {

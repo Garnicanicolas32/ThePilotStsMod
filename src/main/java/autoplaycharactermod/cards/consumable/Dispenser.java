@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 public class Dispenser extends ConsumableCards {
     public static final String ID = makeID("Dispenser");
@@ -21,7 +22,7 @@ public class Dispenser extends ConsumableCards {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            -2 
+            -2
     );
 
     public Dispenser() {
@@ -36,6 +37,8 @@ public class Dispenser extends ConsumableCards {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        boolean found = false;
+
         for (AbstractPotion po : p.potions) {
             if (po instanceof PotionSlot) {
                 AbstractDungeon.topLevelEffectsQueue.add(new MicroMisilesParticle(
@@ -44,12 +47,23 @@ public class Dispenser extends ConsumableCards {
                         po.hb.cX, po.hb.cY - 3f * Settings.scale,
                         AbstractDungeon.player.flipHorizontal,
                         Color.GREEN.cpy(), false, 1.3f));
+                found = true;
                 break;
             }
         }
+        setExhaust(found);
         addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
-        if (alreadyEvolved)
-            addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
-        super.use(p, m);
+        if (found) {
+            if (alreadyEvolved)
+                addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
+            super.use(p, m);
+        }else {
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, cardStrings.EXTENDED_DESCRIPTION[1], true));
+            PlayOnce = false;
+            returnToHand = false;
+        }
+    }
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return PlayOnce && super.canUse(p, m);
     }
 }
