@@ -35,7 +35,7 @@ public class TrashCannon extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 8;
+    private static final int BASE_HP = 10;
     private static final int MAGIC = 3;
     private static final int MAGIC_UPG = 1;
 
@@ -43,7 +43,7 @@ public class TrashCannon extends EquipmentCard {
     public TrashCannon() {
         super(ID, info, BASE_HP);
         this.misc = 5;
-        setMagic(3, 1);
+        setMagic(MAGIC, MAGIC_UPG);
         this.baseDamage = this.misc;
 
         setCustomVar("DURABILITY", 1, 1);
@@ -109,7 +109,6 @@ public class TrashCannon extends EquipmentCard {
     @Override
     public void Activate() {
         if (!Equipped) return;
-        AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = MyCharacter.getTarget();
 
         calculateCardDamage(m);

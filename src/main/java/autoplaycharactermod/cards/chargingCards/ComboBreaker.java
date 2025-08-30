@@ -25,7 +25,7 @@ public class ComboBreaker extends BaseCard {
             CardTarget.SELF,
             -2
     );
-    private static final int UPG_MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
     private static final int MAGIC = 3;
     private int count = 0;
 

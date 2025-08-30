@@ -197,14 +197,7 @@
       "[#03befc]Unequip[]",
       "[#03befc]Unequipped[]"
     ],
-    "DESCRIPTION": "The second time you play an equipment and is discarded from your hand."
-  },
-  {
-    "PROPER_NAME": "[#03befc]Take[] [#03befc]Damage[]",
-    "NAMES": [
-      "[#03befc]Damage[]"
-    ],
-    "DESCRIPTION": "Includes blocked damage."
+    "DESCRIPTION": "The second time you play an equipment and is discarded."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

@@ -708,10 +708,10 @@
   },
   "${modID}:EnergyChamber": {
     "NAME": "Energy Chamber",
-    "DESCRIPTION": "[#03befc]Take[], [#03befc]Block[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] ${modID}:[#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
+    "DESCRIPTION": "[#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] ${modID}:[#03befc]Damage[]: NL Increase this card damage twice that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
+      "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card damage twice that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
     ]
   },
   "${modID}:Drill": {
