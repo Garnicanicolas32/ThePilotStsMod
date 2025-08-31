@@ -4,6 +4,7 @@ import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.GeneralUtils;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,14 +21,14 @@ public class CrossedWires extends TraitCard {
 
     public CrossedWires() {
         super(ID, info, TraitCard.TraitColor.OTHER, false);
-        setMagic(2,2);
+        setMagic(1,1);
         checkEvolve();
     }
 
     @Override
     public void evolveCard() {
         countsTwiceOnUpgrade = true;
-        setMagic(5);
+        setMagic(3);
         super.evolveCard();
 
     }
@@ -38,13 +39,13 @@ public class CrossedWires extends TraitCard {
         for (int i = 0; i < magicNumber; i++) {
             switch (AbstractDungeon.cardRandomRng.random(2)){
                 case 0:
-                    addToBot(new MakeTempCardInDrawPileAction(GeneralUtils.getRandomIgitionCard(), 1, true, true));
+                    addToBot(new MakeTempCardInHandAction(GeneralUtils.getRandomIgitionCard()));
                     break;
                 case 1:
-                    addToBot(new MakeTempCardInDrawPileAction(GeneralUtils.getRandomBastionCard(), 1, true, true));
+                    addToBot(new MakeTempCardInHandAction(GeneralUtils.getRandomBastionCard()));
                     break;
                 case 2:
-                    addToBot(new MakeTempCardInDrawPileAction(GeneralUtils.getRandomScavengeCard(), 1, true, true));
+                    addToBot(new MakeTempCardInHandAction(GeneralUtils.getRandomScavengeCard()));
                     break;
             }
         }

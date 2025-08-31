@@ -21,15 +21,14 @@ public class TakeAim extends BaseCard {
             0 
     );
     private static final int MAGIC = 7;
-    private static final int UPG_MAGIC = 4;
+    private static final int UPG_MAGIC = 5;
     private static final int CHARGE = 3;
-    private static final int CHARGE_UPG = 0;
 
     public TakeAim() {
         super(ID, info);
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
-        setCustomVar("CHARGE", CHARGE, CHARGE_UPG);
+        setCustomVar("CHARGE", CHARGE);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         checkEvolve();
     }

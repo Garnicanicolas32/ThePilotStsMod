@@ -22,24 +22,18 @@ public class InstructionManual extends EquipmentCard {
     );
     private static final int BASE_HP = 12;
     private static final int BLOCK = 8;
-    private static final int BLOCKUPG = 4;
-    private static final int MAGIC = 1;
-    private static final int MAGICUPG = 0;
-
+    private static final int BLOCK_UPG = 4;
 
     public InstructionManual() {
         super(ID, info, BASE_HP);
-        setBlock(BLOCK, BLOCKUPG);
-        setMagic(MAGIC, MAGICUPG);
+        setBlock(BLOCK, BLOCK_UPG);
+        setMagic(1);
         cardsToPreview = new Insight();
         checkEvolve();
     }
 
-    @Override
-    public void evolveCard() {
-        setBlock(20);
-        setMagic(3);
-        super.evolveCard();
+    public void triggerOnShuffle() {
+        Activate();
     }
 
     @Override
@@ -58,9 +52,11 @@ public class InstructionManual extends EquipmentCard {
         return 3;
     }
 
-    public void triggerOnShuffle() {
-        Activate();
+    @Override
+    public void evolveCard() {
+        setBlock(20);
+        setMagic(3);
+        super.evolveCard();
     }
-
 
 }

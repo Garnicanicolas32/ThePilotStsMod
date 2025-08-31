@@ -44,19 +44,10 @@ public class RustyBlade extends EquipmentCard {
     @Override
     public void Activate() {
         if (!Equipped) return;
-
-        AbstractPlayer p = AbstractDungeon.player;
         AbstractMonster m = MyCharacter.getTarget();
-
         calculateCardDamage(m);
         addToBot(new RustyBladeAction(this, AbstractGameAction.AttackEffect.POISON));
-
         super.Activate();
-    }
-
-    @Override
-    protected int getUpgradeDurability() {
-        return 2;
     }
 
     public void triggerOnEndOfTurnForPlayingCard() {

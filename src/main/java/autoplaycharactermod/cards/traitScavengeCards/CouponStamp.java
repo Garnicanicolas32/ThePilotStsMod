@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
@@ -63,9 +64,9 @@ public class CouponStamp extends TraitCard {
 
     @Override
     public void initializeDescription() {
-        if (!this.alreadyEvolved) {
-            this.rawDescription = cardStrings != null ? cardStrings.DESCRIPTION : "";
-            if (BasicMod.purchases > 0 && cardStrings != null) {
+        if (cardStrings != null && CardCrawlGame.isInARun()) {
+            this.rawDescription = this.alreadyEvolved ? cardStrings.DESCRIPTION : cardStrings.EXTENDED_DESCRIPTION[0];
+            if (BasicMod.purchases > 0) {
                 this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1]
                         + BasicMod.purchases
                         + cardStrings.EXTENDED_DESCRIPTION[2];

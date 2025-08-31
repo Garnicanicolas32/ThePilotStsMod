@@ -55,13 +55,9 @@ public class QuickReflex extends BaseCard {
 
     public void updateTextCount() {
         if (!this.alreadyEvolved) {
-            if (upgraded)
-                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            else
                 this.rawDescription = cardStrings.DESCRIPTION;
-
-            if (BasicMod.energySpentTurn > 0)
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn) + cardStrings.EXTENDED_DESCRIPTION[2];
+            if (BasicMod.energySpentTurn >= 0)
+                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn + 1) + cardStrings.EXTENDED_DESCRIPTION[2];
             initializeDescription();
         }
     }
@@ -75,7 +71,6 @@ public class QuickReflex extends BaseCard {
             ((EfficiencyPower)AbstractDungeon.player.getPower(EfficiencyPower.POWER_ID)).triggerEject();
         if (this.alreadyEvolved) {
             addToBot(new EjectedEffectAction());
-            addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
             addToBot(new GainEnergyAction(2));
         }else if (BasicMod.energySpentTurn <= magicNumber){
             addToBot(new EjectedEffectAction());

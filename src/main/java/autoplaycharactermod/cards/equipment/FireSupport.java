@@ -35,7 +35,6 @@ public class FireSupport extends EquipmentCard {
 
     @Override
     public void evolveCard() {
-        setInnate(true);
         setDamage(9);
         super.evolveCard();
     }

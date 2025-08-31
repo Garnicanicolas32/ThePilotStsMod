@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 
 @NoPools
@@ -31,7 +32,7 @@ public class GamblingLoseEnergy extends BaseCard {
     }
 
     public void onChoseThisOption() {
-        addToBot(new LoseEnergyAction(AbstractDungeon.player.energy.energy));
+        addToBot(new LoseEnergyAction(EnergyPanel.getCurrentEnergy()));
         GachaPull.cardsList.removeIf(c -> c instanceof GamblingLoseEnergy);
         
     }

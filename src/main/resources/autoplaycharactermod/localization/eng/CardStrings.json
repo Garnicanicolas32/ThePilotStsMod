@@ -51,7 +51,7 @@
     "NAME": "Burning Payload",
     "DESCRIPTION": "Deal !D! damage. NL Add a *Melt to your hand and a copy of this card to your discard.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage twice. NL Add a copy of this card to your discard pile."
+      "Deal !D! damage twice. NL Add 2 copies of this card to your discard pile."
     ],
     "FLAVOR": "You shouldn't be able to read this."
   },
@@ -100,8 +100,8 @@
     "DESCRIPTION": "Gain Block equal to half the energy spent since last use.",
     "UPGRADE_DESCRIPTION": "Gain Block equal to the energy spent since last use.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block for every [E] spent this combat.",
-      " NL (",
+      "Gain Block equal to the energy spent this combat.",
+      " (",
       " Spent)"
     ]
   },
@@ -244,9 +244,10 @@
   },
   "${modID}:CrossedWires": {
     "NAME": "Crossed Wires",
-    "DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random *Trait cards into your draw pile.",
+    "DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Add a random *Trait card into your hand.",
+    "UPGRADE_DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Add !M! random *Trait cards into your hand.",
     "EXTENDED_DESCRIPTION": [
-      "Counts twice as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random *Trait cards into your draw pile."
+      "Counts twice as *Ignition, *Bastion, *Scavenge. NL Add !M! random *Trait cards into your hand."
     ],
     "FLAVOR": "You shouldn't be able to read this."
   },
@@ -255,7 +256,7 @@
     "DESCRIPTION": "Choose one: NL *Inferno, *Bunker or *Junk *Pit. NL Add it to your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose one: NL *Inferno+, *Bunker+ or *Junk *Pit+. NL Add it to your hand. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Choose one: NL *Inferno, *Bunker or *Junk *Pit. NL Add it to your hand and evolve it. NL Exhaust."
+      "Choose one: NL *Inferno++, *Bunker++ or *Junk *Pit++. NL Add it to your hand. NL Exhaust."
     ]
   },
   "${modID}:TerrainRed": {
@@ -284,7 +285,7 @@
   },
   "${modID}:GachaPull": {
     "NAME": "Gacha Pull",
-    "DESCRIPTION": "Lose !${modID}:COST! Gold to pick NL 1 of !M! rewards or drawbacks and remove it from the pool.",
+    "DESCRIPTION": "Lose !${modID}:COST! Gold to pick NL 1 of !M! rewards or drawbacks.",
     "EXTENDED_DESCRIPTION": [
       "Choose 1 of 3 rewards.",
       "Not enough #rGold.",
@@ -461,7 +462,7 @@
     "NAME": "Quick Reflex",
     "DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Charge 12. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: Gain !B! Block. NL Gain [E] [E] .",
+      "${modID}:Charge 12. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: NL Gain [E] [E] .",
       " NL (",
       " Spent)"
     ]
@@ -543,9 +544,9 @@
   },
   "${modID}:JunkFood": {
     "NAME": "Junk Food",
-    "DESCRIPTION": "Heal !M! HP. NL Exhaust.",
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Heal !M! HP. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Heal !M! HP."
+      "Gain !M! Temporary_HP. NL Heal !M! HP."
     ]
   },
   "${modID}:Grenades": {
@@ -693,10 +694,7 @@
   },
   "${modID}:FireSupport": {
     "NAME": "Fire Support",
-    "DESCRIPTION": "[#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage.",
-    "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage."
-    ]
+    "DESCRIPTION": "[#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage."
   },
   "${modID}:RustyBlade": {
     "NAME": "Rusty Blade",
@@ -719,7 +717,7 @@
     "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL [#03befc]Combat[] [#03befc]End[]: Add a *Scrap to your deck.",
     "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL [#03befc]Combat[] [#03befc]End[]: Add a *Scrap to your deck.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold."
+      "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL Gain 9 Temporary_HP."
     ]
   },
   "${modID}:RocketPunch": {
@@ -731,10 +729,7 @@
   },
   "${modID}:SelfDestruct": {
     "NAME": "Self Destruct",
-    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted card.",
-    "EXTENDED_DESCRIPTION": [
-      "Retain NL ${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted Equipment."
-    ]
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted equipment."
   },
   "${modID}:EMPGrenade": {
     "NAME": "EMP Grenade",

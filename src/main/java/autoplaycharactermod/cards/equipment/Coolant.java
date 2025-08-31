@@ -22,22 +22,12 @@ public class Coolant extends EquipmentCard {
             0 
     );
     private static final int BASE_HP = 14;
-    private static final int MAGIC = 1;
-    private static final int MAGIC_UPG = 0;
 
     public Coolant() {
         super(ID, info, BASE_HP);
-        setMagic(MAGIC, MAGIC_UPG);
+        setMagic(1);
         setInnate(false,true);
         checkEvolve();
-    }
-
-    @Override
-    public void evolveCard() {
-        setInnate(true);
-        setMagic(3);
-        super.evolveCard();
-
     }
 
     public void triggerOnCardPlayed(AbstractCard cardPlayed) {
@@ -47,8 +37,7 @@ public class Coolant extends EquipmentCard {
             for (int i = 0; i < (ConfigPanel.lessParticles ? 10 : 20); i++) {
                 AbstractDungeon.effectsQueue.add(new CoolantEffect(this.hb.cX, this.hb.cY));
             }
-            AbstractPlayer p = AbstractDungeon.player;
-            addToBot(new ExhaustSpecificCardAction(cardPlayed, p.hand));
+            addToBot(new ExhaustSpecificCardAction(cardPlayed, AbstractDungeon.player.hand));
             addToBot(new GainEnergyAction(magicNumber));
             Activate();
         }
@@ -57,5 +46,12 @@ public class Coolant extends EquipmentCard {
     @Override
     protected int getUpgradeDurability() {
         return 6;
+    }
+
+    @Override
+    public void evolveCard() {
+        setInnate(true);
+        setMagic(3);
+        super.evolveCard();
     }
 }

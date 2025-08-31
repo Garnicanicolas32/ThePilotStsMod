@@ -42,6 +42,8 @@ public class ArcBlasterMk extends BaseCard {
     public void evolveCard() {
         super.evolveCard();
         loadCardImage("autoplaycharactermod/images/cards/skill/ArcBlasterMk5.png");
+        this.name = cardStrings.NAME + (this.timesUpgraded + 1) + "++";
+        this.initializeTitle();
     }
 
     @Override
@@ -108,13 +110,11 @@ public class ArcBlasterMk extends BaseCard {
         this.upgraded = true;
         int number = this.timesUpgraded + 1;
         this.name = cardStrings.NAME + number;
-        this.initializeTitle();
-        if (this.alreadyEvolved) {
-            this.initializeDescription();
-        }
         this.misc += UPG_MAGIC;
         if (this.alreadyEvolved) {
             loadCardImage("autoplaycharactermod/images/cards/skill/ArcBlasterMk5.png");
+            this.name += "++";
+            this.initializeTitle();
         } else if (this.timesUpgraded == 1) {
             loadCardImage("autoplaycharactermod/images/cards/skill/ArcBlasterMk2.png");
         } else if (this.timesUpgraded == 2) {
@@ -123,6 +123,9 @@ public class ArcBlasterMk extends BaseCard {
             loadCardImage("autoplaycharactermod/images/cards/skill/ArcBlasterMk4.png");
         } else if (this.timesUpgraded >= 4) {
             loadCardImage("autoplaycharactermod/images/cards/skill/ArcBlasterMk5.png");
+        }
+        if (!this.alreadyEvolved) {
+            this.initializeDescription();
         }
     }
 

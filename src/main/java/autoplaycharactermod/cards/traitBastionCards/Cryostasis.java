@@ -28,16 +28,16 @@ public class Cryostasis extends TraitCard {
     }
 
     @Override
-    public void evolveCard() {
-        setBlock(12);
-        super.evolveCard();
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyPowerAction(p, p, new BlurPower(p, this.alreadyEvolved ? 3 : 1)));
         PlayOnce = false;
         super.use(p, m);
+    }
+
+    @Override
+    public void evolveCard() {
+        setBlock(12);
+        super.evolveCard();
     }
 }

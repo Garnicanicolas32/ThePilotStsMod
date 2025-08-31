@@ -41,7 +41,6 @@ public class DuctTape extends TraitCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (PlayOnce && !Duplicated) {
             PlayOnce = false;
             returnToHand = true;

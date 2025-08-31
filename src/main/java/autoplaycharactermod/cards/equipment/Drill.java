@@ -15,6 +15,7 @@ import autoplaycharactermod.vfx.PoisonMineDrillEffect;
 import basemod.helpers.TooltipInfo;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -121,6 +122,9 @@ public class Drill extends EquipmentCard {
             AbstractDungeon.effectsQueue.add(new PoisonMineDrillEffect(this.hb.cX, this.hb.cY, true));
         }
         addToBot(new GainGoldAction(magicNumber));
+        if (alreadyEvolved) {
+            addToBot(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, 10));
+        }
         super.Activate();
     }
 

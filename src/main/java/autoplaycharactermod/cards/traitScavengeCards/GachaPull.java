@@ -118,8 +118,15 @@ public class GachaPull extends TraitCard {
         } else if (!cardsList.isEmpty() && !this.alreadyEvolved) {
             Collections.shuffle(cardsList, AbstractDungeon.cardRandomRng.random);
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
+            int count = 0;
             for (int i = 0; i < magicNumber && i < cardsList.size(); i++) {
                 AbstractCard option = cardsList.get(i).makeCopy();
+                if (cardsList.size() > (3 + count) && (option instanceof GamblingRelic || option instanceof GamblingStun)) {
+                    if (AbstractDungeon.cardRandomRng.randomBoolean(0.30f)) {
+                        count++;
+                        option = cardsList.get(i + count).makeCopy();
+                    }
+                }
                 option.upgrade();
                 stanceChoices.add(option);
             }

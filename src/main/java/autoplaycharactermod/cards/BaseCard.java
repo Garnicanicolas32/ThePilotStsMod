@@ -101,6 +101,9 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
         }
     }
 
+    public void updateTextCount() {
+    }
+
     protected static String makeID(String name) {
         return BasicMod.makeID(name);
     }
@@ -601,6 +604,10 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
                 CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null) {
             alreadyEvolved = true;
+            this.upgraded = true;
+            this.name = cardStrings.NAME + "++";
+            this.initializeTitle();
+
             if (cardStrings.EXTENDED_DESCRIPTION != null && cardStrings.EXTENDED_DESCRIPTION.length > 0) {
                 this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
             }

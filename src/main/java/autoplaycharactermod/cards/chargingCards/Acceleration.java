@@ -55,26 +55,16 @@ public class Acceleration extends BaseCard {
             } else {
                 if (BasicMod.energySpentTurn > 0)
                     addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber * BasicMod.energySpentTurn)));
-                this.rawDescription = cardStrings.DESCRIPTION;
-                initializeDescription();
             }
             returnToHand = false;
         }
     }
 
-    public void applyPowers() {
-        super.applyPowers();
+    public void updateTextCount() {
         if (!this.alreadyEvolved) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-            if (BasicMod.energySpentTurn > 0)
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + BasicMod.energySpentTurn + cardStrings.EXTENDED_DESCRIPTION[2];
-            initializeDescription();
-        }
-    }
-
-    public void onMoveToDiscard() {
-        if (!this.alreadyEvolved) {
-            this.rawDescription = cardStrings.DESCRIPTION;
+            this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
+            if (BasicMod.energySpentTurn >= 0)
+                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn + 1) + cardStrings.EXTENDED_DESCRIPTION[2];
             initializeDescription();
         }
     }

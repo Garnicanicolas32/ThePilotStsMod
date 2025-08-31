@@ -53,7 +53,7 @@ public class Flamethrower extends EquipmentCard {
 
     @Override
     public void evolveCard() {
-        setDamage(5);
+        setDamage(9);
         super.evolveCard();
     }
 

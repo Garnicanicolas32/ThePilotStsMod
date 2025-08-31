@@ -53,7 +53,6 @@ public class SelfDestruct extends BaseCard {
 
     @Override
     public void evolveCard() {
-        setSelfRetain(true);
         setDamage(22);
         super.evolveCard();
     }

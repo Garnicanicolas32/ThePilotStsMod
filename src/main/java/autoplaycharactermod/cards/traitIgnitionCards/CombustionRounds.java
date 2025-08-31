@@ -44,7 +44,6 @@ public class CombustionRounds extends TraitCard {
         } else {
             addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 1, true, true));
         }
-
         PlayOnce = false;
         super.use(p, m);
     }

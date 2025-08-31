@@ -389,10 +389,8 @@ public class BasicMod implements
                 AbstractDungeon.player.discardPile)) {
             if (group != null) {
                 for (AbstractCard ca : group.group) {
-                    if (ca instanceof DataCache) {
-                        ((DataCache)ca).updateTextCount();
-                    }else if(ca instanceof QuickReflex){
-                        ((QuickReflex)ca).updateTextCount();
+                    if (ca instanceof BaseCard) {
+                        ((BaseCard)ca).updateTextCount();
                     }
                 }
             }

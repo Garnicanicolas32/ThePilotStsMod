@@ -44,6 +44,7 @@ public class BurningPayload extends TraitCard {
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (this.alreadyEvolved) {
             addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new MakeTempCardInDiscardAction(makeStatEquivalentCopy(), 1));
         } else {
             addToBot(new ModifiedCardInHandAction(new Melt(), 1));
         }
