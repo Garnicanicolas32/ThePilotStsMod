@@ -90,6 +90,7 @@ public class SelfDestruct extends BaseCard {
                     OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
                 }
             }));
+            setExhaust(true);
         }
     }
 

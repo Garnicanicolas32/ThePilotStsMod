@@ -36,7 +36,7 @@ public class Flamethrower extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 8;
+    private static final int BASE_HP = 10;
     private static final int DAMAGE = 2;
     private static final int DAMAGE_UPG = 1;
 

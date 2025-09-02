@@ -23,8 +23,8 @@ public class ScorchedCore extends TraitCard {
     );
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
-    private static final int BLOCK = 4;
-    private static final int UPG_BLOCK = 2;
+    private static final int BLOCK = 5;
+    private static final int UPG_BLOCK = 1;
 
     public ScorchedCore() {
         super(ID, info, TraitColor.IGNITE, false);

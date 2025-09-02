@@ -1,5 +1,6 @@
 package autoplaycharactermod.cards.traitIgnitionCards;
 
+import autoplaycharactermod.actions.CheckUnplayedCards;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
@@ -19,8 +20,8 @@ public class ThermalSurge extends TraitCard {
             CardTarget.NONE,
             -2
     );
-    private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 8;
+    private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 1;
     private static final int UPG_MAGIC = 1;
 
@@ -43,8 +44,9 @@ public class ThermalSurge extends TraitCard {
         if (this.alreadyEvolved) {
             addToBot(new ExhaustAction(BaseMod.MAX_HAND_SIZE, false, true, true));
         } else {
-            addToBot(new ExhaustAction(magicNumber, false, true, upgraded));
+            addToBot(new ExhaustAction(magicNumber, false, true, true));
         }
+        addToBot(new CheckUnplayedCards());
         PlayOnce = false;
         super.use(p, m);
     }

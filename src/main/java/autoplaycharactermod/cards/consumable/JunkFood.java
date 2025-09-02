@@ -27,7 +27,7 @@ public class JunkFood extends ConsumableCards {
     private static final int MAGIC_UPG = 2;
 
     public JunkFood() {
-        super(ID, info, 4, 3);
+        super(ID, info, 4, 2);
         tags.add(CardTags.HEALING);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();

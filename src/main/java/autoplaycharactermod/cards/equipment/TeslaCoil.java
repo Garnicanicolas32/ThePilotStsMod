@@ -19,8 +19,8 @@ public class TeslaCoil extends EquipmentCard {
     private static final int BASE_HP = 30;
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 0;
 
     public TeslaCoil() {
         super(ID, info, BASE_HP);
@@ -44,7 +44,7 @@ public class TeslaCoil extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 5;
+        return 10;
     }
 
     public void didDiscard() {

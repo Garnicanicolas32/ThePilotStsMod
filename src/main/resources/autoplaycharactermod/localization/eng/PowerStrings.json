@@ -74,7 +74,7 @@
     "NAME": "Feedback Loop",
     "DESCRIPTIONS": [
       "Whenever you apply a Buff or Debuff, deal #b",
-      " damage to your target."
+      " damage."
     ]
   },
   "${modID}:Crafting": {

@@ -3,6 +3,7 @@ package autoplaycharactermod.cards.chargingCards;
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
@@ -25,7 +26,7 @@ public class DefenseMatrix extends BaseCard {
             CardTarget.SELF,
             0 
     );
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 6;
     private static final int UPG_MAGIC = 4;
 
     public DefenseMatrix() {
@@ -50,7 +51,7 @@ public class DefenseMatrix extends BaseCard {
             addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
         } else {
             addToBot(new DiscardAction(p, p, 1, false));
-            AbstractPower pwr = p.getPower(SavePower.POWER_ID);
+            AbstractPower pwr = p.getPower(ChargePower.POWER_ID);
             int number = (pwr != null) ? pwr.amount : magicNumber;
             if (this.alreadyEvolved)
                 addToBot(new GainBlockAction(p, p, number * 2));
@@ -58,13 +59,6 @@ public class DefenseMatrix extends BaseCard {
                 addToBot(new GainBlockAction(p, p, number / 2));
             returnToHand = false;
         }
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Charge").PROPER_NAME, BasicMod.keywords.get("Charge").DESCRIPTION));
-        return customTooltips;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package autoplaycharactermod.ui;
 
 import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.util.Hotkeys;
 import autoplaycharactermod.powers.HackedPower;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -105,7 +106,7 @@ public class ScryButton {
             AbstractDungeon.effectsQueue.add(new EndTurnLongPressBarFlashEffect());
         }
 
-        if ((!Settings.USE_LONG_PRESS) && (this.hb.clicked && !this.isDisabled && this.enabled)) {
+        if ((!Settings.USE_LONG_PRESS) && ((this.hb.clicked || Hotkeys.ActionSet.ScryButton.isJustPressed()) && !this.isDisabled && this.enabled)) {
             this.hb.clicked = false;
             if (!AbstractDungeon.isScreenUp) {
                 this.trigger();
@@ -217,7 +218,7 @@ public class ScryButton {
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {// 258
                     float dy = 162f;
-                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2] + (AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount) + uiStrings.TEXT[3]);
+                    TipHelper.renderGenericTip(this.current_x - 155F * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1] + Hotkeys.ActionSet.ScryButton.getKeyString() + ")", uiStrings.TEXT[2] + (AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount) + uiStrings.TEXT[3]);
                 }
             } else {
                 textColor = Color.LIGHT_GRAY.cpy();// 241

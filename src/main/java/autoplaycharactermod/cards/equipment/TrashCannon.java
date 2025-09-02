@@ -35,7 +35,7 @@ public class TrashCannon extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 10;
+    private static final int BASE_HP = 14;
     private static final int MAGIC = 3;
     private static final int MAGIC_UPG = 1;
 
@@ -165,7 +165,7 @@ public class TrashCannon extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 4;
+        return 0;
     }
 
     @Override

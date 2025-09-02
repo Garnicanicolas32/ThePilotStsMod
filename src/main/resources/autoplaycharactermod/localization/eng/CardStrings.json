@@ -49,9 +49,9 @@
   },
   "${modID}:BurningPayload": {
     "NAME": "Burning Payload",
-    "DESCRIPTION": "Deal !D! damage. NL Add a *Melt to your hand and a copy of this card to your discard.",
+    "DESCRIPTION": "Deal !D! damage twice. NL Add a *Melt to your hand and a copy of this card to your discard.",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage twice. NL Add 2 copies of this card to your discard pile."
+      "Deal !D! damage 3 times. NL Add 2 copies of this card to your discard pile."
     ],
     "FLAVOR": "You shouldn't be able to read this."
   },
@@ -65,8 +65,8 @@
   },
   "${modID}:ThermalSurge": {
     "NAME": "Thermal Surge",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust a card in your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Exhaust up to 2 cards in your hand.",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust up to !M! card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Exhaust up to !M! cards in your hand.",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage. NL Exhaust any card in your hand."
     ],
@@ -237,17 +237,17 @@
   },
   "${modID}:NFT": {
     "NAME": "NFT",
-    "DESCRIPTION": "Gain !B! Block. NL Loses !M! Block for each *NFT in your deck.",
+    "DESCRIPTION": "Gain !B! Block. NL Gains !M! less Block for each *NFT you have in combat.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Gain 15 gold for each *NFT in your deck."
     ]
   },
   "${modID}:CrossedWires": {
     "NAME": "Crossed Wires",
-    "DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Add a random *Trait card into your hand.",
-    "UPGRADE_DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Add !M! random *Trait cards into your hand.",
+    "DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random *Trait cards into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Counts as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random Upgraded *Trait cards into your draw pile.",
     "EXTENDED_DESCRIPTION": [
-      "Counts twice as *Ignition, *Bastion, *Scavenge. NL Add !M! random *Trait cards into your hand."
+      "Counts twice as *Ignition, *Bastion, *Scavenge. NL Shuffle !M! random Upgraded *Trait cards into your draw pile."
     ],
     "FLAVOR": "You shouldn't be able to read this."
   },
@@ -460,9 +460,9 @@
   },
   "${modID}:QuickReflex": {
     "NAME": "Quick Reflex",
-    "DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
+    "DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! Weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Charge 12. NL Apply !${modID}:WEAK! weak. NL ${modID}:[#03befc]Ejected[]: NL Gain [E] [E] .",
+      "${modID}:Charge 12. NL Apply !${modID}:WEAK! Weak. NL ${modID}:[#03befc]Ejected[]: NL Gain [E] [E] .",
       " NL (",
       " Spent)"
     ]
@@ -530,9 +530,9 @@
   },
   "${modID}:DefenseMatrix": {
     "NAME": "Defense Matrix",
-    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain Block equal to half your ${modID}:Capacity.",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain Block equal to half your ${modID}:Charge.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain Block equal to twice your ${modID}:Capacity."
+      "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain Block equal to twice your ${modID}:Charge."
     ]
   },
   "${modID}:PowerSlide": {
@@ -602,15 +602,15 @@
   },
   "${modID}:Coolant": {
     "NAME": "Coolant",
-    "DESCRIPTION": "[#03befc]Play[] Status: NL Exhaust it and gain [E].",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it and gain [E].",
+    "DESCRIPTION": "[#03befc]Play[] Status: NL Exhaust it. NL Gain !M! Vigor. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it. NL Gain !M! Vigor. NL Gain [E].",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it and gain [E] [E] [E]."
+      "${modID}:Deploy. NL [#03befc]Play[] Status: NL Exhaust it NL Gain !M! Vigor. NL Gain [E] [E] [E] "
     ]
   },
   "${modID}:HeavyShield": {
     "NAME": "Heavy Shield",
-    "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: NL Gain !B! Block. NL Next turn, Lose [E] .",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: NL Gain !B! Block. NL Gain !M! Weak.",
     "EXTENDED_DESCRIPTION": [
       "[#03befc]Turn[] [#03befc]End[]: NL Gain !B! Block."
     ]
@@ -706,18 +706,13 @@
   },
   "${modID}:EnergyChamber": {
     "NAME": "Energy Chamber",
-    "DESCRIPTION": "[#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card's damage by that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage.",
-    "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card damage twice that much. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
-    ]
+    "DESCRIPTION": "[#03befc]Take[], [#03befc]Block[] [#03befc]Damage[]: NL Increase this card's damage by !M!. NL ${modID}:[#03befc]Unequipped[]: NL Deal !D! damage."
   },
   "${modID}:Drill": {
     "NAME": "Drill",
     "DESCRIPTION": "[#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL [#03befc]Combat[] [#03befc]End[]: Add a *Scrap to your deck.",
-    "UPGRADE_DESCRIPTION": "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL [#03befc]Combat[] [#03befc]End[]: Add a *Scrap to your deck.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL [#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL Gain 9 Temporary_HP."
+      "[#03befc]Turn[] [#03befc]End[]: Gain !M! Gold. NL Gain 9 Temporary_HP."
     ]
   },
   "${modID}:RocketPunch": {
@@ -729,7 +724,7 @@
   },
   "${modID}:SelfDestruct": {
     "NAME": "Self Destruct",
-    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each Exhausted equipment."
+    "DESCRIPTION": "${modID}:[#03befc]Echo[]: Exhaust any ${modID}:Equipment in hand. NL Deal !D! damage to ALL enemies for each one. NL Exhaust."
   },
   "${modID}:EMPGrenade": {
     "NAME": "EMP Grenade",

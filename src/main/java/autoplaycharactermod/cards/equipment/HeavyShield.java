@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ public class HeavyShield extends EquipmentCard {
 
     public HeavyShield() {
         super(ID, info, BASE_HP);
+        setMagic(1);
         setBlock(BLOCK, BLOCKUPG);
             setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_blue_skill.png"), BasicMod.imagePath("character/cardback/bg_blue_skill_p.png"));
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.BLUE.cpy());
@@ -107,7 +109,7 @@ public class HeavyShield extends EquipmentCard {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
         if (!this.alreadyEvolved)
-            addToBot(new ApplyPowerAction(p, p, new OneLessEnergyPower(p, 1)));
+            addToBot(new ApplyPowerAction(p, p, new WeakPower(p, magicNumber, true)));
         calculateCardDamage(null);
         addToBot(new GainBlockAction(p, p, block));
 

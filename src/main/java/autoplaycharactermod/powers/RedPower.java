@@ -28,8 +28,8 @@ import static autoplaycharactermod.BasicMod.makeID;
 public class RedPower extends BasePower {
     public static final String POWER_ID = makeID("RedPower");
     public static final int RANDOMDAMAGE = 4;
-    public static final int TARGETDAMAGE = 5;
-    public static final int AOEDAMAGE = 6;
+    public static final int TARGETDAMAGE = 6;
+    public static final int AOEDAMAGE = 8;
     public static final int STRENGTHTOADD = 2;
     private static final AbstractPower.PowerType TYPE = NeutralPowertypePatch.NEUTRAL;
     private static final boolean TURN_BASED = false;
@@ -119,7 +119,7 @@ public class RedPower extends BasePower {
         }
         if (this.amount > 2) {
             makeFire();
-            addToBot(new DamageAllEnemiesAction((AbstractPlayer) this.owner, AOEDAMAGE, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AOEDAMAGE, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
         if (this.amount > 3)
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, STRENGTHTOADD)));
@@ -127,7 +127,7 @@ public class RedPower extends BasePower {
             makeFire();
             addToBot(new DamageRandomEnemyAction(new DamageInfo(this.owner, RANDOMDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(this.owner, TARGETDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new DamageAllEnemiesAction((AbstractPlayer) this.owner, AOEDAMAGE, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AOEDAMAGE, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, STRENGTHTOADD)));
         }
         if (this.amount > 5 && !usedStun) {

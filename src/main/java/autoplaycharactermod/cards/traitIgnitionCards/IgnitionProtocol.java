@@ -24,7 +24,7 @@ public class IgnitionProtocol extends TraitCard {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
-            -2 
+            -2
     );
     private static final int DAMAGE = 12;
     private static final int UPG_DAMAGE = 4;
@@ -56,8 +56,10 @@ public class IgnitionProtocol extends TraitCard {
             AbstractDungeon.effectsQueue.add(new GiantFireEffect());
         }
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            AbstractDungeon.effectsQueue.add(new RedFireballEffect(mo.hb.cX - 130 * Settings.scale, mo.hb.cY, mo.hb.cX + 130 * Settings.scale, mo.hb.cY - 50.0F * Settings.scale, 2));
-            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber, true));
+            if (!mo.isDeadOrEscaped()) {
+                AbstractDungeon.effectsQueue.add(new RedFireballEffect(mo.hb.cX - 130 * Settings.scale, mo.hb.cY, mo.hb.cX + 130 * Settings.scale, mo.hb.cY - 50.0F * Settings.scale, 2));
+                addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber, true));
+            }
         }
         if (!this.alreadyEvolved)
             addToBot(new ModifiedCardInHandAction(new Melt(), 1));

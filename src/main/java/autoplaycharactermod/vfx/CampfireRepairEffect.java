@@ -52,10 +52,7 @@ public class CampfireRepairEffect extends AbstractGameEffect {
             int count = 0;
             CardCrawlGame.sound.playAV("CARD_UPGRADE", 0.2f, 1.0F);
             CardCrawlGame.sound.playAV("BLOCK_ATTACK", MathUtils.random(-0.2F, 0.2F), 0.5F);
-            if (hasRelic){
-                AbstractDungeon.player.getRelic(Schematics.ID).flash();
-                AbstractDungeon.player.heal(Schematics.AMOUNTTOHEALREPAIR);
-            }
+
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                 if (c instanceof EquipmentCard) {
                     ((EquipmentCard) c).equipmentHp = ((EquipmentCard) c).equipmentMaxHp;
@@ -63,6 +60,10 @@ public class CampfireRepairEffect extends AbstractGameEffect {
                             c.makeStatEquivalentCopy(), startX + count++ * w, Settings.HEIGHT * 0.5f
                     ));
                 }
+            }
+            if (hasRelic){
+                AbstractDungeon.player.getRelic(Schematics.ID).flash();
+                AbstractDungeon.player.heal(Schematics.AMOUNTTOHEALREPAIR);
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             ((RestRoom) AbstractDungeon.getCurrRoom()).fadeIn();

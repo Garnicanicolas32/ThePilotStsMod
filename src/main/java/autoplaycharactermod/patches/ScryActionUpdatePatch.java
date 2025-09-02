@@ -4,6 +4,7 @@ import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.relics.CoolingFan;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -44,9 +45,15 @@ public class ScryActionUpdatePatch {
     )
     public static void InsertHasRelic(ScryAction __instance) {
         if (AbstractDungeon.player.hasRelic(CoolingFan.ID)) {
+            boolean purged = false;
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                if (c.type == AbstractCard.CardType.STATUS)
-                    AbstractDungeon.player.discardPile.removeCard(c);
+                if (c.type == AbstractCard.CardType.STATUS) {
+                    AbstractDungeon.player.discardPile.moveToExhaustPile(c);
+                    purged = true;
+                }
+            }
+            if (purged){
+                AbstractDungeon.player.getRelic(CoolingFan.ID).flash();
             }
         }
     }

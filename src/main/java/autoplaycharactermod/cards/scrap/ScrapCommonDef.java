@@ -37,9 +37,9 @@ public class ScrapCommonDef extends BaseCard {
         setBlock(SHIELD);
         setMagic(MAGIC);
         tags.add(BasicMod.CustomTags.NoEnergyText);
+        MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
         if (BasicMod.evolved && CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null) {
-            MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
             this.evolveCard();
         }
     }

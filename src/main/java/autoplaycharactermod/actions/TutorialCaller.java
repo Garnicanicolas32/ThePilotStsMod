@@ -24,13 +24,13 @@ public class TutorialCaller extends AbstractGameAction {
     public void update() {
         if (BasicMod.unseenTutorials[code]) {
             switch (code){
-                case 1:
+                case 0:
                     AbstractDungeon.ftue = new PilotTutorials();
                     break;
-                case 2:
+                case 1:
                     AbstractDungeon.ftue = new TraitTutorials();
                     break;
-                case 3:
+                case 2:
                     AbstractDungeon.ftue = new DurabilityTutorial(new TeslaCoil());
                     break;
             }

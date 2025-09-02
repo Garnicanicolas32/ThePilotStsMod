@@ -32,6 +32,7 @@ public class DuctTapeAction extends AbstractGameAction {
                     ((DuctTape)card).addPower();
                 }
             }
+
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();
         }

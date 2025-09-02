@@ -19,9 +19,9 @@ public class GrapplingHook extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 20;
+    private static final int BASE_HP = 24;
     private static final int BLOCK = 5;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_BLOCK = 2;
     private boolean skipCheck = false;
 
     public GrapplingHook() {
@@ -54,7 +54,7 @@ public class GrapplingHook extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 14;
+        return 10;
     }
 
     protected void onEquip() {

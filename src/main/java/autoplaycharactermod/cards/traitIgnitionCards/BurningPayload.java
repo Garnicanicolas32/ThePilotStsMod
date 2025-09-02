@@ -20,8 +20,8 @@ public class BurningPayload extends TraitCard {
             CardTarget.NONE,
             -2 
     );
-    private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 3;
+    private static final int DAMAGE = 4;
+    private static final int UPG_DAMAGE = 2;
 
     public BurningPayload() {
         super(ID, info, TraitColor.IGNITE, false);
@@ -41,6 +41,7 @@ public class BurningPayload extends TraitCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (this.alreadyEvolved) {
             addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.BLUNT_HEAVY));

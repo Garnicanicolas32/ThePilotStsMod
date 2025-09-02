@@ -22,22 +22,26 @@ public class EnergyChamber extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 22;
+    private static final int BASE_HP = 28;
+    private static final int MAGIC = 4;
+    private static final int MAGIC_UPG = 2;
+    private static final int DAMAGE = 6;
+    private static final int DAMAGE_UPG = 3;
     private int count = 0;
 
     public EnergyChamber() {
         super(ID, info, BASE_HP);
-        setInnate(false, true);
-        setDamage(1);
+        setDamage(DAMAGE, DAMAGE_UPG);
+        setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();
         this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
     }
 
     @Override
     public void evolveCard() {
-        setInnate(true);
+        setMagic(10);
+        setDamage(15);
         super.evolveCard();
-
     }
 
     protected void onEquip() {
@@ -53,24 +57,21 @@ public class EnergyChamber extends EquipmentCard {
     @Override
     public void Activate() {
         if (!Equipped) return;
-        AbstractPlayer p = AbstractDungeon.player;
         super.Activate();
     }
 
     @Override
     protected int getUpgradeDurability() {
-        return 8;
+        return 10;
     }
 
     public void damageReceived(int damageAmount) {
-        if (!Equipped)
+        if (!Equipped || damageAmount < 1)
             return;
-        if (alreadyEvolved)
-            damageAmount += damageAmount;
-        addToBot(new SfxActionVolume("ORB_DARK_EVOKE", -0.5F + count * 0.05F, 2f));
+        addToBot(new SfxActionVolume("ORB_DARK_EVOKE", Math.min(-0.3F + count * 0.05F, 0.5f) , 2f));
         this.addToBot(new VFXAction(new EnergyChamberEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, damageAmount, false), 0.5F));
         count++;
-        upgradeDamage(damageAmount);
+        upgradeDamage(magicNumber);
         initializeDescription();
         Activate();
     }

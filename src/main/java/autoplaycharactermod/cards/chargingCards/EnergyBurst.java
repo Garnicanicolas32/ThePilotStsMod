@@ -24,14 +24,12 @@ public class EnergyBurst extends BaseCard {
 
     public EnergyBurst() {
         super(ID, info);
-        setInnate(false, true);
         setMagic(1,1);
         checkEvolve();
     }
 
     @Override
     public void evolveCard() {
-        setInnate(true);
         super.evolveCard();
     }
 

@@ -26,7 +26,7 @@ public class Dispenser extends ConsumableCards {
     );
 
     public Dispenser() {
-        super(ID, info, 3, 4);
+        super(ID, info, 3, 3);
         checkEvolve();
     }
 

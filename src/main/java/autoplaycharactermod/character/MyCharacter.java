@@ -361,12 +361,28 @@ public class MyCharacter extends CustomPlayer {
             targetCheck(target, camera);
     }
 
+    public static void ApplyLowestTarget() {
+        AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters){
+            if (target.maxHealth > mon.maxHealth){
+                target = mon;
+            }
+        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new TargetedPower(target, -1)));
+
+        if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead() && AbstractDungeon.player.hasPower("Surrounded"))
+            AbstractDungeon.player.flipHorizontal = (target.drawX < AbstractDungeon.player.drawX);
+    }
+
     @Override
     public void applyStartOfCombatPreDrawLogic() {
         super.applyStartOfCombatPreDrawLogic();
         skipTargetSwitchThisTurn = true;
         savedEnergy = 0;
-        ApplyRandomTarget(false);
+        if (AbstractDungeon.player.hasRelic(ScheduledUpdate.ID))
+            ApplyRandomTarget(false);
+        else
+            ApplyLowestTarget();
     }
 
     @Override

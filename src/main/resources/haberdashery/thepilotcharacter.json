@@ -1,0 +1,668 @@
+{
+  "THEPILOTCHARACTER": {
+    "Runic Dome": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shoulder",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.71428573,
+        "y": 0.71428573
+      },
+      "rotation": -43.10247,
+      "position": {
+        "x": 48.898727,
+        "y": -41.3545
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Boot": {
+      "boneName": "bone8",
+      "large": false,
+      "drawOrder": {
+        "slotName": "feet",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Boot_LuDN.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.6833438,
+        "y": 0.6833438
+      },
+      "rotation": -85.03321,
+      "position": {
+        "x": -3.7508743,
+        "y": -4.14499
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Anchor": {
+      "boneName": "bone7",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Anchor_Z98x.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 133.1176,
+      "position": {
+        "x": -104.64373,
+        "y": 69.26889
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Juzu Bracelet": {
+      "boneName": "bone4",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Juzu Bracelet_4Oik.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.64640886,
+        "y": 0.64640886
+      },
+      "rotation": -17.334503,
+      "position": {
+        "x": -5.524502,
+        "y": 3.306037
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Calipers": {
+      "boneName": "bone2",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Calipers_lyMX.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.6089558,
+        "y": 0.6089558
+      },
+      "rotation": -165.895,
+      "position": {
+        "x": -1.269371,
+        "y": -13.476225
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Calling Bell": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "torso",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.80373305,
+        "y": 0.80373305
+      },
+      "rotation": -26.421616,
+      "position": {
+        "x": 39.419025,
+        "y": -97.98935
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Champion Belt": {
+      "boneName": "bone",
+      "large": false,
+      "drawOrder": {
+        "slotName": "legs",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Champion Belt_dUBX.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.893401,
+        "y": 0.893401
+      },
+      "rotation": 37.6161,
+      "position": {
+        "x": 48.42766,
+        "y": -31.600983
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Dead Branch": {
+      "boneName": "bone2",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Dead Branch_9Xfh.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 141.00958,
+      "position": {
+        "x": 84.35034,
+        "y": -74.60041
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Du-Vu Doll": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "torso",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Du-Vu Doll_LiBm.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.6514598,
+        "y": 0.6514598
+      },
+      "rotation": -79.83188,
+      "position": {
+        "x": 2.2942474,
+        "y": -53.14571
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Enchiridion": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "tube",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.92667156,
+        "y": 0.92667156
+      },
+      "rotation": -104.15198,
+      "position": {
+        "x": 27.950586,
+        "y": -43.205265
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Eternal Feather": {
+      "boneName": "bone3",
+      "large": false,
+      "drawOrder": {
+        "slotName": "torso",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.47619048,
+        "y": 0.47619048
+      },
+      "rotation": 17.696354,
+      "position": {
+        "x": -12.011136,
+        "y": 1.1057124
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Gremlin Horn": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shoulder 2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.59388644,
+        "y": 0.59388644
+      },
+      "rotation": -115.96324,
+      "position": {
+        "x": 4.3554826,
+        "y": -104.97775
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Kunai": {
+      "boneName": "bone",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shadow",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.6441441,
+        "y": 0.6441441
+      },
+      "rotation": -31.014984,
+      "position": {
+        "x": 27.465496,
+        "y": -67.5954
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Letter Opener": {
+      "boneName": "bone",
+      "large": false,
+      "drawOrder": {
+        "slotName": "legs",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Letter Opener_SohF.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.61958975,
+        "y": 0.61958975
+      },
+      "rotation": 53.536922,
+      "position": {
+        "x": -16.402771,
+        "y": -69.299995
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "TungstenRod": {
+      "boneName": "bone",
+      "large": false,
+      "drawOrder": {
+        "slotName": "legs",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.68990684,
+        "y": 0.68990684
+      },
+      "rotation": 18.005127,
+      "position": {
+        "x": -80.43634,
+        "y": -43.527878
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "WingedGreaves": {
+      "boneName": "bone8",
+      "large": false,
+      "drawOrder": {
+        "slotName": "feet",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.9373764,
+        "y": 0.9373764
+      },
+      "rotation": -64.0385,
+      "position": {
+        "x": -158.96597,
+        "y": -23.333858
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Lizard Tail": {
+      "boneName": "bone",
+      "large": false,
+      "drawOrder": {
+        "slotName": "tube",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Lizard Tail_aevA.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 122.354095,
+      "position": {
+        "x": 38.19214,
+        "y": -65.107605
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Peace Pipe": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "torso",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": true,
+      "scale": {
+        "x": 0.6447368,
+        "y": 0.6447368
+      },
+      "rotation": 148.25464,
+      "position": {
+        "x": -24.530228,
+        "y": -83.58019
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Bronze Scales": {
+      "boneName": "bone6",
+      "large": false,
+      "drawOrder": {
+        "slotName": "shoulder 2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.47192478,
+        "y": 0.47192478
+      },
+      "rotation": 22.805819,
+      "position": {
+        "x": -1.46717,
+        "y": 2.7087657
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Vajra": {
+      "boneName": "bone7",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Vajra_ILbs.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.5781818,
+        "y": 0.5781818
+      },
+      "rotation": -86.64022,
+      "position": {
+        "x": -138.8514,
+        "y": 48.4402
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Meat on the Bone": {
+      "boneName": "bone7",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Meat on the Bone_fRge.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 88.51729,
+      "position": {
+        "x": -117.51488,
+        "y": 88.930855
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Busted Crown": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "torso",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.4411265,
+        "y": 0.4411265
+      },
+      "rotation": -94.40263,
+      "position": {
+        "x": 9.982206,
+        "y": -107.47376
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Nilry\u0027s Codex": {
+      "boneName": "bone1",
+      "large": false,
+      "drawOrder": {
+        "slotName": "legs",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": -99.764496,
+      "position": {
+        "x": 28.353931,
+        "y": -44.66379
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "WarpedTongs": {
+      "boneName": "bone7",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "WarpedTongs_yrRj.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 0.7830882,
+        "y": 0.7830882
+      },
+      "rotation": -33.297188,
+      "position": {
+        "x": -30.866035,
+        "y": 34.633762
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "CaptainsWheel": {
+      "boneName": "bone2",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand2",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "CaptainsWheel_qiea.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 20.890766,
+      "position": {
+        "x": 55.80326,
+        "y": -43.039135
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    "Ice Cream": {
+      "boneName": "bone7",
+      "large": false,
+      "drawOrder": {
+        "slotName": "hand",
+        "zIndex": 0
+      },
+      "hideSlotNames": [],
+      "requiredSlotNames": [],
+      "mask": "Ice Cream_eo7g.png",
+      "flipHorizontal": false,
+      "flipVertical": false,
+      "scale": {
+        "x": 1.0,
+        "y": 1.0
+      },
+      "rotation": 62.764458,
+      "position": {
+        "x": -63.187588,
+        "y": 33.735268
+      },
+      "shear": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    }
+  }
+}

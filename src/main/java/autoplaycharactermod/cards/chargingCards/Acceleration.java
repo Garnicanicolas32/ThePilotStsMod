@@ -63,8 +63,8 @@ public class Acceleration extends BaseCard {
     public void updateTextCount() {
         if (!this.alreadyEvolved) {
             this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
-            if (BasicMod.energySpentTurn >= 0)
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn + 1) + cardStrings.EXTENDED_DESCRIPTION[2];
+            if (BasicMod.energySpentTurn > 0)
+                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn) + cardStrings.EXTENDED_DESCRIPTION[2];
             initializeDescription();
         }
     }

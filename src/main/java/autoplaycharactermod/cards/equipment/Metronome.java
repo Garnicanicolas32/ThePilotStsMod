@@ -21,7 +21,7 @@ public class Metronome extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 12;
+    private static final int BASE_HP = 14;
     private static final int STR = 2;
     private static final int STR_UPG = 1;
 

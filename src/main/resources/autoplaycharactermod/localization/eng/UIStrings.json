@@ -35,12 +35,19 @@
       "[#FFF6E2FF]Click[] [#FFF6E2FF]to[] [#FFF6E2FF]cycle.[] NL "
     ]
   },
+  "${modID}:CUSTOMIZE": {
+    "TEXT": [
+      "Pilot: Play",
+      "Pilot: Scry"
+    ]
+  },
   "${modID}:DrawButton": {
     "TEXT": [
       "Play 1",
-      "Play",
+      "Play (",
       "Spend [E] to play the top card of your draw pile.",
-      "I can only play up to NL #r", " cards this turn.",
+      "I can only play up to NL #r",
+      " cards this turn.",
       " cards per turn."
     ]
   },
@@ -52,7 +59,7 @@
   "${modID}:ScryButton": {
     "TEXT": [
       "Scry ",
-      "Scry",
+      "Scry (",
       "Spend [E] to look at the top ",
       " cards of your draw pile. You may discard any of them."
     ]

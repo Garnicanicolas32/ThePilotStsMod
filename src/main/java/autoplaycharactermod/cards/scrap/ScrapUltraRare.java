@@ -8,7 +8,9 @@ import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EvolveCardEffect;
 import autoplaycharactermod.vfx.UltraRareScrapStarsEffect;
+import basemod.AutoAdd;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,6 +19,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -31,7 +34,7 @@ public class ScrapUltraRare extends BaseCard {
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
-            0 
+            0
     );
 
     public static final UIStrings uiStringsShow = CardCrawlGame.languagePack.getUIString(makeID("SelectCustomAction"));
@@ -87,7 +90,7 @@ public class ScrapUltraRare extends BaseCard {
     }
 
     @Override
-    public void upgrade(){
+    public void upgrade() {
     }
 
     public boolean canUpgrade() {

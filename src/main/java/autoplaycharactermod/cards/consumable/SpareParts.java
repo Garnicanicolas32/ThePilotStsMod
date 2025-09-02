@@ -26,11 +26,11 @@ public class SpareParts extends ConsumableCards {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int MAGIC_UPG = 1;
 
     public SpareParts() {
-        super(ID, info, 4, 3);
+        super(ID, info, 4, 2);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();
     }

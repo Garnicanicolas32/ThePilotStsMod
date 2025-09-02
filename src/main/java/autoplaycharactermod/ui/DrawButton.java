@@ -2,6 +2,7 @@ package autoplaycharactermod.ui;
 
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.AutoplayTopCardAction;
+import autoplaycharactermod.util.Hotkeys;
 import autoplaycharactermod.relics.reworks.UnceasingBottom;
 import autoplaycharactermod.vfx.ButtonGlowEffect;
 import basemod.BaseMod;
@@ -114,7 +115,7 @@ public class DrawButton {
             AbstractDungeon.effectsQueue.add(new EndTurnLongPressBarFlashEffect());
         }
 
-        if ((!Settings.USE_LONG_PRESS) && (this.hb.clicked && !this.isDisabled && this.enabled)) {
+        if ((!Settings.USE_LONG_PRESS) && ((this.hb.clicked || Hotkeys.ActionSet.PlayButton.isJustPressed()) && !this.isDisabled && this.enabled)) {
             this.hb.clicked = false;
             if (!AbstractDungeon.isScreenUp) {
                 this.trigger();
@@ -240,7 +241,7 @@ public class DrawButton {
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {// 258
                     float dy = 140f;
-                    TipHelper.renderGenericTip(this.current_x - 155f * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1], uiStrings.TEXT[2]);// TIP_TEXT[0], body);// 259 262
+                    TipHelper.renderGenericTip(this.current_x - 155f * Settings.scale, this.current_y + dy * Settings.scale, uiStrings.TEXT[1] + Hotkeys.ActionSet.PlayButton.getKeyString() + ")", uiStrings.TEXT[2]);// TIP_TEXT[0], body);// 259 262
                 }
             } else {
                 textColor = Color.LIGHT_GRAY.cpy();// 241

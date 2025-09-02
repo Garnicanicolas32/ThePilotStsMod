@@ -1,9 +1,9 @@
 {
   "${modID}:PilotTutorials": {
     "TEXT": [
-      "The Pilot is incapable of drawing cards, every draw effect is transformed to energy and cards have no cost. NL NL Instead it has two new buttons available. NL #yPlay: Spend [E] to play the top card of your draw pile. NL #yScry: Spend [E] to look at the top 3 cards of your draw pile. You may discard any of them.",
-      "At the start of combat, apply #yTarget to a random enemy NL #yTarget: Powers and cards played will target this enemy. Removed when another enemy is Targeted. NL NL At the start of your turn, add a #ySelect #yTarget to your hand if two or more enemies are alive.",
-      "To simplify card descriptions, a new type of keyword was added: [#03befc]Triggers[]. NL NL Cards can have different [#03befc]Triggers that activate effects separately from playing the card."
+      "The Pilot is incapable of drawing cards, draw effects are transformed into [E] and cards have no cost. NL NL Instead the pilot has two new buttons available. NL #yPlay #y(Q): Spend [E] to play the top card of your draw pile. NL #yScry #y(W): Spend [E] to look at the top 4 cards of your draw pile. You may discard any of them. NL #bTip: You can change the keybinds in the Input Settings.",
+      "At combat start, apply #yTarget to the lowest HP enemy. NL #yTarget: Powers and cards played will target this enemy. Removed when another enemy is Targeted. NL NL At the start of your turn, add a #ySelect #yTarget to your hand if two or more enemies are alive.",
+      "To simplify card descriptions, a new type of keyword were added: [#03befc]Triggers[]. NL NL Cards can have different [#03befc]Triggers that activate effects separately from playing the card."
     ],
     "LABEL": [
       "Next",

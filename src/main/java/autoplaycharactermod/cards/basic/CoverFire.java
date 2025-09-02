@@ -21,7 +21,7 @@ public class CoverFire extends BaseCard {
             -2
     );
     private static final int DAMAGE = 6;
-    private static final int DAMAGE_UPG = 3;
+    private static final int DAMAGE_UPG = 2;
 
     public CoverFire() {
         super(ID, info);

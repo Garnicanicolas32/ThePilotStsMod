@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 public class ArcBlasterMk extends BaseCard {
     public static final String ID = makeID("ArcBlasterMk");
@@ -27,7 +28,7 @@ public class ArcBlasterMk extends BaseCard {
             CardTarget.SELF,
             -2
     );
-    private static final int UPG_MAGIC = 4;
+    private static final int UPG_MAGIC = 5;
     private static final int MAGIC = 6;
 
     public ArcBlasterMk() {

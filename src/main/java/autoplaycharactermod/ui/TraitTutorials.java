@@ -23,9 +23,9 @@ public class TraitTutorials extends FtueTip {
     private static final float IMG1_OFFSET_X = 135;
     private static final float IMG1_OFFSET_Y = -310f;
     private static final float TXT1_OFFSET_X = -265f;
-    private static final float TXT1_OFFSET_Y = -20f;
-    private static final float FOOTER1_OFFSET_Y = -390f;
-    private static final float FOOTER2_OFFSET_Y = -430f;
+    private static final float TXT1_OFFSET_Y = -8f;
+    private static final float FOOTER1_OFFSET_Y = -410f;
+    private static final float FOOTER2_OFFSET_Y = -450f;
 
     private Texture img1;
     private final Color screen = Color.valueOf("1c262a00");
@@ -77,6 +77,7 @@ public class TraitTutorials extends FtueTip {
                 Settings.HEIGHT / 2f - (FontHelper.getSmartHeight(FontHelper.panelNameFont, txt[0], 700f * Settings.scale, 40f * Settings.scale) / 2f)
                         + TXT1_OFFSET_Y * Settings.scale,
                 770f * Settings.scale, 40f * Settings.scale, Settings.CREAM_COLOR);
+
         FontHelper.renderFontCenteredWidth(sb, FontHelper.panelNameFont, LABEL[2],
                 Settings.WIDTH / 2f, Settings.HEIGHT / 2f + FOOTER1_OFFSET_Y * Settings.yScale, Settings.GOLD_COLOR);
         FontHelper.renderFontCenteredWidth(sb, FontHelper.tipBodyFont,

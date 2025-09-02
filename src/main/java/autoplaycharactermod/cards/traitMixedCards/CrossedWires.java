@@ -1,10 +1,15 @@
 package autoplaycharactermod.cards.traitMixedCards;
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.GeneralUtils;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,33 +26,39 @@ public class CrossedWires extends TraitCard {
 
     public CrossedWires() {
         super(ID, info, TraitCard.TraitColor.OTHER, false);
-        setMagic(1,1);
+        setMagic(2,0);
         checkEvolve();
     }
 
     @Override
     public void evolveCard() {
-        countsTwiceOnUpgrade = true;
-        setMagic(3);
         super.evolveCard();
-
+        if (BasicMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
+            addPower();
+        }
+        countsTwiceOnUpgrade = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         PlayOnce = false;
         for (int i = 0; i < magicNumber; i++) {
+            AbstractCard card;
             switch (AbstractDungeon.cardRandomRng.random(2)){
                 case 0:
-                    addToBot(new MakeTempCardInHandAction(GeneralUtils.getRandomIgitionCard()));
+                    card = GeneralUtils.getRandomIgitionCard();
                     break;
                 case 1:
-                    addToBot(new MakeTempCardInHandAction(GeneralUtils.getRandomBastionCard()));
+                    card = GeneralUtils.getRandomBastionCard();
                     break;
-                case 2:
-                    addToBot(new MakeTempCardInHandAction(GeneralUtils.getRandomScavengeCard()));
+                default:
+                    card = GeneralUtils.getRandomScavengeCard();
                     break;
             }
+            if (upgraded || alreadyEvolved){
+                card.upgrade();
+            }
+            addToBot(new MakeTempCardInDrawPileAction(card,1,true,true,false));
         }
         super.use(p, m);
     }

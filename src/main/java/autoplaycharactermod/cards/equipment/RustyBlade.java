@@ -19,9 +19,9 @@ public class RustyBlade extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 10;
-    private static final int DAMAGE = 4;
-    private static final int DAMAGE_UPG = 4;
+    private static final int BASE_HP = 12;
+    private static final int DAMAGE = 5;
+    private static final int DAMAGE_UPG = 3;
 
 
     public RustyBlade() {
@@ -53,6 +53,10 @@ public class RustyBlade extends EquipmentCard {
     public void triggerOnEndOfTurnForPlayingCard() {
         if (alreadyEvolved)
             Activate();
+    }
+
+    protected int getUpgradeDurability() {
+        return 3;
     }
 
     public void atTurnStart() {

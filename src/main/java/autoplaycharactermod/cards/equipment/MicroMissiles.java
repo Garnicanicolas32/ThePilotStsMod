@@ -25,7 +25,7 @@ public class MicroMissiles extends EquipmentCard {
     private static final int UPG_DAMAGE = 1;
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 0;
-    private static final int BASE_HP = 15;
+    private static final int BASE_HP = 18;
 
 
     public MicroMissiles() {
@@ -61,7 +61,7 @@ public class MicroMissiles extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 5;
+        return 6;
     }
 
     public void triggerOnShuffle() {

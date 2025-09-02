@@ -16,10 +16,7 @@ import autoplaycharactermod.potions.BasePotion;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.powers.YellowPower;
 import autoplaycharactermod.relics.BaseRelic;
-import autoplaycharactermod.ui.ConfigPanel;
-import autoplaycharactermod.ui.ScrapReward;
-import autoplaycharactermod.ui.ScryButton;
-import autoplaycharactermod.ui.TraitsTopPanel;
+import autoplaycharactermod.ui.*;
 import autoplaycharactermod.util.GeneralUtils;
 import autoplaycharactermod.util.KeywordInfo;
 import autoplaycharactermod.util.TextureLoader;
@@ -302,10 +299,6 @@ public class BasicMod implements
                 localizationPath(lang, "CardStrings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 localizationPath(lang, "CharacterStrings.json"));
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                localizationPath(lang, "EventStrings.json"));
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                localizationPath(lang, "OrbStrings.json"));
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 localizationPath(lang, "PotionStrings.json"));
         BaseMod.loadCustomStringsFile(PowerStrings.class,
@@ -383,6 +376,7 @@ public class BasicMod implements
 
     public static void energySpentTrigger() {
         energySpentCombat++;
+        energySpentTurn++;
         for (CardGroup group : Arrays.asList(
                 AbstractDungeon.player.hand,
                 AbstractDungeon.player.drawPile,
@@ -395,22 +389,31 @@ public class BasicMod implements
                 }
             }
         }
-        energySpentTurn++;
     }
 
     @Override
     public void receiveOnPlayerTurnStart() {
         energySpentTurn = 0;
+        for (CardGroup group : Arrays.asList(
+                AbstractDungeon.player.hand,
+                AbstractDungeon.player.drawPile,
+                AbstractDungeon.player.discardPile)) {
+            if (group != null) {
+                for (AbstractCard ca : group.group) {
+                    if (ca instanceof BaseCard) {
+                        ((BaseCard)ca).updateTextCount();
+                    }
+                }
+            }
+        }
     }
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         AbstractPlayer p = AbstractDungeon.player;
-
         if (AbstractDungeon.player instanceof MyCharacter && unseenTutorials[0]) {
             AbstractDungeon.actionManager.addToTop(new TutorialCaller(0));
         }
-
         GachaPull.cardsList = GachaPull.getList(true);
         energySpentCombat = 0;
         YellowPower.usedScrap = false;

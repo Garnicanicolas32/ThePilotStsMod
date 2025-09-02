@@ -34,7 +34,7 @@ import static autoplaycharactermod.BasicMod.makeID;
 public class BluePower extends BasePower {
     public static final String POWER_ID = makeID("BluePower");
     public static final int SHIELDAMOUNT = 4;
-    public static final int THORNS = 2;
+    public static final int THORNS = 1;
     public static final int PLATEDARMOR = 2;
     private static final PowerType TYPE = NeutralPowertypePatch.NEUTRAL;
     private static final boolean TURN_BASED = false;

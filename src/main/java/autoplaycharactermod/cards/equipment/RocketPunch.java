@@ -22,7 +22,7 @@ public class RocketPunch extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 30;
+    private static final int BASE_HP = 34;
     private static final int DAMAGE = 5;
     private static final int UPG_DAMAGE = 1;
     private static final int MAGIC = 3;
@@ -55,7 +55,7 @@ public class RocketPunch extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 20;
+        return 14;
     }
 
     public void atTurnStart() {

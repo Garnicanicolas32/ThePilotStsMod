@@ -41,12 +41,11 @@ public class Drill extends EquipmentCard {
             0
     );
     private static final int BASE_HP = 10;
-    private static final int MAGIC = 10;
+    private static final int MAGIC = 8;
     private static final int UPG_MAGIC = 4;
 
     public Drill() {
         super(ID, info, BASE_HP);
-        setInnate(false, true);
         setMagic(MAGIC, UPG_MAGIC);
         tags.add(CardTags.HEALING);
         setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
@@ -61,7 +60,6 @@ public class Drill extends EquipmentCard {
     public void evolveCard() {
         MultiCardPreview.clear(this);
         setMagic(30);
-        setInnate(true);
         super.evolveCard();
     }
 
