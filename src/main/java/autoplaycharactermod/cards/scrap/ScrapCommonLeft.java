@@ -39,7 +39,7 @@ public class ScrapCommonLeft extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> possibleCards = new ArrayList<>();
         for (AbstractCard c : p.masterDeck.group){
-            if (c instanceof BaseCard && c.rarity == CardRarity.COMMON && !((BaseCard) c).alreadyEvolved){
+            if (c instanceof BaseCard && (c.rarity == CardRarity.COMMON || c.rarity == CardRarity.BASIC) && !((BaseCard) c).alreadyEvolved){
                 possibleCards.add(c);
             }
         }

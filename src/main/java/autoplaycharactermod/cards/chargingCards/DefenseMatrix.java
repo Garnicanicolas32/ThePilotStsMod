@@ -6,16 +6,12 @@ import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DefenseMatrix extends BaseCard {
     public static final String ID = makeID("DefenseMatrix");
@@ -24,7 +20,7 @@ public class DefenseMatrix extends BaseCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            0 
+            0
     );
     private static final int MAGIC = 6;
     private static final int UPG_MAGIC = 4;
@@ -52,11 +48,13 @@ public class DefenseMatrix extends BaseCard {
         } else {
             addToBot(new DiscardAction(p, p, 1, false));
             AbstractPower pwr = p.getPower(ChargePower.POWER_ID);
-            int number = (pwr != null) ? pwr.amount : magicNumber;
-            if (this.alreadyEvolved)
-                addToBot(new GainBlockAction(p, p, number * 2));
-            else
-                addToBot(new GainBlockAction(p, p, number / 2));
+            int number = (pwr != null) ? pwr.amount : 0;
+            if (number > 0) {
+                if (this.alreadyEvolved)
+                    addToBot(new GainBlockAction(p, p, number * 2));
+                else
+                    addToBot(new GainBlockAction(p, p, number / 2));
+            }
             returnToHand = false;
         }
     }

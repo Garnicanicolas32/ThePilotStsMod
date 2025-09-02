@@ -34,7 +34,6 @@ public class Maintenance extends BaseCard {
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
         setBlock(BLOCK, UPG_BLOCK);
-        setCustomVar("DISCARD", 1, 1);
         tags.add(BasicMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
@@ -56,7 +55,7 @@ public class Maintenance extends BaseCard {
                 addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
             returnToHand = true;
         } else {
-            addToBot(new DiscardAction(p, p, alreadyEvolved ? 1 : customVar("DISCARD"), false));
+            addToBot(new DiscardAction(p, p, 1, false));
             addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
             if (this.alreadyEvolved)
                 addToBot(new GainBlockAction(p, p, block));

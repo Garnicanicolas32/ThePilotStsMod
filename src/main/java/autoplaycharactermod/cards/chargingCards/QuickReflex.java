@@ -42,6 +42,7 @@ public class QuickReflex extends BaseCard {
     @Override
     public void evolveCard() {
         setMagic(2);
+        setCustomVar("WEAK", 3);
         super.evolveCard();
     }
 

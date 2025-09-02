@@ -30,7 +30,7 @@ public class FieldBubble extends ConsumableCards {
 
     @Override
     public void evolveCard() {
-        setMagic(4);
+        setMagic(12);
         super.evolveCard();
     }
 

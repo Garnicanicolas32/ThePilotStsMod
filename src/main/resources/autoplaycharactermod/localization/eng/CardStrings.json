@@ -175,7 +175,7 @@
   },
   "${modID}:ScrapCommonLeft": {
     "NAME": "Common Leftovers",
-    "DESCRIPTION": "Permanently evolve a random common card in your deck and all its copies. NL stslib:Fleeting."
+    "DESCRIPTION": "Permanently evolve a random common or basic card in your deck and all its copies. NL stslib:Fleeting."
   },
   "${modID}:ScrapUncommonAttStr": {
     "NAME": "Strong Module",
@@ -442,8 +442,7 @@
   },
   "${modID}:Maintenance": {
     "NAME": "Maintenance",
-    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Discard !${modID}:DISCARD! card to Gain !M! ${modID}:Capacity.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Discard !${modID}:DISCARD! cards to Gain !M! ${modID}:Capacity.",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Gain !M! ${modID}:Capacity.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to repeat."
     ]

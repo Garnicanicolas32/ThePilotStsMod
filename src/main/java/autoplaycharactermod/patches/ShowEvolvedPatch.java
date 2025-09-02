@@ -45,7 +45,7 @@ public class ShowEvolvedPatch {
             if (toggleHb.clicked || CInputActionSet.topPanel.isJustPressed()) {
                 CInputActionSet.topPanel.unpress();
                 toggleHb.clicked = false;
-                if(((BaseCard)c).ForceVisualEvolved) {
+                if(c.upgraded ||((BaseCard)c).ForceVisualEvolved) {
                     ((BaseCard)c).ForceVisualEvolved = false;
                 } else {
                     ((BaseCard)c).ForceVisualEvolved = true;
