@@ -91,7 +91,7 @@ public class Flamethrower extends EquipmentCard {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
 
-        int amountUpg = damage;
+        int amountUpg = baseDamage;
         if (p.hasPower(StrengthPower.POWER_ID))
             amountUpg += p.getPower(StrengthPower.POWER_ID).amount;
 

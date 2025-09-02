@@ -33,7 +33,7 @@ public class PoisonMine extends EquipmentCard {
 
     @Override
     public void evolveCard() {
-        setMagic(2);
+        setMagic(3);
         super.evolveCard();
 
     }

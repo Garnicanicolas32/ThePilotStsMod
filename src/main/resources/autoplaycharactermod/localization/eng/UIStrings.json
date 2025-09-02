@@ -23,7 +23,7 @@
     "TEXT_DICT": {
       "lessParticles": "Less custom particles and VFX. (Faster)",
       "experimentalSounds": "More custom sounds, is known to sometimes crash, mostly equipment. (EXPERIMENTAL)",
-      "debugScry": "Scry button amount (DEFAULT 4, Dev tool for DEBUG)"
+      "debugScry": "Scry button amount. (DEFAULT 4, Dev tool for DEBUG)"
     }
   },
   "${modID}:ComboTags": {
@@ -39,6 +39,11 @@
     "TEXT": [
       "Pilot: Play",
       "Pilot: Scry"
+    ]
+  },
+  "${modID}:ShowEvolved": {
+    "TEXT": [
+      "Evolved"
     ]
   },
   "${modID}:DrawButton": {

@@ -208,6 +208,7 @@ public class BasicMod implements
 
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
+
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, new ConfigPanel());
         registerPotions();
         BaseMod.addTopPanelItem(new TraitsTopPanel());

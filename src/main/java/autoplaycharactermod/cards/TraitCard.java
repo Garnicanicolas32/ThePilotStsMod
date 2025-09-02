@@ -75,6 +75,7 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
         }
     }
 
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addPower();

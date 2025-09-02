@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.Level;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
     public boolean PlayOnce = true;
     public boolean Duplicated = false;
     public boolean alreadyEvolved = false;
+    public boolean ForceVisualEvolved = false;
     public boolean dontsparkle = false;
     protected CardStrings cardStrings;
     protected boolean upgradesDescription;
@@ -98,6 +100,9 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
                     this.evolveCard();
                 }
             }
+        }
+        if (ForceVisualEvolved) {
+            this.evolveCard();
         }
     }
 
@@ -600,9 +605,9 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
     }
 
     public void evolveCard() {
-        if (BasicMod.evolved &&
+        if ((BasicMod.evolved &&
                 CardCrawlGame.isInARun()
-                && AbstractDungeon.player.masterDeck != null) {
+                && AbstractDungeon.player.masterDeck != null) || ForceVisualEvolved) {
             alreadyEvolved = true;
             this.upgraded = true;
             this.name = cardStrings.NAME + "++";
@@ -640,6 +645,10 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
         if (this.alreadyEvolved)
             copy.evolveCard();
         return copy;
+    }
+
+    public AbstractCard nonEvolvedCopy() {
+        return super.makeStatEquivalentCopy();
     }
 
     protected enum VariableType {
