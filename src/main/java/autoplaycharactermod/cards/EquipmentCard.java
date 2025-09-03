@@ -199,6 +199,10 @@ public abstract class EquipmentCard extends BaseCard {
     protected void onUnequip() {
     }
 
+    public void onGainCharge(){
+
+    }
+
     public void triggerOnShuffle() {
     }
 

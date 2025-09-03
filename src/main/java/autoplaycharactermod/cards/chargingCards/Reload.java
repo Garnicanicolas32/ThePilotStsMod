@@ -25,8 +25,8 @@ public class Reload extends BaseCard {
             CardTarget.SELF,
             0
     );
-    private static final int MAGIC = 5;
-    private static final int UPG_MAGIC = 3;
+    private static final int MAGIC = 6;
+    private static final int UPG_MAGIC = 4;
 
     public Reload() {
         super(ID, info);

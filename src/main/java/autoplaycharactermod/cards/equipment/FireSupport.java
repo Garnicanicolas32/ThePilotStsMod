@@ -4,10 +4,14 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.relics.OilCan;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
+import autoplaycharactermod.vfx.EquipmentShowCardBrieflyEffect;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,13 +27,14 @@ public class FireSupport extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 35;
+    private static final int BASE_HP = 30;
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
 
     public FireSupport() {
         super(ID, info, BASE_HP);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(2);
         checkEvolve();
     }
 
@@ -52,6 +57,18 @@ public class FireSupport extends EquipmentCard {
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.FIRE));
 
         super.Activate();
+    }
+
+    public void didDiscard() {
+        if (Equipped){
+            flash(Color.GREEN.cpy());
+            healEquipment(magicNumber, false, true);
+            AbstractDungeon.effectList.add(new EquipmentShowCardBrieflyEffect(this.makeStatEquivalentCopy()));
+            if (AbstractDungeon.player.hasRelic(OilCan.ID)) {
+                ((OilCan) AbstractDungeon.player.getRelic(OilCan.ID)).activate();
+            }
+            checkActivations();
+        }
     }
 
     public void onBetterScry() {

@@ -475,7 +475,7 @@
   },
   "${modID}:TitaniumCasing": {
     "NAME": "Titanium Casing",
-    "DESCRIPTION": "Double your ${modID}:Capacity and Block. NL Exhaust.",
+    "DESCRIPTION": "Gain half your ${modID}:Capacity and Block.",
     "UPGRADE_DESCRIPTION": "Double your ${modID}:Capacity and Block.",
     "EXTENDED_DESCRIPTION": [
       "Triple your ${modID}:Capacity and Block."
@@ -495,15 +495,15 @@
   },
   "${modID}:DoubleOrNothing": {
     "NAME": "Double Or Nothing",
-    "DESCRIPTION": "${modID}:Charge equal to half your current ${modID}:Charge. NL Lose all your Block.",
-    "UPGRADE_DESCRIPTION": "Double your ${modID}:Charge. NL Lose all your Block.",
+    "DESCRIPTION": "Lose half your Block. NL ${modID}:[#03befc]Echo[]: ${modID}:Charge equal to half your current ${modID}:Charge.",
+    "UPGRADE_DESCRIPTION": "Lose all your Block. NL ${modID}:[#03befc]Echo[]: Double your ${modID}:Charge.",
     "EXTENDED_DESCRIPTION": [
-      "Triple your ${modID}:Charge."
+      "${modID}:[#03befc]Echo[]: Triple your ${modID}:Charge."
     ]
   },
   "${modID}:Reload": {
     "NAME": "Reload",
-    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to place a card from your discard pile on top of your draw pile.",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity.  Discard 1 card to place a card from your discard pile on top of your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to play a card from your discard pile."
     ]
@@ -624,7 +624,10 @@
   },
   "${modID}:ToolKit": {
     "NAME": "Tool Kit",
-    "DESCRIPTION": "${modID}:Repair !M! durability to ALL ${modID}:Equipment in your hand."
+    "DESCRIPTION": "${modID}:Repair !M! durability to ALL ${modID}:Equipment in your hand. Decrease this by 1 this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "${modID}:Repair !M! durability to ALL ${modID}:Equipment in your hand."
+    ]
   },
   "${modID}:Flamethrower": {
     "NAME": "Flamethrower",
@@ -682,7 +685,7 @@
   },
   "${modID}:TeslaCoil": {
     "NAME": "Tesla Coil",
-    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[], [#03befc]End[]: NL Deal !D! damage. ${modID}:[#03befc]Discard[]: NL ${modID}:Repair !M! durability."
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[], [#03befc]End[]: NL Deal !D! damage. NL [#03befc]Gain[] [#03befc]Charge[]: NL ${modID}:Repair !M! durability."
   },
   "${modID}:SmartGun": {
     "NAME": "Smart Gun",
@@ -693,7 +696,7 @@
   },
   "${modID}:FireSupport": {
     "NAME": "Fire Support",
-    "DESCRIPTION": "[#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage."
+    "DESCRIPTION": "[#03befc]Apply[] ${modID}:[#03befc]Target[], [#03befc]Scry[]: NL Deal !D! damage. NL ${modID}:[#03befc]Discard[]: NL ${modID}:Repair !M! durability."
   },
   "${modID}:RustyBlade": {
     "NAME": "Rusty Blade",

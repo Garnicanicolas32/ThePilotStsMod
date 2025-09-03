@@ -24,7 +24,7 @@ public class ExposedWire extends BaseCard {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 6;
+    private static final int MAGIC = 7;
     private static final int UPG_MAGIC = 0;
 
     public ExposedWire() {

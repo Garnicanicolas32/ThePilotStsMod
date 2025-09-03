@@ -61,6 +61,10 @@ public class PowerBank extends EquipmentCard {
         super.Activate();
     }
 
+    public void onGainCharge() {
+        Activate();
+    }
+
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();

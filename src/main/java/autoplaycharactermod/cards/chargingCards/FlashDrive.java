@@ -29,8 +29,8 @@ public class FlashDrive extends BaseCard {
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 4;
+    private static final int MAGIC = 7;
+    private static final int UPG_MAGIC = 5;
 
     public FlashDrive() {
         super(ID, info);

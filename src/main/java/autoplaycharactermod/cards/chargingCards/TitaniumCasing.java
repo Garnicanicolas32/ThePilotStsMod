@@ -8,6 +8,7 @@ import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.unique.DoubleYourBlockAction;
 import com.megacrit.cardcrawl.actions.unique.TripleYourBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,13 +34,11 @@ public class TitaniumCasing extends BaseCard {
         super(ID, info);
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
-        setExhaust(true, false);
         checkEvolve();
     }
 
     @Override
     public void evolveCard() {
-        setExhaust(false);
         super.evolveCard();
     }
 
@@ -47,13 +46,21 @@ public class TitaniumCasing extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower pwr = p.getPower(SavePower.POWER_ID);
         int number = (pwr != null) ? pwr.amount : 0;
-        if (number > 0)
-            addToBot(new ApplyPowerAction(p, p, new SavePower(p, number * (this.alreadyEvolved ? 2 : 1))));
+        if (number > 0){
+            if (alreadyEvolved){
+                number *= 2;
+            } else if(!upgraded){
+                number = number / 2;
+            }
+            addToBot(new ApplyPowerAction(p, p, new SavePower(p, number)));
+        }
         addToBot(new SfxActionVolume("SHOVEL", 0f,1.6F));
         if (this.alreadyEvolved)
             addToBot(new TripleYourBlockAction(p));
-        else
+        else if (upgraded)
             addToBot(new DoubleYourBlockAction(p));
+        else
+            addToBot(new GainBlockAction(p,p,p.currentBlock / 2));
         PlayOnce = false;
     }
 

@@ -1,6 +1,6 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.cards.equipment.PowerBank;
+import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -81,8 +81,8 @@ public class ChargePower extends BasePower {
 
     private void checkHand() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof PowerBank) {
-                ((PowerBank) c).Activate();
+            if (c instanceof EquipmentCard) {
+                ((EquipmentCard) c).onGainCharge();
             }
         }
     }

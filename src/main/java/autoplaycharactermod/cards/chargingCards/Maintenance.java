@@ -24,9 +24,9 @@ public class Maintenance extends BaseCard {
             CardTarget.SELF,
             0 
     );
-    private static final int MAGIC = 6;
+    private static final int MAGIC = 7;
     private static final int UPG_MAGIC = 2;
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 7;
     private static final int UPG_BLOCK = 2;
 
     public Maintenance() {

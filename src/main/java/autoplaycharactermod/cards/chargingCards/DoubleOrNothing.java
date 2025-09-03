@@ -1,10 +1,14 @@
 package autoplaycharactermod.cards.chargingCards;
 
+import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.actions.ScryWithChargeAction;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,33 +24,41 @@ public class DoubleOrNothing extends BaseCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            -2
+            0
     );
 
     public DoubleOrNothing() {
         super(ID, info);
         returnToHand = true;
+        tags.add(BasicMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower pwr = p.getPower(ChargePower.POWER_ID);
-        int number = (pwr != null) ? pwr.amount : 0;
-        if (number > 0) {
-            addToBot(new SFXAction("GUARDIAN_ROLL_UP"));
-            AbstractDungeon.topLevelEffectsQueue.add(new StanceChangeParticleGenerator(p.hb.cX, p.hb.cY, "Neutral"));
-            if (this.alreadyEvolved) {
-                addToBot(new ApplyPowerAction(p, p, new ChargePower(p, number * 2)));
-            } else
-                addToBot(new ApplyPowerAction(p, p, new ChargePower(p, this.upgraded ? number : number / 2)));
+        if (PlayOnce && !Duplicated) {
+            PlayOnce = false;
+            returnToHand = true;
+            if (!this.alreadyEvolved)
+                addToBot(new LoseBlockAction(p, p, upgraded ? p.currentBlock : p.currentBlock / 2));
+        } else {
+            AbstractPower pwr = p.getPower(ChargePower.POWER_ID);
+            int number = (pwr != null) ? pwr.amount : 0;
+            if (number > 0) {
+                addToBot(new SFXAction("GUARDIAN_ROLL_UP"));
+                AbstractDungeon.topLevelEffectsQueue.add(new StanceChangeParticleGenerator(p.hb.cX, p.hb.cY, "Neutral"));
+                if (this.alreadyEvolved) {
+                    addToBot(new ApplyPowerAction(p, p, new ChargePower(p, number * 2)));
+                } else
+                    addToBot(new ApplyPowerAction(p, p, new ChargePower(p, this.upgraded ? number : number / 2)));
+            }
+            returnToHand = false;
         }
-        if (!this.alreadyEvolved)
-            addToBot(new LoseBlockAction(p, p, p.currentBlock));
         PlayOnce = false;
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return PlayOnce && super.canUse(p, m);
+    @Override
+    public boolean freeToPlay() {
+        return true;
     }
 }

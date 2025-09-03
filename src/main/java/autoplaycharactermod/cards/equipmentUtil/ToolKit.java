@@ -54,17 +54,21 @@ public class ToolKit extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int count = 0;
-        addToBot(new SFXAction("POWER_DEXTERITY"));
-        for (AbstractCard c : p.hand.group) {
-            if (c instanceof EquipmentCard) {
-                ((EquipmentCard) c).healEquipment(magicNumber, false, true);
-                c.flash(Color.GREEN.cpy());
-                count++;
+        if (magicNumber > 0) {
+            addToBot(new SFXAction("POWER_DEXTERITY"));
+            for (AbstractCard c : p.hand.group) {
+                if (c instanceof EquipmentCard) {
+                    ((EquipmentCard) c).healEquipment(magicNumber, false, true);
+                    c.flash(Color.GREEN.cpy());
+                    count++;
+                }
             }
-        }
-        if (count > 0) {
-            addToBot(new SFXAction("HEAL_2"));
-            AbstractDungeon.topLevelEffectsQueue.add(new HealEquipmentEffect(this, (float) Settings.WIDTH / 2, (float) Settings.HEIGHT / 2, count * magicNumber));
+            if (count > 0) {
+                addToBot(new SFXAction("HEAL_2"));
+                AbstractDungeon.topLevelEffectsQueue.add(new HealEquipmentEffect(this, (float) Settings.WIDTH / 2, (float) Settings.HEIGHT / 2, count * magicNumber));
+            }
+            if (!this.alreadyEvolved)
+                this.baseMagicNumber--;
         }
         PlayOnce = false;
     }

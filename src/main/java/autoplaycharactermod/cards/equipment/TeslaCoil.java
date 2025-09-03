@@ -1,11 +1,19 @@
 package autoplaycharactermod.cards.equipment;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.relics.OilCan;
 import autoplaycharactermod.util.CardStats;
+import autoplaycharactermod.vfx.EquipmentShowCardBrieflyEffect;
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TeslaCoil extends EquipmentCard {
     public static final String ID = makeID("TeslaCoil");
@@ -20,12 +28,11 @@ public class TeslaCoil extends EquipmentCard {
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 0;
 
     public TeslaCoil() {
         super(ID, info, BASE_HP);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC);
         checkEvolve();
     }
 
@@ -47,11 +54,24 @@ public class TeslaCoil extends EquipmentCard {
         return 10;
     }
 
-    public void didDiscard() {
+    public void onGainCharge(){
         if (Equipped){
             flash(Color.GREEN.cpy());
             healEquipment(magicNumber, false, true);
+            AbstractDungeon.effectList.add(new EquipmentShowCardBrieflyEffect(this.makeStatEquivalentCopy()));
+            if (AbstractDungeon.player.hasRelic(OilCan.ID)) {
+                ((OilCan) AbstractDungeon.player.getRelic(OilCan.ID)).activate();
+            }
+            checkActivations();
         }
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
+        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Charge").PROPER_NAME, BasicMod.keywords.get("Charge").DESCRIPTION));
+        return customTooltips;
     }
 
     public void atTurnStart() {

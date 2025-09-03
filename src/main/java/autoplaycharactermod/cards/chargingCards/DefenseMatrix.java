@@ -22,8 +22,8 @@ public class DefenseMatrix extends BaseCard {
             CardTarget.SELF,
             0
     );
-    private static final int MAGIC = 6;
-    private static final int UPG_MAGIC = 4;
+    private static final int MAGIC = 7;
+    private static final int UPG_MAGIC = 5;
 
     public DefenseMatrix() {
         super(ID, info);
@@ -36,7 +36,7 @@ public class DefenseMatrix extends BaseCard {
     @Override
     public void evolveCard() {
         super.evolveCard();
-        setMagic(10);
+        setMagic(15);
     }
 
     @Override

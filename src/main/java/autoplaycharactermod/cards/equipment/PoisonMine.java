@@ -21,7 +21,7 @@ public class PoisonMine extends EquipmentCard {
             CardTarget.NONE,
             0 
     );
-    private static final int BASE_HP = 24;
+    private static final int BASE_HP = 21;
     private static final int POISON = 2;
     private static final int UPG_POISON = 1;
 
@@ -60,7 +60,7 @@ public class PoisonMine extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 6;
+        return 5;
     }
 
     public void triggerOnEndOfTurnForPlayingCard() {
