@@ -31,11 +31,21 @@ public class CampfireRepairEffect extends AbstractGameEffect {
     private final Color screenColor = AbstractDungeon.fadeColor.cpy();
     private boolean openedScreen = false;
     private boolean hasRelic = false;
+    private CardGroup cards;
 
     public CampfireRepairEffect() {
         this.duration = 1.5F;
         this.screenColor.a = 0.0F;
         AbstractDungeon.overlayMenu.proceedButton.hide();
+        this.cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            if (c instanceof EquipmentCard) {
+                EquipmentCard base = (EquipmentCard) c;
+                if (base.equipmentHp < base.equipmentMaxHp) {
+                    cards.group.add(c);
+                }
+            }
+        }
     }
 
     public void update() {
@@ -46,39 +56,35 @@ public class CampfireRepairEffect extends AbstractGameEffect {
         }
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractDungeon.overlayMenu.cancelButton.hide();
+            if (AbstractDungeon.gridSelectScreen.selectedCards.size() >= Math.min(cards.size(), hasRelic ? 4 : 2)){
+                float w = AbstractCard.IMG_WIDTH + 30f * Settings.scale;
+                float startX = Settings.WIDTH * 0.5f - (w * (AbstractDungeon.gridSelectScreen.selectedCards.size() - 1)) / 2f;
+                int count = 0;
+                CardCrawlGame.sound.playAV("CARD_UPGRADE", 0.2f, 1.0F);
+                CardCrawlGame.sound.playAV("BLOCK_ATTACK", MathUtils.random(-0.2F, 0.2F), 0.5F);
 
-            float w = AbstractCard.IMG_WIDTH + 30f * Settings.scale;
-            float startX = Settings.WIDTH * 0.5f - (w * (AbstractDungeon.gridSelectScreen.selectedCards.size() - 1)) / 2f;
-            int count = 0;
-            CardCrawlGame.sound.playAV("CARD_UPGRADE", 0.2f, 1.0F);
-            CardCrawlGame.sound.playAV("BLOCK_ATTACK", MathUtils.random(-0.2F, 0.2F), 0.5F);
-
-            for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                if (c instanceof EquipmentCard) {
-                    ((EquipmentCard) c).equipmentHp = ((EquipmentCard) c).equipmentMaxHp;
-                    AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(
-                            c.makeStatEquivalentCopy(), startX + count++ * w, Settings.HEIGHT * 0.5f
-                    ));
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                    if (c instanceof EquipmentCard) {
+                        ((EquipmentCard) c).equipmentHp = ((EquipmentCard) c).equipmentMaxHp;
+                        AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(
+                                c.makeStatEquivalentCopy(), startX + count++ * w, Settings.HEIGHT * 0.5f
+                        ));
+                    }
                 }
-            }
-            if (hasRelic){
-                AbstractDungeon.player.getRelic(Schematics.ID).flash();
-                AbstractDungeon.player.heal(Schematics.AMOUNTTOHEALREPAIR);
+                if (hasRelic){
+                    AbstractDungeon.player.getRelic(Schematics.ID).flash();
+                    AbstractDungeon.player.heal(Schematics.AMOUNTTOHEALREPAIR);
+                }
+            }else{
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                    c.stopGlowing();
+                }
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             ((RestRoom) AbstractDungeon.getCurrRoom()).fadeIn();
         }
         if (this.duration < 1.0F && !this.openedScreen) {
             this.openedScreen = true;
-            CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-                if (c instanceof EquipmentCard) {
-                    EquipmentCard base = (EquipmentCard) c;
-                    if (base.equipmentHp < base.equipmentMaxHp) {
-                        cards.group.add(c);
-                    }
-                }
-            }
             AbstractDungeon.gridSelectScreen.open(cards, Math.min(cards.size(), hasRelic ? 4 : 2), TEXT[2], false, false, true, true);
         }
         if (this.duration < 0.0F) {
