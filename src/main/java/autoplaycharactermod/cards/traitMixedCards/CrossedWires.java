@@ -1,6 +1,8 @@
 package autoplaycharactermod.cards.traitMixedCards;
 import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.TraitCard;
+import autoplaycharactermod.cards.chargingCards.Thrusters;
+import autoplaycharactermod.cards.chargingCards.Virus;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.util.CardStats;
@@ -13,6 +15,8 @@ import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class CrossedWires extends TraitCard {
     public static final String ID = makeID("CrossedWires");
@@ -63,5 +67,11 @@ public class CrossedWires extends TraitCard {
         super.use(p, m);
     }
 
-
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[1]) {
+            return new Virus();
+        }
+        return this;
+    }
 }

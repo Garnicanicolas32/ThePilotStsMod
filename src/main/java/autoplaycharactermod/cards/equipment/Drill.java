@@ -53,7 +53,7 @@ public class Drill extends EquipmentCard {
         FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Scavenge").DESCRIPTION);
         checkEvolve();
         if (!alreadyEvolved)
-            MultiCardPreview.add(this, new ScrapCommon(), new ScrapCommonDef());
+            MultiCardPreview.add(this, true, new ScrapCommon(), new ScrapCommonDef());
     }
 
     @Override

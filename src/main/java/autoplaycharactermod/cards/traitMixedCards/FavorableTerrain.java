@@ -1,6 +1,9 @@
 package autoplaycharactermod.cards.traitMixedCards;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.BaseCard;
+import autoplaycharactermod.cards.chargingCards.Virus;
+import autoplaycharactermod.cards.traitIgnitionCards.IgnitionProtocol;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
@@ -58,6 +61,14 @@ public class FavorableTerrain extends BaseCard {
         for (AbstractCard c : MultiCardPreview.multiCardPreview.get(this)) {
             c.upgrade();
         }
+    }
+
+    @Override
+    public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
+        if (BasicMod.unseenTutorials[1]) {
+            return new IgnitionProtocol();
+        }
+        return this;
     }
 
     @Override

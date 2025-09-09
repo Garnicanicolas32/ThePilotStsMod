@@ -192,7 +192,7 @@
     "DESCRIPTION": "Permanently evolve a random rare card in your deck and all its copies. NL stslib:Fleeting."
   },
   "${modID}:ScrapUltraRare": {
-    "NAME": "Omega Frame",
+    "NAME": "Omega Form",
     "DESCRIPTION": "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all its copies. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "${modID}:[#03befc]Echo[]: Permanently evolve a card in your deck and all its copies. NL Exhaust."
@@ -227,7 +227,7 @@
   },
   "${modID}:NFT": {
     "NAME": "NFT",
-    "DESCRIPTION": "Gain !B! Block. NL Gains !M! less Block for each *NFT you have in combat.",
+    "DESCRIPTION": "Gain !B! Block. NL Gains !M! less Block for each *NFT you have during combat.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Gain 15 gold for each *NFT in your deck."
     ]
@@ -493,7 +493,7 @@
   },
   "${modID}:Reload": {
     "NAME": "Reload",
-    "DESCRIPTION": "Gain !M! ${modID}:Capacity.  Discard 1 card to place a card from your discard pile on top of your draw pile.",
+    "DESCRIPTION": "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to place a card from your discard pile on top of your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "Gain !M! ${modID}:Capacity. NL ${modID}:[#03befc]Echo[]: Discard 1 card to play a card from your discard pile."
     ]
@@ -654,7 +654,7 @@
   },
   "${modID}:TrashCannon": {
     "NAME": "Trash Cannon",
-    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Removing cards from your deck permanently increases durability by !${modID}:DURABILITY! and damage by !M!.",
+    "DESCRIPTION": "[#03befc]Turn[] [#03befc]Start[]: NL Deal !D! damage. NL Removing cards from your deck permanently increases damage by !M! and durability by !${modID}:DURABILITY!.",
     "EXTENDED_DESCRIPTION": [
       "[#03befc]Turn[] [#03befc]Start[]: NL Deal !M! damage for every fusion made to ALL enemies."
     ]
