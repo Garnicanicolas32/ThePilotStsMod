@@ -30,7 +30,7 @@ public class SpareParts extends ConsumableCards {
     private static final int MAGIC_UPG = 1;
 
     public SpareParts() {
-        super(ID, info, 4, 2);
+        super(ID, info, 3, 2);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();
     }

@@ -34,7 +34,7 @@ public class FireSupport extends EquipmentCard {
     public FireSupport() {
         super(ID, info, BASE_HP);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(2);
+        setMagic(1);
         checkEvolve();
     }
 
@@ -51,8 +51,8 @@ public class FireSupport extends EquipmentCard {
         AbstractMonster m = MyCharacter.getTarget();
 
         calculateCardDamage(m);
-        if (ConfigPanel.experimentalSounds)
-            this.addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", -0.25F, 1F));
+        //if (ConfigPanel.experimentalSounds)
+            this.addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", -0.2F, 1F));
         this.addToBot(new VFXAction(p, new SweepingBeamEffect(this.hb.cX, this.hb.cY, AbstractDungeon.player.flipHorizontal), 0.4F));
         addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.FIRE));
 

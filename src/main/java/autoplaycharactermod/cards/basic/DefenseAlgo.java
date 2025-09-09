@@ -19,7 +19,7 @@ public class DefenseAlgo extends BaseCard {
             -2 
     );
     private static final int BLOCK = 5;
-    private static final int UPG_BLOCK = 3;
+    private static final int UPG_BLOCK = 2;
 
     public DefenseAlgo() {
         super(ID, info);
