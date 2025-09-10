@@ -20,8 +20,8 @@ public class GamblingHeal extends BaseCard {
             CardTarget.NONE,
             -2 
     );
-    private static final int MAGIC = 2;
-    private static final int MAGIC_UPG = 4;
+    private static final int MAGIC = 3;
+    private static final int MAGIC_UPG = 3;
 
     public GamblingHeal() {
         super(ID, info);

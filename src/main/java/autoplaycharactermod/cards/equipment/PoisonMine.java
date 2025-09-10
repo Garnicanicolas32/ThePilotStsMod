@@ -22,7 +22,7 @@ public class PoisonMine extends EquipmentCard {
             0 
     );
     private static final int BASE_HP = 21;
-    private static final int POISON = 2;
+    private static final int POISON = 1;
     private static final int UPG_POISON = 1;
 
     public PoisonMine() {

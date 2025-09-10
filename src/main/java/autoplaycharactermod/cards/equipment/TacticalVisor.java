@@ -1,5 +1,6 @@
 package autoplaycharactermod.cards.equipment;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -29,7 +30,7 @@ public class TacticalVisor extends EquipmentCard {
     private static final int BASE_HP = 10;
 
     private boolean particleUse = false;
-    private boolean unused = true;
+    public boolean unused = false;
     private float particleTimer = 0.0F;
 
     public TacticalVisor() {
@@ -89,7 +90,6 @@ public class TacticalVisor extends EquipmentCard {
             }
         }
     }
-
 
     @Override
     protected int getUpgradeDurability() {

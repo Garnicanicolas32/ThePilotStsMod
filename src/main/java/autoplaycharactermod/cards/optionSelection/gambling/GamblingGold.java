@@ -19,8 +19,8 @@ public class GamblingGold extends BaseCard {
             CardTarget.NONE,
             -2
     );
-    private static final int MAGIC = 20;
-    private static final int MAGIC_UPG = 40;
+    private static final int MAGIC = 15;
+    private static final int MAGIC_UPG = 45;
 
     public GamblingGold() {
         super(ID, info);

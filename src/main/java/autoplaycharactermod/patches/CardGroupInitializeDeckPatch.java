@@ -1,5 +1,6 @@
 package autoplaycharactermod.patches;
 
+import autoplaycharactermod.cards.equipment.TacticalVisor;
 import autoplaycharactermod.character.MyCharacter;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,6 +16,11 @@ public class CardGroupInitializeDeckPatch {
     public static SpireReturn<Void> InsertInnate(CardGroup __instance, CardGroup masterDeck, @ByRef ArrayList<AbstractCard>[] placeOnTop) {
         if (AbstractDungeon.player instanceof MyCharacter) {
             ((MyCharacter) AbstractDungeon.player).innateAmount = placeOnTop[0].size();
+            for (AbstractCard c : placeOnTop[0]){
+                if (c instanceof TacticalVisor){
+                    ((TacticalVisor)c).unused = true;
+                }
+            }
             placeOnTop[0].clear();
             return SpireReturn.Return();
         }

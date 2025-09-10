@@ -62,17 +62,19 @@ public class YellowPower extends BasePower {
             listreturn.add(new GamblingPlatedArmor());
         }
         if (AbstractDungeon.cardRandomRng.randomBoolean(0.5f)) {
-            listreturn.add(new GamblingPotion());
             listreturn.add(new GamblingHeal());
             listreturn.add(new GamblingScrap());
         }
         if (AbstractDungeon.cardRandomRng.randomBoolean(0.3f)) {
             listreturn.add(new GamblingCardReward());
+            listreturn.add(new GamblingPotion());
             listreturn.add(new GamblingGold());
         }
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                listreturn.add(new GamblingUpgradeCards());
+            if ((c.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || c.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) && !c.upgraded) {
+                if (AbstractDungeon.cardRandomRng.randomBoolean(0.3f)) {
+                    listreturn.add(new GamblingUpgradeCards());
+                }
                 break;
             }
         }
