@@ -32,13 +32,15 @@ public class Thrusters extends BaseCard {
     }
     @Override
     public void evolveCard() {
-        super.evolveCard();
+        setCustomVar("SCRY", 5);
         setMagic(12);
+        super.evolveCard();
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ScryAction(alreadyEvolved ? 5 : customVar("SCRY")));
+        addToBot(new ScryAction(customVar("SCRY")));
         addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber)));
         addToBot(new GainEnergyAction(1));
         if (!this.alreadyEvolved)

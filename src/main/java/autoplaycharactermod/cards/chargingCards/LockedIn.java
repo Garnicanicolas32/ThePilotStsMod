@@ -35,6 +35,7 @@ public class LockedIn extends BaseCard {
     @Override
     public void evolveCard() {
         setMagic(18);
+        setCustomVar("SCRY", 8);
         super.evolveCard();
     }
 
@@ -46,7 +47,7 @@ public class LockedIn extends BaseCard {
             addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber)));
         } else {
             addToBot(new DiscardAction(p, p, this.alreadyEvolved ? 1 : 2, false));
-            addToBot(new ScryAction(alreadyEvolved ? 10 : customVar("SCRY")));
+            addToBot(new ScryAction(customVar("SCRY")));
             returnToHand = false;
         }
     }

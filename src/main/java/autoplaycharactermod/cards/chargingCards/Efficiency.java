@@ -35,7 +35,7 @@ public class Efficiency extends BaseCard {
 
     @Override
     public void evolveCard() {
-        setMagic(8);
+        setMagic(12);
         super.evolveCard();
     }
 

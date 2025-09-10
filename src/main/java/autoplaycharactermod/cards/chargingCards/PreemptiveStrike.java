@@ -21,7 +21,7 @@ public class PreemptiveStrike extends BaseCard {
     private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 1;
     private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 3;
+    private static final int UPG_DAMAGE = 2;
 
     public PreemptiveStrike() {
         super(ID, info);

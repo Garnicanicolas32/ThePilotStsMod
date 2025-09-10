@@ -38,7 +38,7 @@ public class VolatileBattery extends BaseCard {
 
     @Override
     public void evolveCard() {
-        setMagic(8);
+        setMagic(6);
         super.evolveCard();
     }
 

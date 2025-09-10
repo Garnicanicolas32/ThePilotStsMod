@@ -391,7 +391,7 @@
     "NAME": "Locked In",
     "DESCRIPTION": "${modID}:Charge !M!. NL ${modID}:[#03befc]Echo[]: Discard 2 cards to Scry !${modID}:SCRY!.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Charge !M!. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Scry 10."
+      "${modID}:Charge !M!. NL ${modID}:[#03befc]Echo[]: Discard 1 card to Scry !${modID}:SCRY!."
     ]
   },
   "${modID}:FlashDrive": {
@@ -403,10 +403,7 @@
   },
   "${modID}:TakeAim": {
     "NAME": "Take Aim",
-    "DESCRIPTION": "Shuffle your discard pile into your draw pile. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "Shuffle your discard. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge 4 for each card discarded. NL Exhaust."
-    ]
+    "DESCRIPTION": "Shuffle your discard pile into your draw pile. NL ${modID}:[#03befc]Echo[]: Scry !M! then ${modID}:Charge !${modID}:CHARGE! for each card discarded. NL Exhaust."
   },
   "${modID}:ComboBreaker": {
     "NAME": "Combo Breaker",
@@ -420,7 +417,7 @@
     "NAME": "Thrusters",
     "DESCRIPTION": "Scry !${modID}:SCRY!. NL ${modID}:Charge !M!. NL Gain [E] . NL Next turn, Lose [E] .",
     "EXTENDED_DESCRIPTION": [
-      "Scry 5. NL ${modID}:Charge !M!. NL Gain [E] ."
+      "Scry !${modID}:SCRY!. NL ${modID}:Charge !M!. NL Gain [E] ."
     ]
   },
   "${modID}:VolatileBattery": {
@@ -451,7 +448,7 @@
     "NAME": "Quick Reflex",
     "DESCRIPTION": "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! Weak. NL ${modID}:[#03befc]Ejected[]: If you spent less than !M! energy this turn, Gain [E].",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Charge 12. NL Apply !${modID}:WEAK! Weak. NL ${modID}:[#03befc]Ejected[]: NL Gain [E] [E] .",
+      "${modID}:Charge !${modID}:CAPACITY!. NL Apply !${modID}:WEAK! Weak. NL ${modID}:[#03befc]Ejected[]: NL Gain [E] [E] .",
       " NL (",
       " Spent)"
     ]
@@ -681,7 +678,7 @@
     "NAME": "Smart Gun",
     "DESCRIPTION": "${modID}:[#03befc]Equip[], [#03befc]Trigger NL [#03befc]Other ${modID}:Equipment: NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      "${modID}:Deploy. NL ${modID}:[#03befc]Equip[], [#03befc]Trigger ${modID}:Equipment: NL Deal !D! damage."
+      "${modID}:Deploy. NL ${modID}:[#03befc]Equip[], [#03befc]Trigger [#03befc]Other ${modID}:Equipment: NL Deal !D! damage."
     ]
   },
   "${modID}:FireSupport": {

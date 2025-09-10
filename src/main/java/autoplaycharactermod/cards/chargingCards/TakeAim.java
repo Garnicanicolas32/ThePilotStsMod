@@ -36,6 +36,7 @@ public class TakeAim extends BaseCard {
     @Override
     public void evolveCard() {
         setMagic(30);
+        setCustomVar("CHARGE", 4);
         super.evolveCard();
     }
 
@@ -47,7 +48,7 @@ public class TakeAim extends BaseCard {
             addToBot(new EmptyDeckShuffleAction());
             this.addToBot(new ShuffleAction(AbstractDungeon.player.drawPile, false));
         } else {
-            addToBot(new ScryWithChargeAction(magicNumber, alreadyEvolved ? 4 : customVar("CHARGE")));
+            addToBot(new ScryWithChargeAction(magicNumber, customVar("CHARGE")));
             setExhaust(true);
             returnToHand = false;
         }

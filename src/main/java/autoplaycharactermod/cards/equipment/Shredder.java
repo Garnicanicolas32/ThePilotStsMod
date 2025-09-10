@@ -36,7 +36,7 @@ public class Shredder extends EquipmentCard {
 
     @Override
     public void evolveCard() {
-        setMagic(4);
+        setMagic(3);
         super.evolveCard();
     }
 

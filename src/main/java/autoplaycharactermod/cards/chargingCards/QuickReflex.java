@@ -43,13 +43,14 @@ public class QuickReflex extends BaseCard {
     public void evolveCard() {
         setMagic(2);
         setCustomVar("WEAK", 3);
+        setCustomVar("CAPACITY", 14);
         super.evolveCard();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new ChargePower(p, alreadyEvolved ? 12 : customVar("CAPACITY"))));
+        addToBot(new ApplyPowerAction(p, p, new ChargePower(p, customVar("CAPACITY"))));
         addToBot(new ApplyPowerAction(MyCharacter.getTarget(), p, new WeakPower(p, customVar("WEAK"), false)));
         PlayOnce = false;
     }

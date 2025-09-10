@@ -35,7 +35,7 @@ public class JunkFood extends ConsumableCards {
 
     @Override
     public void evolveCard() {
-        setMagic(4);
+        setMagic(7);
         super.evolveCard();
     }
 
