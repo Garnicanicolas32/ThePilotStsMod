@@ -10,12 +10,17 @@ import autoplaycharactermod.relics.reworks.StrangeFork;
 import autoplaycharactermod.ui.DurabilityTutorial;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.EquipmentVisualModifier;
+import autoplaycharactermod.util.TextureLoader;
 import autoplaycharactermod.vfx.DamageEquipmentEffect;
 import autoplaycharactermod.vfx.EquipmentShowCardBrieflyEffect;
 import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -24,6 +29,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -38,7 +44,7 @@ public abstract class EquipmentCard extends BaseCard {
     public int equipmentHp;
     public int equipmentMaxHp;
     protected boolean Equipped = false;
-    private boolean canSpawnTutorial = false;
+    public boolean canSpawnTutorial = false;
 
     public EquipmentCard(String ID, CardStats info, int hp) {
         super(ID, info);
@@ -199,7 +205,7 @@ public abstract class EquipmentCard extends BaseCard {
     protected void onUnequip() {
     }
 
-    public void onGainCharge(){
+    public void onGainCharge() {
 
     }
 
@@ -257,7 +263,7 @@ public abstract class EquipmentCard extends BaseCard {
         canSpawnTutorial = AbstractDungeon.player instanceof MyCharacter;
     }
 
-    private float WaitTimer = 0.4F;
+    private float WaitTimer = 0.8F;
 
     @Override
     public void update() {

@@ -27,6 +27,12 @@
       "Pilot: Scry"
     ]
   },
+  "${modID}:HoverTextTutorial": {
+    "TEXT": [
+      "Hover for tip!",
+      "Hover for tutorial!"
+    ]
+  },
   "${modID}:ShowEvolved": {
     "TEXT": [
       "Evolved"

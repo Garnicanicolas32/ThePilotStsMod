@@ -9,18 +9,23 @@ import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.powers.YellowPower;
 import autoplaycharactermod.ui.TraitTutorials;
 import autoplaycharactermod.util.CardStats;
+import autoplaycharactermod.util.TextureLoader;
 import autoplaycharactermod.vfx.TraitFlashesEffect;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
+import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -29,12 +34,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static autoplaycharactermod.BasicMod.makeID;
+
 public abstract class TraitCard extends BaseCard implements SpawnModificationCard {
 
     private static final UIStrings descriptor = CardCrawlGame.languagePack.getUIString(makeID("ComboTags"));
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("HoverTextTutorial"));
+
     protected boolean countsTwiceOnUpgrade;
     protected TraitColor traitColor;
     private boolean canSpawnTutorial = false;
+    private static final Texture textHover = TextureLoader.getTexture(BasicMod.imagePath("tip/hover.png"));
+    private final Color iconColour = new Color(1, 1, 1, 1);
+    private float time;
 
     public TraitCard(String ID, CardStats info, TraitColor color, Boolean countsTwice) {
         super(ID, info);
@@ -252,23 +264,38 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
         canSpawnTutorial = AbstractDungeon.player instanceof MyCharacter;
     }
 
-    private float WaitTimer = 0.4F;
+    private float WaitTimer = 0.8F;
 
     @Override
     public void update() {
         super.update();
-        if (hb.hovered && canSpawnTutorial && BasicMod.unseenTutorials[1]) {
-            if (WaitTimer <= 0F) {
-                AbstractDungeon.ftue = new TraitTutorials();
-                BasicMod.unseenTutorials[1] = false;
-                canSpawnTutorial = false;
-                try {
-                    BasicMod.saveTutorialsSeen();
-                } catch (IOException e) {
-                    e.printStackTrace();
+        if (canSpawnTutorial && BasicMod.unseenTutorials[1]) {
+            time = (time + Gdx.graphics.getDeltaTime()) % (MathUtils.PI2);
+            float normalized = (MathUtils.sin(time * 2f) + 1f) * 0.5f;
+            iconColour.a = this.transparency;
+            FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale);
+
+            ExtraIcons.icon(textHover)
+                    .text(uiStrings.TEXT[1])
+                    .drawColor(iconColour)
+                    .textOffsetX(-18f)
+                    .offsetY(-265f + normalized * 25f)
+                    .offsetX(145f)
+                    .render(this);
+
+            if (hb.hovered) {
+                if (WaitTimer <= 0F) {
+                    AbstractDungeon.ftue = new TraitTutorials();
+                    BasicMod.unseenTutorials[1] = false;
+                    canSpawnTutorial = false;
+                    try {
+                        BasicMod.saveTutorialsSeen();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    WaitTimer -= Gdx.graphics.getDeltaTime();
                 }
-            } else {
-                WaitTimer -= Gdx.graphics.getDeltaTime();
             }
         }
     }
