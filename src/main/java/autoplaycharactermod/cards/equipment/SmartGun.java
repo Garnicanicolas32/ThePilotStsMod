@@ -1,5 +1,6 @@
 package autoplaycharactermod.cards.equipment;
 
+import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.actions.SmartGunLocateAnimation;
@@ -7,12 +8,16 @@ import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.character.MyCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SmartGun extends EquipmentCard {
     public static final String ID = makeID("SmartGun");
@@ -76,5 +81,10 @@ public class SmartGun extends EquipmentCard {
     @Override
     protected int getUpgradeDurability() {
         return 33;
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        return null;
     }
 }
