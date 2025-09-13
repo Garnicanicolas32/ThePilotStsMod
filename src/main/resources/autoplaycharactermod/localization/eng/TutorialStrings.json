@@ -15,7 +15,7 @@
   },
   "${modID}:TraitTutorials": {
     "TEXT": [
-      "New card type, #yTraits. NL NL #yTrait cards activate effects at the end of your turn based on how many cards of the same trait you hold. NL You can see the current effects that will apply by hovering over the player. NL For a full list, hover over the trait icon at the top and click to cycle. NL NL #yRecommendation: Try not to memorize every effect right away."
+      "New card type, #yTraits. NL NL #yTrait cards activate effects at the end of your turn based on how many cards of the same trait you hold. NL You can see the current effects that will apply by hovering over the player. NL For a full list, hover over the trait icon at the top and click to cycle. NL NL #bTip: Try not to memorize every effect right away."
     ],
     "LABEL": [
       "Next",
