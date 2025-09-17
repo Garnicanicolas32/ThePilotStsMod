@@ -21,11 +21,11 @@ public class QuickReflex extends BaseCard {
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.COMMON,
             CardTarget.SELF,
             -2 
     );
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 4;
     private static final int UPG_MAGIC = 2;
     private static final int CAPACITY = 5;
     private static final int UPG_CAPACITY = 3;

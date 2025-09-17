@@ -20,11 +20,11 @@ public class Acceleration extends BaseCard {
     private static final CardStats info = new CardStats(
             MyCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             0
     );
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 0;
 
     public Acceleration() {
@@ -46,7 +46,7 @@ public class Acceleration extends BaseCard {
             PlayOnce = false;
             addToBot(new SfxActionVolume("ATTACK_DEFECT_BEAM", 0.8F, 1.8F));
             this.addToBot(new VFXAction(new WhirlwindEffect(new Color(0.0F, 1.0F, 1.0F, 0.7F), false), 0.0F));
-            this.addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, upgraded || alreadyEvolved ? 2 : 1), 1));
+            this.addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, upgraded || alreadyEvolved ? 2 : 1)));
             returnToHand = true;
         } else {
             addToBot(new DiscardAction(p, p, 1, false));
