@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class LockedIn extends BaseCard {
     public static final String ID = makeID("LockedIn");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -28,7 +28,7 @@ public class LockedIn extends BaseCard {
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
         setCustomVar("SCRY", 4, 1);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
 

@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.basic;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.TargetedPower;
 import autoplaycharactermod.relics.ScheduledUpdate;
 import autoplaycharactermod.util.CardStats;
@@ -21,7 +21,7 @@ public class SelectTarget extends BaseCard {
     public static final int MAGIC = 2;
     public static final int MAGIC_UPG = 2;
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.ENEMY,
@@ -33,7 +33,7 @@ public class SelectTarget extends BaseCard {
         setExhaust(true);
         setEthereal(true);
         setMagic(MAGIC, MAGIC_UPG);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class SelectTarget extends BaseCard {
         } else {
                 addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
         }
-        MyCharacter.targetCheck(m, true);
+        PilotCharacter.targetCheck(m, true);
     }
 
     @Override

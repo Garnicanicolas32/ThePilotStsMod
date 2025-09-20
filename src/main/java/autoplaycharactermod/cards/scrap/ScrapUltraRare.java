@@ -1,16 +1,14 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EvolveCardEffect;
 import autoplaycharactermod.vfx.UltraRareScrapStarsEffect;
-import basemod.AutoAdd;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
-import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -19,7 +17,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -30,7 +27,7 @@ import java.util.Objects;
 public class ScrapUltraRare extends BaseCard {
     public static final String ID = makeID("ScrapUltraRare");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
@@ -42,11 +39,11 @@ public class ScrapUltraRare extends BaseCard {
     public ScrapUltraRare() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        this.setBannerTexture(BasicMod.imagePath("cards/EvolvedBanner.png"), BasicMod.imagePath("cards/EvolvedBanner_p.png"));
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_skill_p.png"));
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        this.setBannerTexture(ThePilotMod.imagePath("cards/EvolvedBanner.png"), ThePilotMod.imagePath("cards/EvolvedBanner_p.png"));
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_skill_p.png"));
         if (CardCrawlGame.isInARun() && AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null) {
-            BasicMod.evolved = true;
+            ThePilotMod.evolved = true;
         }
     }
 

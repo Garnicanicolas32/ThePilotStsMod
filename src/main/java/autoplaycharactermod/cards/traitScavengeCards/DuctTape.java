@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.traitScavengeCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.DuctTapeAction;
 import autoplaycharactermod.cards.TraitCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.util.CardStats;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class DuctTape extends TraitCard {
     public static final String ID = makeID("DuctTape");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
@@ -28,8 +28,8 @@ public class DuctTape extends TraitCard {
     public DuctTape() {
         super(ID, info, TraitCard.TraitColor.SCAVENGE, false);
         setDamage(DAMAGE, UPG_DAMAGE);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.skipVigor);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.skipVigor);
         checkEvolve();
     }
 

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class FirewallPower extends BasePower implements OnCreateCardInterface {
     public static final String POWER_ID = makeID("FirewallPower");

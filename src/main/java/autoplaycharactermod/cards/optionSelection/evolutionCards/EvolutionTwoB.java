@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.evolutionCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.relics.RunicEngine;
 import autoplaycharactermod.util.CardStats;
@@ -27,8 +27,8 @@ public class EvolutionTwoB extends BaseCard {
 
     public EvolutionTwoB() {
         super(ID, info);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution2_power.png"), BasicMod.imagePath("character/cardback/bg_evolution2_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution2_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution2_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override

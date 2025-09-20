@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class LoseThornsPower extends BasePower {
     public static final String POWER_ID = makeID("LoseThornsPower");

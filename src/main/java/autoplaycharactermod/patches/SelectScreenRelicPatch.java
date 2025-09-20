@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 public class SelectScreenRelicPatch {
     @SpirePrefixPatch
     public static SpireReturn<Void> Prefix(CharacterOption __instance, SpriteBatch sb, CharSelectInfo ___charInfo, float ___infoX, float ___infoY) {
-        if (___charInfo.player instanceof MyCharacter) {
+        if (___charInfo.player instanceof PilotCharacter) {
             sb.setColor(Settings.QUARTER_TRANSPARENT_BLACK_COLOR);
             float var10002 = ___infoX - 52.0F * Settings.scale;
             sb.draw(RelicLibrary.getRelic(___charInfo.relics.get(0)).outlineImg, var10002, ___infoY - 60.0F * Settings.scale - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 128, 128, false, false);

@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.MicroMissilesEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,7 +15,7 @@ public class MicroMissiles extends EquipmentCard {
     public static final String ID = makeID("MicroMissiles");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -46,7 +46,7 @@ public class MicroMissiles extends EquipmentCard {
     public void Activate() {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractMonster m = MyCharacter.getTarget();
+        AbstractMonster m = PilotCharacter.getTarget();
 
         int loops = (p.drawPile.size() + p.hand.size() + p.discardPile.size()) / magicNumber;
         if (loops > 0)

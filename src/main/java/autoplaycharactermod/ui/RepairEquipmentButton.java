@@ -1,6 +1,6 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.relics.Schematics;
 import autoplaycharactermod.vfx.CampfireRepairEffect;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class RepairEquipmentButton extends AbstractCampfireOption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("repairButton"));
@@ -24,7 +24,7 @@ public class RepairEquipmentButton extends AbstractCampfireOption {
         } else {
             this.description = TEXT[3];
         }
-        this.img = ImageMaster.loadImage(BasicMod.imagePath("button/repair.png"));
+        this.img = ImageMaster.loadImage(ThePilotMod.imagePath("button/repair.png"));
     }
 
     public void useOption() {

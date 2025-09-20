@@ -2,7 +2,7 @@ package autoplaycharactermod.relics;
 
 import autoplaycharactermod.cards.scrap.ScrapCommon;
 import autoplaycharactermod.cards.scrap.ScrapCommonDef;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.evacipated.cardcrawl.mod.stslib.relics.CardRewardSkipButtonRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class RecyclingBin extends BaseRelic implements CardRewardSkipButtonRelic {
     private static final String NAME = "RecyclingBin"; //The name will be used for determining the image file as well as the ID.
@@ -19,7 +19,7 @@ public class RecyclingBin extends BaseRelic implements CardRewardSkipButtonRelic
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
 
     public RecyclingBin() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
         counter = 0;
     }
 

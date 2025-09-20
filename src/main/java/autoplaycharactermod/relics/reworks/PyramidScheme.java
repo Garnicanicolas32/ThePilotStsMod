@@ -1,12 +1,12 @@
 package autoplaycharactermod.relics.reworks;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.BaseRelic;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class PyramidScheme extends BaseRelic {
     private static final String NAME = "PyramidScheme"; //The name will be used for determining the image file as well as the ID.
@@ -15,7 +15,7 @@ public class PyramidScheme extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.FLAT; //The sound played when the relic is clicked.
 
     public PyramidScheme() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     public void onPlayerEndTurn() {

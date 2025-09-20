@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.scrap.ScrapUltraRare;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.TriFunction;
@@ -19,7 +19,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import org.apache.logging.log4j.Level;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -91,7 +90,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
     }
 
     protected void checkEvolve() {
-        if (BasicMod.evolved &&
+        if (ThePilotMod.evolved &&
                 CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null
                 && !this.alreadyEvolved) {
@@ -110,7 +109,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
     }
 
     protected static String makeID(String name) {
-        return BasicMod.makeID(name);
+        return ThePilotMod.makeID(name);
     }
 
     private static String getName(String ID) {
@@ -446,7 +445,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
 
             if (this.upgradesDescription) {
                 if (cardStrings.UPGRADE_DESCRIPTION == null) {
-                    BasicMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
+                    ThePilotMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
                 } else {
                     this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
                 }
@@ -605,7 +604,7 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
     }
 
     public void evolveCard() {
-        if ((BasicMod.evolved &&
+        if ((ThePilotMod.evolved &&
                 CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null) || ForceVisualEvolved) {
             alreadyEvolved = true;
@@ -616,19 +615,19 @@ public abstract class BaseCard extends CustomCard implements CustomSavable<Integ
             if (cardStrings.EXTENDED_DESCRIPTION != null && cardStrings.EXTENDED_DESCRIPTION.length > 0) {
                 this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
             }
-            this.setBannerTexture(BasicMod.imagePath("cards/EvolvedBanner.png"), BasicMod.imagePath("cards/EvolvedBanner_p.png"));
+            this.setBannerTexture(ThePilotMod.imagePath("cards/EvolvedBanner.png"), ThePilotMod.imagePath("cards/EvolvedBanner_p.png"));
             switch (this.type) {
                 case ATTACK:
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_attack.png"), BasicMod.imagePath("character/cardback/Evolved/bg_attack_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_attack.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_attack_p.png"));
                     break;
                 case SKILL:
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_skill_p.png"));
                     break;
                 case POWER:
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_power.png"), BasicMod.imagePath("character/cardback/Evolved/bg_power_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_power.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_power_p.png"));
                     break;
             }
-            if (BasicMod.isInCombat())
+            if (ThePilotMod.isInCombat())
                 applyPowers();
             initializeDescription();
         }

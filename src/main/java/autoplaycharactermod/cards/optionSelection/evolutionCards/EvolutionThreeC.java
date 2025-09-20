@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.evolutionCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.relics.RunicEngine;
 import autoplaycharactermod.ui.ScryButton;
@@ -28,8 +28,8 @@ public class EvolutionThreeC extends BaseCard {
 
     public EvolutionThreeC() {
         super(ID, info);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution3_power.png"), BasicMod.imagePath("character/cardback/bg_evolution3_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution3_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution3_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override

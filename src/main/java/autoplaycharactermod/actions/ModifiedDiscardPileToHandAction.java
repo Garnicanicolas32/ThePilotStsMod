@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
@@ -55,11 +55,11 @@ public class ModifiedDiscardPileToHandAction extends AbstractGameAction {
 
                     for (AbstractCard c : cardsToMove) {
                         if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                            if (c.color == MyCharacter.Meta.CARD_COLOR) {
+                            if (c.color == PilotCharacter.Meta.CARD_COLOR) {
                                 this.player.discardPile.removeCard(c);
                                 this.player.hand.addToTop(c);
                                 c.setCostForTurn(0);
-                                AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, MyCharacter.getTarget()));
+                                AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, PilotCharacter.getTarget()));
                             } else {
                                 this.player.hand.addToHand(c);
                                 if (this.setCost) {
@@ -96,11 +96,11 @@ public class ModifiedDiscardPileToHandAction extends AbstractGameAction {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                     if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                        if (c.color == MyCharacter.Meta.CARD_COLOR) {
+                        if (c.color == PilotCharacter.Meta.CARD_COLOR) {
                             this.player.discardPile.removeCard(c);
                             this.player.hand.addToTop(c);
                             c.setCostForTurn(0);
-                            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, MyCharacter.getTarget()));
+                            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, PilotCharacter.getTarget()));
                         } else {
                             this.player.hand.addToHand(c);
                             if (this.setCost) {

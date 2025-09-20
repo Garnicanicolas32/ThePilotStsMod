@@ -1,22 +1,21 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.EnergyChamberAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EnergyChamberEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class EnergyChamber extends EquipmentCard {
     public static final String ID = makeID("EnergyChamber");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -34,7 +33,7 @@ public class EnergyChamber extends EquipmentCard {
         setDamage(DAMAGE, DAMAGE_UPG);
         setMagic(MAGIC, MAGIC_UPG);
         checkEvolve();
-        this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
+        this.tags.remove(ThePilotMod.CustomTags.ignoreDuplication);
     }
 
     @Override
@@ -49,7 +48,7 @@ public class EnergyChamber extends EquipmentCard {
     }
 
     protected void onUnequip() {
-        calculateCardDamage(MyCharacter.getTarget());
+        calculateCardDamage(PilotCharacter.getTarget());
         addToBot(new EnergyChamberAction(this, AbstractGameAction.AttackEffect.NONE));
         super.Activate();
     }

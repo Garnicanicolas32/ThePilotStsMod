@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -49,7 +49,7 @@ public class DamageCurrentTargetAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
-            AbstractMonster target = MyCharacter.getTarget();
+            AbstractMonster target = PilotCharacter.getTarget();
             card.calculateCardDamage(target);
             if (this.attackEffect == AttackEffect.LIGHTNING) {
                 addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, card.damage), AttackEffect.NONE, this.skipWait, this.muteSfx));

@@ -1,6 +1,6 @@
 package autoplaycharactermod.util;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import basemod.abstracts.AbstractCardModifier;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class InnateRelicMod extends AbstractCardModifier {
     private static final UIStrings uiStrings;
-    private static final Texture texDefault = TextureLoader.getTexture(BasicMod.imagePath("relics/MemoryCard.png"));
+    private static final Texture texDefault = TextureLoader.getTexture(ThePilotMod.imagePath("relics/MemoryCard.png"));
     public static String ID = makeID("InnateRelicMod");
 
     static {

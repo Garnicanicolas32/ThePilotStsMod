@@ -1,6 +1,6 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.scrap.ScrapCommon;
 import autoplaycharactermod.cards.scrap.ScrapCommonDef;
 import autoplaycharactermod.patches.RewardItemScrapPatch;
@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class ScrapReward extends CustomReward {
-    private static final Texture ICON = TextureLoader.getTexture(BasicMod.imagePath("Reward.png"));
+    private static final Texture ICON = TextureLoader.getTexture(ThePilotMod.imagePath("Reward.png"));
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ScrapReward"));
 
     public ScrapReward() {

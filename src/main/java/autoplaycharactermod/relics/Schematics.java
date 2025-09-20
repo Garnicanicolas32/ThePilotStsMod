@@ -1,8 +1,8 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class Schematics extends BaseRelic {
     private static final String NAME = "Schematics"; //The name will be used for determining the image file as well as the ID.
@@ -12,7 +12,7 @@ public class Schematics extends BaseRelic {
     public static final int AMOUNTTOHEALREPAIR = 10; //The sound played when the relic is clicked.
 
     public Schematics() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     @Override

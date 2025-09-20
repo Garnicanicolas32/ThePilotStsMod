@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -15,7 +15,7 @@ public class OverlayMenuButtonPatch {
     private static boolean shownThisCombat;
 
     public static boolean shouldShowButton() {
-        return shownThisCombat || AbstractDungeon.player instanceof MyCharacter;
+        return shownThisCombat || AbstractDungeon.player instanceof PilotCharacter;
     }
 
     @SpirePatch2(clz = OverlayMenu.class, method = SpirePatch.CLASS)

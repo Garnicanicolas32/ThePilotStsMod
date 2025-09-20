@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import com.badlogic.gdx.math.MathUtils;
@@ -14,7 +14,7 @@ public class TungstenCoat extends EquipmentCard {
     public static final String ID = makeID("TungstenCoat");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,

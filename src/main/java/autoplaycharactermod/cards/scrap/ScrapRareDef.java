@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 public class ScrapRareDef extends BaseCard {
     public static final String ID = makeID("ScrapRareDef");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
@@ -34,10 +34,10 @@ public class ScrapRareDef extends BaseCard {
     public ScrapRareDef() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.ScrapRare);
+        tags.add(ThePilotMod.CustomTags.ScrapRare);
         setBlock(BLOCK);
         setMagic(MAGIC);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
         this.setDisplayRarity(CardRarity.RARE);
     }
 

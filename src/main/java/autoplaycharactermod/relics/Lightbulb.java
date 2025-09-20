@@ -1,11 +1,11 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class Lightbulb extends BaseRelic {
     public static final int SCRY = 5;
@@ -15,11 +15,11 @@ public class Lightbulb extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.MAGICAL; //The sound played when the relic is clicked.
 
     public Lightbulb() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     public void atBattleStart() {
-        if (!(AbstractDungeon.player instanceof MyCharacter))
+        if (!(AbstractDungeon.player instanceof PilotCharacter))
             doAction();
     }
 

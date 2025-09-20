@@ -1,6 +1,6 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.util.Hotkeys;
 import autoplaycharactermod.powers.HackedPower;
 import com.badlogic.gdx.Gdx;
@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.EndTurnLongPressBarFlashEffect;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class ScryButton {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ScryButton"));
@@ -106,23 +106,18 @@ public class ScryButton {
             AbstractDungeon.effectsQueue.add(new EndTurnLongPressBarFlashEffect());
         }
 
-        if ((!Settings.USE_LONG_PRESS) && ((this.hb.clicked || Hotkeys.ActionSet.ScryButton.isJustPressed()) && !this.isDisabled && this.enabled)) {
+        if ((!Settings.USE_LONG_PRESS) && ((this.hb.clicked || Hotkeys.ActionSet.ScryButton.isJustPressed() || Hotkeys.CActionSet.ScryButton.isJustPressed()) && !this.isDisabled && this.enabled)) {
             this.hb.clicked = false;
             if (!AbstractDungeon.isScreenUp) {
                 this.trigger();
             }
         }
+
     }
 
     private void updateHoldProgress() {
-        if (!Settings.USE_LONG_PRESS && !InputHelper.isMouseDown) {// 129
-            this.holdProgress -= Gdx.graphics.getDeltaTime();// 131
-            if (this.holdProgress < 0.0F) {// 132
-                this.holdProgress = 0.0F;// 133
-            }
-
-        } else {
-            if ((this.hb.hovered && InputHelper.isMouseDown) && !this.isDisabled && this.enabled) {// 138 139
+        if (Settings.USE_LONG_PRESS && (Settings.isControllerMode || Hotkeys.ActionSet.ScryButton.isPressed() || Hotkeys.CActionSet.ScryButton.isPressed() || InputHelper.isMouseDown)) {// 129
+            if ((this.hb.hovered && (InputHelper.isMouseDown || Hotkeys.ActionSet.ScryButton.isPressed() || Hotkeys.CActionSet.ScryButton.isPressed())) && !this.isDisabled && this.enabled) {// 138 139
                 this.holdProgress += Gdx.graphics.getDeltaTime();// 140
                 if (this.holdProgress > HOLD_DUR) {// 141
                     this.holdProgress = HOLD_DUR;// 142
@@ -133,7 +128,11 @@ public class ScryButton {
                     this.holdProgress = 0.0F;// 147
                 }
             }
-
+        } else {
+            this.holdProgress -= Gdx.graphics.getDeltaTime();// 131
+            if (this.holdProgress < 0.0F) {// 132
+                this.holdProgress = 0.0F;// 133
+            }
         }
     }// 135 150
 
@@ -159,7 +158,7 @@ public class ScryButton {
 
         AbstractDungeon.actionManager.addToBottom(new ScryAction((AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount)));
 
-        BasicMod.energySpentTrigger();
+        ThePilotMod.energySpentTrigger();
     }
 
     private void glow() {
@@ -260,6 +259,11 @@ public class ScryButton {
                 sb.setColor(Settings.HALF_TRANSPARENT_WHITE_COLOR);// 335
                 sb.draw(buttonImg, this.current_x - 128.0F, tmpY - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);// 336
                 sb.setBlendFunction(770, 771);// 353
+            }
+
+            if (Settings.isControllerMode && this.enabled) {
+                sb.setColor(Color.WHITE);
+                sb.draw(Hotkeys.CActionSet.ScryButton.getKeyImg(), this.current_x + 60.0F * Settings.scale, tmpY - 32.0F, 32.0F, 32.0F, 64.0F, 64.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 64, 64, false, false);
             }
 
             FontHelper.renderFontCentered(sb, FontHelper.panelEndTurnFont, this.label + (AbstractDungeon.player.hasPower(HackedPower.POWER_ID) ? scryAmount - 1 : scryAmount), this.current_x - 0.0F * Settings.scale, tmpY - 3.0F * Settings.scale, textColor);// 381

@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.chargingCards;
 
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -16,13 +16,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 public class ArcBlasterMk extends BaseCard {
     public static final String ID = makeID("ArcBlasterMk");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,

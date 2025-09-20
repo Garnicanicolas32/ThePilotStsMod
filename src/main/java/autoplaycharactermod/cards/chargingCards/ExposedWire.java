@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ExposedWire extends BaseCard {
     public static final String ID = makeID("ExposedWire");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -54,7 +54,7 @@ public class ExposedWire extends BaseCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Charge").PROPER_NAME, BasicMod.keywords.get("Charge").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Charge").PROPER_NAME, ThePilotMod.keywords.get("Charge").DESCRIPTION));
         return customTooltips;
     }
 

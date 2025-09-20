@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.ScryWithChargeAction;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TakeAim extends BaseCard {
     public static final String ID = makeID("TakeAim");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
@@ -29,7 +29,7 @@ public class TakeAim extends BaseCard {
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
         setCustomVar("CHARGE", CHARGE);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
 

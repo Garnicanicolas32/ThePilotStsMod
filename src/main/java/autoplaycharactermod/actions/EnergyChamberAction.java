@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.vfx.EnergyChamberEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -26,7 +26,7 @@ public class EnergyChamberAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
-            AbstractMonster target = MyCharacter.getTarget();
+            AbstractMonster target = PilotCharacter.getTarget();
             card.calculateCardDamage(target);
             addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, card.damage), this.attackEffect, false, false));
             addToTop(new VFXAction(new EnergyChamberEffect(original.hb.cX, original.hb.cY, target.hb.cX, target.hb.cY, card.damage, true), 0.5F));

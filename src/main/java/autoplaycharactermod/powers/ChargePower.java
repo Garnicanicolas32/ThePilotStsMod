@@ -1,7 +1,7 @@
 package autoplaycharactermod.powers;
 
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class ChargePower extends BasePower {
     public static final String POWER_ID = makeID("ChargePower");
@@ -42,7 +42,7 @@ public class ChargePower extends BasePower {
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        AbstractMonster m = MyCharacter.getTarget();
+        AbstractMonster m = PilotCharacter.getTarget();
         AbstractPlayer p = AbstractDungeon.player;
 
         if (amount < 50)

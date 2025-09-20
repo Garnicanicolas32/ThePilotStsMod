@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class GrapplingHook extends EquipmentCard {
     public static final String ID = makeID("GrapplingHook");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -28,7 +28,7 @@ public class GrapplingHook extends EquipmentCard {
         super(ID, info, BASE_HP);
         setBlock(BLOCK, UPG_BLOCK);
         checkEvolve();
-        this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
+        this.tags.remove(ThePilotMod.CustomTags.ignoreDuplication);
     }
 
     @Override

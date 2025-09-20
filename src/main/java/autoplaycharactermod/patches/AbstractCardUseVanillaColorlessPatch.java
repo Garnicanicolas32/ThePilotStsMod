@@ -3,7 +3,7 @@ package autoplaycharactermod.patches;
 import autoplaycharactermod.actions.ModifiedCardFromDeckToHandAction;
 import autoplaycharactermod.actions.ModifiedDiscardPileToHandAction;
 import autoplaycharactermod.actions.modifiedDrawPileToHandAction;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.potions.SneckoOilRework;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,7 +32,7 @@ public class AbstractCardUseVanillaColorlessPatch {
     public static class patchSecretTechniqueSkill {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(SecretTechnique __instance, AbstractPlayer p, AbstractMonster m) {
-            if (AbstractDungeon.player instanceof MyCharacter){
+            if (AbstractDungeon.player instanceof PilotCharacter){
                 AbstractDungeon.actionManager.addToBottom(new ModifiedCardFromDeckToHandAction(1, false, AbstractCard.CardType.SKILL));
                 return SpireReturn.Return();
             }
@@ -52,7 +52,7 @@ public class AbstractCardUseVanillaColorlessPatch {
     public static class patchSecretTechniqueAttack {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(SecretWeapon __instance, AbstractPlayer p, AbstractMonster m) {
-            if (AbstractDungeon.player instanceof MyCharacter){
+            if (AbstractDungeon.player instanceof PilotCharacter){
                 AbstractDungeon.actionManager.addToBottom(new ModifiedCardFromDeckToHandAction(1, false, AbstractCard.CardType.ATTACK));
                 return SpireReturn.Return();
             }
@@ -72,7 +72,7 @@ public class AbstractCardUseVanillaColorlessPatch {
     public static class patchViolence {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(Violence __instance, AbstractPlayer p, AbstractMonster m) {
-            if (AbstractDungeon.player instanceof MyCharacter){
+            if (AbstractDungeon.player instanceof PilotCharacter){
                 AbstractDungeon.actionManager.addToBottom(new modifiedDrawPileToHandAction(3, AbstractCard.CardType.ATTACK));
                 return SpireReturn.Return();
             }
@@ -91,7 +91,7 @@ public class AbstractCardUseVanillaColorlessPatch {
     public static class patchLiquidMemories {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(LiquidMemories __instance, AbstractCreature target) {
-            if (AbstractDungeon.player instanceof MyCharacter){
+            if (AbstractDungeon.player instanceof PilotCharacter){
                 AbstractDungeon.actionManager.addToBottom(new ModifiedDiscardPileToHandAction(__instance.getPotency(), 0));
                 return SpireReturn.Return();
             }
@@ -110,7 +110,7 @@ public class AbstractCardUseVanillaColorlessPatch {
     public static class patchSneckoOil {
         @SpirePrefixPatch
         public static SpireReturn<AbstractPotion> Prefix(String name) {
-            if (AbstractDungeon.player instanceof MyCharacter && Objects.equals(name, "SneckoOil")){
+            if (AbstractDungeon.player instanceof PilotCharacter && Objects.equals(name, "SneckoOil")){
                 return SpireReturn.Return(new SneckoOilRework());
             }
             else

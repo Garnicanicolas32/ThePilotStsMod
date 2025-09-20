@@ -1,11 +1,11 @@
 package autoplaycharactermod.cards.equipmentUtil;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.traitBastionCards.FeedbackLoop;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class SelfDestruct extends BaseCard {
     public static final String ID = makeID("SelfDestruct");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ALL_ENEMY,
@@ -45,8 +45,8 @@ public class SelfDestruct extends BaseCard {
         returnToHand = true;
         setDamage(DAMAGE, UPG_DAMAGE);
         this.isMultiDamage = true;
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.skipVigor);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.skipVigor);
         returnToHand = true;
         checkEvolve();
     }
@@ -59,7 +59,7 @@ public class SelfDestruct extends BaseCard {
 
     @Override
     public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
-        if (BasicMod.unseenTutorials[2]) {
+        if (ThePilotMod.unseenTutorials[2]) {
             return new FeedbackLoop();
         }
         return this;

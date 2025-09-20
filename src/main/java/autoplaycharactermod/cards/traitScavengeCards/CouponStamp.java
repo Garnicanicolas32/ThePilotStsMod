@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.traitScavengeCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.TraitCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 public class CouponStamp extends TraitCard {
     public static final String ID = makeID("CouponStamp");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -42,9 +42,9 @@ public class CouponStamp extends TraitCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("SHOP_PURCHASE"));
-        AbstractMonster mon = MyCharacter.getTarget();
+        AbstractMonster mon = PilotCharacter.getTarget();
         this.addToBot(new VFXAction(new WeightyImpactEffect(mon.hb.cX, mon.hb.cY, Color.GOLD.cpy())));
-        this.baseDamage = BasicMod.purchases * this.magicNumber;
+        this.baseDamage = ThePilotMod.purchases * this.magicNumber;
         this.calculateCardDamage(mon);
         addToBot(new DamageAction(mon, new DamageInfo(p, damage)));
         PlayOnce = false;
@@ -54,13 +54,13 @@ public class CouponStamp extends TraitCard {
 
     @Override
     public void applyPowers() {
-        this.baseDamage = BasicMod.purchases * this.magicNumber;
+        this.baseDamage = ThePilotMod.purchases * this.magicNumber;
         super.applyPowers();
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseDamage = BasicMod.purchases * this.magicNumber;
+        this.baseDamage = ThePilotMod.purchases * this.magicNumber;
         super.calculateCardDamage(mo);
     }
 
@@ -68,9 +68,9 @@ public class CouponStamp extends TraitCard {
     public void initializeDescription() {
         if (cardStrings != null && CardCrawlGame.isInARun()) {
             this.rawDescription = this.alreadyEvolved ? cardStrings.DESCRIPTION : cardStrings.EXTENDED_DESCRIPTION[0];
-            if (BasicMod.purchases > 0) {
+            if (ThePilotMod.purchases > 0) {
                 this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1]
-                        + BasicMod.purchases
+                        + ThePilotMod.purchases
                         + cardStrings.EXTENDED_DESCRIPTION[2];
             }
         }

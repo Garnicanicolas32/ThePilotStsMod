@@ -1,7 +1,7 @@
 package autoplaycharactermod.patches;
 
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.RepairEquipmentButton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +25,7 @@ public class CampfireUIinitializeButtonsPatch {
                 .filter(c -> c instanceof EquipmentCard)
                 .anyMatch(c -> ((EquipmentCard) c).equipmentHp < ((EquipmentCard) c).equipmentMaxHp);
 
-        if (hasRepairableEquipment || AbstractDungeon.player instanceof MyCharacter) {
+        if (hasRepairableEquipment || AbstractDungeon.player instanceof PilotCharacter) {
             ___buttons[0].add(new RepairEquipmentButton(hasRepairableEquipment));
         }
     }

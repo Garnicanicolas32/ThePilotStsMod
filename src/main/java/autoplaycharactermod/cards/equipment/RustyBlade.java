@@ -1,19 +1,17 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.RustyBladeAction;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RustyBlade extends EquipmentCard {
     public static final String ID = makeID("RustyBlade");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -28,7 +26,7 @@ public class RustyBlade extends EquipmentCard {
         super(ID, info, BASE_HP);
         setDamage(DAMAGE, DAMAGE_UPG);
         checkEvolve();
-        this.tags.remove(BasicMod.CustomTags.ignoreDuplication);
+        this.tags.remove(ThePilotMod.CustomTags.ignoreDuplication);
     }
 
     @Override
@@ -44,7 +42,7 @@ public class RustyBlade extends EquipmentCard {
     @Override
     public void Activate() {
         if (!Equipped) return;
-        AbstractMonster m = MyCharacter.getTarget();
+        AbstractMonster m = PilotCharacter.getTarget();
         calculateCardDamage(m);
         addToBot(new RustyBladeAction(this, AbstractGameAction.AttackEffect.POISON));
         super.Activate();

@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.HackedPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -35,7 +35,7 @@ public class SneckoTakeTurnPatch {
     }
 
     public static boolean isMyCharacter() {
-        return AbstractDungeon.player instanceof MyCharacter;
+        return AbstractDungeon.player instanceof PilotCharacter;
     }
 }
 

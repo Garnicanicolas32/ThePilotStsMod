@@ -3,7 +3,7 @@ package autoplaycharactermod.util;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class PlayTurnStartModifier extends AbstractCardModifier {
     public static String ID = makeID("PlayTurnStartModifier");

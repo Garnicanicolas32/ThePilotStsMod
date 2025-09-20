@@ -1,11 +1,11 @@
 package autoplaycharactermod.relics.reworks;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.BaseRelic;
 import autoplaycharactermod.ui.ScryButton;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class ChemicalY extends BaseRelic {
     private static final String NAME = "ChemicalY"; //The name will be used for determining the image file as well as the ID.
@@ -14,7 +14,7 @@ public class ChemicalY extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
 
     public ChemicalY() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     public void onEquip() {

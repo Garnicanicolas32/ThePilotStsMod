@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class CampfireInnateEffect extends AbstractGameEffect {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("InnateRest"));

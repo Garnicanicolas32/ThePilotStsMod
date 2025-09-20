@@ -1,6 +1,6 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.optionSelection.gambling.*;
 import autoplaycharactermod.cards.optionSelection.traitReward.YellowOptionOne;
 import autoplaycharactermod.cards.optionSelection.traitReward.YellowOptionThree;
@@ -30,7 +30,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class YellowPower extends BasePower {
     public static final String POWER_ID = makeID("YellowPower");
@@ -102,7 +102,7 @@ public class YellowPower extends BasePower {
             }
             if (amount >= 3) {
                 if (usesGold < 2)
-                    Desc.append(DESCRIPTIONS[2]).append(BasicMod.scavengeCount).append(DESCRIPTIONS[3]).append(GOLDAMOUNT).append(DESCRIPTIONS[4]);
+                    Desc.append(DESCRIPTIONS[2]).append(ThePilotMod.scavengeCount).append(DESCRIPTIONS[3]).append(GOLDAMOUNT).append(DESCRIPTIONS[4]);
                 else
                     Desc.append(" NL 3. ").append(DESCRIPTIONS[10]);
             }
@@ -165,7 +165,7 @@ public class YellowPower extends BasePower {
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (this.amount > 6 && !BasicMod.usedYellowJACKPOT) {
+        if (this.amount > 6 && !ThePilotMod.usedYellowJACKPOT) {
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new YellowOptionThree());
             stanceChoices.add(new YellowOptionTwo());
@@ -175,10 +175,10 @@ public class YellowPower extends BasePower {
 
         if (this.amount > 2 && usesGold < 2) {
             sparkles();
-            addToBot(new GainGoldAction(BasicMod.scavengeCount));
-            for (int i = 0; i < BasicMod.scavengeCount; i++)
+            addToBot(new GainGoldAction(ThePilotMod.scavengeCount));
+            for (int i = 0; i < ThePilotMod.scavengeCount; i++)
                 AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player.hb_x, AbstractDungeon.player.hb_y));
-            BasicMod.scavengeCount += GOLDAMOUNT;
+            ThePilotMod.scavengeCount += GOLDAMOUNT;
             usesGold++;
         }
         if (this.amount > 3 && !usedScrap) {
@@ -188,7 +188,7 @@ public class YellowPower extends BasePower {
         }
         if (this.amount > 4 && !usedCardReward) {
             sparkles();
-            BasicMod.extracards++;
+            ThePilotMod.extracards++;
             usedCardReward = true;
         }
         if (this.amount > 5 && !usedUpgrade) {

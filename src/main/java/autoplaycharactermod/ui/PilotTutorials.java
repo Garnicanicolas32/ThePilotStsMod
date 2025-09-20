@@ -1,6 +1,6 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.util.TextureLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.TutorialStrings;
 import com.megacrit.cardcrawl.ui.FtueTip;
 
 public class PilotTutorials extends FtueTip {
-    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(BasicMod.makeID("PilotTutorials"));
+    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(ThePilotMod.makeID("PilotTutorials"));
     public static final String[] txt = tutorialStrings.TEXT;
     public static final String[] LABEL = tutorialStrings.LABEL;
 
@@ -43,8 +43,8 @@ public class PilotTutorials extends FtueTip {
     private int currentSlot = 0, closeScreen = -1;
 
     public PilotTutorials() {
-        img1 = TextureLoader.getTexture(BasicMod.imagePath("/tip/t1.png"));
-        img2 = TextureLoader.getTexture(BasicMod.imagePath("/tip/t2.png"));
+        img1 = TextureLoader.getTexture(ThePilotMod.imagePath("/tip/t1.png"));
+        img2 = TextureLoader.getTexture(ThePilotMod.imagePath("/tip/t2.png"));
 
         AbstractDungeon.player.releaseCard();
         if (AbstractDungeon.isScreenUp) {

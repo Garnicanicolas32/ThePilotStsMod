@@ -1,11 +1,11 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.traitIgnitionCards.ThermalSurge;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
@@ -30,7 +30,7 @@ import java.util.List;
 public class Flamethrower extends EquipmentCard {
     public static final String ID = makeID("Flamethrower");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -44,10 +44,10 @@ public class Flamethrower extends EquipmentCard {
         super(ID, info, BASE_HP);
         setDamage(DAMAGE, DAMAGE_UPG);
         this.isMultiDamage = true;
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_red_attack.png"), BasicMod.imagePath("character/cardback/bg_red_attack_p.png"));
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_red_attack.png"), ThePilotMod.imagePath("character/cardback/bg_red_attack_p.png"));
         FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.FIREBRICK.cpy());
         FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.WHITE.cpy());
-        FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Ignition").DESCRIPTION);
+        FlavorText.AbstractCardFlavorFields.flavor.set(this, ThePilotMod.keywords.get("Ignition").DESCRIPTION);
         checkEvolve();
     }
 
@@ -146,14 +146,14 @@ public class Flamethrower extends EquipmentCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Ignition").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Equipment").PROPER_NAME, ThePilotMod.keywords.get("Equipment").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Ignition").PROPER_NAME, ThePilotMod.keywords.get("Trait").DESCRIPTION));
         return customTooltips;
     }
 
     @Override
     public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
-        if (BasicMod.unseenTutorials[1] || BasicMod.unseenTutorials[2]) {
+        if (ThePilotMod.unseenTutorials[1] || ThePilotMod.unseenTutorials[2]) {
             return new ThermalSurge();
         }
         return this;

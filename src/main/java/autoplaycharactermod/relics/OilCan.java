@@ -1,11 +1,11 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class OilCan extends BaseRelic {
     private static final String NAME = "OilCan"; //The name will be used for determining the image file as well as the ID.
@@ -14,7 +14,7 @@ public class OilCan extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.SOLID; //The sound played when the relic is clicked.
 
     public OilCan() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     @Override

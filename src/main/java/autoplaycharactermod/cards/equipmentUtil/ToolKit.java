@@ -1,10 +1,10 @@
 package autoplaycharactermod.cards.equipmentUtil;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.traitIgnitionCards.Firewall;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.HealEquipmentEffect;
 import com.badlogic.gdx.graphics.Color;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class ToolKit extends BaseCard {
     public static final String ID = makeID("ToolKit");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -45,7 +45,7 @@ public class ToolKit extends BaseCard {
 
     @Override
     public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
-        if (BasicMod.unseenTutorials[2]) {
+        if (ThePilotMod.unseenTutorials[2]) {
             return new Firewall();
         }
         return this;

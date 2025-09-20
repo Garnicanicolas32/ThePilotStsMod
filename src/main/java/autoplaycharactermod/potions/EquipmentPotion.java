@@ -1,7 +1,7 @@
 package autoplaycharactermod.potions;
 
 import autoplaycharactermod.actions.DiscoveryEquipmentAction;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class EquipmentPotion extends BasePotion{
     public static final String ID = makeID("EquipmentPotion");
@@ -17,7 +17,7 @@ public class EquipmentPotion extends BasePotion{
     public EquipmentPotion(){
         super(ID, 5, PotionRarity.COMMON, PotionSize.CARD, PotionColor.SMOKE);
         isThrown = false;
-        playerClass = MyCharacter.Meta.THEPILOTCHARACTER;
+        playerClass = PilotCharacter.Meta.THEPILOTCHARACTER;
         labOutlineColor = Color.valueOf("#50eb9b");
     }
     @Override

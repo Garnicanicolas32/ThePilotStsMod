@@ -1,9 +1,9 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class CoolingFan extends BaseRelic {
     private static final String NAME = "CoolingFan"; //The name will be used for determining the image file as well as the ID.
@@ -12,7 +12,7 @@ public class CoolingFan extends BaseRelic {
     private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.CLINK; //The sound played when the relic is clicked.
 
     public CoolingFan() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class TargetedPower extends BasePower {
     public static final String POWER_ID = makeID("MarkedPower");
@@ -55,7 +55,7 @@ public class TargetedPower extends BasePower {
         AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
             @Override
             public void update() {
-                MyCharacter.ApplyRandomTarget(false);
+                PilotCharacter.ApplyRandomTarget(false);
                 this.isDone = true;
             }
         });

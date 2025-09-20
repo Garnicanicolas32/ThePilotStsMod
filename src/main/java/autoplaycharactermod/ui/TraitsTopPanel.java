@@ -1,7 +1,7 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ThePilotMod;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.TipHelperRenderTipBoxPatch;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.powers.RedPower;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class TraitsTopPanel extends TopPanelItem {
     public static final String ID = makeID("TraitsTopPanel");
@@ -26,9 +26,9 @@ public class TraitsTopPanel extends TopPanelItem {
     public static final PowerStrings uiStringsRed = CardCrawlGame.languagePack.getPowerStrings(makeID("RedPower"));
     public static final PowerStrings uiStringsBlue = CardCrawlGame.languagePack.getPowerStrings(makeID("BluePower"));
     public static final PowerStrings uiStringsYellow = CardCrawlGame.languagePack.getPowerStrings(makeID("YellowPower"));
-    private static final Texture IMG = TextureLoader.getTexture(BasicMod.imagePath("topPanel/Ignite.png"));
-    private static final Texture IMG2 = TextureLoader.getTexture(BasicMod.imagePath("topPanel/Bastion.png"));
-    private static final Texture IMG3 = TextureLoader.getTexture(BasicMod.imagePath("topPanel/Scavenge.png"));
+    private static final Texture IMG = TextureLoader.getTexture(ThePilotMod.imagePath("topPanel/Ignite.png"));
+    private static final Texture IMG2 = TextureLoader.getTexture(ThePilotMod.imagePath("topPanel/Bastion.png"));
+    private static final Texture IMG3 = TextureLoader.getTexture(ThePilotMod.imagePath("topPanel/Scavenge.png"));
     private static final float tipYpos = Settings.HEIGHT - (120.0f * Settings.scale);
     private static final float offsetLeft = 180;
     private int current = 1;
@@ -44,7 +44,7 @@ public class TraitsTopPanel extends TopPanelItem {
 
     @Override
     public void render(SpriteBatch sb) {
-        if (AbstractDungeon.player instanceof MyCharacter) {
+        if (AbstractDungeon.player instanceof PilotCharacter) {
             if (uiStringsRed == null || uiStringsBlue == null || uiStringsYellow == null)
                 buildLines();
             render(sb, Color.WHITE);
@@ -116,7 +116,7 @@ public class TraitsTopPanel extends TopPanelItem {
         DescriptionsLinesYellow =
                 uiStringsYellow.DESCRIPTIONS[0] + YellowPower.PUNISHMENTAMOUNT + uiStringsYellow.DESCRIPTIONS[1] +
                         uiStringsYellow.DESCRIPTIONS[6] +
-                        uiStringsYellow.DESCRIPTIONS[2] + BasicMod.scavengeCount + uiStringsYellow.DESCRIPTIONS[3] + YellowPower.GOLDAMOUNT + uiStringsYellow.DESCRIPTIONS[4] +
+                        uiStringsYellow.DESCRIPTIONS[2] + ThePilotMod.scavengeCount + uiStringsYellow.DESCRIPTIONS[3] + YellowPower.GOLDAMOUNT + uiStringsYellow.DESCRIPTIONS[4] +
                         uiStringsYellow.DESCRIPTIONS[5] +
                         uiStringsYellow.DESCRIPTIONS[7] +
                         uiStringsYellow.DESCRIPTIONS[8] +

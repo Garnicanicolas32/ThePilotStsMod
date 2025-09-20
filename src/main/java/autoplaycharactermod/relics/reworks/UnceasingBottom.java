@@ -1,9 +1,9 @@
 package autoplaycharactermod.relics.reworks;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.BaseRelic;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class UnceasingBottom extends BaseRelic {
     private static final String NAME = "UnceasingBottom"; //The name will be used for determining the image file as well as the ID.
@@ -13,7 +13,7 @@ public class UnceasingBottom extends BaseRelic {
     boolean lockTrigger = false;
 
     public UnceasingBottom() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package autoplaycharactermod.potions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.HackedPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class SneckoOilRework extends BasePotion{
     public static final String ID = makeID("SneckoOilRework");
@@ -22,7 +22,7 @@ public class SneckoOilRework extends BasePotion{
     public  SneckoOilRework(){
         super(ID, 5, PotionRarity.RARE, PotionSize.SNECKO, PotionColor.POISON);
         isThrown = false;
-        playerClass = MyCharacter.Meta.THEPILOTCHARACTER;
+        playerClass = PilotCharacter.Meta.THEPILOTCHARACTER;
         labOutlineColor = Color.valueOf("#50eb9b");
     }
     @Override

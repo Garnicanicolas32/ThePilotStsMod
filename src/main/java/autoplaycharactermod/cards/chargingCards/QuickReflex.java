@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.EjectedEffectAction;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.util.CardStats;
@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 public class QuickReflex extends BaseCard {
     public static final String ID = makeID("QuickReflex");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
@@ -51,15 +51,15 @@ public class QuickReflex extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyPowerAction(p, p, new ChargePower(p, customVar("CAPACITY"))));
-        addToBot(new ApplyPowerAction(MyCharacter.getTarget(), p, new WeakPower(p, customVar("WEAK"), false)));
+        addToBot(new ApplyPowerAction(PilotCharacter.getTarget(), p, new WeakPower(p, customVar("WEAK"), false)));
         PlayOnce = false;
     }
 
     public void updateTextCount() {
         if (!this.alreadyEvolved) {
                 this.rawDescription = cardStrings.DESCRIPTION;
-            if (BasicMod.energySpentTurn > 0)
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + BasicMod.energySpentTurn + cardStrings.EXTENDED_DESCRIPTION[2];
+            if (ThePilotMod.energySpentTurn > 0)
+                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + ThePilotMod.energySpentTurn + cardStrings.EXTENDED_DESCRIPTION[2];
             initializeDescription();
         }
     }
@@ -74,14 +74,14 @@ public class QuickReflex extends BaseCard {
         if (this.alreadyEvolved) {
             addToBot(new EjectedEffectAction());
             addToBot(new GainEnergyAction(2));
-        }else if (BasicMod.energySpentTurn <= magicNumber){
+        }else if (ThePilotMod.energySpentTurn <= magicNumber){
             addToBot(new EjectedEffectAction());
             addToBot(new GainEnergyAction(1));
         }
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = BasicMod.energySpentTurn <= this.magicNumber ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = ThePilotMod.energySpentTurn <= this.magicNumber ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public void onScrySelected() {

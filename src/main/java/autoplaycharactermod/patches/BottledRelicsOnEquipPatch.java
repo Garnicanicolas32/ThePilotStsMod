@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.PlayTurnStartModifier;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -24,7 +24,7 @@ public class BottledRelicsOnEquipPatch {
     public static class patchBottledFlame {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(BottledFlame __instance, @ByRef boolean[] ___cardSelected) {
-            if (AbstractDungeon.player instanceof MyCharacter) {
+            if (AbstractDungeon.player instanceof PilotCharacter) {
                 CardGroup list = AbstractDungeon.player.masterDeck.getPurgeableCards().getAttacks();
                 list.group.removeIf(c -> c.isInnate || CardModifierManager.hasModifier(c, PlayTurnStartModifier.ID));
                 if (!list.isEmpty()) {
@@ -50,7 +50,7 @@ public class BottledRelicsOnEquipPatch {
     public static class patchBottledLightning {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(BottledLightning __instance, @ByRef boolean[] ___cardSelected) {
-            if (AbstractDungeon.player instanceof MyCharacter) {
+            if (AbstractDungeon.player instanceof PilotCharacter) {
                 CardGroup list = AbstractDungeon.player.masterDeck.getPurgeableCards().getSkills();
                 list.group.removeIf(c -> c.isInnate || CardModifierManager.hasModifier(c, PlayTurnStartModifier.ID));
                 if (!list.isEmpty()) {
@@ -76,7 +76,7 @@ public class BottledRelicsOnEquipPatch {
     public static class patchBottledTornado {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(BottledTornado __instance, @ByRef boolean[] ___cardSelected) {
-            if (AbstractDungeon.player instanceof MyCharacter) {
+            if (AbstractDungeon.player instanceof PilotCharacter) {
                 CardGroup list = AbstractDungeon.player.masterDeck.getPurgeableCards().getPowers();
                 list.group.removeIf(c -> c.isInnate || CardModifierManager.hasModifier(c, PlayTurnStartModifier.ID));
                 if (!list.isEmpty()) {
@@ -102,7 +102,7 @@ public class BottledRelicsOnEquipPatch {
     public static class patchUnceasingTop {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(UnceasingTop __instance, @ByRef boolean[] ___canDraw) {
-            if (AbstractDungeon.player instanceof MyCharacter) {
+            if (AbstractDungeon.player instanceof PilotCharacter) {
                 ___canDraw[0] = false;
                 return SpireReturn.Return();
             } else

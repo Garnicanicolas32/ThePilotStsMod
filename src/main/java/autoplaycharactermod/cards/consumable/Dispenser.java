@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.consumable;
 
 import autoplaycharactermod.cards.ConsumableCards;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.MicroMisilesParticle;
 import com.badlogic.gdx.graphics.Color;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 public class Dispenser extends ConsumableCards {
     public static final String ID = makeID("Dispenser");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,

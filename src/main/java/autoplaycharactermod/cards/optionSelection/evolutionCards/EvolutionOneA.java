@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.evolutionCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.relics.RunicEngine;
 import autoplaycharactermod.util.CardStats;
@@ -24,8 +24,8 @@ public class EvolutionOneA extends BaseCard {
 
     public EvolutionOneA() {
         super(ID, info);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution1_power.png"), BasicMod.imagePath("character/cardback/bg_evolution1_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution1_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution1_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override

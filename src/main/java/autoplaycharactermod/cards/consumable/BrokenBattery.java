@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.consumable;
 
 import autoplaycharactermod.cards.ConsumableCards;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.powers.SavePower;
 import autoplaycharactermod.util.CardStats;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class BrokenBattery extends ConsumableCards {
     public static final String ID = makeID("BrokenBattery");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,

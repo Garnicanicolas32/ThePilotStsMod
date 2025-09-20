@@ -1,6 +1,6 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,11 +16,11 @@ import com.megacrit.cardcrawl.ui.buttons.GotItButton;
 import java.util.ArrayList;
 
 public class DurabilityTutorial extends FtueTip {
-    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(BasicMod.makeID("DurabilityTutorials"));
+    private static final TutorialStrings tutorialStrings = CardCrawlGame.languagePack.getTutorialString(ThePilotMod.makeID("DurabilityTutorials"));
     public static final String[] MSG = tutorialStrings.TEXT;
     public static final String[] LABEL = tutorialStrings.LABEL;
-    public static final String header = BasicMod.keywords.get("Equipment").PROPER_NAME;
-    public static final String body = BasicMod.keywords.get("Equipment").DESCRIPTION;
+    public static final String header = ThePilotMod.keywords.get("Equipment").PROPER_NAME;
+    public static final String body = ThePilotMod.keywords.get("Equipment").DESCRIPTION;
     private final GotItButton button;
     private AbstractCard cardUsed;
     private final ArrayList<String> emptyKeywords = new ArrayList<>();

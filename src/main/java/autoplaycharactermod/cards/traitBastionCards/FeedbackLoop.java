@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.traitBastionCards;
 
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.FeedbackLoopPower;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class FeedbackLoop extends BaseCard {
     public static final String ID = makeID("FeedbackLoop");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,

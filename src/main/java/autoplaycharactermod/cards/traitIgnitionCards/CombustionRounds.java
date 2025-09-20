@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.traitIgnitionCards;
 
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.TraitCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 public class CombustionRounds extends TraitCard {
     public static final String ID = makeID("CombustionRounds");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,

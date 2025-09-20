@@ -1,11 +1,10 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.actions.SmartGunLocateAnimation;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
@@ -16,14 +15,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SmartGun extends EquipmentCard {
     public static final String ID = makeID("SmartGun");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
@@ -67,7 +65,7 @@ public class SmartGun extends EquipmentCard {
     public void Activate() {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractMonster m = MyCharacter.getTarget();
+        AbstractMonster m = PilotCharacter.getTarget();
 
         calculateCardDamage(m);
         if (ConfigPanel.experimentalSounds)

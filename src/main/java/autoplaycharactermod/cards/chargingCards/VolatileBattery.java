@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.chargingCards;
 
 import autoplaycharactermod.actions.EjectedEffectAction;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.ui.ConfigPanel;
@@ -20,7 +20,7 @@ import java.util.Objects;
 public class VolatileBattery extends BaseCard {
     public static final String ID = makeID("VolatileBattery");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,

@@ -1,14 +1,14 @@
 package autoplaycharactermod.relics.reworks;
 
 import autoplaycharactermod.actions.AutoplayTopCardAction;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class AIFiedHand extends BaseRelic {
     private static final String NAME = "AIFiedHand"; //The name will be used for determining the image file as well as the ID.
@@ -17,7 +17,7 @@ public class AIFiedHand extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.FLAT; //The sound played when the relic is clicked.
 
     public AIFiedHand() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {

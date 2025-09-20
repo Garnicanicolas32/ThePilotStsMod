@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.traitReward;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -23,8 +23,8 @@ public class YellowOptionThree extends BaseCard {
 
     public YellowOptionThree() {
         super(ID, info);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution4_power.png"), BasicMod.imagePath("character/cardback/bg_evolution4_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution4_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution4_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override
@@ -35,6 +35,6 @@ public class YellowOptionThree extends BaseCard {
     public void onChoseThisOption() {
         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
-        BasicMod.usedYellowJACKPOT = true;
+        ThePilotMod.usedYellowJACKPOT = true;
     }
 }

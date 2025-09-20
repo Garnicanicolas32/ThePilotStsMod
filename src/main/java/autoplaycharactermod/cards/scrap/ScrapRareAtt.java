@@ -1,14 +1,12 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.cards.statusAndCurses.Melt;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
-import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -24,7 +22,7 @@ import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 public class ScrapRareAtt extends BaseCard {
     public static final String ID = makeID("ScrapRareAtt");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.SELF,
@@ -38,11 +36,11 @@ public class ScrapRareAtt extends BaseCard {
     public ScrapRareAtt() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.ScrapRare);
+        tags.add(ThePilotMod.CustomTags.ScrapRare);
         setDamage(DAMAGE);
         setMagic(MAGIC);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.skipVigor);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.skipVigor);
         this.setDisplayRarity(CardRarity.RARE);
     }
 

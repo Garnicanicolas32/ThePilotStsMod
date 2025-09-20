@@ -1,8 +1,7 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.ui.ConfigPanel;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -78,7 +77,7 @@ public class ShowEvolvedPatch {
     }
 
 
-    private static String uiText = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("ShowEvolved")).TEXT[0];
+    private static String uiText = CardCrawlGame.languagePack.getUIString(ThePilotMod.makeID("ShowEvolved")).TEXT[0];
     public static Hitbox toggleHb = new Hitbox(250.0F * Settings.scale, 80.0F * Settings.scale);
     private static void render(SpriteBatch sb, AbstractCard c) {
         if (toggleHb == null || !(c instanceof BaseCard))

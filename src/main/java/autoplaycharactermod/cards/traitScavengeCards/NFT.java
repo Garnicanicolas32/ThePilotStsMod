@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.traitScavengeCards;
 
 import autoplaycharactermod.cards.TraitCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.NFTcardEffect;
@@ -22,7 +22,7 @@ public class NFT extends TraitCard {
     public static final int UPG_BLOCK = 4;
     public static final int MAGIC = 2;
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,

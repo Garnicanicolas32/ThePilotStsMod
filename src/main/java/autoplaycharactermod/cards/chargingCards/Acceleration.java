@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.util.CardStats;
 import com.badlogic.gdx.graphics.Color;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 public class Acceleration extends BaseCard {
     public static final String ID = makeID("Acceleration");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -31,7 +31,7 @@ public class Acceleration extends BaseCard {
         super(ID, info);
         returnToHand = true;
         setMagic(MAGIC, UPG_MAGIC);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
 
@@ -51,10 +51,10 @@ public class Acceleration extends BaseCard {
         } else {
             addToBot(new DiscardAction(p, p, 1, false));
             if (this.alreadyEvolved) {
-                addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber * BasicMod.energySpentCombat)));
+                addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber * ThePilotMod.energySpentCombat)));
             } else {
-                if (BasicMod.energySpentTurn > 0)
-                    addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber * BasicMod.energySpentTurn)));
+                if (ThePilotMod.energySpentTurn > 0)
+                    addToBot(new ApplyPowerAction(p, p, new ChargePower(p, magicNumber * ThePilotMod.energySpentTurn)));
             }
             returnToHand = false;
         }
@@ -63,8 +63,8 @@ public class Acceleration extends BaseCard {
     public void updateTextCount() {
         if (!this.alreadyEvolved) {
             this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
-            if (BasicMod.energySpentTurn > 0)
-                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (BasicMod.energySpentTurn) + cardStrings.EXTENDED_DESCRIPTION[2];
+            if (ThePilotMod.energySpentTurn > 0)
+                this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[1] + (ThePilotMod.energySpentTurn) + cardStrings.EXTENDED_DESCRIPTION[2];
             initializeDescription();
         }
     }

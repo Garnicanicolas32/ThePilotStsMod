@@ -1,11 +1,11 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.optionSelection.traitReward.RedOptionOne;
 import autoplaycharactermod.cards.optionSelection.traitReward.RedOptionThree;
 import autoplaycharactermod.cards.optionSelection.traitReward.RedOptionTwo;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,7 +22,7 @@ import com.megacrit.cardcrawl.vfx.combat.GiantFireEffect;
 
 import java.util.ArrayList;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class RedPower extends BasePower {
     public static final String POWER_ID = makeID("RedPower");
@@ -99,7 +98,7 @@ public class RedPower extends BasePower {
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (this.amount > 6 && !BasicMod.usedRedJACKPOT) {
+        if (this.amount > 6 && !ThePilotMod.usedRedJACKPOT) {
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new RedOptionOne());
             stanceChoices.add(new RedOptionTwo());
@@ -115,7 +114,7 @@ public class RedPower extends BasePower {
         }
         if (this.amount > 1) {
             makeFire();
-            addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(this.owner, TARGETDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAction(PilotCharacter.getTarget(), new DamageInfo(this.owner, TARGETDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
         if (this.amount > 2) {
             makeFire();
@@ -126,7 +125,7 @@ public class RedPower extends BasePower {
         if (this.amount > 4) {
             makeFire();
             addToBot(new DamageRandomEnemyAction(new DamageInfo(this.owner, RANDOMDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(this.owner, TARGETDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAction(PilotCharacter.getTarget(), new DamageInfo(this.owner, TARGETDAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(AOEDAMAGE, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, STRENGTHTOADD)));
         }

@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.EquipmentCard;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -18,7 +18,7 @@ public class AbstractCardRenderEnergyPatch {
             locator = Locator.class
     )
     public static SpireReturn<Void> Insert(AbstractCard __instance, SpriteBatch sb) {
-        if (__instance instanceof EquipmentCard || (__instance.hasTag(BasicMod.CustomTags.NoEnergyText) && __instance.freeToPlay()))
+        if (__instance instanceof EquipmentCard || (__instance.hasTag(ThePilotMod.CustomTags.NoEnergyText) && __instance.freeToPlay()))
             return SpireReturn.Return();
         return SpireReturn.Continue();
     }

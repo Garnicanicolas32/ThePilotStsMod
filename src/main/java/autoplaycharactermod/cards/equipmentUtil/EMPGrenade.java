@@ -1,12 +1,12 @@
 package autoplaycharactermod.cards.equipmentUtil;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.chargingCards.Thrusters;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class EMPGrenade extends BaseCard {
     public static final String ID = makeID("EMPGrenade");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.SELF,
@@ -68,7 +68,7 @@ public class EMPGrenade extends BaseCard {
 
     @Override
     public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
-        if (BasicMod.unseenTutorials[2]) {
+        if (ThePilotMod.unseenTutorials[2]) {
             return new Thrusters();
         }
         return this;

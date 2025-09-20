@@ -1,6 +1,6 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.InnateRestButton;
 import autoplaycharactermod.util.InnateRelicMod;
 import basemod.helpers.CardModifierManager;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
 import java.util.ArrayList;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class MemoryCard extends BaseRelic {
     private static final String NAME = "MemoryCard"; //The name will be used for determining the image file as well as the ID.
@@ -18,7 +18,7 @@ public class MemoryCard extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.MAGICAL; //The sound played when the relic is clicked.
 
     public MemoryCard() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
         this.counter = 0;
     }
 

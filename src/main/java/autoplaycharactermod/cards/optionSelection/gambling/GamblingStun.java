@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.optionSelection.gambling;
 
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
@@ -31,7 +31,7 @@ public class GamblingStun extends BaseCard {
     }
 
     public void onChoseThisOption() {
-        addToBot(new StunMonsterAction(MyCharacter.getTarget(), AbstractDungeon.player));
+        addToBot(new StunMonsterAction(PilotCharacter.getTarget(), AbstractDungeon.player));
         GachaPull.cardsList.removeIf(c -> c instanceof GamblingStun);
     }
 }

@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.CoolantEffect;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 public class Coolant extends EquipmentCard {
     public static final String ID = makeID("Coolant");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,

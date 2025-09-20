@@ -1,10 +1,9 @@
 package autoplaycharactermod.cards.traitMixedCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.cards.chargingCards.Virus;
 import autoplaycharactermod.cards.traitIgnitionCards.IgnitionProtocol;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 public class FavorableTerrain extends BaseCard {
     public static final String ID = makeID("FavorableTerrain");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
@@ -65,7 +64,7 @@ public class FavorableTerrain extends BaseCard {
 
     @Override
     public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
-        if (BasicMod.unseenTutorials[1]) {
+        if (ThePilotMod.unseenTutorials[1]) {
             return new IgnitionProtocol();
         }
         return this;

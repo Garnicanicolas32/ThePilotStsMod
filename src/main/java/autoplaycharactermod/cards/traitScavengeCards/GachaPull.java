@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.traitScavengeCards;
 
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.optionSelection.gambling.*;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.GachaPullEffect;
@@ -22,7 +22,7 @@ import java.util.Collections;
 public class GachaPull extends TraitCard {
     public static final String ID = makeID("GachaPull");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,

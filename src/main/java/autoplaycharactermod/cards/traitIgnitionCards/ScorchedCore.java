@@ -3,7 +3,7 @@ package autoplaycharactermod.cards.traitIgnitionCards;
 import autoplaycharactermod.actions.ModifiedCardInHandAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.statusAndCurses.Melt;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 public class ScorchedCore extends TraitCard {
     public static final String ID = makeID("ScorchedCore");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,

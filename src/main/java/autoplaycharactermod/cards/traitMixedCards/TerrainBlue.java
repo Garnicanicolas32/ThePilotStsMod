@@ -1,10 +1,10 @@
 package autoplaycharactermod.cards.traitMixedCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.ModifiedCardInHandAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TerrainBlue extends TraitCard {
     public static final String ID = makeID("TerrainBlue");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -29,8 +29,8 @@ public class TerrainBlue extends TraitCard {
     public TerrainBlue() {
         super(ID, info, TraitColor.BASTION, true);
         setSelfRetain(true);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.ignoreDuplication);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.ignoreDuplication);
         checkEvolve();
     }
 
@@ -73,7 +73,7 @@ public class TerrainBlue extends TraitCard {
     @Override
     public void upgrade(){
         super.upgrade();
-        if (BasicMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
+        if (ThePilotMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BluePower(AbstractDungeon.player, 1)));
         }
     }

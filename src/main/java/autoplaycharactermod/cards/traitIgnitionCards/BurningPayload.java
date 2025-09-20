@@ -4,7 +4,7 @@ import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.ModifiedCardInHandAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.statusAndCurses.Melt;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class BurningPayload extends TraitCard {
     public static final String ID = makeID("BurningPayload");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,

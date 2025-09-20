@@ -1,10 +1,10 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionOne;
 import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionThree;
 import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionTwo;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
@@ -29,7 +29,7 @@ import com.megacrit.cardcrawl.vfx.UpgradeHammerImprintEffect;
 
 import java.util.ArrayList;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class BluePower extends BasePower {
     public static final String POWER_ID = makeID("BluePower");
@@ -111,7 +111,7 @@ public class BluePower extends BasePower {
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (this.amount > 6 && !BasicMod.usedBlueJACKPOT) {
+        if (this.amount > 6 && !ThePilotMod.usedBlueJACKPOT) {
 
             ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
             stanceChoices.add(new BlueOptionOne());
@@ -132,7 +132,7 @@ public class BluePower extends BasePower {
         }
         if (this.amount > 2) {
             HammerImprints();
-            addToBot(new ApplyPowerAction(MyCharacter.getTarget(), this.owner, new WeakPower(MyCharacter.getTarget(), 1, false)));
+            addToBot(new ApplyPowerAction(PilotCharacter.getTarget(), this.owner, new WeakPower(PilotCharacter.getTarget(), 1, false)));
         }
         if (this.amount > 3) {
             HammerImprints();
@@ -145,7 +145,7 @@ public class BluePower extends BasePower {
                 @Override
                 public void update() {
                     //addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, AbstractDungeon.player.currentBlock, DamageInfo.DamageType.THORNS, AttackEffect.BLUNT_HEAVY));
-                    addToTop(new DamageAction(MyCharacter.getTarget(), new DamageInfo(AbstractDungeon.player, AbstractDungeon.player.currentBlock, DamageInfo.DamageType.THORNS), AttackEffect.BLUNT_HEAVY));
+                    addToTop(new DamageAction(PilotCharacter.getTarget(), new DamageInfo(AbstractDungeon.player, AbstractDungeon.player.currentBlock, DamageInfo.DamageType.THORNS), AttackEffect.BLUNT_HEAVY));
                     isDone = true;
                 }
             });

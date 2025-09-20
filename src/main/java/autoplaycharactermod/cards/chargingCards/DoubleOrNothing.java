@@ -1,14 +1,11 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.actions.ScryWithChargeAction;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.ChargePower;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 public class DoubleOrNothing extends BaseCard {
     public static final String ID = makeID("DoubleOrNothing");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
@@ -30,7 +27,7 @@ public class DoubleOrNothing extends BaseCard {
     public DoubleOrNothing() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
         checkEvolve();
     }
 

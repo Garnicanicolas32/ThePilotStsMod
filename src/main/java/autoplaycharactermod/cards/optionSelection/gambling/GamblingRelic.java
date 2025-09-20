@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.gambling;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
 import autoplaycharactermod.util.CardStats;
@@ -36,7 +36,7 @@ public class GamblingRelic extends BaseCard {
     public void onChoseThisOption() {
 
         if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && (AbstractDungeon.id.equals("TheBeyond") || AbstractDungeon.id.equals("TheEnding"))) {// 114
-            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2F, Settings.HEIGHT / 2F, BasicMod.returnTrueRandomScreenlessRelic());
+            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2F, Settings.HEIGHT / 2F, ThePilotMod.returnTrueRandomScreenlessRelic());
         } else {
             if (AbstractDungeon.cardRandomRng.randomBoolean())
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);

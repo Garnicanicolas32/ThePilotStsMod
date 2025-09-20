@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,7 +23,7 @@ public class CombatRewardScreenSetupItemRewardPatch {
                 locator = Locator.class
         )
         public static void Insert(CombatRewardScreen __instance, @ByRef ArrayList<RewardItem>[] ___rewards) {
-            for (int i = 0; i < BasicMod.extracards; i++) {
+            for (int i = 0; i < ThePilotMod.extracards; i++) {
                 RewardItem cardReward = new RewardItem();
                 if (!cardReward.cards.isEmpty())
                     ___rewards[0].add(cardReward);
@@ -52,8 +52,8 @@ public class CombatRewardScreenSetupItemRewardPatch {
         )
         public static void Insert(AbstractDungeon __instance, SaveFile saveFile) {
             calledonce = false;
-            BasicMod.extracards = 0;
-            BasicMod.extracardsoption = false;
+            ThePilotMod.extracards = 0;
+            ThePilotMod.extracardsoption = false;
         }
 
         private static class LocatorDungeon extends SpireInsertLocator {
@@ -75,7 +75,7 @@ public class CombatRewardScreenSetupItemRewardPatch {
                 localvars = {"numCards"}
         )
         public static void Insert(@ByRef int[] numCards) {
-            if (!calledonce && BasicMod.extracardsoption)
+            if (!calledonce && ThePilotMod.extracardsoption)
                 numCards[0]++;
             calledonce = true;
         }

@@ -1,10 +1,10 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 public class ScrapCommon extends BaseCard {
     public static final String ID = makeID("ScrapCommon");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -35,13 +35,13 @@ public class ScrapCommon extends BaseCard {
     public ScrapCommon() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.ScrapCommon);
+        tags.add(ThePilotMod.CustomTags.ScrapCommon);
         setDamage(DAMAGE);
         setMagic(MAGIC);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.skipVigor);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.skipVigor);
         MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
-        if (BasicMod.evolved && CardCrawlGame.isInARun()
+        if (ThePilotMod.evolved && CardCrawlGame.isInARun()
                 && AbstractDungeon.player.masterDeck != null) {
             this.evolveCard();
         }

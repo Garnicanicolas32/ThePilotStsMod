@@ -1,10 +1,10 @@
 package autoplaycharactermod.cards.consumable;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.ConsumableCards;
 import autoplaycharactermod.cards.EquipmentCard;
 import autoplaycharactermod.cards.chargingCards.PreemptiveStrike;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.HealEquipmentEffect;
 import com.badlogic.gdx.graphics.Color;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class SpareParts extends ConsumableCards {
     public static final String ID = makeID("SpareParts");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.SELF,
@@ -43,7 +43,7 @@ public class SpareParts extends ConsumableCards {
 
     @Override
     public AbstractCard replaceWith(ArrayList<AbstractCard> currentRewardCards) {
-        if (BasicMod.unseenTutorials[2]) {
+        if (ThePilotMod.unseenTutorials[2]) {
             return new PreemptiveStrike();
         }
         return this;

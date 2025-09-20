@@ -1,7 +1,7 @@
 package autoplaycharactermod.patches;
 
 import autoplaycharactermod.cards.equipment.TacticalVisor;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class CardGroupInitializeDeckPatch {
     @SpireInsertPatch(locator = LocatorInnate.class, localvars = {"placeOnTop"})
     public static SpireReturn<Void> InsertInnate(CardGroup __instance, CardGroup masterDeck, @ByRef ArrayList<AbstractCard>[] placeOnTop) {
-        if (AbstractDungeon.player instanceof MyCharacter) {
-            ((MyCharacter) AbstractDungeon.player).innateAmount = placeOnTop[0].size();
+        if (AbstractDungeon.player instanceof PilotCharacter) {
+            ((PilotCharacter) AbstractDungeon.player).innateAmount = placeOnTop[0].size();
             for (AbstractCard c : placeOnTop[0]){
                 if (c instanceof TacticalVisor){
                     ((TacticalVisor)c).unused = true;

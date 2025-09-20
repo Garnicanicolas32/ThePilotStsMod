@@ -1,6 +1,6 @@
 package autoplaycharactermod.ui;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.vfx.CampfireInnateEffect;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class InnateRestButton extends AbstractCampfireOption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("InnateRest"));
@@ -18,7 +18,7 @@ public class InnateRestButton extends AbstractCampfireOption {
         this.label = TEXT[0];
         this.usable = active;
         this.description = TEXT[1];
-        this.img = ImageMaster.loadImage(BasicMod.imagePath("button/prepare.png"));
+        this.img = ImageMaster.loadImage(ThePilotMod.imagePath("button/prepare.png"));
     }
 
     public void useOption() {

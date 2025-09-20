@@ -1,12 +1,12 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.CraftingScrapAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class Crafting extends BasePower {
     public static final String POWER_ID = makeID("Crafting");
@@ -52,17 +52,17 @@ public class Crafting extends BasePower {
                 break;
         }
         if (commons >= 3) {
-            addToBot(new CraftingScrapAction(BasicMod.CustomTags.ScrapCommon, 1));
+            addToBot(new CraftingScrapAction(ThePilotMod.CustomTags.ScrapCommon, 1));
             commons -= 3;
             removeConsumed();
         }
         if (uncommons >= 3) {
-            addToBot(new CraftingScrapAction(BasicMod.CustomTags.ScrapUncommon, 2));
+            addToBot(new CraftingScrapAction(ThePilotMod.CustomTags.ScrapUncommon, 2));
             uncommons -= 3;
             removeConsumed();
         }
         if (rares >= 3) {
-            addToBot(new CraftingScrapAction(BasicMod.CustomTags.ScrapRare, 3));
+            addToBot(new CraftingScrapAction(ThePilotMod.CustomTags.ScrapRare, 3));
             rares -= 3;
             removeConsumed();
         }

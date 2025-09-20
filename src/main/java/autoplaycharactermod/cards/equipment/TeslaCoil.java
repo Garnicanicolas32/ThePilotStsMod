@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.equipment;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.OilCan;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EquipmentShowCardBrieflyEffect;
@@ -18,7 +18,7 @@ import java.util.List;
 public class TeslaCoil extends EquipmentCard {
     public static final String ID = makeID("TeslaCoil");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -69,8 +69,8 @@ public class TeslaCoil extends EquipmentCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Charge").PROPER_NAME, BasicMod.keywords.get("Charge").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Equipment").PROPER_NAME, ThePilotMod.keywords.get("Equipment").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Charge").PROPER_NAME, ThePilotMod.keywords.get("Charge").DESCRIPTION));
         return customTooltips;
     }
 

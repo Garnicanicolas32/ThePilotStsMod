@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.basic;
 
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Defend extends BaseCard {
     public static final String ID = makeID("Defend");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             AbstractCard.CardType.SKILL,
             AbstractCard.CardRarity.BASIC,
             AbstractCard.CardTarget.SELF,

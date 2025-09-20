@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 public class ScrapUncommonDefDex extends BaseCard {
     public static final String ID = makeID("ScrapUncommonDefDex");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.SELF,
@@ -31,11 +31,11 @@ public class ScrapUncommonDefDex extends BaseCard {
     public ScrapUncommonDefDex() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.ScrapUncommon);
+        tags.add(ThePilotMod.CustomTags.ScrapUncommon);
         setMagic(MAGIC);
         setBlock(BLOCK);
         MultiCardPreview.add(this, new ScrapRareAtt(), new ScrapRareDef());
-        tags.add(BasicMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
         this.setDisplayRarity(CardRarity.UNCOMMON);
     }
 

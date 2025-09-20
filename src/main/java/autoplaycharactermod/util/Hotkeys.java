@@ -1,10 +1,11 @@
 package autoplaycharactermod.util;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import com.badlogic.gdx.Input;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.controller.CInputAction;
+import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputAction;
 import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -15,13 +16,13 @@ import javassist.CtBehavior;
 import java.util.ArrayList;
 
 public class Hotkeys {
-    private static final String PLAY_KEY = BasicMod.makeID("PLAY");
-    private static final String SCRY_KEY = BasicMod.makeID("SCRY");
-    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(BasicMod.makeID("CUSTOMIZE"));
+    private static final String PLAY_KEY = ThePilotMod.makeID("PLAY");
+    private static final String SCRY_KEY = ThePilotMod.makeID("SCRY");
+    private static final String PLAY_KEY_Controller = ThePilotMod.makeID("PLAYC");
+    private static final String SCRY_KEY_Controller = ThePilotMod.makeID("SCRYC");
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ThePilotMod.makeID("CUSTOMIZE"));
 
     public static class ActionSet {
-
-
         public static InputAction PlayButton;
         public static InputAction ScryButton;
 
@@ -41,6 +42,26 @@ public class Hotkeys {
         }
     }
 
+    public static class CActionSet {
+        public static CInputAction PlayButton;
+        public static CInputAction ScryButton;
+
+        public static void load() {
+            PlayButton = new CInputAction(InputActionSet.prefs.getInteger(PLAY_KEY_Controller, 8));
+            ScryButton = new CInputAction(InputActionSet.prefs.getInteger(SCRY_KEY_Controller, 9));
+        }
+
+        public static void save() {
+            CInputActionSet.prefs.putInteger(PLAY_KEY_Controller, PlayButton.getKey());
+            CInputActionSet.prefs.putInteger(SCRY_KEY_Controller, ScryButton.getKey());
+        }
+
+        public static void resetToDefault() {
+            PlayButton.remap(8);
+            ScryButton.remap(9);
+        }
+    }
+
     @SpirePatch2(
             clz = InputSettingsScreen.class,
             method = "refreshData"
@@ -51,10 +72,8 @@ public class Hotkeys {
                 localvars = {"elements"}
         )
         public static void insert(InputSettingsScreen __instance, ArrayList<RemapInputElement> elements) {
-            if (!Settings.isControllerMode) {
-                elements.add(new RemapInputElement(__instance, uiStrings.TEXT[0], ActionSet.PlayButton));
-                elements.add(new RemapInputElement(__instance, uiStrings.TEXT[1], ActionSet.ScryButton));
-            }
+            elements.add(new RemapInputElement(__instance, uiStrings.TEXT[0], ActionSet.PlayButton, CActionSet.PlayButton));
+            elements.add(new RemapInputElement(__instance, uiStrings.TEXT[1], ActionSet.ScryButton, CActionSet.ScryButton));
         }
 
         private static class Locator extends SpireInsertLocator {
@@ -67,7 +86,6 @@ public class Hotkeys {
     }
 
     private static class ActionSetPatches {
-
         @SpirePatch2(
                 clz = InputActionSet.class,
                 method = "load"
@@ -98,6 +116,41 @@ public class Hotkeys {
             @SpirePrefixPatch
             public static void prefix() {
                 ActionSet.resetToDefault();
+            }
+        }
+    }
+
+    private static class cActionSetPatches {
+        @SpirePatch2(
+                clz = CInputActionSet.class,
+                method = "load"
+        )
+        public static class Load {
+            @SpirePrefixPatch
+            public static void prefix() {
+                CActionSet.load();
+            }
+        }
+
+        @SpirePatch2(
+                clz = CInputActionSet.class,
+                method = "save"
+        )
+        public static class Save {
+            @SpirePrefixPatch
+            public static void prefix() {
+                CActionSet.save();
+            }
+        }
+
+        @SpirePatch2(
+                clz = CInputActionSet.class,
+                method = "resetToDefaults"
+        )
+        public static class Reset {
+            @SpirePrefixPatch
+            public static void prefix() {
+                CActionSet.resetToDefault();
             }
         }
     }

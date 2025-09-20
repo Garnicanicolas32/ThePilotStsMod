@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.gambling;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
 import autoplaycharactermod.util.CardStats;
@@ -31,9 +31,9 @@ public class GamblingCardReward extends BaseCard {
 
     public void onChoseThisOption() {
         if (upgraded){
-            BasicMod.extracards++;
+            ThePilotMod.extracards++;
         }else {
-            BasicMod.extracardsoption = true;
+            ThePilotMod.extracardsoption = true;
         }
         GachaPull.cardsList.removeIf(c -> c instanceof GamblingCardReward);
     }

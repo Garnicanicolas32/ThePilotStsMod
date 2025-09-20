@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.EquipmentCard;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -18,7 +18,7 @@ public class SingleCardViewRenderCostPatch {
             locator = Locator.class
     )
     public static SpireReturn<Void> Insert(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard ___card) {
-        if (___card instanceof EquipmentCard || ___card.hasTag(BasicMod.CustomTags.NoEnergyText))
+        if (___card instanceof EquipmentCard || ___card.hasTag(ThePilotMod.CustomTags.NoEnergyText))
             return SpireReturn.Return();
         return SpireReturn.Continue();
     }

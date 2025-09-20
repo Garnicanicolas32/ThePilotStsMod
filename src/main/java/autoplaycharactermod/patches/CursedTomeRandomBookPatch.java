@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.reworks.NecronomiconPDF;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,7 +21,7 @@ public class CursedTomeRandomBookPatch {
             localvars = {"possibleBooks"}
     )
     public static void Insert(CursedTome __instance, @ByRef ArrayList<AbstractRelic>[] possibleBooks) {
-        if (AbstractDungeon.player instanceof MyCharacter) {
+        if (AbstractDungeon.player instanceof PilotCharacter) {
             possibleBooks[0].removeIf(r -> r instanceof Necronomicon);
             possibleBooks[0].add(new NecronomiconPDF());
         }

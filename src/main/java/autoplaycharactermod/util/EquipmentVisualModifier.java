@@ -1,6 +1,6 @@
 package autoplaycharactermod.util;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import basemod.abstracts.AbstractCardModifier;
@@ -16,20 +16,20 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class EquipmentVisualModifier extends AbstractCardModifier {
 
     public static final String ID = makeID("EquipmentVisualModifier");
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("HoverTextTutorial"));
 
-    private static final Texture texDefault = TextureLoader.getTexture(BasicMod.imagePath("cards/EquipmentBack.png"));
-    private static final Texture texCommon = TextureLoader.getTexture(BasicMod.imagePath("cards/EquipmentBackCommon.png"));
-    private static final Texture texUncommon = TextureLoader.getTexture(BasicMod.imagePath("cards/EquipmentBackUncommon.png"));
-    private static final Texture texRare = TextureLoader.getTexture(BasicMod.imagePath("cards/EquipmentBackRare.png"));
-    private static final Texture texEvolved = TextureLoader.getTexture(BasicMod.imagePath("cards/EquipmentBackEvolved.png"));
+    private static final Texture texDefault = TextureLoader.getTexture(ThePilotMod.imagePath("cards/EquipmentBack.png"));
+    private static final Texture texCommon = TextureLoader.getTexture(ThePilotMod.imagePath("cards/EquipmentBackCommon.png"));
+    private static final Texture texUncommon = TextureLoader.getTexture(ThePilotMod.imagePath("cards/EquipmentBackUncommon.png"));
+    private static final Texture texRare = TextureLoader.getTexture(ThePilotMod.imagePath("cards/EquipmentBackRare.png"));
+    private static final Texture texEvolved = TextureLoader.getTexture(ThePilotMod.imagePath("cards/EquipmentBackEvolved.png"));
     private final Color iconColour = new Color(1, 1, 1, 1);
-    private static final Texture texTutorial = TextureLoader.getTexture(BasicMod.imagePath("tip/hoverBlue.png"));
+    private static final Texture texTutorial = TextureLoader.getTexture(ThePilotMod.imagePath("tip/hoverBlue.png"));
     private float time;
 
     public EquipmentVisualModifier() {
@@ -65,7 +65,7 @@ public class EquipmentVisualModifier extends AbstractCardModifier {
                 .offsetX(135f)
                 .render(card);
 
-        if (((EquipmentCard) card).canSpawnTutorial && BasicMod.unseenTutorials[2]) {
+        if (((EquipmentCard) card).canSpawnTutorial && ThePilotMod.unseenTutorials[2]) {
             time = (time + Gdx.graphics.getDeltaTime()) % (MathUtils.PI2);
             float normalized = (MathUtils.sin(time * 2f) + 1f) * 0.5f;
             FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale);

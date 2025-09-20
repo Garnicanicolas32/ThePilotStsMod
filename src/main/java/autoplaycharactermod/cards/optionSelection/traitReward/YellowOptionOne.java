@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.traitReward;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -25,8 +25,8 @@ public class YellowOptionOne extends BaseCard {
     public YellowOptionOne() {
         super(ID, info);
         setMagic(MAGIC);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution4_power.png"), BasicMod.imagePath("character/cardback/bg_evolution4_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution4_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution4_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override
@@ -38,6 +38,6 @@ public class YellowOptionOne extends BaseCard {
         AbstractDungeon.player.gainGold(magicNumber);
         for (int i = 0; i < magicNumber; i++)
             AbstractDungeon.effectList.add(new GainPennyEffect(this.current_x, this.current_y));
-        BasicMod.usedYellowJACKPOT = true;
+        ThePilotMod.usedYellowJACKPOT = true;
     }
 }

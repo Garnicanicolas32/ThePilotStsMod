@@ -1,26 +1,21 @@
 package autoplaycharactermod.cards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.equipment.*;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.relics.OilCan;
 import autoplaycharactermod.relics.reworks.StrangeFork;
 import autoplaycharactermod.ui.DurabilityTutorial;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.util.EquipmentVisualModifier;
-import autoplaycharactermod.util.TextureLoader;
 import autoplaycharactermod.vfx.DamageEquipmentEffect;
 import autoplaycharactermod.vfx.EquipmentShowCardBrieflyEffect;
 import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.mod.stslib.util.extraicons.ExtraIcons;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -29,7 +24,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -52,7 +46,7 @@ public abstract class EquipmentCard extends BaseCard {
         this.returnToHand = true;
         this.equipmentMaxHp = hp;
         this.equipmentHp = hp;
-        this.tags.add(BasicMod.CustomTags.ignoreDuplication);
+        this.tags.add(ThePilotMod.CustomTags.ignoreDuplication);
         CardModifierManager.addModifier(this, new EquipmentVisualModifier());
     }
 
@@ -177,7 +171,7 @@ public abstract class EquipmentCard extends BaseCard {
                 ((EquipmentCard) c).equipmentHp = Math.min(((EquipmentCard) c).equipmentMaxHp, this.equipmentHp);
             }
         }
-        if (BasicMod.isInCombat())
+        if (ThePilotMod.isInCombat())
             this.applyPowers();
     }
 
@@ -245,7 +239,7 @@ public abstract class EquipmentCard extends BaseCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Equipment").PROPER_NAME, BasicMod.keywords.get("Equipment").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Equipment").PROPER_NAME, ThePilotMod.keywords.get("Equipment").DESCRIPTION));
         return customTooltips;
     }
 
@@ -260,7 +254,7 @@ public abstract class EquipmentCard extends BaseCard {
     @Override
     public void onRewardListCreated(ArrayList<AbstractCard> rewardCards) {
         super.onRewardListCreated(rewardCards);
-        canSpawnTutorial = AbstractDungeon.player instanceof MyCharacter;
+        canSpawnTutorial = AbstractDungeon.player instanceof PilotCharacter;
     }
 
     private float WaitTimer = 0.8F;
@@ -268,16 +262,16 @@ public abstract class EquipmentCard extends BaseCard {
     @Override
     public void update() {
         super.update();
-        if (hb.hovered && canSpawnTutorial && BasicMod.unseenTutorials[2]) {
+        if (hb.hovered && canSpawnTutorial && ThePilotMod.unseenTutorials[2]) {
             if (WaitTimer <= 0F) {
                 AbstractCard card = this.makeStatEquivalentCopy();
                 card.current_x = Settings.WIDTH / 2f - 180f * Settings.scale;
                 card.current_y = Settings.HEIGHT / 2f - 35f;
                 card.drawScale *= 1.65f;
                 AbstractDungeon.ftue = new DurabilityTutorial(card);
-                BasicMod.unseenTutorials[2] = false;
+                ThePilotMod.unseenTutorials[2] = false;
                 try {
-                    BasicMod.saveTutorialsSeen();
+                    ThePilotMod.saveTutorialsSeen();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class DrawCardActionUpdatePatch {
     @SpirePrefixPatch
     public static SpireReturn<Void> Prefix(DrawCardAction __instance, @ByRef float[] ___duration ) {
-        if (AbstractDungeon.player instanceof MyCharacter){
+        if (AbstractDungeon.player instanceof PilotCharacter){
             if (__instance.amount <= 0) {
                 __instance.isDone = true;
                 return SpireReturn.Return();

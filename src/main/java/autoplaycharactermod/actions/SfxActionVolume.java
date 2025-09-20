@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,7 +19,7 @@ public class SfxActionVolume extends AbstractGameAction {
     }
 
     public void update() {
-        if (BasicMod.isInCombat() && !AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
+        if (ThePilotMod.isInCombat() && !AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
             try {
                 CardCrawlGame.sound.playAV(this.key, this.pitch, this.volume);
             } catch (Exception ignored) {

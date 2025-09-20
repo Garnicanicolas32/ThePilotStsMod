@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.traitReward;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -24,8 +24,8 @@ public class RedOptionThree extends BaseCard {
     public RedOptionThree() {
         super(ID, info);
         setMagic(MAGIC);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution3_power.png"), BasicMod.imagePath("character/cardback/bg_evolution3_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution3_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution3_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override
@@ -35,6 +35,6 @@ public class RedOptionThree extends BaseCard {
 
     public void onChoseThisOption() {
         AbstractDungeon.player.increaseMaxHp(magicNumber, true);
-        BasicMod.usedRedJACKPOT = true;
+        ThePilotMod.usedRedJACKPOT = true;
     }
 }

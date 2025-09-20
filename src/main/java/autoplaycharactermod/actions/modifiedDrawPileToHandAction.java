@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
@@ -52,11 +52,11 @@ public class modifiedDrawPileToHandAction extends AbstractGameAction {
                         this.p.createHandIsFullDialog();
                     } else {
                         card.unhover();
-                        if (card.color == MyCharacter.Meta.CARD_COLOR) {
+                        if (card.color == PilotCharacter.Meta.CARD_COLOR) {
                             this.p.drawPile.removeCard(card);
                             this.p.hand.addToTop(card);
                             card.setCostForTurn(0);
-                            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, MyCharacter.getTarget()));
+                            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, PilotCharacter.getTarget()));
                         } else {
                             card.lighten(true);
                             card.setAngle(0.0F);

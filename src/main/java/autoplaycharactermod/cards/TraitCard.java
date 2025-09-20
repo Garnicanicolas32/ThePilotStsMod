@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.traitBastionCards.Beacon;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.BluePower;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.powers.YellowPower;
@@ -34,8 +34,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static autoplaycharactermod.BasicMod.makeID;
-
 public abstract class TraitCard extends BaseCard implements SpawnModificationCard {
 
     private static final UIStrings descriptor = CardCrawlGame.languagePack.getUIString(makeID("ComboTags"));
@@ -44,7 +42,7 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
     protected boolean countsTwiceOnUpgrade;
     protected TraitColor traitColor;
     private boolean canSpawnTutorial = false;
-    private static final Texture textHover = TextureLoader.getTexture(BasicMod.imagePath("tip/hover.png"));
+    private static final Texture textHover = TextureLoader.getTexture(ThePilotMod.imagePath("tip/hover.png"));
     private final Color iconColour = new Color(1, 1, 1, 1);
     private float time;
 
@@ -56,33 +54,33 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
         switch (color) {
             case BASTION:
                 if (info.cardType == CardType.SKILL)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_blue_skill.png"), BasicMod.imagePath("character/cardback/bg_blue_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_blue_skill.png"), ThePilotMod.imagePath("character/cardback/bg_blue_skill_p.png"));
                 FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.BLUE.cpy());
                 FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.WHITE.cpy());
-                FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Bastion").DESCRIPTION);
+                FlavorText.AbstractCardFlavorFields.flavor.set(this, ThePilotMod.keywords.get("Bastion").DESCRIPTION);
                 break;
             case IGNITE:
                 if (info.cardType == CardType.ATTACK)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_red_attack.png"), BasicMod.imagePath("character/cardback/bg_red_attack_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_red_attack.png"), ThePilotMod.imagePath("character/cardback/bg_red_attack_p.png"));
                 else if (info.cardType == CardType.SKILL)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_red_skill.png"), BasicMod.imagePath("character/cardback/bg_red_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_red_skill.png"), ThePilotMod.imagePath("character/cardback/bg_red_skill_p.png"));
                 FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.FIREBRICK.cpy());
                 FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.WHITE.cpy());
-                FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Ignition").DESCRIPTION);
+                FlavorText.AbstractCardFlavorFields.flavor.set(this, ThePilotMod.keywords.get("Ignition").DESCRIPTION);
                 break;
             case SCAVENGE:
                 if (info.cardType == CardType.ATTACK)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_attack.png"), BasicMod.imagePath("character/cardback/bg_yellow_attack_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_yellow_attack.png"), ThePilotMod.imagePath("character/cardback/bg_yellow_attack_p.png"));
                 else if (info.cardType == CardType.SKILL)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_yellow_skill.png"), ThePilotMod.imagePath("character/cardback/bg_yellow_skill_p.png"));
                 FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.GOLD.cpy());
-                FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("Scavenge").DESCRIPTION);
+                FlavorText.AbstractCardFlavorFields.flavor.set(this, ThePilotMod.keywords.get("Scavenge").DESCRIPTION);
                 break;
             case OTHER:
-                setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_crosswire_skill.png"), BasicMod.imagePath("character/cardback/bg_crosswire_skill_p.png"));
+                setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_crosswire_skill.png"), ThePilotMod.imagePath("character/cardback/bg_crosswire_skill_p.png"));
                 FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.PURPLE);
                 FlavorText.AbstractCardFlavorFields.textColor.set(this, Color.WHITE);
-                FlavorText.AbstractCardFlavorFields.flavor.set(this, BasicMod.keywords.get("CrossWire").DESCRIPTION);
+                FlavorText.AbstractCardFlavorFields.flavor.set(this, ThePilotMod.keywords.get("CrossWire").DESCRIPTION);
                 break;
         }
     }
@@ -104,22 +102,22 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
         switch (traitColor) {
             case BASTION:
                 if (this.type == CardType.SKILL)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_blue_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_blue_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_blue_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_blue_skill_p.png"));
                 break;
             case IGNITE:
                 if (this.type == CardType.ATTACK)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_red_attack.png"), BasicMod.imagePath("character/cardback/Evolved/bg_red_attack_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_red_attack.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_red_attack_p.png"));
                 else if (this.type == CardType.SKILL)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_red_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_red_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_red_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_red_skill_p.png"));
                 break;
             case SCAVENGE:
                 if (this.type == CardType.ATTACK)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_yellow_attack.png"), BasicMod.imagePath("character/cardback/Evolved/bg_yellow_attack_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_yellow_attack.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_yellow_attack_p.png"));
                 else if (this.type == CardType.SKILL)
-                    setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_yellow_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_yellow_skill_p.png"));
+                    setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_yellow_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_yellow_skill_p.png"));
                 break;
             case OTHER:
-                setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_crosswire_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_crosswire_skill_p.png"));
+                setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_crosswire_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_crosswire_skill_p.png"));
                 break;
         }
     }
@@ -189,16 +187,16 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
         switch (traitColor) {
             case BASTION:
-                customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Bastion").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
+                customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Bastion").PROPER_NAME, ThePilotMod.keywords.get("Trait").DESCRIPTION));
                 break;
             case IGNITE:
-                customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Ignition").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
+                customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Ignition").PROPER_NAME, ThePilotMod.keywords.get("Trait").DESCRIPTION));
                 break;
             case SCAVENGE:
-                customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Scavenge").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
+                customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Scavenge").PROPER_NAME, ThePilotMod.keywords.get("Trait").DESCRIPTION));
                 break;
             case OTHER:
-                customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Trait").PROPER_NAME, BasicMod.keywords.get("Trait").DESCRIPTION));
+                customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Trait").PROPER_NAME, ThePilotMod.keywords.get("Trait").DESCRIPTION));
                 break;
         }
         return customTooltips;
@@ -261,7 +259,7 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
     @Override
     public void onRewardListCreated(ArrayList<AbstractCard> rewardCards) {
         super.onRewardListCreated(rewardCards);
-        canSpawnTutorial = AbstractDungeon.player instanceof MyCharacter;
+        canSpawnTutorial = AbstractDungeon.player instanceof PilotCharacter;
     }
 
     private float WaitTimer = 0.8F;
@@ -269,7 +267,7 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
     @Override
     public void update() {
         super.update();
-        if (canSpawnTutorial && BasicMod.unseenTutorials[1]) {
+        if (canSpawnTutorial && ThePilotMod.unseenTutorials[1]) {
             time = (time + Gdx.graphics.getDeltaTime()) % (MathUtils.PI2);
             float normalized = (MathUtils.sin(time * 2f) + 1f) * 0.5f;
             iconColour.a = this.transparency;
@@ -286,10 +284,10 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
             if (hb.hovered) {
                 if (WaitTimer <= 0F) {
                     AbstractDungeon.ftue = new TraitTutorials();
-                    BasicMod.unseenTutorials[1] = false;
+                    ThePilotMod.unseenTutorials[1] = false;
                     canSpawnTutorial = false;
                     try {
-                        BasicMod.saveTutorialsSeen();
+                        ThePilotMod.saveTutorialsSeen();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

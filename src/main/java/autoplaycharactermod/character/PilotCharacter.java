@@ -1,6 +1,6 @@
 package autoplaycharactermod.character;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.InnateAction;
 import autoplaycharactermod.cards.basic.*;
 import autoplaycharactermod.cards.equipment.Coolant;
@@ -51,10 +51,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static autoplaycharactermod.BasicMod.characterPath;
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.characterPath;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
-public class MyCharacter extends CustomPlayer {
+public class PilotCharacter extends CustomPlayer {
 
     //Stats
     public static final int ENERGY_PER_TURN = 4;
@@ -101,7 +101,7 @@ public class MyCharacter extends CustomPlayer {
     public static boolean skipTargetSwitchThisTurn = true;
     public int innateAmount = 0;
 
-    public MyCharacter() {
+    public PilotCharacter() {
         super(getNames()[0], Meta.THEPILOTCHARACTER,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
                 new SpineAnimation(characterPath("SkeletonThePilot.atlas"), characterPath("SkeletonThePilot.json"), 1f)); //Animation
@@ -254,7 +254,7 @@ public class MyCharacter extends CustomPlayer {
     @Override
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
-        return new MyCharacter();
+        return new PilotCharacter();
     }
 
     public int savedEnergy = 0;
@@ -441,7 +441,7 @@ public class MyCharacter extends CustomPlayer {
     public void applyStartOfTurnCards() {
         for (AbstractCard c : this.hand.group) {
             if (c != null && CardModifierManager.hasModifier(c, PlayTurnStartModifier.ID))
-                AbstractDungeon.actionManager.addToBottom(new NewQueueCardAction(c, MyCharacter.getTarget(), false, true));
+                AbstractDungeon.actionManager.addToBottom(new NewQueueCardAction(c, PilotCharacter.getTarget(), false, true));
         }
         super.applyStartOfTurnCards();
     }
@@ -469,9 +469,9 @@ public class MyCharacter extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         ArrayList<CutscenePanel> panels = new ArrayList<>();
-        panels.add(new CutscenePanel(BasicMod.characterPath("cutscene/EndingSlice_1.png"), "ATTACK_DAGGER_2"));
-        panels.add(new CutscenePanel(BasicMod.characterPath("cutscene/EndingSlice_2.png"), "ORB_PLASMA_CHANNEL"));
-        panels.add(new CutscenePanel(BasicMod.characterPath("cutscene/EndingSlice_3.png"), "ATTACK_MAGIC_BEAM_SHORT"));
+        panels.add(new CutscenePanel(ThePilotMod.characterPath("cutscene/EndingSlice_1.png"), "ATTACK_DAGGER_2"));
+        panels.add(new CutscenePanel(ThePilotMod.characterPath("cutscene/EndingSlice_2.png"), "ORB_PLASMA_CHANNEL"));
+        panels.add(new CutscenePanel(ThePilotMod.characterPath("cutscene/EndingSlice_3.png"), "ATTACK_MAGIC_BEAM_SHORT"));
         return panels;
     }
 
@@ -513,7 +513,7 @@ public class MyCharacter extends CustomPlayer {
         }
 
         public static void registerCharacter() {
-            BaseMod.addCharacter(new MyCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
+            BaseMod.addCharacter(new PilotCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
         }
     }
 }

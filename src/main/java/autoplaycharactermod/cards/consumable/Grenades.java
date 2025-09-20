@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.consumable;
 
 import autoplaycharactermod.cards.ConsumableCards;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.TheBombPower;
 public class Grenades extends ConsumableCards {
     public static final String ID = makeID("Grenades");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.NONE,

@@ -1,6 +1,6 @@
 package autoplaycharactermod.powers;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class FeedbackLoopPower extends BasePower {
     public static final String POWER_ID = makeID("FeedbackLoopPower");
@@ -40,7 +40,7 @@ public class FeedbackLoopPower extends BasePower {
                 && !power.ID.equals("Shackled") && source == this.owner
                 && (target == this.owner || !target.hasPower("Artifact"))) {
             flash();
-            addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAction(PilotCharacter.getTarget(), new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 }

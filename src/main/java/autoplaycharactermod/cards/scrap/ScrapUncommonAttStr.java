@@ -1,9 +1,9 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.powers.Crafting;
 import autoplaycharactermod.util.CardStats;
@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class ScrapUncommonAttStr extends BaseCard {
     public static final String ID = makeID("ScrapUncommonAttStr");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -33,12 +33,12 @@ public class ScrapUncommonAttStr extends BaseCard {
     public ScrapUncommonAttStr() {
         super(ID, info);
         returnToHand = true;
-        tags.add(BasicMod.CustomTags.ScrapUncommon);
+        tags.add(ThePilotMod.CustomTags.ScrapUncommon);
         setMagic(MAGIC);
         setDamage(DAMAGE);
         MultiCardPreview.add(this, new ScrapRareAtt(), new ScrapRareDef());
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.skipVigor);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.skipVigor);
         this.setDisplayRarity(CardRarity.UNCOMMON);
     }
 

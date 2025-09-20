@@ -1,8 +1,8 @@
 package autoplaycharactermod.cards.chargingCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.EfficiencyPower;
 import autoplaycharactermod.util.CardStats;
 import basemod.helpers.TooltipInfo;
@@ -17,7 +17,7 @@ public class Efficiency extends BaseCard {
     public static final String ID = makeID("Efficiency");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.POWER,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
@@ -47,7 +47,7 @@ public class Efficiency extends BaseCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         ArrayList<TooltipInfo> customTooltips = new ArrayList<>();
-        customTooltips.add(new TooltipInfo(BasicMod.keywords.get("Ejected").PROPER_NAME, BasicMod.keywords.get("Ejected").DESCRIPTION));
+        customTooltips.add(new TooltipInfo(ThePilotMod.keywords.get("Ejected").PROPER_NAME, ThePilotMod.keywords.get("Ejected").DESCRIPTION));
         return customTooltips;
     }
 }

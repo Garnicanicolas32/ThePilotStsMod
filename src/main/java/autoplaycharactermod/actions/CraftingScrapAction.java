@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.scrap.*;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.vfx.OmegaGroupEffect;
@@ -60,7 +60,7 @@ public class CraftingScrapAction extends AbstractGameAction {
                     break;
             }
             if (c != null) {
-                BasicMod.fusionsmade++;
+                ThePilotMod.fusionsmade++;
                 if (countUpgrade > 1)
                     c.upgrade();
 
@@ -94,15 +94,15 @@ public class CraftingScrapAction extends AbstractGameAction {
 
 
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.hasTag(BasicMod.CustomTags.ScrapCommon) || c.hasTag(BasicMod.CustomTags.ScrapUncommon) || c.hasTag(BasicMod.CustomTags.ScrapRare)) {
+            if (c.hasTag(ThePilotMod.CustomTags.ScrapCommon) || c.hasTag(ThePilotMod.CustomTags.ScrapUncommon) || c.hasTag(ThePilotMod.CustomTags.ScrapRare)) {
                 toRemove.add(c);
             }
         }
         for (AbstractCard c : toRemove) {
             AbstractCard replace;
-            if (c.hasTag(BasicMod.CustomTags.ScrapRare))
+            if (c.hasTag(ThePilotMod.CustomTags.ScrapRare))
                 replace = new ScrapRareLeft();
-            else if (c.hasTag(BasicMod.CustomTags.ScrapUncommon))
+            else if (c.hasTag(ThePilotMod.CustomTags.ScrapUncommon))
                 replace = new ScrapUncommonLeft();
             else
                 replace = new ScrapCommonLeft();
@@ -110,9 +110,9 @@ public class CraftingScrapAction extends AbstractGameAction {
             AbstractDungeon.player.discardPile.addToTop(replace.makeSameInstanceOf());
             AbstractDungeon.player.masterDeck.group.removeIf(card -> card.uuid.equals(c.uuid));
         }
-        AbstractDungeon.player.discardPile.group.removeIf(card -> card.hasTag(BasicMod.CustomTags.ScrapCommon) || card.hasTag(BasicMod.CustomTags.ScrapUncommon) || card.hasTag(BasicMod.CustomTags.ScrapRare));
-        AbstractDungeon.player.drawPile.group.removeIf(card -> card.hasTag(BasicMod.CustomTags.ScrapCommon) || card.hasTag(BasicMod.CustomTags.ScrapUncommon) || card.hasTag(BasicMod.CustomTags.ScrapRare));
-        AbstractDungeon.player.hand.group.removeIf(card -> card.hasTag(BasicMod.CustomTags.ScrapCommon) || card.hasTag(BasicMod.CustomTags.ScrapUncommon) || card.hasTag(BasicMod.CustomTags.ScrapRare));
+        AbstractDungeon.player.discardPile.group.removeIf(card -> card.hasTag(ThePilotMod.CustomTags.ScrapCommon) || card.hasTag(ThePilotMod.CustomTags.ScrapUncommon) || card.hasTag(ThePilotMod.CustomTags.ScrapRare));
+        AbstractDungeon.player.drawPile.group.removeIf(card -> card.hasTag(ThePilotMod.CustomTags.ScrapCommon) || card.hasTag(ThePilotMod.CustomTags.ScrapUncommon) || card.hasTag(ThePilotMod.CustomTags.ScrapRare));
+        AbstractDungeon.player.hand.group.removeIf(card -> card.hasTag(ThePilotMod.CustomTags.ScrapCommon) || card.hasTag(ThePilotMod.CustomTags.ScrapUncommon) || card.hasTag(ThePilotMod.CustomTags.ScrapRare));
     }
 
 }

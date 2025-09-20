@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.chargingCards;
 
 import autoplaycharactermod.actions.AutoplayTopCardAction;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.VirusEffect;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 public class Virus extends BaseCard {
     public static final String ID = makeID("Virus");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,

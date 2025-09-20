@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.traitReward;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -23,8 +23,8 @@ public class BlueOptionTwo extends BaseCard {
     public BlueOptionTwo() {
         super(ID, info);
         setMagic(MAGIC);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution1_power.png"), BasicMod.imagePath("character/cardback/bg_evolution1_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution1_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution1_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class BlueOptionTwo extends BaseCard {
     }
 
     public void onChoseThisOption() {
-        BasicMod.startWithBuffer = true;
-        BasicMod.usedBlueJACKPOT = true;
+        ThePilotMod.startWithBuffer = true;
+        ThePilotMod.usedBlueJACKPOT = true;
     }
 }

@@ -1,7 +1,7 @@
 package autoplaycharactermod.actions;
 
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -32,7 +32,7 @@ public class RustyBladeAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
-            AbstractMonster target = MyCharacter.getTarget();
+            AbstractMonster target = PilotCharacter.getTarget();
             card.calculateCardDamage(target);
             addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new PoisonPower(target, AbstractDungeon.player, durability)));
             addToTop(new DamageAction(target, new DamageInfo(AbstractDungeon.player, card.damage), this.attackEffect, this.skipWait, this.muteSfx));

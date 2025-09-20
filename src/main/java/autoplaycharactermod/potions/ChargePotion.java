@@ -1,8 +1,8 @@
 package autoplaycharactermod.potions;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.ScryWithChargeAction;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.KeywordInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,16 +11,16 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class ChargePotion extends BasePotion{
     public static final String ID = makeID("ChargePotion");
-    public static final KeywordInfo ChargeString = BasicMod.keywords.get("Charge");
+    public static final KeywordInfo ChargeString = ThePilotMod.keywords.get("Charge");
 
     public ChargePotion(){
         super(ID, 5, PotionRarity.UNCOMMON, PotionSize.SPHERE, PotionColor.SWIFT);
         isThrown = false;
-        playerClass = MyCharacter.Meta.THEPILOTCHARACTER;
+        playerClass = PilotCharacter.Meta.THEPILOTCHARACTER;
         labOutlineColor = Color.valueOf("#50eb9b");
     }
     @Override

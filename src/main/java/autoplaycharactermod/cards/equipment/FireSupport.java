@@ -3,15 +3,13 @@ package autoplaycharactermod.cards.equipment;
 import autoplaycharactermod.actions.DamageCurrentTargetAction;
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.relics.OilCan;
-import autoplaycharactermod.ui.ConfigPanel;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EquipmentShowCardBrieflyEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,7 +19,7 @@ public class FireSupport extends EquipmentCard {
     public static final String ID = makeID("FireSupport");
 
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,
@@ -48,7 +46,7 @@ public class FireSupport extends EquipmentCard {
     public void Activate() {
         if (!Equipped) return;
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractMonster m = MyCharacter.getTarget();
+        AbstractMonster m = PilotCharacter.getTarget();
 
         calculateCardDamage(m);
         //if (ConfigPanel.experimentalSounds)

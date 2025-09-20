@@ -1,7 +1,7 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.BasicMod;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.ThePilotMod;
+import autoplaycharactermod.character.PilotCharacter;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
@@ -28,7 +28,7 @@ public class AbstractCardRenderCardBgPatch {
     public static class RenderBGevolutionCorrect {
         public static SpireReturn<?> Prefix(AbstractCard __instance, SpriteBatch sb, float xPos, float yPos, Color ___renderColor)
         {
-            if (!(__instance.hasTag(BasicMod.CustomTags.Evolution))
+            if (!(__instance.hasTag(ThePilotMod.CustomTags.Evolution))
             ) {
                 return SpireReturn.Continue();
             }
@@ -107,14 +107,14 @@ public class AbstractCardRenderCardBgPatch {
                     cardField.setAccessible(true);
                     AbstractCard card = (AbstractCard) cardField.get(popup);
                     AbstractCard.CardColor color = card.color;
-                    if (card.hasTag(BasicMod.CustomTags.Evolution)) {
+                    if (card.hasTag(ThePilotMod.CustomTags.Evolution)) {
                         if (Objects.requireNonNull(card.type) == AbstractCard.CardType.POWER) {
                             Texture bgTexture = null;
                             if (card instanceof CustomCard) {
                                 bgTexture = ((CustomCard) card).getBackgroundLargeTexture();
                             }
                             if (bgTexture == null) {
-                                bgTexture = BaseMod.getPowerBgPortraitTexture(MyCharacter.Meta.CARD_COLOR);
+                                bgTexture = BaseMod.getPowerBgPortraitTexture(PilotCharacter.Meta.CARD_COLOR);
                                 if (bgTexture == null) {
                                     bgTexture = ImageMaster.loadImage(BaseMod.getPowerBgPortrait(color));
                                     BaseMod.savePowerBgPortraitTexture(color, bgTexture);

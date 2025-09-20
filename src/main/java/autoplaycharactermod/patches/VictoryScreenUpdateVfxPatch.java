@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.vfx.PilotEndingScreen;
 import autoplaycharactermod.vfx.PilotEyeScreen;
 import com.badlogic.gdx.Gdx;
@@ -22,7 +22,7 @@ public class VictoryScreenUpdateVfxPatch {
 
     @SpirePostfixPatch
     public static void Postfix(VictoryScreen __instance, @ByRef ArrayList<AbstractGameEffect>[] ___effect, @ByRef float[] ___effectTimer) {
-        if (AbstractDungeon.player instanceof MyCharacter) {
+        if (AbstractDungeon.player instanceof PilotCharacter) {
             ___effectTimer[0] -= Gdx.graphics.getDeltaTime();
             if (___effectTimer[0] < 0.0F) {
                 ___effect[0].add(new SlowFireParticleEffect());

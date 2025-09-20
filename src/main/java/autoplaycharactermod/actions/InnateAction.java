@@ -1,6 +1,5 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.BasicMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
@@ -8,7 +7,6 @@ import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import org.apache.logging.log4j.Level;
 
 public class InnateAction extends AbstractGameAction {
     public InnateAction() {

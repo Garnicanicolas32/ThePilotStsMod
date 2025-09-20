@@ -1,12 +1,12 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class EmptyDisk extends BaseRelic {
     private static final String NAME = "EmptyDisk"; //The name will be used for determining the image file as well as the ID.
@@ -15,7 +15,7 @@ public class EmptyDisk extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.CLINK; //The sound played when the relic is clicked.
 
     public EmptyDisk() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     public void onEquip() {

@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.TargetedPower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -18,7 +18,7 @@ public class SpawnMonsterActionUpdatePatch {
             locator = Locator.class
     )
     public static void Insert(SpawnMonsterAction __instance, AbstractMonster ___m) {
-        if (AbstractDungeon.player instanceof MyCharacter) {
+        if (AbstractDungeon.player instanceof PilotCharacter) {
             boolean found = false;
             for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
                 if (mon.currentHealth > 0 && mon.hasPower(TargetedPower.POWER_ID)) {
@@ -27,7 +27,7 @@ public class SpawnMonsterActionUpdatePatch {
             }
             if (!found) {
                 AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(___m, ___m, new TargetedPower(___m, -1)));
-                MyCharacter.targetCheck(___m, true);
+                PilotCharacter.targetCheck(___m, true);
             }
         }
     }

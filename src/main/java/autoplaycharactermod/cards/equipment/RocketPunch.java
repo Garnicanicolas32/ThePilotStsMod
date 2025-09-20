@@ -1,7 +1,7 @@
 package autoplaycharactermod.cards.equipment;
 
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.OnUseCardPowersAndRelicsPatch;
 import autoplaycharactermod.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 public class RocketPunch extends EquipmentCard {
     public static final String ID = makeID("RocketPunch");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.NONE,

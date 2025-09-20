@@ -1,8 +1,8 @@
 package autoplaycharactermod.relics;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class SecurityCamera extends BaseRelic {
     private static final String NAME = "SecurityCamera"; //The name will be used for determining the image file as well as the ID.
@@ -11,7 +11,7 @@ public class SecurityCamera extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.HEAVY; //The sound played when the relic is clicked.
 
     public SecurityCamera() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
     }
 
     @Override

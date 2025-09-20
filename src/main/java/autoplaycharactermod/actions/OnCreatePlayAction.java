@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.PlayTurnStartModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -24,7 +24,7 @@ public class OnCreatePlayAction extends AbstractGameAction {
             if (AbstractDungeon.actionManager.turnHasEnded) {
                 CardModifierManager.addModifier(card, new PlayTurnStartModifier());
             } else {
-                AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(card, MyCharacter.getTarget(), false, true));
+                AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(card, PilotCharacter.getTarget(), false, true));
             }
         }
         this.isDone = true;

@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.equipment.TeslaCoil;
 import autoplaycharactermod.ui.DurabilityTutorial;
 import autoplaycharactermod.ui.PilotTutorials;
@@ -22,7 +22,7 @@ public class TutorialCaller extends AbstractGameAction {
     }
 
     public void update() {
-        if (BasicMod.unseenTutorials[code]) {
+        if (ThePilotMod.unseenTutorials[code]) {
             switch (code){
                 case 0:
                     AbstractDungeon.ftue = new PilotTutorials();
@@ -34,9 +34,9 @@ public class TutorialCaller extends AbstractGameAction {
                     AbstractDungeon.ftue = new DurabilityTutorial(new TeslaCoil());
                     break;
             }
-            BasicMod.unseenTutorials[code] = false;
+            ThePilotMod.unseenTutorials[code] = false;
             try {
-                BasicMod.saveTutorialsSeen();
+                ThePilotMod.saveTutorialsSeen();
                 this.isDone = true;
             } catch (IOException e) {
                 e.printStackTrace();

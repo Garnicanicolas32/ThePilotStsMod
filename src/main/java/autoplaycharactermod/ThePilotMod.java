@@ -2,14 +2,12 @@ package autoplaycharactermod;
 
 import autoplaycharactermod.actions.TutorialCaller;
 import autoplaycharactermod.cards.BaseCard;
-import autoplaycharactermod.cards.chargingCards.QuickReflex;
 import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionOne;
 import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionThree;
 import autoplaycharactermod.cards.optionSelection.traitReward.BlueOptionTwo;
 import autoplaycharactermod.cards.optionSelection.traitReward.RedOptionTwo;
-import autoplaycharactermod.cards.traitBastionCards.DataCache;
 import autoplaycharactermod.cards.traitScavengeCards.GachaPull;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.CombatRewardScreenSetupItemRewardPatch;
 import autoplaycharactermod.patches.RewardItemScrapPatch;
 import autoplaycharactermod.potions.BasePotion;
@@ -66,7 +64,7 @@ import java.util.function.Supplier;
 import static autoplaycharactermod.powers.YellowPower.GOLDAMOUNTSTART;
 
 @SpireInitializer
-public class BasicMod implements
+public class ThePilotMod implements
         EditRelicsSubscriber,
         EditCardsSubscriber,
         EditCharactersSubscriber,
@@ -112,7 +110,7 @@ public class BasicMod implements
         loadModInfo();
     }
 
-    public BasicMod() {
+    public ThePilotMod() {
         BaseMod.subscribe(this);
         logger.info(modID + " subscribed to BaseMod.");
     }
@@ -122,8 +120,8 @@ public class BasicMod implements
     }
 
     public static void initialize() {
-        new BasicMod();
-        MyCharacter.Meta.registerColor();
+        new ThePilotMod();
+        PilotCharacter.Meta.registerColor();
         try {
             for (int i = 0; i < unseenTutorials.length; i++) {
                 tutorialSaves.setProperty("activeTutorials" + i, "true");
@@ -162,7 +160,7 @@ public class BasicMod implements
     }
 
     private static String checkResourcesPath() {
-        String name = BasicMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
+        String name = ThePilotMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
         int separator = name.indexOf('.');
         if (separator > 0)
             name = name.substring(0, separator);
@@ -172,7 +170,7 @@ public class BasicMod implements
             throw new RuntimeException("\n\tFailed to find resources folder; expected it to be at  \"resources/" + name + "\"." +
                     " Either make sure the folder under resources has the same name as your mod's package, or change the line\n" +
                     "\t\"private static final String resourcesFolder = checkResourcesPath();\"\n" +
-                    "\tat the top of the " + BasicMod.class.getSimpleName() + " java file.");
+                    "\tat the top of the " + ThePilotMod.class.getSimpleName() + " java file.");
         }
         if (!resources.child("images").exists()) {
             throw new RuntimeException("\n\tFailed to find the 'images' folder in the mod's 'resources/" + name + "' folder; Make sure the " +
@@ -191,7 +189,7 @@ public class BasicMod implements
             if (annotationDB == null)
                 return false;
             Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(), Collections.emptySet());
-            return initializers.contains(BasicMod.class.getName());
+            return initializers.contains(ThePilotMod.class.getName());
         }).findFirst();
         if (infos.isPresent()) {
             info = infos.get();
@@ -345,7 +343,7 @@ public class BasicMod implements
 
     @Override
     public void receiveEditCharacters() {
-        MyCharacter.Meta.registerCharacter();
+        PilotCharacter.Meta.registerCharacter();
     }
 
     @Override
@@ -412,7 +410,7 @@ public class BasicMod implements
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         AbstractPlayer p = AbstractDungeon.player;
-        if (AbstractDungeon.player instanceof MyCharacter && unseenTutorials[0]) {
+        if (AbstractDungeon.player instanceof PilotCharacter && unseenTutorials[0]) {
             AbstractDungeon.actionManager.addToTop(new TutorialCaller(0));
         }
         GachaPull.cardsList = GachaPull.getList(true);
@@ -446,7 +444,7 @@ public class BasicMod implements
 
     @Override
     public void receivePostDungeonInitialize() {
-        if (AbstractDungeon.player instanceof MyCharacter) {
+        if (AbstractDungeon.player instanceof PilotCharacter) {
             AbstractDungeon.bossRelicPool.remove(SneckoEye.ID);
             AbstractDungeon.bossRelicPool.remove(RunicPyramid.ID);
             AbstractDungeon.shopRelicPool.remove(ChemicalX.ID);

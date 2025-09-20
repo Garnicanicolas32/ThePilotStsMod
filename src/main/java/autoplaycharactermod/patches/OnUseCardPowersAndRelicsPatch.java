@@ -1,6 +1,6 @@
 package autoplaycharactermod.patches;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.cards.EquipmentCard;
 import basemod.ReflectionHacks;
@@ -26,7 +26,7 @@ public class OnUseCardPowersAndRelicsPatch {
     public static class DontConsumeVigorPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> patch(VigorPower __instance, AbstractCard card, UseCardAction action) {
-            if (card instanceof EquipmentCard || card.hasTag(BasicMod.CustomTags.skipVigor)) {
+            if (card instanceof EquipmentCard || card.hasTag(ThePilotMod.CustomTags.skipVigor)) {
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
@@ -37,7 +37,7 @@ public class OnUseCardPowersAndRelicsPatch {
     public static class DontConsumePenNibPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> patch(PenNib __instance, AbstractCard card, UseCardAction action) {
-            if ((card instanceof EquipmentCard || card.hasTag(BasicMod.CustomTags.skipVigor)) && __instance.counter > 8) {
+            if ((card instanceof EquipmentCard || card.hasTag(ThePilotMod.CustomTags.skipVigor)) && __instance.counter > 8) {
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
@@ -48,7 +48,7 @@ public class OnUseCardPowersAndRelicsPatch {
     public static class DontConsumePenNibPowerPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> patch(PenNibPower __instance, AbstractCard card, UseCardAction action) {
-            if ((card instanceof EquipmentCard || card.hasTag(BasicMod.CustomTags.skipVigor))) {
+            if ((card instanceof EquipmentCard || card.hasTag(ThePilotMod.CustomTags.skipVigor))) {
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
@@ -59,7 +59,7 @@ public class OnUseCardPowersAndRelicsPatch {
     public static class DontConsumeDuplicationPowerPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> patch(DuplicationPower __instance, AbstractCard card, UseCardAction action) {
-            if (card.hasTag(BasicMod.CustomTags.ignoreDuplication)) {
+            if (card.hasTag(ThePilotMod.CustomTags.ignoreDuplication)) {
                 return SpireReturn.Return(null);
 
             }else if(card instanceof BaseCard){

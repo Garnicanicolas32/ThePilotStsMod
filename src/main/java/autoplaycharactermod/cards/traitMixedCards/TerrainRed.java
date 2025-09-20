@@ -1,10 +1,10 @@
 package autoplaycharactermod.cards.traitMixedCards;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.actions.ModifiedCardInHandAction;
 import autoplaycharactermod.cards.TraitCard;
 import autoplaycharactermod.cards.traitScavengeCards.DuctTape;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.powers.RedPower;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TerrainRed extends TraitCard {
     public static final String ID = makeID("TerrainRed");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.SPECIAL,
             CardTarget.NONE,
@@ -31,8 +31,8 @@ public class TerrainRed extends TraitCard {
     public TerrainRed() {
         super(ID, info, TraitCard.TraitColor.IGNITE, true);
         setSelfRetain(true);
-        tags.add(BasicMod.CustomTags.NoEnergyText);
-        tags.add(BasicMod.CustomTags.ignoreDuplication);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.ignoreDuplication);
         checkEvolve();
     }
 
@@ -67,7 +67,7 @@ public class TerrainRed extends TraitCard {
     @Override
     public void upgrade(){
         super.upgrade();
-        if (BasicMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
+        if (ThePilotMod.isInCombat() && AbstractDungeon.player.hand.contains(this)){
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RedPower(AbstractDungeon.player, 1)));
         }
     }
@@ -76,7 +76,7 @@ public class TerrainRed extends TraitCard {
     public void onRetained() {
         super.onRetained();
         if (this.alreadyEvolved) {
-            addToBot(new DamageAction(MyCharacter.getTarget(), new DamageInfo(AbstractDungeon.player, 15, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAction(PilotCharacter.getTarget(), new DamageInfo(AbstractDungeon.player, 15, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

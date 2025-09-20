@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.HashMap;
 import java.util.Locale;
 
-import static autoplaycharactermod.BasicMod.*;
+import static autoplaycharactermod.ThePilotMod.*;
 
 public class TextureLoader {
     private static final HashMap<String, Texture> textures = new HashMap<>();

@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.scrap;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.EvolveCardEffect;
@@ -31,8 +31,8 @@ public class ScrapUncommonLeft extends BaseCard {
     public ScrapUncommonLeft() {
         super(ID, info);
         FleetingField.fleeting.set(this, true);
-        this.setBannerTexture(BasicMod.imagePath("cards/EvolvedBanner.png"), BasicMod.imagePath("cards/EvolvedBanner_p.png"));
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/Evolved/bg_skill.png"), BasicMod.imagePath("character/cardback/Evolved/bg_skill_p.png"));
+        this.setBannerTexture(ThePilotMod.imagePath("cards/EvolvedBanner.png"), ThePilotMod.imagePath("cards/EvolvedBanner_p.png"));
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/Evolved/bg_skill.png"), ThePilotMod.imagePath("character/cardback/Evolved/bg_skill_p.png"));
     }
 
     @Override

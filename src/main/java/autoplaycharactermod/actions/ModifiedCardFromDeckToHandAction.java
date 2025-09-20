@@ -1,6 +1,6 @@
 package autoplaycharactermod.actions;
 
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
@@ -67,9 +67,9 @@ public class ModifiedCardFromDeckToHandAction extends AbstractGameAction {
                     card.current_y = CardGroup.DRAW_PILE_Y;
                     this.p.drawPile.removeCard(card);
                     AbstractDungeon.player.hand.addToTop(card);
-                    if (card.color == MyCharacter.Meta.CARD_COLOR || autoPlayColorless) {
+                    if (card.color == PilotCharacter.Meta.CARD_COLOR || autoPlayColorless) {
                         card.setCostForTurn(0);
-                        AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, MyCharacter.getTarget()));
+                        AbstractDungeon.actionManager.addToBottom(new QueueCardAction(card, PilotCharacter.getTarget()));
                     } else {
                         AbstractDungeon.player.hand.refreshHandLayout();
                         AbstractDungeon.player.hand.applyPowers();
@@ -91,9 +91,9 @@ public class ModifiedCardFromDeckToHandAction extends AbstractGameAction {
                     } else {
                         this.p.drawPile.removeCard(c);
                         this.p.hand.addToTop(c);
-                        if (c.color == MyCharacter.Meta.CARD_COLOR || autoPlayColorless) {
+                        if (c.color == PilotCharacter.Meta.CARD_COLOR || autoPlayColorless) {
                             c.setCostForTurn(0);
-                            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, MyCharacter.getTarget()));
+                            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(c, PilotCharacter.getTarget()));
                         } else {
                             this.p.hand.refreshHandLayout();
                             this.p.hand.applyPowers();

@@ -1,7 +1,7 @@
 package autoplaycharactermod.relics;
 
 import autoplaycharactermod.cards.EquipmentCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.patches.ObtainKeyEffectUpdatePatch;
 import autoplaycharactermod.vfx.HealEquipmentEffect;
 import basemod.abstracts.CustomSavable;
@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class RunicEngine extends BaseRelic implements CustomSavable<Integer[]> {
     private static final String NAME = "RunicEngine"; //The name will be used for determining the image file as well as the ID.
@@ -35,12 +35,12 @@ public class RunicEngine extends BaseRelic implements CustomSavable<Integer[]> {
     private int countStr = 0;
 
     public RunicEngine() {
-        super(ID, NAME, MyCharacter.Meta.CARD_COLOR, RARITY, SOUND);
+        super(ID, NAME, PilotCharacter.Meta.CARD_COLOR, RARITY, SOUND);
         counter = 0;
     }
 
     public void atBattleStart() {
-        if (!(AbstractDungeon.player instanceof MyCharacter) && lvl1 > 0)
+        if (!(AbstractDungeon.player instanceof PilotCharacter) && lvl1 > 0)
             doAction();
     }
 

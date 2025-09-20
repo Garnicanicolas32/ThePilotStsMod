@@ -3,7 +3,7 @@ package autoplaycharactermod.powers;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class SavePower extends BasePower {
     public static final String POWER_ID = makeID("SavePower");

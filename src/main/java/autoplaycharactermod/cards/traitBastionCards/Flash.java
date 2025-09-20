@@ -2,7 +2,7 @@ package autoplaycharactermod.cards.traitBastionCards;
 
 import autoplaycharactermod.actions.SfxActionVolume;
 import autoplaycharactermod.cards.TraitCard;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import autoplaycharactermod.util.CardStats;
 import autoplaycharactermod.vfx.FlashbangEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 public class Flash extends TraitCard {
     public static final String ID = makeID("Flash");
     private static final CardStats info = new CardStats(
-            MyCharacter.Meta.CARD_COLOR,
+            PilotCharacter.Meta.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.ALL_ENEMY,

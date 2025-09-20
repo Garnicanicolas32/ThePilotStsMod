@@ -1,6 +1,6 @@
 package autoplaycharactermod.cards.optionSelection.traitReward;
 
-import autoplaycharactermod.BasicMod;
+import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
 import autoplaycharactermod.util.CardStats;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -31,8 +31,8 @@ public class YellowOptionTwo extends BaseCard {
     public YellowOptionTwo() {
         super(ID, info);
         setMagic(UPG_AMOUNT);
-        setBackgroundTexture(BasicMod.imagePath("character/cardback/bg_evolution4_power.png"), BasicMod.imagePath("character/cardback/bg_evolution4_power_p.png"));
-        tags.add(BasicMod.CustomTags.Evolution);
+        setBackgroundTexture(ThePilotMod.imagePath("character/cardback/bg_evolution4_power.png"), ThePilotMod.imagePath("character/cardback/bg_evolution4_power_p.png"));
+        tags.add(ThePilotMod.CustomTags.Evolution);
     }
 
     @Override
@@ -60,6 +60,6 @@ public class YellowOptionTwo extends BaseCard {
             } else
                 break;
         }
-        BasicMod.usedYellowJACKPOT = true;
+        ThePilotMod.usedYellowJACKPOT = true;
     }
 }

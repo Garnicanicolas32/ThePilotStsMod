@@ -1,7 +1,7 @@
 package autoplaycharactermod.actions;
 
 import autoplaycharactermod.cards.equipment.Coolant;
-import autoplaycharactermod.character.MyCharacter;
+import autoplaycharactermod.character.PilotCharacter;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
-import static autoplaycharactermod.BasicMod.makeID;
+import static autoplaycharactermod.ThePilotMod.makeID;
 
 public class AutoplayTopCardAction extends AbstractGameAction {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("AutoPlayTopCardAction"));
@@ -52,7 +52,7 @@ public class AutoplayTopCardAction extends AbstractGameAction {
             }
 
             AbstractPlayer player = AbstractDungeon.player;
-            AbstractMonster target = MyCharacter.getTarget();
+            AbstractMonster target = PilotCharacter.getTarget();
             AbstractCard card = player.drawPile.getTopCard();
 
             if (card.cost > 0){
