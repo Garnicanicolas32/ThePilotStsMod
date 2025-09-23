@@ -60,7 +60,7 @@ public class PoisonMine extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 5;
+        return 3;
     }
 
     public void triggerOnEndOfTurnForPlayingCard() {

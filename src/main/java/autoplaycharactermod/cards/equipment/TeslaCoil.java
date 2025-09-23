@@ -24,7 +24,7 @@ public class TeslaCoil extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 30;
+    private static final int BASE_HP = 34;
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
     private static final int MAGIC = 1;
@@ -51,7 +51,7 @@ public class TeslaCoil extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 10;
+        return 4;
     }
 
     public void onGainCharge(){

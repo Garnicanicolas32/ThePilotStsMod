@@ -61,7 +61,7 @@ public class EnergyChamber extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 10;
+        return 6;
     }
 
     public void damageReceived(int damageAmount) {

@@ -117,7 +117,7 @@ public class HeavyShield extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 6;
+        return 4;
     }
 
     public void triggerOnExhaust() {

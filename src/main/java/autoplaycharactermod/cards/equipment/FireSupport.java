@@ -25,7 +25,7 @@ public class FireSupport extends EquipmentCard {
             CardTarget.NONE,
             0
     );
-    private static final int BASE_HP = 30;
+    private static final int BASE_HP = 32;
     private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 2;
 
@@ -75,6 +75,6 @@ public class FireSupport extends EquipmentCard {
 
     @Override
     protected int getUpgradeDurability() {
-        return 10;
+        return 5;
     }
 }

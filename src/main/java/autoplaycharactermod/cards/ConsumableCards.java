@@ -57,7 +57,7 @@ public abstract class ConsumableCards extends BaseCard {
         AbstractPlayer p = AbstractDungeon.player;
         for (AbstractCard c : p.masterDeck.group) {
             if (c.uuid.equals(this.uuid) && c instanceof ConsumableCards) {
-                ((ConsumableCards) c).uses = this.uses;
+                ((ConsumableCards) c).uses = Math.min(this.uses, ((ConsumableCards) c).MaxAmount);
                 c.applyPowers();
                 break;
             }
