@@ -1,0 +1,762 @@
+{
+  "thepilotcharacter:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "thepilotcharacter:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "thepilotcharacter:CoverFire": {
+    "NAME": "击破掩体",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 对目标敌人造成双倍伤害。",
+    "EXTENDED_DESCRIPTION": [
+	"对所有敌人造成 !D! 点伤害。 NL 对目标敌人造成三倍伤害。"
+    ]
+  },
+  "thepilotcharacter:DefenseAlgo": {
+    "NAME": "防守算法",
+    "DESCRIPTION": "每有一个敌人获得 !B! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      "每有一个敌人获得 !B! 点 格挡 和 [E] 。"
+    ]
+  },
+  "thepilotcharacter:SelectTarget": {
+    "NAME": "锁定目标",
+    "DESCRIPTION": " 虚无 。 NL 将敌人设为 thepilotcharacter:目标 。 NL 如果敌人已被设为 *目标， 获得 !M! 点 活力 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " 虚无 。 NL 将敌人设为 thepilotcharacter:目标 。 NL 如果敌人已被设为 *目标， 获得 !M! 点 力量 。 NL 消耗 。"
+    ]
+  },
+  "thepilotcharacter:ScorchedCore": {
+    "NAME": "点燃核心",
+    "DESCRIPTION": "获得 [E] 。 NL 获得 !B! 点 格挡 。 NL 添加一张 *熔毁 到手牌中。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] 。 NL 获得 !B! 点 格挡 。 NL 添加一张 *熔毁 到手牌中。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 [E] [E] [E] 。 NL 获得 !B! 点 格挡 。"
+    ],
+    "FLAVOR": "You shouldn't be able to read this。"
+  },
+  "thepilotcharacter:BurningPayload": {
+    "NAME": "燃烧负载",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 添加一张 *熔毁 到手牌中并添加一张本牌的复制到弃牌堆。",
+    "EXTENDED_DESCRIPTION": [
+	"造成 !D! 点伤害 3 次。 NL 添加 2 张本牌的复制到弃牌堆。"
+    ],
+    "FLAVOR": "You shouldn't be able to read this。"
+  },
+  "thepilotcharacter:CombustionRounds": {
+    "NAME": "灼烧弹头",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *眩晕 洗入抽牌堆。",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害。 NL 获得 1 点 人工制品 。"
+    ],
+    "FLAVOR": "You shouldn't be able to read this。"
+  },
+  "thepilotcharacter:ThermalSurge": {
+    "NAME": "热浪涌",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 选择 消耗 最多 !M! 张手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 选择 消耗 最多 !M! 张手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害。 NL 消耗 任意张手牌。"
+    ],
+    "FLAVOR": "You shouldn't be able to read this。"
+  },
+  "thepilotcharacter:IgnitionProtocol": {
+    "NAME": "自燃协议",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并施加 !M! 层 易伤 ， 添加一张 *熔毁 到手牌中。",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点伤害并施加 99 层 易伤 。"
+    ],
+    "FLAVOR": "You shouldn't be able to read this。"
+  },
+  "thepilotcharacter:Firewall": {
+    "NAME": "防火墙",
+    "DESCRIPTION": "每次获得或打出状态牌， NL 获得 !M! 点 格挡 。"
+  },
+  "thepilotcharacter:FeedbackLoop": {
+    "NAME": "反馈回路",
+    "DESCRIPTION": "每当你施加增益或减益效果， NL 造成 !M! 点伤害。"
+  },
+  "thepilotcharacter:Flash": {
+    "NAME": "强光干扰",
+    "DESCRIPTION": "对所有敌人施加 !M! 层 虚弱 。",
+    "EXTENDED_DESCRIPTION": [
+      "降低所有敌人 !M! 点 力量 。"
+    ]
+  },
+  "thepilotcharacter:DataCache": {
+    "NAME": "数据缓存",
+    "DESCRIPTION": "获得 格挡 。格挡数等同于上次打出本牌到这次打出本牌期间，所消耗的 [E] 的一半。",
+    "UPGRADE_DESCRIPTION": "获得 格挡 。格挡数等同于上次打出本牌到这次打出本牌期间，所消耗的 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 格挡 。 格挡数等同于本场战斗截至目前所消耗的 [E] 。",
+      " (",
+      " 消耗能量)"
+    ]
+  },
+  "thepilotcharacter:Cryostasis": {
+    "NAME": "低温静置",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合结束后，保留格挡点数直至下回合。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL 本回合结束后，保留格挡点数直至下 3 回合。"
+    ]
+  },
+  "thepilotcharacter:TakeCover": {
+    "NAME": "掩体保护",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 多层护甲 。"
+  },
+  "thepilotcharacter:Beacon": {
+    "NAME": "信标",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 添加一张随机 *自卫 牌到弃牌堆中。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL thepilotcharacter:余波 : 添加 2 张随机 *自卫 牌到弃牌堆中。"
+    ]
+  },
+  "thepilotcharacter:RedOptionOne": {
+    "NAME": "改装：恶魔燃料",
+    "DESCRIPTION": "后续每回合开始时, 获得 1 点 力量 。"
+  },
+  "thepilotcharacter:RedOptionTwo": {
+    "NAME": "改装：场外支援",
+    "DESCRIPTION": "后续每场战斗开始时，敌人减少 !M!% 血量。"
+  },
+  "thepilotcharacter:RedOptionThree": {
+    "NAME": "改装：机壳升级",
+    "DESCRIPTION": "增加 !M! 点最大生命值。"
+  },
+  "thepilotcharacter:BlueOptionOne": {
+    "NAME": "改装：堡垒协议",
+    "DESCRIPTION": "后续每场战斗前 !M! 回合开始时，格挡值不会移除。"
+  },
+  "thepilotcharacter:BlueOptionTwo": {
+    "NAME": "改装：无效化开场",
+    "DESCRIPTION": "后续每场战斗开始时，获得 !M! 层 *缓冲 。"
+  },
+  "thepilotcharacter:BlueOptionThree": {
+    "NAME": "改装：符文编程",
+    "DESCRIPTION": "后续每场战斗开始时，获得 !M! 层 人工制品 。"
+  },
+  "thepilotcharacter:YellowOptionOne": {
+    "NAME": "改装：掘金系统",
+    "DESCRIPTION": "获得 !M! 金币。"
+  },
+  "thepilotcharacter:YellowOptionTwo": {
+    "NAME": "改装：自动完善化",
+    "DESCRIPTION": "升级牌组中 !M! 张随机牌。"
+  },
+  "thepilotcharacter:YellowOptionThree": {
+    "NAME": "改装：幸运存储",
+    "DESCRIPTION": "获得 2 个遗物。"
+  },
+  "thepilotcharacter:ScrapCommon": {
+    "NAME": "零件：尖锐碎片",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thepilotcharacter:[#03befc]余波 : 获得 !M! 点 活力 。 NL thepilotcharacter:融合 并 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害。 NL thepilotcharacter:[#03befc]余波 : 治疗 3 点生命值。 NL 消耗 。"
+    ]
+  },
+  "thepilotcharacter:ScrapCommonDef": {
+    "NAME": "零件：坚硬碎片",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 获得 !M! 层 荆棘 。 NL thepilotcharacter:融合 并 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 治疗 3 点生命值。 NL 消耗 。"
+    ]
+  },
+  "thepilotcharacter:ScrapCommonLeft": {
+    "NAME": "碎片残渣",
+    "DESCRIPTION": "随机进化牌组中一张普通品质的牌。 NL stslib:消逝 。"
+  },
+  "thepilotcharacter:ScrapUncommonAttStr": {
+    "NAME": "零件：力量模块",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thepilotcharacter:[#03befc]余波 : 获得 !M! 点 力量 。 NL  thepilotcharacter:融合 并 消耗 。"
+  },
+  "thepilotcharacter:ScrapUncommonDefDex": {
+    "NAME": "零件：敏捷模块",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 获得 !M! 点 敏捷 。 NL thepilotcharacter:融合 并 消耗 。"
+  },
+  "thepilotcharacter:ScrapUncommonLeft": {
+    "NAME": "模块残渣",
+    "DESCRIPTION": "随机进化牌组中一张罕见品质的牌。 NL stslib:消逝 。"
+  },
+  "thepilotcharacter:ScrapRareAtt": {
+    "NAME": "零件：阿尔法原型",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thepilotcharacter:[#03befc]余波 : 获得 !M! 层 仪式 。 NL thepilotcharacter:融合 并 消耗 。"
+  },
+  "thepilotcharacter:ScrapRareDef": {
+    "NAME": "零件：德尔塔原型",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 获得 !M! 层 无实体 。 NL thepilotcharacter:融合 并 消耗 。"
+  },
+  "thepilotcharacter:ScrapRareLeft": {
+    "NAME": "原型残渣",
+    "DESCRIPTION": "随机进化牌组中一张稀有品质的牌。 NL stslib:消逝 。"
+  },
+  "thepilotcharacter:ScrapUltraRare": {
+    "NAME": "欧米茄模型",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]余波 : 选择进化一张牌组中的牌以及其所有的复制品。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:[#03befc]余波 : 选择进化一张牌组中的牌以及其所有的复制品。 NL 消耗 。"
+    ]
+  },
+  "thepilotcharacter:CouponStamp": {
+    "NAME": "购物印章",
+    "DESCRIPTION": "对敌人造成等同于 !M! 倍你在商店购物次数的伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "对敌人造成等同于 !M! 倍你在商店购物次数的伤害。",
+      " NL (",
+      " 购物次数。)"
+    ]
+  },
+  "thepilotcharacter:LostAndFound": {
+    "NAME": "失物招领",
+    "DESCRIPTION": "获得 [E] [E] 。 NL 打出此牌后，本场战斗降低 1 点此牌获得的 [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 打出此牌后，本场战斗降低 1 点此牌获得的 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 [E] [E] [E] [E] 。",
+      "获得 ",
+      "。 NL 本场战斗降低 1 点此牌获得的 [E] 。",
+      "什么都不剩了"
+    ]
+  },
+  "thepilotcharacter:DuctTape": {
+    "NAME": "布胶带",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]余波 : 造成 !D! 点伤害。 NL 每打出一张 *特质 牌，将本牌返回手牌中。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:[#03befc]余波 : 造成 !D! 点伤害。 NL 获得 2 临时生命 。 NL 每打出一张 *特质 牌，将本牌返回手牌中。"
+    ]
+  },
+  "thepilotcharacter:NFT": {
+    "NAME": "NFT",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 战斗中每有一张 *NFT ，获得的 格挡 减少 !M! 点。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL 牌堆中每有一张 *NFT ，获得 15 金币。"
+    ]
+  },
+  "thepilotcharacter:CrossedWires": {
+    "NAME": "线路交叉",
+    "DESCRIPTION": "同时视为 *自燃 ， *自卫 ， *自敛 牌。 NL 洗入 !M! 张随机 *特质 牌到你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "同时视为 *自燃 ， *自卫 ， *自敛 牌。 NL 洗入 !M! 张 升级后的 随机 *特质 牌到你的抽牌堆。",
+    "EXTENDED_DESCRIPTION": [
+      "同时视为两张 *自燃 ， *自卫 ， *自敛 牌。 NL 洗入 !M! 张 升级后的 随机 *特质 牌到你的抽牌堆。"
+    ],
+    "FLAVOR": "You shouldn't be able to read this。"
+  },
+  "thepilotcharacter:FavorableTerrain": {
+    "NAME": "地形改造",
+    "DESCRIPTION": "选择一张牌: NL *炼狱 ， *堡垒 ， *垃圾场 。 NL 并将其加入手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "选择一张牌: NL *炼狱 + ， *堡垒 + ， *垃圾场 + 。 NL 并将其加入手牌。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "选择一张牌: NL *炼狱 ++ ， *堡垒 ++ ， *垃圾场 ++ 。 NL 并将其加入手牌。 NL 消耗 。"
+    ]
+  },
+  "thepilotcharacter:TerrainRed": {
+    "NAME": "炼狱",
+    "DESCRIPTION": " 保留 。 NL thepilotcharacter:[#03befc]余波 : 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 视为两张 *自燃 牌。 NL thepilotcharacter:[#03befc]余波 : 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " 保留 。 NL 视为两张 *自燃 牌。 NL [#03befc]回合[] [#03befc]结束时[] : 造成 15 点伤害。 NL thepilotcharacter:[#03befc]余波 : 消耗 。"
+    ]
+  },
+  "thepilotcharacter:TerrainBlue": {
+    "NAME": "堡垒",
+    "DESCRIPTION": " 保留 。 NL thepilotcharacter:[#03befc]余波 : 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 视为两张 *堡垒 牌。 NL thepilotcharacter:[#03befc]余波 : 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " 保留 。 NL 视为两张 *堡垒 牌。 NL [#03befc]回合[] [#03befc]结束时[] : 获得 15 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 消耗 。"
+    ]
+  },
+  "thepilotcharacter:TerrainYellow": {
+    "NAME": "垃圾场",
+    "DESCRIPTION": " 保留 。 NL thepilotcharacter:[#03befc]余波 : 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 视为两张 *自敛 牌。 NL thepilotcharacter:[#03befc]余波 : 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " 保留 。 NL 视为两张 *自敛 牌。 NL [#03befc]回合[] [#03befc]结束时[] : 获得 30 金币。 NL thepilotcharacter:[#03befc]余波 : 消耗 。"
+    ]
+  },
+  "thepilotcharacter:GachaPull": {
+    "NAME": "扭蛋机",
+    "DESCRIPTION": "花费 !thepilotcharacter:COST! 金币并抽取 !M! 种奖励或惩罚。 NL 选择其中一种。",
+    "EXTENDED_DESCRIPTION": [
+      "选择 3 种中的 1 种奖励。",
+      "没有足够的 #r金币。",
+      "奖励已耗尽。"
+    ]
+  },
+  "thepilotcharacter:GamblingBlock": {
+    "NAME": "奖品：格挡",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "thepilotcharacter:GamblingBuffer": {
+    "NAME": "奖品：缓冲",
+    "DESCRIPTION": "获得 !M! 层 缓冲 。"
+  },
+  "thepilotcharacter:GamblingCardReward": {
+    "NAME": "奖品：卡牌",
+    "DESCRIPTION": "下次选择获得新卡牌时，获得 1 个额外的可选项。",
+    "UPGRADE_DESCRIPTION": "本场战斗结束后额外奖励一张卡牌。"
+  },
+  "thepilotcharacter:GamblingCreateScavenge": {
+    "NAME": "奖品：自敛",
+    "DESCRIPTION": "添加 !M! 张随机 thepilotcharacter:自敛 牌到你的抽牌堆。"
+  },
+  "thepilotcharacter:GamblingDamage": {
+    "NAME": "奖品：群体伤害",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+  },
+  "thepilotcharacter:GamblingDexterity": {
+    "NAME": "奖品：敏捷",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。"
+  },
+  "thepilotcharacter:GamblingEnergy": {
+    "NAME": "奖品：能量",
+    "DESCRIPTION": "下回合开始时， 获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] [E] 。"
+  },
+  "thepilotcharacter:GamblingLoseEnergy": {
+    "NAME": "惩罚：能量流失",
+    "DESCRIPTION": "失去当前所有的 [E] 。"
+  },
+  "thepilotcharacter:GamblingFrail": {
+    "NAME": "惩罚：脆弱",
+    "DESCRIPTION": "获得 !M! 层 脆弱 。"
+  },
+  "thepilotcharacter:Gambling获得Curse": {
+    "NAME": "惩罚：诅咒",
+    "DESCRIPTION": "添加一张随机诅咒牌到你的卡组。"
+  },
+  "thepilotcharacter:GamblingGold": {
+    "NAME": "奖励：金币",
+    "DESCRIPTION": "获得 !M! 金币。"
+  },
+  "thepilotcharacter:GamblingHeal": {
+    "NAME": "奖励：治疗",
+    "DESCRIPTION": "恢复 !M! 点生命值。"
+  },
+  "thepilotcharacter:GamblingLoseGold": {
+    "NAME": "惩罚：扣钱",
+    "DESCRIPTION": "失去 !M! 金币。"
+  },
+  "thepilotcharacter:GamblingLoseHP": {
+    "NAME": "惩罚：受伤",
+    "DESCRIPTION": "失去 !M! 点生命值。"
+  },
+  "thepilotcharacter:GamblingNoBlock": {
+    "NAME": "惩罚：破防",
+    "DESCRIPTION": "接下来 2 回合你将无法通过卡牌获得格挡点数。"
+  },
+  "thepilotcharacter:GamblingPlatedArmor": {
+    "NAME": "奖励：多层护甲",
+    "DESCRIPTION": "获得 !M! 层 多层护甲 。"
+  },
+  "thepilotcharacter:GamblingPotion": {
+    "NAME": "奖励：药水",
+    "DESCRIPTION": "获得一瓶随机药水。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 瓶随机药水。"
+  },
+  "thepilotcharacter:GamblingRelic": {
+    "NAME": "奖励：遗物",
+    "DESCRIPTION": "获得一个随机遗物。"
+  },
+  "thepilotcharacter:GamblingScry": {
+    "NAME": "奖励：检索",
+    "DESCRIPTION": " thepilotcharacter:检索 !M! 张牌。"
+  },
+  "thepilotcharacter:GamblingStrength": {
+    "NAME": "奖励：力量",
+    "DESCRIPTION": "获得 !M! 点 力量 。"
+  },
+  "thepilotcharacter:GamblingStun": {
+    "NAME": "奖励：眩晕",
+    "DESCRIPTION": "击晕目标敌人一回合。"
+  },
+  "thepilotcharacter:GamblingUpgradeCards": {
+    "NAME": "奖励：升级",
+    "DESCRIPTION": "升级你牌组中的一张打击或防御。",
+    "UPGRADE_DESCRIPTION": "升级你牌组中的随机一张牌。"
+  },
+  "thepilotcharacter:GamblingVulnerable": {
+    "NAME": "惩罚：易伤",
+    "DESCRIPTION": "获得 !M! 层 易伤 。"
+  },
+  "thepilotcharacter:GamblingWeak": {
+    "NAME": "惩罚：虚弱",
+    "DESCRIPTION": "获得 !M! 层 虚弱 。"
+  },
+  "thepilotcharacter:GamblingScrap": {
+    "NAME": "奖励",
+    "DESCRIPTION": "添加一张 *零件 牌 到你的牌堆。",
+    "UPGRADE_DESCRIPTION": "添加 2 张 *零件 牌 到你的牌堆。"
+  },
+  "thepilotcharacter:LockedIn": {
+    "NAME": "精准定位",
+    "DESCRIPTION": " thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 2 张牌并 thepilotcharacter:检索 !thepilotcharacter:SCRY! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张牌并 thepilotcharacter:检索 !thepilotcharacter:SCRY! 张牌。"
+    ]
+  },
+  "thepilotcharacter:FlashDrive": {
+    "NAME": "闪存盘",
+    "DESCRIPTION": "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]弹射 : 从抽牌堆中选择一张技能牌并打出。 NL 添加一张 *眩晕 到弃牌堆中。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]弹射 : 从抽牌堆选择一张牌并打出。"
+    ]
+  },
+  "thepilotcharacter:TakeAim": {
+    "NAME": "瞄准",
+    "DESCRIPTION": "将弃牌堆的牌洗入抽牌堆。 NL thepilotcharacter:[#03befc]余波 : thepilotcharacter:检索 !M! 张牌，每丢弃一张牌获得 !thepilotcharacter:CHARGE! 点 thepilotcharacter:蓄能 。 NL 消耗 。"
+  },
+  "thepilotcharacter:ComboBreaker": {
+    "NAME": "连击破坏者",
+    "DESCRIPTION": " 虚无 。 NL thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]弹射 : 增加一倍本牌的 thepilotcharacter:蓄能 点数。",
+    "UPGRADE_DESCRIPTION": " thepilotcharacter:蓄能 !M!。 NL thepilotcharacter:[#03befc]弹射 : 增加一倍本牌的 thepilotcharacter:蓄能 点数。",
+    "EXTENDED_DESCRIPTION": [
+	" thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]弹射 : 增加两倍本牌的 thepilotcharacter:蓄能 点数。"
+    ]
+  },
+  "thepilotcharacter:Thrusters": {
+    "NAME": "火箭推进器",
+    "DESCRIPTION": " thepilotcharacter:检索 !thepilotcharacter:SCRY! 张牌。 NL thepilotcharacter:蓄能 !M! 。 NL 获得 [E] 。 NL 下回合失去 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:检索 !thepilotcharacter:SCRY! 张牌。 NL thepilotcharacter:蓄能 !M! 。 NL 获得 [E] 。"
+    ]
+  },
+  "thepilotcharacter:VolatileBattery": {
+    "NAME": "挥发性电池",
+    "DESCRIPTION": "牌组中每拥有一张本牌， thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]弹射 : 在弃牌堆中添加一张本牌复制品。",
+    "EXTENDED_DESCRIPTION": [
+      "牌组中每拥有一张本牌， thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]弹射: 在弃牌堆中添加 2 张本牌复制品。"
+    ]
+  },
+  "thepilotcharacter:Maintenance": {
+    "NAME": "日常维护",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张手牌并获得 !M! 点 thepilotcharacter:电容量 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL 获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张牌并再获得一次电容量。"
+    ]
+  },
+  "thepilotcharacter:Acceleration": {
+    "NAME": "加速运转",
+    "DESCRIPTION": "下回合获得 [E] 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张牌，本回合每消耗一点 [E] 获得 thepilotcharacter:蓄能 !M! 次。",
+    "UPGRADE_DESCRIPTION": "下回合获得 [E] [E] 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张牌，本回合每消耗一点 [E] 获得 thepilotcharacter:蓄能 !M! 次。",
+    "EXTENDED_DESCRIPTION": [
+      "下回合获得 [E] [E] 。 NL thepilotcharacter:[#03befc]余波 : 弃 1 张牌，本场战斗每消耗一点 [E] 获得 thepilotcharacter:蓄能 !M! 次。",
+      " NL (",
+      " 消耗能量)"
+    ]
+  },
+  "thepilotcharacter:QuickReflex": {
+    "NAME": "瞬时反应",
+    "DESCRIPTION": " thepilotcharacter:蓄能 !thepilotcharacter:CAPACITY! 次。 NL 施加 !thepilotcharacter:WEAK! 层 虚弱 。 NL thepilotcharacter:[#03befc]弹射 : 如果本回合消耗的 [E] 少于 !M! ， 获得 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:蓄能 !thepilotcharacter:CAPACITY! 次。 NL 施加 !thepilotcharacter:WEAK! 层 虚弱 。 NL thepilotcharacter:[#03befc]弹射 : NL 获得 [E] [E] 。",
+      " NL (",
+      " 消耗能量)"
+    ]
+  },
+  "thepilotcharacter:ArcBlasterMk": {
+    "NAME": "电弧冲击炮 Mk-",
+    "DESCRIPTION": " thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]弹射 : 本场战斗临时升级此牌 。 NL 此牌可多次升级。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:蓄能 !M! 。 NL thepilotcharacter:[#03befc]弹射 : 本局游戏升级此牌 。 NL 此牌可多次升级。"
+    ]
+  },
+  "thepilotcharacter:TitaniumCasing": {
+    "NAME": "钛合金外壳",
+    "DESCRIPTION": "获得一半当前拥有的 thepilotcharacter:电容量 和 格挡 点数。",
+    "UPGRADE_DESCRIPTION": "增加一倍当前拥有的 thepilotcharacter:电容量 和 格挡 点数。",
+    "EXTENDED_DESCRIPTION": [
+      "增加两倍当前拥有的 thepilotcharacter:电容量 和 格挡 点数。"
+    ]
+  },
+  "thepilotcharacter:PreemptiveStrike": {
+    "NAME": "先发制人",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thepilotcharacter:检索 !M! 张牌。"
+  },
+  "thepilotcharacter:EnergyBurst": {
+    "NAME": "能量迸发",
+    "DESCRIPTION": "每次洗牌时，获得等同于牌组总牌数一半的 thepilotcharacter:蓄能 。",
+    "UPGRADE_DESCRIPTION": "每次洗牌时，获得等同于牌组总牌数的 thepilotcharacter:蓄能 。",
+    "EXTENDED_DESCRIPTION": [
+	"每次洗牌时，获得等同于牌组总牌数两倍的 thepilotcharacter:蓄能 。"
+    ]
+  },
+  "thepilotcharacter:DoubleOrNothing": {
+    "NAME": "亦祸亦福",
+    "DESCRIPTION": "失去当前一半的格挡值。 NL thepilotcharacter:[#03befc]余波 : 额外获得等同于当前拥有的 thepilotcharacter:蓄能 点数一半的 thepilotcharacter:蓄能 。",
+    "UPGRADE_DESCRIPTION": "失去当前全部的格挡值。 NL thepilotcharacter:[#03befc]余波 : 增加一倍你当前拥有的 thepilotcharacter:蓄能 点数。",
+    "EXTENDED_DESCRIPTION": [
+	" thepilotcharacter:[#03befc]余波 : 增加两倍你当前拥有的 thepilotcharacter:蓄能 点数。"
+    ]
+  },
+  "thepilotcharacter:Reload": {
+  "NAME": "上膛",
+    "DESCRIPTION": "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张手牌并选择一张弃牌堆的牌放置到抽牌堆顶部。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张手牌并选择一张弃牌堆的牌打出。"
+    ]
+  },
+  "thepilotcharacter:ExposedWire": {
+    "NAME": "裸露的电线",
+    "DESCRIPTION": " 保留 。 NL 获得 [E] [E] 。 NL 获得 !M! 点 thepilotcharacter:电容量 。 NL 消耗一张随机手牌。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 [E] [E] [E] 。 NL 获得 !M! 点 thepilotcharacter:电容量 。 NL 消耗一张随机手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 [E] [E] [E] 。 NL 获得 !M! 点 thepilotcharacter:电容量 。"
+    ]
+  },
+  "thepilotcharacter:Efficiency": {
+    "NAME": "高效化",
+    "DESCRIPTION": "每次触发卡牌中的 [#03befc]弹射[] 效果， 获得 !M! 点 格挡 。"
+  },
+  "thepilotcharacter:Virus": {
+    "NAME": "病毒程序",
+    "DESCRIPTION": "打出抽牌堆顶部的 !M! 张牌。 NL 获得一层 易伤 。",
+    "EXTENDED_DESCRIPTION": [
+      "打出抽牌堆顶部的 !M! 张牌。"
+    ]
+  },
+  "thepilotcharacter:DefenseMatrix": {
+    "NAME": "防御矩阵",
+    "DESCRIPTION": "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张手牌并获得等同于你当前 thepilotcharacter:蓄能 点数一半的 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+	"获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:[#03befc]余波 : 丢弃 1 张手牌并获得等同于你当前 thepilotcharacter:蓄能 点数两倍的 格挡 。"
+    ]
+  },
+  "thepilotcharacter:PowerSlide": {
+    "NAME": "动力滑行",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]余波 : thepilotcharacter:蓄能 !M! 。 NL [#03befc]检索[] : 将本牌从弃牌堆返回手牌。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:[#03befc]余波 : thepilotcharacter:蓄能 !M! 。 NL 增加本牌的 thepilotcharacter:蓄能 点数 2 点。 NL [#03befc]检索[] : 将本牌从弃牌堆返回手牌。"
+    ]
+  },
+  "thepilotcharacter:JunkFood": {
+    "NAME": "垃圾食品",
+    "DESCRIPTION": "获得 !M! 点 临时生命 。 NL 恢复 !M! 点生命值。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+	"获得 !M! 点 临时生命 。 NL 恢复 !M! 点生命值。"
+    ]
+  },
+  "thepilotcharacter:Grenades": {
+    "NAME": "榴弹炮",
+    "DESCRIPTION": "在 2 回合结束后，对所有敌人造成 !M! 点伤害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "在 2 回合结束后，对所有敌人造成 !M! 点伤害。"
+    ]
+  },
+  "thepilotcharacter:Dispenser": {
+    "NAME": "自动补货机",
+    "DESCRIPTION": "获得一瓶随机药水。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 2 瓶随机药水。",
+      "我没有空余的 #r药水 栏位。"
+    ]
+  },
+  "thepilotcharacter:BrokenBattery": {
+    "NAME": "破损电池",
+    "DESCRIPTION": "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:蓄能 !M! 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !M! 点 thepilotcharacter:电容量 。 NL thepilotcharacter:蓄能 !M! 。"
+    ]
+  },
+  "thepilotcharacter:FieldBubble": {
+    "NAME": "立场护罩",
+    "DESCRIPTION": "本回合降低 !M! 点受到的伤害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "本回合降低 !M! 点受到的伤害。"
+    ]
+  },
+  "thepilotcharacter:SpareParts": {
+    "NAME": "零部件",
+    "DESCRIPTION": "给所有的 thepilotcharacter:装备 牌 thepilotcharacter:维修 !M! 点耐久度。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "给所有的 thepilotcharacter:装备 牌 thepilotcharacter:维修 !M! 点耐久度。"
+    ]
+  },
+  "thepilotcharacter:Metronome": {
+    "NAME": "节拍器",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]开始[] : NL 本回合获得 !M! 点 力量 和 敏捷 。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]回合[] [#03befc]开始[] : NL 获得 !M! 点 力量 和 敏捷 。"
+    ]
+  },
+  "thepilotcharacter:TungstenCoat": {
+    "NAME": "钨涂层",
+    "DESCRIPTION": " [#03befc]损失[] [#03befc]生命时[] : NL 少损失 1 点生命值。",
+    "UPGRADE_DESCRIPTION": " thepilotcharacter:安置 。 NL [#03befc]损失[] [#03befc]生命时[] : NL 少损失 1 点生命值。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:安置 。 NL [#03befc]损失[] [#03befc]生命时[] : NL 少损失 3 点生命值。"
+    ]
+  },
+  "thepilotcharacter:Coolant": {
+    "NAME": "冷却液",
+    "DESCRIPTION": " [#03befc]打出状态牌[] : NL 将其 消耗 。 NL 获得 !M! 点 活力 。 NL 获得 [E] 。",
+    "UPGRADE_DESCRIPTION": " thepilotcharacter:安置 。 NL [#03befc]打出状态牌[] : NL 将其 消耗 。 NL 获得 !M! 点 活力 。 NL 获得 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:安置 。 NL [#03befc]打出状态牌[] : NL 将其 消耗 。 NL 获得 !M! 点 活力 。 NL 获得 [E] [E] [E] 。"
+    ]
+  },
+  "thepilotcharacter:HeavyShield": {
+    "NAME": "重型护盾",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]结束[] : NL 获得 !B! 点 格挡 。 NL 获得 !M! 层 虚弱 。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]回合[] [#03befc]结束[] : NL 获得 !B! 点 格挡 。"
+    ]
+  },
+  "thepilotcharacter:TacticalVisor": {
+    "NAME": "战术目镜",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]开始[] : NL thepilotcharacter:检索 !M! 张牌。 NL 获得 [E] 。",
+    "UPGRADE_DESCRIPTION": " thepilotcharacter:安置 。 NL [#03befc]回合[] [#03befc]开始[] : NL thepilotcharacter:检索 !M! 张牌。 NL 获得 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:安置 。 NL [#03befc]回合[] [#03befc]开始[] : NL thepilotcharacter:检索 !M! 张牌。 NL 获得 [E] [E] 。"
+    ]
+  },
+  "thepilotcharacter:ToolKit": {
+    "NAME": "工具箱",
+    "DESCRIPTION": "给手牌中所有 thepilotcharacter:装备 牌 thepilotcharacter:维修 !M! 点耐久度。 NL 打出此牌后，本场战斗此牌的维修点数降低 1 点。",
+    "EXTENDED_DESCRIPTION": [
+      "给手牌中所有 thepilotcharacter:装备 牌 thepilotcharacter:维修 !M! 点耐久度。"
+    ]
+  },
+  "thepilotcharacter:Flamethrower": {
+    "NAME": "喷火器",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]结束[] : NL 对所有敌人造成 !D! 点伤害，并将此牌的伤害翻倍。"
+  },
+  "thepilotcharacter:InstructionManual": {
+    "NAME": "操作指南",
+    "DESCRIPTION": " [#03befc]洗[] [#03befc]牌[] [#03befc]时[] : NL 获得 !B! 点 格挡 。 NL 将一张 *洞见 洗入抽牌堆。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]洗[] [#03befc]牌[] [#03befc]时[] : NL 获得 !B! 点 格挡 。 NL 将 !M! 张 *洞见 洗入抽牌堆。"
+    ]
+  },
+  "thepilotcharacter:GrapplingHook": {
+    "NAME": "抓钩",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]装上 ， thepilotcharacter:[#03befc]卸下 时: NL 获得 !B! 点 格挡 。 NL 打出此牌时，如果上一张打出的牌是攻击牌，获得 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:[#03befc]装上 ， thepilotcharacter:[#03befc]卸下 时: NL 获得 !B! 点 格挡 。 NL 打出此牌时，如果上一张打出的牌是攻击牌， 获得 [E] [E] 。"
+    ]
+  },
+  "thepilotcharacter:PowerBank": {
+    "NAME": "充电宝",
+    "DESCRIPTION": " [#03befc]获得 [#03befc]蓄能[] : NL 获得 !M! 点 thepilotcharacter:电容量 。 NL 获得 !B! 点 格挡 。"
+  },
+  "thepilotcharacter:MicroMissiles": {
+    "NAME": "微型导弹",
+    "DESCRIPTION": " [#03befc]洗[] [#03befc]牌[] [#03befc]时[] : NL 牌堆中每有 !M! 张牌，造成 !D! 点伤害。"
+  },
+  "thepilotcharacter:PoisonMine": {
+    "NAME": "毒性地雷",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]结束[] : NL 手牌中每有 2 张牌，对所有敌人施加 !M! 层 中毒 。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]回合[] [#03befc]结束[] : NL 手牌中每有 1 张牌， 对所有敌人施加 !M! 层 中毒 。"
+    ]
+  },
+  "thepilotcharacter:TrashCannon": {
+    "NAME": "垃圾喷射炮",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]开始[] : NL 造成 !D! 点伤害。 NL 从牌组中移除卡牌时，增加本牌伤害 !M! 点 并增加耐久度 !thepilotcharacter:DURABILITY! 点。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]回合[] [#03befc]开始[] : NL 每次 thepilotcharacter:融合 时，对所有敌人造成 !M! 点伤害。"
+    ]
+  },
+  "thepilotcharacter:FailSafe": {
+    "NAME": "紧急备用电源",
+    "DESCRIPTION": " [#03befc]死亡 [#03befc]时[] : NL 复活并恢复到最大生命值的 !M!% 。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:安置 。 NL [#03befc]死亡 [#03befc]时[] : NL 复活并恢复到最大生命值的 !M!% 。 NL 消耗 。"
+    ]
+  },
+  "thepilotcharacter:Shredder": {
+    "NAME": "粉碎机",
+    "DESCRIPTION": " [#03befc]获得[] [#03befc]格挡[] : NL 本回合同时获得 !M! 层 荆棘 。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]获得[] [#03befc]格挡[] : NL 同时获得 !M! 层 荆棘 。"
+    ]
+  },
+  "thepilotcharacter:TeslaCoil": {
+    "NAME": "电磁线圈",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]开始[] ， [#03befc]结束[] : NL 造成 !D! 点伤害。 NL [#03befc]获得[] [#03befc]蓄能[] : NL thepilotcharacter:维修 !M! 点耐久度。"
+  },
+  "thepilotcharacter:SmartGun": {
+    "NAME": "智能枪械",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]装上 和 [#03befc]触发[] NL [#03befc]其他[] thepilotcharacter:装备 时: NL 造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " thepilotcharacter:安置 。 NL thepilotcharacter:[#03befc]装上 和 [#03befc]触发[] [#03befc]其他 thepilotcharacter:装备 时: NL 造成 !D! 点伤害。"
+    ]
+  },
+  "thepilotcharacter:FireSupport": {
+    "NAME": "火力增援模组",
+    "DESCRIPTION": " [#03befc]施加 thepilotcharacter:目标 [#03befc]效果与 thepilotcharacter:检索 [#03befc]时 : NL 造成 !D! 点伤害。 NL thepilotcharacter:[#03befc]丢弃 时: NL thepilotcharacter:维修 !M! 点耐久度。"
+  },
+  "thepilotcharacter:RustyBlade": {
+    "NAME": "破伤风刀刃",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]装上 与 [#03befc]回合[] [#03befc]开始[] 时: NL 造成 !D! 点伤害。 NL 每失去一点耐久度，攻击时额外施加一点 中毒 。",
+    "UPGRADE_DESCRIPTION": " thepilotcharacter:[#03befc]装上 与 [#03befc]回合[] [#03befc]开始[] 时: NL 造成 !D! 点伤害。 NL 每失去一点耐久度，攻击时额外施加一点 中毒 。",
+    "EXTENDED_DESCRIPTION": [
+	" thepilotcharacter:[#03befc]装上 与 [#03befc]回合[] [#03befc]开始[] [#03befc]或[] [#03befc]结束[] 时: NL 造成 !D! 点伤害。 NL 每失去一点耐久度，攻击时额外施加一点 中毒 。"
+    ]
+  },
+  "thepilotcharacter:EnergyChamber": {
+    "NAME": "储能仓",
+    "DESCRIPTION": " [#03befc]受到[] [#03befc]被格挡的[] [#03befc]伤害[] 时: NL 增加本牌伤害 !M! 点。 NL thepilotcharacter:[#03befc]卸下 : NL 造成 !D! 点伤害。"
+  },
+  "thepilotcharacter:Drill": {
+    "NAME": "钻探",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]结束[] : 获得 !M! 金币。 NL [#03befc]战斗[] [#03befc]结束[] : 添加一张 *零件 牌到你的牌组中。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]回合[] [#03befc]结束[] : 获得 !M! 金币。 NL 获得 9 点 临时生命 。"
+    ]
+  },
+  "thepilotcharacter:RocketPunch": {
+    "NAME": "火箭冲击",
+    "DESCRIPTION": " [#03befc]回合[] [#03befc]开始[] : NL 获得 !M! 点 活力 。 NL [#03befc]回合[] [#03befc]结束[] : NL 对所有敌人造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " [#03befc]回合[] [#03befc]开始[] : NL 获得 !M! 点 力量 。 NL [#03befc]回合[] [#03befc]结束[] : NL 对所有敌人造成 !D! 点伤害。"
+    ]
+  },
+  "thepilotcharacter:SelfDestruct": {
+    "NAME": "自毁",
+    "DESCRIPTION": " thepilotcharacter:[#03befc]余波 : 消耗 所有手牌中的 thepilotcharacter:装备 牌。 NL 每 消耗 一张对所有敌人造成 !D! 点伤害。 NL 消耗 。"
+  },
+  "thepilotcharacter:EMPGrenade": {
+    "NAME": "脉冲手雷",
+    "DESCRIPTION": "造成 !D! 点伤害。 手牌中每拥有一张 thepilotcharacter:装备 牌，额外造成 !M! 点伤害。"
+  },
+  "thepilotcharacter:Melt": {
+    "NAME": "熔毁",
+    "DESCRIPTION": " 保留 。 NL 消耗 。"
+  },
+  "thepilotcharacter:EvolutionOneA": {
+    "NAME": "启动: 生命能量",
+    "DESCRIPTION": "每场战斗开始时， 获得 9 点 临时生命 。"
+  },
+  "thepilotcharacter:EvolutionOneB": {
+    "NAME": "启动: 囤积系统",
+    "DESCRIPTION": "每场战斗开始时， 将 2 张 *奇迹+ 洗入抽牌堆。"
+  },
+  "thepilotcharacter:EvolutionOneC": {
+    "NAME": "启动: 狂战士形态",
+    "DESCRIPTION": "每场战斗开始时， 获得 3 点临时 力量 。"
+  },
+  "thepilotcharacter:EvolutionTwoA": {
+    "NAME": "指令: 防护储备",
+    "DESCRIPTION": "在你每回合结束时， 手牌中每拥有 2 张牌，获得 1 点 格挡 。"
+  },
+  "thepilotcharacter:EvolutionTwoB": {
+    "NAME": "指令: 设施维护",
+    "DESCRIPTION": "在你每回合结束时，给手牌中一张随机 thepilotcharacter:装备 牌 thepilotcharacter:维修 1 点耐久度。"
+  },
+  "thepilotcharacter:EvolutionTwoC": {
+    "NAME": "指令: 军备竞赛",
+    "DESCRIPTION": "在你每回合结束时， 获得 1 点 力量 。 (每场战斗最多 3 次)"
+  },
+  "thepilotcharacter:EvolutionThreeA": {
+    "NAME": "节点: 内存升级",
+    "DESCRIPTION": "增加 2 点手牌数量上限。"
+  },
+  "thepilotcharacter:EvolutionThreeB": {
+    "NAME": "节点: 电能供给",
+    "DESCRIPTION": "每场战斗前 2 回合开始时，获得 [E] 。"
+  },
+  "thepilotcharacter:EvolutionThreeC": {
+    "NAME": "节点: 处理单元",
+    "DESCRIPTION": "每次使用检索按钮 thepilotcharacter:检索 时，额外 thepilotcharacter:检索 1 张牌。"
+  }
+}

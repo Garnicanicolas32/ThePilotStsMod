@@ -1,0 +1,151 @@
+{
+  "thepilotcharacter:CoolingFan": {
+    "NAME": "风冷散热器",
+    "FLAVOR": "顶级的大功率散热装置。",
+    "DESCRIPTIONS": [
+      "检索到 #y状态 牌时可以直接将其 #y消耗 。"
+    ]
+  },
+  "thepilotcharacter:RunicEngine": {
+    "NAME": "符文引擎",
+    "FLAVOR": "这些符文都无法解读。但不知为何，它们仍然有效。",
+    "DESCRIPTIONS": [
+      "当你获得一把钥匙碎片， 选择一项 #ythepilotcharacter:改造 。",
+      " NL [#03befc]战斗[] [#03befc]开始[] : ",
+      "获得 #b9 #y临时 #y生命 。",
+      "洗入 #b2 张 #y奇迹+ 。",
+      "获得 #b3 点临时 力量 。",
+      " NL [#03befc]回合[] [#03befc]结束[] : ",
+      "手牌中每拥有 #b2 张牌，获得 #b1 点 #y格挡 。",
+      "给手牌中一张随机 #y装备 牌 #y维修 #b1 点耐久度。",
+      "获得 #b1 点 #y力量 。 (最多 3 次)",
+      " NL [#03befc]永久[] : ",
+      "增加 #b2 张手牌上限。",
+      "战斗开始的前 2 回合，获得 [E] 。",
+      "每次使用检索按钮检索时， 额外检索 #b1 张牌。",
+      "当你获得一把钥匙碎片， 选择一项 #y改造 。"
+    ]
+  },
+  "thepilotcharacter:OilCan": {
+    "NAME": "机油罐子",
+    "FLAVOR": "禁忌的饮品。",
+    "DESCRIPTIONS": [
+      "每当你触发一次 #ythepilotcharacter:装备 牌的效果时， 获得 #b1 点 #y格挡 。"
+    ]
+  },
+  "thepilotcharacter:Lightbulb": {
+    "NAME": "明亮的灯泡",
+    "FLAVOR": "一个巨型灯泡，就如太阳一样。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时， #y检索 #b"
+    ]
+  },
+  "thepilotcharacter:RGBLED": {
+    "NAME": "彩色LED灯",
+    "FLAVOR": "5BCEFA F5A9B8 FFFFFF F5A9B8 5BCEFA.",
+    "DESCRIPTIONS": [
+      "替换 [#e1ff4d]明亮的灯泡[] 。 每场战斗开始时， #y检索 #b"
+    ]
+  },
+  "thepilotcharacter:EmptyDisk": {
+    "NAME": "空磁盘",
+    "FLAVOR": "终于！迫不及待要玩... 切断高塔2了？",
+    "DESCRIPTIONS": [
+	"获得 #b1 个额外药水槽。 NL 提升 #b8 点最大生命值。 NL 增加 #b4 张手牌上限。"
+    ]
+  },
+  "thepilotcharacter:Motherboard": {
+    "NAME": "电脑主板",
+    "FLAVOR": "由3根铜线和1块铁板制成。",
+    "DESCRIPTIONS": [
+      "每回合第一次打出 #ythepilotcharacter:装备 牌时， 获得 [E] 。"
+    ]
+  },
+  "thepilotcharacter:Schematics": {
+    "NAME": "设计图纸",
+    "FLAVOR": "第一步: 建造。 第二部: ??? 第三步: 赚钱。",
+    "DESCRIPTIONS": [
+      "在火堆维修装备时，治疗 #b" , " 点生命值。 每次维修可以额外维修 #b2 张 #ythepilotcharacter:装备 牌。"
+    ]
+  },
+  "thepilotcharacter:RecyclingBin": {
+    "NAME": "回收站",
+    "FLAVOR": "不易降解的物件要单独存放。",
+    "DESCRIPTIONS": [
+      "获得卡牌奖励时， 你可以选择 #y回收 。 每 #b两 次回收， 添加一张随机 #y零件 牌到你的牌组。",
+      "回收 ",
+      "/2"
+    ]
+  },
+  "thepilotcharacter:MemoryCard": {
+    "NAME": "内存卡",
+    "FLAVOR": "啊... 我看穿了你... 你喜欢恶魔城。 对吧？",
+    "DESCRIPTIONS": [
+      "在火堆时，你可以选择给牌组中任意一张牌添加 #ythepilotcharacter:安置 效果。 (最多 3 次)"
+    ]
+  },
+  "thepilotcharacter:SecurityCamera": {
+    "NAME": "警备摄像机",
+    "FLAVOR": "正在以144p录制。",
+    "DESCRIPTIONS": [
+      "战斗中每次切换 #ythepilotcharacter:目标 ，则对新目标施加 #b1 点 #y易伤 。"
+    ]
+  },
+  "thepilotcharacter:UnceasingBottom": {
+  "NAME": "不息陀螺",
+  "FLAVOR": "不休陀螺的替代品。",
+    "DESCRIPTIONS": [
+      "每当你在手牌已满的情况下继续使用出牌按钮， 丢弃 #b1 张牌。"
+    ]
+  },
+  "thepilotcharacter:AIFiedHand": {
+    "NAME": "智能之手",
+    "FLAVOR": "干瘪之手的替代品。",
+    "DESCRIPTIONS": [
+      "每当你打出一张 #y能力 牌，再打出下一张抽牌堆顶部的牌。"
+    ]
+  },
+  "thepilotcharacter:NecronomiconPDF": {
+    "NAME": "死灵之书.pdf",
+    "FLAVOR": "死灵之书的替代品。",
+    "DESCRIPTIONS": [
+      "每当你打出一张 #y诅咒 牌， 下一张打出的牌将会打出两次。 拾起这件遗物时， 获得 #y诅咒 。"
+    ]
+  },
+  "thepilotcharacter:SneckoAI": {
+    "NAME": "异蛇 AI",
+    "FLAVOR": "异蛇之眼的替代品。",
+    "DESCRIPTIONS": [
+      "在每回合开始时，获得 [E] 。每场战斗开始时 #ythepilotcharacter:被入侵 。"
+    ]
+  },
+  "thepilotcharacter:PyramidScheme": {
+    "NAME": "金字塔设计图",
+    "FLAVOR": "符文金字塔的替代品。",
+    "DESCRIPTIONS": [
+	"增加 #b2 张手牌上限。 在你的回合结束时，选择 #y保留 最多 #b2 张手牌。"
+    ]
+  },
+  "thepilotcharacter:ChemicalY": {
+    "NAME": "化学物Y",
+    "FLAVOR": "化学物X的替代品。",
+    "DESCRIPTIONS": [
+      "每当你使用检索按钮时，额外检索 #b1 张牌。"
+    ]
+  },
+  "thepilotcharacter:StrangeFork": {
+    "NAME": "奇怪的叉子",
+    "FLAVOR": "奇怪的勺子的替代品。",
+    "DESCRIPTIONS": [
+      "每当你触发一张 #y装备 牌的效果时， 它有 #b",
+      "% 概率不损耗耐久度。"
+    ]
+  },
+  "thepilotcharacter:ScheduledUpdate": {
+    "NAME": "更新程序",
+    "FLAVOR": "请等待... 预估时间: 7 年。",
+    "DESCRIPTIONS": [
+      "在每回合开始时，获得 [E] 并随机切换一个 #y目标 。 NL #y锁定 #y目标 牌将额外消耗 #b2 点能量。"
+    ]
+  }
+}

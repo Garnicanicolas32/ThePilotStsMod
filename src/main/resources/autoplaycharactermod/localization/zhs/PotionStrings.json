@@ -1,0 +1,24 @@
+{
+  "thepilotcharacter:SneckoOilRework": {
+    "NAME": "异蛇油脂",
+    "DESCRIPTIONS": [
+      "获得 #b",
+      " 能量和 #y被入侵 。 NL 替换 #y异蛇 #y之油 "
+    ]
+  },
+  "thepilotcharacter:EquipmentPotion": {
+    "NAME": "装备药水",
+    "DESCRIPTIONS": [
+      "从随机 #b3 张中选 #b1 张 #y装备 牌并添加到手牌。",
+      "从随机 #b3 张中选 #b1 张 #y装备 牌并添加 #b2 份到手牌。"
+    ]
+  },
+  "thepilotcharacter:ChargePotion": {
+    "NAME": "蓄能药水",
+    "DESCRIPTIONS": [
+      " #y检索 ",
+      " 而后 #y蓄能 ， ",
+      " 每丢弃一张牌 #y蓄能 一次。"
+    ]
+  }
+}

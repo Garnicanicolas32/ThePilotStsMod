@@ -1,0 +1,134 @@
+{
+  "thepilotcharacter:RedPower": {
+    "NAME": "特质：自燃",
+    "DESCRIPTIONS": [
+      "在你回合结束时: NL 1. 造成 #b",
+      " 点伤害。 (随机目标)",
+      " NL 2. 造成 #b",
+      " 点伤害。 (锁定目标)",
+      " NL 3. 造成 #b",
+      " 点伤害。 (全体敌人)",
+      " NL 4. 获得 #b",
+      " 点力量。",
+      " NL 5. 再执行一次前4级的所有效果。",
+      " NL 6. 击晕全体敌人。 (最多 1 次)",
+      " NL 7. 选择一个独特的改造升级。 (每局游戏仅一次)"
+    ]
+  },
+  "thepilotcharacter:BluePower": {
+    "NAME": "特质：自卫",
+    "DESCRIPTIONS": [
+      "在你回合结束时: NL 1. 获得 #b",
+      " 点格挡。",
+      " NL 3. 对目标施加 #b1 层 #y虚弱 。",
+      " NL 2. 获得 #b",
+      " 层 #y荆棘 。",
+      " NL 4. 获得 #b",
+      " 点 #y多层护甲 。",
+      " NL 6. 翻倍当前的格挡值。",
+      " NL 5. 对敌人造成等同于当前格挡值点数的伤害。",
+      " NL 7. 选择一个独特的改造升级。 (每局游戏仅一次)"
+    ]
+  },
+  "thepilotcharacter:YellowPower": {
+    "NAME": "特质：自敛",
+    "DESCRIPTIONS": [
+      "在你回合结束时 NL 1. 获得 #b",
+      " 点临时生命。",
+      " NL 3. 获得 #b",
+      " 金币， 永久增加本级获得的金币数 #b", " 。 (最多 2)",
+      " NL 4. 本场战斗结束后，额外奖励一张零件牌。 (最多 1 张)",
+      " NL 2. 在2种奖励中选择1种。 (最多 1 次)",
+      " NL 5. 额外获得一次卡牌奖励。 (最多 1 张)",
+      " NL 6. 升级牌组中随机一张牌 (最多 1 张)",
+      " NL 7. 选择一个独特的改造升级。 (每局游戏仅一次)",
+      "已使用。"
+    ]
+  },
+  "thepilotcharacter:MarkedPower": {
+    "NAME": "目标",
+    "DESCRIPTIONS": [
+      "打出的指向性牌将优先攻击该目标。"
+    ]
+  },
+  "thepilotcharacter:FirewallPower": {
+    "NAME": "防火墙",
+    "DESCRIPTIONS": [
+      "战斗中每次打出或获得一张状态牌， 获得 #b",
+      " 点格挡。"
+    ]
+  },
+  "thepilotcharacter:BubblePower": {
+    "NAME": "立场护罩",
+    "DESCRIPTIONS": [
+      "减少受到的伤害 "
+    ]
+  },
+  "thepilotcharacter:FeedbackLoopPower": {
+    "NAME": "反馈回路",
+    "DESCRIPTIONS": [
+      "每当你施加增益或减益效果时， 造成 #b",
+      " 点伤害。"
+    ]
+  },
+  "thepilotcharacter:Crafting": {
+    "NAME": "零件打造",
+    "DESCRIPTIONS": [
+      " 之 ",
+      " 块碎片。 ",
+      " 块模型。 ",
+      " 块原型。 ",
+      " [#03befc]融合[] 3 张零件牌以获得一张更高级的零件牌。 NL "
+    ]
+  },
+  "thepilotcharacter:SavePower": {
+    "NAME": "电容量",
+    "DESCRIPTIONS": [
+      "回合结束时，保留 #b",
+      " 点 #y蓄能 。"
+    ]
+  },
+  "thepilotcharacter:ChargePower": {
+    "NAME": "蓄能",
+    "DESCRIPTIONS": [
+      "回合结束时 : 造成 #b",
+      " 点伤害。 如果击杀了敌人，保留一半蓄能点数。"
+    ]
+  },
+  "thepilotcharacter:EnergyBurstPower": {
+    "NAME": "能量迸发",
+    "DESCRIPTIONS": [
+      "每次洗牌时，获得 #y蓄能， 获得的点数等同于 ", " 牌组数的一半。",
+      " 牌组数。",
+      " 倍牌组数。"
+    ]
+  },
+  "thepilotcharacter:HackedPower": {
+    "NAME": "被入侵",
+    "DESCRIPTIONS": [
+      "每当使用检索按钮时，少检索 #b1 张牌。"
+    ]
+  },
+  "thepilotcharacter:EfficiencyPower": {
+    "NAME": "高效化",
+    "DESCRIPTIONS": [
+      "#b弹射时 : 获得 #b",
+      " 点格挡。"
+    ]
+  },
+  "thepilotcharacter:LoseThornsPower": {
+    "NAME": "失去荆棘",
+    "DESCRIPTIONS": [
+      "本回合结束时， 失去 #b",
+      " #y荆棘 。"
+    ]
+  },
+  "thepilotcharacter:OneLessEnergyPower": {
+    "NAME": "能量削弱",
+    "DESCRIPTIONS": [
+      "下回合少获得 #b1 点 [E] 。",
+      "少获得 #b1 点 [E] ，持续 #b",
+      " 回合。"
+    ]
+  }
+}

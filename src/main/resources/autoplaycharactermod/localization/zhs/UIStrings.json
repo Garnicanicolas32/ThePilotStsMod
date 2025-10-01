@@ -1,0 +1,95 @@
+{
+  "thepilotcharacter:SelectCustomAction": {
+    "TEXT": [
+      "消耗",
+      "进化"
+    ]
+  },
+  "thepilotcharacter:ConfigPanel": {
+    "TEXT_DICT": {
+      "lessParticles": "减少额外的视觉特效和粒子. (优化性能)",
+      "experimentalSounds": "加入更多特制的音效， 有闪退的风险。 音效大多用于装备牌 (测试阶段)",
+      "debugScry": "Scry button amount. (DEFAULT 4, Dev tool for DEBUG)"
+    }
+  },
+  "thepilotcharacter:ComboTags": {
+    "TEXT": [
+      "自燃",
+      "自卫",
+      "自敛",
+      "装备",
+      "[#FFF6E2FF]点击[] [#FFF6E2FF]以[] [#FFF6E2FF]切换[] NL "
+    ]
+  },
+  "thepilotcharacter:CUSTOMIZE": {
+    "TEXT": [
+      "Pilot: Play",
+      "Pilot: Scry"
+    ]
+  },
+  "thepilotcharacter:ShowEvolved": {
+    "TEXT": [
+      "选择进化"
+    ]
+  },
+  "thepilotcharacter:DrawButton": {
+    "TEXT": [
+      "出牌 1",
+      "出牌 (",
+      "消耗 [E] 并打出抽牌堆顶部的牌",
+      "我只能打出最多 NL #r",
+      " 张牌本回合",
+      " 张牌每回合"
+    ]
+  },
+  "thepilotcharacter:AutoPlayTopCardAction": {
+    "TEXT": [
+      "I'm #rEntangled! NL Can't play Attacks"
+    ]
+  },
+  "thepilotcharacter:ScryButton": {
+    "TEXT": [
+      "检索 ",
+      "检索 (",
+      "消耗 [E] 并查看 ",
+      " 张抽牌堆顶部的牌。 可以选择丢弃其中任意张牌。"
+    ]
+  },
+  "thepilotcharacter:InnateRest": {
+    "TEXT": [
+      "战前准备",
+      "给你牌组中的一张牌添加安置效果。",
+      "选择一张牌添加安置效果"
+    ]
+  },
+  "thepilotcharacter:repairButton": {
+    "TEXT": [
+      "维修",
+      "维修 ",
+      " 将装备牌的耐久度回满。",
+      "没有可维修的装备牌。",
+      "选择牌并维修"
+    ]
+  },
+  "thepilotcharacter:InnateRelicMod": {
+    "TEXT": [
+      " thepilotcharacter:安置 。 NL ",
+      "战斗开始时打出这张牌。 替换固有。 "
+    ]
+  },
+  "thepilotcharacter:ConsumableCards": {
+    "TEXT": [
+      " thepilotcharacter:消耗品 。 NL [#68fa43](",
+      " [#68fa43]剩余 [#68fa43]次数 ) NL ",
+      " [#68fa43]剩余 [#68fa43]次数 ) NL "
+    ]
+  },
+  "thepilotcharacter:ScrapReward": {
+    "TEXT": [
+      "添加一张零件牌到你的牌组",
+      "选择一个零件",
+      "添加一张牌到你的牌组",
+      "选择一张牌"
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+[
+  {
+    "ID": "Ignition",
+    "PROPER_NAME": "特质: 自燃",
+    "NAMES": [
+      "自燃",
+      "自燃+"
+    ],
+    "DESCRIPTION": " #y自燃 特质会给予你额外的力量并造成更多伤害。"
+  },
+  {
+    "ID": "Bastion",
+    "PROPER_NAME": "特质: 自卫",
+    "NAMES": [
+      "自卫",
+      "自卫+"
+    ],
+    "DESCRIPTION": " #y自卫 特质会给予你更多格挡值和各种增益效果。"
+  },
+  {
+    "ID": "Scavenge",
+    "PROPER_NAME": "特质: 自敛",
+    "NAMES": [
+      "自敛",
+      "自敛+"
+    ],
+    "DESCRIPTION": " [#03befc]自敛[] 特质会给予你额外的金币和各类奖励。"
+  },
+  {
+    "ID": "CrossWire",
+    "PROPER_NAME": "线路交叉",
+    "NAMES": [
+      "线路交叉",
+      "线路交叉+"
+    ],
+    "DESCRIPTION": "进攻，防御，和资源... 似乎出问题了。"
+  },
+  {
+    "ID": "Trait",
+    "PROPER_NAME": "特质",
+    "NAMES": [
+      "特质"
+    ],
+    "DESCRIPTION": "如果回合结束时手牌中有附带特质的牌，则根据牌数给予你相应特质的增益。"
+  },
+  {
+    "ID": "Equipment",
+    "PROPER_NAME": "装备",
+    "NAMES": [
+      "装备",
+      "装备"
+    ],
+    "DESCRIPTION": "此牌会一直保留在手牌中，每次 [#03befc]激活[] 其效果则降低1点耐久度，耐久度耗尽后 #y消耗 。 NL 将此牌打出即可取消装备并丢进弃牌堆。"
+  },
+  {
+    "PROPER_NAME": "目标",
+    "NAMES": [
+      "目标",
+      "[#03befc]目标"
+    ],
+    "DESCRIPTION": "打出的牌会优先针对该敌人。战斗中不能同时拥有多个目标敌人。"
+  },
+  {
+    "PROPER_NAME": "维修",
+    "NAMES": [
+      "维修"
+    ],
+    "DESCRIPTION": "用于增加装备牌的耐久度。"
+  },
+  {
+    "PROPER_NAME": "融合",
+    "NAMES": [
+      "融合",
+      "融合"
+    ],
+    "DESCRIPTION": "融合3张相同稀有度的零件牌并永久获得一张更高级的零件牌，融合成功后将原本参与融合的3张零件牌永久移除。"
+  },
+  {
+    "PROPER_NAME": "消耗品",
+    "NAMES": [
+      "消耗品"
+    ],
+    "DESCRIPTION": "拥有有限的打出次数。次数耗尽后，本场战斗将此牌从牌堆中移除。"
+  },
+  {
+    "PROPER_NAME": "Barricade",
+    "NAMES": [
+      "Barricade"
+    ],
+    "DESCRIPTION": "Block is not removed at the start of your turn."
+  },
+  {
+    "ID": "Charge",
+    "PROPER_NAME": "蓄能",
+    "NAMES": [
+      "蓄能"
+    ],
+    "DESCRIPTION": "你的回合结束后对敌人造成相应点数的伤害。 如果击杀了敌人，保留一半的蓄能点数。"
+  },
+  {
+    "PROPER_NAME": "电容量",
+    "NAMES": [
+      "电容量"
+    ],
+    "DESCRIPTION": "回合结束后， #y蓄能 点数将保持在电容量之上。"
+  },
+  {
+    "PROPER_NAME": "改造",
+    "NAMES": [
+      "改造"
+    ],
+    "DESCRIPTION": " #y改造 是本局游戏持续保留的永久性角色升级。"
+  },
+  {
+    "PROPER_NAME": "被入侵",
+    "NAMES": [
+      "被入侵"
+    ],
+    "DESCRIPTION": "每当你检索时， 少检索 #b1 张牌。"
+  },
+  {
+    "PROPER_NAME": "检索",
+    "NAMES": [
+      "检索"
+    ],
+    "DESCRIPTION": "等同于观者的 #y预见 ，查看抽牌堆顶部的牌，并可以选择丢弃任意张。"
+  },
+  {
+    "ID": "Deploy",
+    "PROPER_NAME": "安置",
+    "NAMES": [
+      "安置"
+    ],
+    "DESCRIPTION": "战斗开始时失去 [E] 并打出此牌。 如果没有足够的 [E] ， 将一张 #y虚空 洗入抽牌堆。 替换 #y固有 。"
+  },
+  {
+    "PROPER_NAME": "Plated Armor",
+    "NAMES": [
+      "Plated Armor",
+      "plated_armor",
+      "Played_Armor"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain Block equal to your plated armor. Unblocked attack damage reduces Plated Armor by 1."
+  },
+  {
+    "ID": "Ejected",
+    "PROPER_NAME": "[#03befc]弹射[]",
+    "NAMES": [
+      "[#03befc]弹射",
+      "弹射",
+      "弹射"
+    ],
+    "DESCRIPTION": "每当你通过检索按钮丢弃，或直接丢弃此牌，触发 #y弹射 的效果。"
+  },
+  {
+    "ID": "Echo",
+    "PROPER_NAME": "[#03befc]余波[]",
+    "NAMES": [
+      "余波",
+      "[#03befc]余波"
+    ],
+    "DESCRIPTION": "同一回合内，再次打出此牌即可触发 #y余波 的效果。"
+  },
+  {
+    "PROPER_NAME": "[#03befc]丢弃[]",
+    "NAMES": [
+      "丢弃",
+      "[#03befc]丢弃"
+    ],
+    "DESCRIPTION": "每当此牌在手牌中时，将其丢弃即可激活 #y丢弃 的效果。"
+  },
+  {
+  "PROPER_NAME": "[#03befc]装上[]",
+    "NAMES": [
+      "[#03befc]装上",
+      "[#03befc]装上",
+      "[#03befc]装上"
+    ],
+    "DESCRIPTION": "回合内通过出牌按钮打出该装备牌时，视为 #y装上 。"
+  },
+  {
+    "PROPER_NAME": "[#03befc]卸下[]",
+    "NAMES": [
+      "[#03befc]卸下",
+      "[#03befc]卸下",
+      "[#03befc]卸下"
+    ],
+    "DESCRIPTION": "回合内通过手动打出该装备牌将其丢弃时，视为 #y卸下 。"
+  }
+]

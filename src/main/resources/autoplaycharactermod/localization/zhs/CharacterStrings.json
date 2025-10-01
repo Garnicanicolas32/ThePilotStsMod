@@ -1,0 +1,13 @@
+{
+  "thepilotcharacter:ThePilot": {
+    "NAMES": [
+      "领航员",
+      "领航员"
+    ],
+    "TEXT": [
+	"一个未完工的机械体游荡于尖塔。 NL 为了方便行动经过了简化设计，且会不断进行自我升级。",
+      " NL 你 #r~点燃~ 你的核心并抽出了利刃...",
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~hollow~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+    ]
+  }
+}
