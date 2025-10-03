@@ -44,7 +44,7 @@
   },
   "thepilotcharacter:AutoPlayTopCardAction": {
     "TEXT": [
-      "I'm #rEntangled! NL Can't play Attacks"
+      "我被 #r缠身 了！ NL 不能打出攻击牌。"
     ]
   },
   "thepilotcharacter:ScryButton": {
@@ -90,6 +90,12 @@
       "选择一个零件",
       "添加一张牌到你的牌组",
       "选择一张牌"
+    ]
+  },
+  "thepilotcharacter:HoverTextTutorial": {
+    "TEXT": [
+      "悬停以查看提示！",
+      "悬停以查看教程！"
     ]
   }
 }

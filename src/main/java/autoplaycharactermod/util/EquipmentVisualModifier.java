@@ -69,13 +69,27 @@ public class EquipmentVisualModifier extends AbstractCardModifier {
             time = (time + Gdx.graphics.getDeltaTime()) % (MathUtils.PI2);
             float normalized = (MathUtils.sin(time * 2f) + 1f) * 0.5f;
             FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale);
-            ExtraIcons.icon(texTutorial)
-                    .text(uiStrings.TEXT[0])
-                    .drawColor(iconColour)
-                    .textOffsetX(-50f)
-                    .offsetY(-285f + normalized * 25f)
-                    .offsetX(175f)
-                    .render(card);
+
+            if (Settings.lineBreakViaCharacter){
+                ExtraIcons.icon(texTutorial)
+                        .font(FontHelper.buttonLabelFont)
+                        .text(uiStrings.TEXT[0])
+                        .drawColor(iconColour)
+                        .textOffsetX(-50f)
+                        .offsetY(-285f + normalized * 25f)
+                        .offsetX(175f)
+                        .render(card);
+            }
+            else {
+                ExtraIcons.icon(texTutorial)
+                        .text(uiStrings.TEXT[0])
+                        .drawColor(iconColour)
+                        .textOffsetX(-50f)
+                        .offsetY(-285f + normalized * 25f)
+                        .offsetX(175f)
+                        .render(card);
+            }
+
         }
     }
 

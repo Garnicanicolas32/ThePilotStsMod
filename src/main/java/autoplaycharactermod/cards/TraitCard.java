@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -273,13 +274,26 @@ public abstract class TraitCard extends BaseCard implements SpawnModificationCar
             iconColour.a = this.transparency;
             FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale);
 
-            ExtraIcons.icon(textHover)
-                    .text(uiStrings.TEXT[1])
-                    .drawColor(iconColour)
-                    .textOffsetX(-18f)
-                    .offsetY(-265f + normalized * 25f)
-                    .offsetX(145f)
-                    .render(this);
+            if (Settings.lineBreakViaCharacter){
+                ExtraIcons.icon(textHover)
+                        .font(FontHelper.buttonLabelFont)
+                        .text(uiStrings.TEXT[1])
+                        .drawColor(iconColour)
+                        .textOffsetX(-18f)
+                        .offsetY(-265f + normalized * 25f)
+                        .offsetX(145f)
+                        .render(this);
+            }else {
+                ExtraIcons.icon(textHover)
+                        .text(uiStrings.TEXT[1])
+                        .drawColor(iconColour)
+                        .textOffsetX(-18f)
+                        .offsetY(-265f + normalized * 25f)
+                        .offsetX(145f)
+                        .render(this);
+            }
+
+
 
             if (hb.hovered) {
                 if (WaitTimer <= 0F) {
