@@ -91,8 +91,6 @@ public class CraftingScrapAction extends AbstractGameAction {
 
     public void replaceLeftovers() {
         ArrayList<AbstractCard> toRemove = new ArrayList<>();
-
-
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.hasTag(ThePilotMod.CustomTags.ScrapCommon) || c.hasTag(ThePilotMod.CustomTags.ScrapUncommon) || c.hasTag(ThePilotMod.CustomTags.ScrapRare)) {
                 toRemove.add(c);

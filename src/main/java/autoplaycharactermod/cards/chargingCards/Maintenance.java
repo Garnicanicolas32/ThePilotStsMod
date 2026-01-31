@@ -50,17 +50,26 @@ public class Maintenance extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (PlayOnce) {
             PlayOnce = false;
+            //stuff to do the first time played
             addToBot(new GainBlockAction(p, p, block));
             if (this.alreadyEvolved)
                 addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
+            // end of stuff to do first time played
             returnToHand = true;
         } else {
+            //stuff to do when echo
             addToBot(new DiscardAction(p, p, 1, false));
             addToBot(new ApplyPowerAction(p, p, new SavePower(p, magicNumber)));
             if (this.alreadyEvolved)
                 addToBot(new GainBlockAction(p, p, block));
+            // end of stuff to do when echo
             returnToHand = false;
         }
+    }
+
+    @Override
+    public boolean freeToPlay() {
+        return true;
     }
 
     @Override
@@ -70,8 +79,5 @@ public class Maintenance extends BaseCard {
         return customTooltips;
     }
 
-    @Override
-    public boolean freeToPlay() {
-        return true;
-    }
+
 }

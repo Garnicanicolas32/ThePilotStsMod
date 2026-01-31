@@ -2,6 +2,7 @@ package autoplaycharactermod.patches;
 
 import autoplaycharactermod.ThePilotMod;
 import autoplaycharactermod.cards.BaseCard;
+import autoplaycharactermod.cards.basic.Strike;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -31,6 +33,10 @@ public class ShowEvolvedPatch {
         @SpirePostfixPatch
         public static void patch(@ByRef AbstractCard[] ___card) {
             if(!CardCrawlGame.isInARun() && ___card[0] instanceof BaseCard) {
+                if(update(___card[0])){
+                    ___card[0] = ((BaseCard) ___card[0]).makeCopy();
+                }
+            }else if(CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && ThePilotMod.evolved){
                 if(update(___card[0])){
                     ___card[0] = ((BaseCard) ___card[0]).makeCopy();
                 }
@@ -76,9 +82,9 @@ public class ShowEvolvedPatch {
         }
     }
 
-
     private static String uiText = CardCrawlGame.languagePack.getUIString(ThePilotMod.makeID("ShowEvolved")).TEXT[0];
     public static Hitbox toggleHb = new Hitbox(250.0F * Settings.scale, 80.0F * Settings.scale);
+    
     private static void render(SpriteBatch sb, AbstractCard c) {
         if (toggleHb == null || !(c instanceof BaseCard))
             return;
