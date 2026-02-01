@@ -1,0 +1,91 @@
+package ThePilotCharacter.cards.scrap;
+
+import ThePilotCharacter.ThePilotMod;
+import ThePilotCharacter.actions.DamageCurrentTargetAction;
+import ThePilotCharacter.actions.SfxActionVolume;
+import ThePilotCharacter.cards.BaseCard;
+import ThePilotCharacter.character.PilotCharacter;
+import ThePilotCharacter.patches.OnUseCardPowersAndRelicsPatch;
+import ThePilotCharacter.powers.Crafting;
+import ThePilotCharacter.util.CardStats;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+
+public class ScrapCommon extends BaseCard {
+    public static final String ID = makeID("ScrapCommon");
+    private static final CardStats info = new CardStats(
+            PilotCharacter.Meta.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.COMMON,
+            CardTarget.NONE,
+            0
+    );
+    private static final int DAMAGE = 4;
+    private static final int UPG = 4;
+    private static final int MAGIC = 3;
+    private static final int MAGICUPG = 4;
+
+    public ScrapCommon() {
+        super(ID, info);
+        returnToHand = true;
+        tags.add(ThePilotMod.CustomTags.ScrapCommon);
+        setDamage(DAMAGE);
+        setMagic(MAGIC);
+        tags.add(ThePilotMod.CustomTags.NoEnergyText);
+        tags.add(ThePilotMod.CustomTags.skipVigor);
+        MultiCardPreview.add(this, new ScrapUncommonAttStr(), new ScrapUncommonDefDex());
+        if (ThePilotMod.evolved && CardCrawlGame.isInARun()
+                && AbstractDungeon.player.masterDeck != null) {
+            this.evolveCard();
+        }
+    }
+
+    @Override
+    public void evolveCard() {
+        MultiCardPreview.clear(this);
+        setDamage(10);
+        super.evolveCard();
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (PlayOnce && !Duplicated) {
+            PlayOnce = false;
+            addToBot(new DamageCurrentTargetAction(this, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            OnUseCardPowersAndRelicsPatch.checkPenNibVigor();
+            returnToHand = true;
+        } else {
+            if (this.alreadyEvolved) {
+                addToBot(new HealAction(p, p, 3));
+            } else {
+                addToBot(new SfxActionVolume("MAP_SELECT_1", 0f, 3.8F));
+                if (!Duplicated)
+                    addToBot(new ApplyPowerAction(p, p, new Crafting(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
+            }
+            returnToHand = false;
+            setExhaust(true);
+        }
+    }
+
+    @Override
+    public void upgrade(){
+    }
+
+    @Override
+    public boolean canUpgrade(){
+        return false;
+    }
+
+    @Override
+    public boolean freeToPlay() {
+        return true;
+    }
+}

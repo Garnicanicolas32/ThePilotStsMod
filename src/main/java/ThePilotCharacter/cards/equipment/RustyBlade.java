@@ -1,0 +1,63 @@
+package ThePilotCharacter.cards.equipment;
+
+import ThePilotCharacter.ThePilotMod;
+import ThePilotCharacter.actions.RustyBladeAction;
+import ThePilotCharacter.cards.EquipmentCard;
+import ThePilotCharacter.character.PilotCharacter;
+import ThePilotCharacter.util.CardStats;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+public class RustyBlade extends EquipmentCard {
+    public static final String ID = makeID("RustyBlade");
+    private static final CardStats info = new CardStats(
+            PilotCharacter.Meta.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.COMMON,
+            CardTarget.NONE,
+            0
+    );
+    private static final int BASE_HP = 11;
+    private static final int DAMAGE = 5;
+    private static final int DAMAGE_UPG = 3;
+
+
+    public RustyBlade() {
+        super(ID, info, BASE_HP);
+        setDamage(DAMAGE, DAMAGE_UPG);
+        checkEvolve();
+        this.tags.remove(ThePilotMod.CustomTags.ignoreDuplication);
+    }
+
+    @Override
+    public void evolveCard() {
+        setDamage(10);
+        super.evolveCard();
+    }
+
+    protected void onEquip() {
+        Activate();
+    }
+
+    @Override
+    public void Activate() {
+        if (!Equipped) return;
+        AbstractMonster m = PilotCharacter.getTarget();
+        calculateCardDamage(m);
+        addToBot(new RustyBladeAction(this, AbstractGameAction.AttackEffect.POISON));
+        super.Activate();
+    }
+
+    public void triggerOnEndOfTurnForPlayingCard() {
+        if (alreadyEvolved)
+            Activate();
+    }
+
+    protected int getUpgradeDurability() {
+        return 2;
+    }
+
+    public void atTurnStart() {
+        Activate();
+    }
+}
