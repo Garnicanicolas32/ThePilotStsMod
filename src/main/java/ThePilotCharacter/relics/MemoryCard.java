@@ -31,6 +31,11 @@ public class MemoryCard extends BaseRelic {
     }
 
     @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.floorNum <= 48;
+    }
+
+    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }

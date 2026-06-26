@@ -1,6 +1,7 @@
 package ThePilotCharacter.relics;
 
 import ThePilotCharacter.character.PilotCharacter;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static ThePilotCharacter.ThePilotMod.makeID;
 
@@ -18,5 +19,10 @@ public class Schematics extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + AMOUNTTOHEALREPAIR + DESCRIPTIONS[1];
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.floorNum <= 48;
     }
 }
